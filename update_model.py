@@ -1457,7 +1457,58 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
         f"window.MARKET_INSIGHT_DATA = {json.dumps(state, indent=2)};\n",
         encoding="utf-8",
     )
+    sync_to_github_if_configured()
     return state
+
+
+def sync_to_github_if_configured() -> None:
+    """If .github_token exists locally, push updated data files to GitHub Pages."""
+    token_path = WORKSPACE_DIR / ".github_token"
+    if not token_path.exists():
+        return
+    token = token_path.read_text(encoding="utf-8").strip()
+    if not token:
+        return
+    try:
+        import base64
+
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "Content-Type": "application/json",
+            "User-Agent": "MarketInsightUpdater/1.0",
+        }
+        for fname in ("portfolio_data.js", "portfolio_state.json", "model_memory.json"):
+            fpath = WORKSPACE_DIR / fname
+            if not fpath.exists():
+                continue
+            api_url = f"https://api.github.com/repos/PDub1101/market-insight/contents/{fname}"
+            req_get = urllib.request.Request(api_url, headers=headers)
+            sha = None
+            try:
+                with urllib.request.urlopen(req_get, timeout=8) as r:
+                    sha = json.loads(r.read().decode("utf-8")).get("sha")
+            except Exception:
+                pass
+            payload: Dict[str, Any] = {
+                "message": f"Automated daily model sync: {fname}",
+                "content": base64.b64encode(fpath.read_bytes()).decode("ascii"),
+                "branch": "main",
+            }
+            if sha:
+                payload["sha"] = sha
+            req_put = urllib.request.Request(
+                api_url,
+                data=json.dumps(payload).encode("utf-8"),
+                headers=headers,
+                method="PUT",
+            )
+            with urllib.request.urlopen(req_put, timeout=12):
+                pass
+        print("Synced updated Day Tab to https://pdub1101.github.io/market-insight/")
+    except Exception as exc:
+        print(f"[warn] GitHub sync skipped: {exc}", file=sys.stderr)
 
 
 def print_concise_summary(state: Dict[str, Any]) -> None:
