@@ -1,0 +1,38 @@
+name: Daily $7K Stock Model Cloud Update
+
+on:
+  schedule:
+    # Runs at 4:35 PM ET on Weekdays (Mon-Fri) after US market close
+    - cron: "35 20 * * 1-5"
+    - cron: "35 21 * * 1-5"
+  workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  daily-model-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Google GenAI SDK
+        run: pip install -U google-genai
+
+      - name: Run $7,000 Stock Model Daily Update
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python update_model.py
+
+      - name: Commit & Push Updated Day Tab to Live Webpage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portfolio_state.json portfolio_data.js model_memory.json
+          git diff --staged --quiet || (git commit -m "Automated Daily $7K Stock Model Update ($(date -u +'%Y-%m-%d'))" && git push)
