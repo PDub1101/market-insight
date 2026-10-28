@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Insight — $7,000 Self-Learning AI Model & Mutual Fund Comparator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-app: #0b0c0f;
+      --bg-sidebar: #101217;
+      --bg-card: #151820;
+      --bg-card-hover: #1b1f2a;
+      --bg-elevated: #1e222d;
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --border-highlight: rgba(110, 231, 183, 0.35);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #64748b;
+      --accent-mint: #6ee7b7;
+      --accent-green: #34d399;
+      --accent-lime: #d9f99d;
+      --accent-cyan: #a5f3fc;
+      --accent-purple: #a78bfa;
+      --accent-red: #f87171;
+      --accent-amber: #fbbf24;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-app);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-variant-numeric: tabular-nums;
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      width: 244px;
+      min-width: 244px;
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      padding: 18px 12px;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      overflow-y: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 14px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, var(--accent-lime), var(--accent-mint));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 99px;
+      background: rgba(110, 231, 183, 0.14);
+      color: var(--accent-mint);
+      border: 1px solid rgba(110, 231, 183, 0.3);
+    }
+
+    .nav-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 6px 8px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+
+    .nav-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+    }
+
+    .nav-btn.active {
+      background: #202531;
+      color: var(--text-primary);
+      font-weight: 600;
+      border-color: rgba(110, 231, 183, 0.25);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-btn-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timeline-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .nav-btn.active .timeline-dot {
+      background: var(--accent-mint);
+      box-shadow: 0 0 8px var(--accent-mint);
+    }
+
+    .day-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+    }
+
+    .day-pill.pos {
+      color: var(--accent-mint);
+      background: rgba(52, 211, 153, 0.12);
+    }
+
+    .day-pill.neg {
+      color: var(--accent-red);
+      background: rgba(248, 113, 113, 0.12);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 10px 12px;
+      border-radius: 9px;
+      background: rgba(110, 231, 183, 0.04);
+      border: 1px solid rgba(110, 231, 183, 0.14);
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .sidebar-footer strong {
+      color: var(--accent-mint);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Main Content Container — Compact Single-Screen Density */
+    .main-content {
+      flex: 1;
+      padding: 14px 22px 28px;
+      max-width: calc(100vw - 244px);
+    }
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 11px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .page-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-title {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .day-step-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2px;
+    }
+
+    .step-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .step-btn:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-primary);
+    }
+
+    .step-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .live-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-mint);
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      padding: 3px 9px;
+      border-radius: 99px;
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-mint);
+      box-shadow: 0 0 8px var(--accent-mint);
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .capital-select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 4px 9px;
+      font-size: 11.5px;
+      color: var(--text-secondary);
+    }
+
+    .capital-select {
+      background: transparent;
+      border: none;
+      color: var(--accent-mint);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 12px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .capital-select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+
+    .search-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 6px 11px;
+      color: var(--text-primary);
+      font-size: 12px;
+      width: 195px;
+      outline: none;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent-mint);
+    }
+
+    /* Top Market Ribbon */
+    .market-ribbon {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(130px, 1fr));
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 11px;
+      padding: 9px 14px;
+      margin-bottom: 11px;
+      overflow-x: auto;
+    }
+
+    .ribbon-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-right: 8px;
+      border-right: 1px solid var(--border-subtle);
+    }
+
+    .ribbon-item:last-child {
+      border-right: none;
+    }
+
+    .ribbon-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .ribbon-chg {
+      font-size: 10px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .ribbon-chg.up { color: var(--accent-mint); }
+    .ribbon-chg.down { color: var(--accent-red); }
+
+    .ribbon-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .ribbon-price {
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-primary);
+    }
+
+    /* Compact Executive Digest Bar */
+    .ai-briefing-card {
+      background: linear-gradient(135deg, rgba(21, 24, 32, 0.98), rgba(26, 31, 42, 0.95));
+      border: 1px solid rgba(110, 231, 183, 0.22);
+      border-radius: 12px;
+      padding: 11px 16px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    @media (max-width: 1100px) {
+      .ai-briefing-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ai-briefing-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .ai-briefing-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-mint);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-briefing-text {
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: #e5e7eb;
+      margin-bottom: 7px;
+    }
+
+    .executive-chips-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .weight-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: rgba(11, 12, 15, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--accent-cyan);
+    }
+
+    .drawer-toggle-btn {
+      background: rgba(167, 139, 250, 0.12);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      color: #ddd6fe;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .drawer-toggle-btn:hover {
+      background: rgba(167, 139, 250, 0.22);
+    }
+
+    .gemini-drawer {
+      display: none;
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 7px;
+      background: rgba(11, 12, 15, 0.65);
+      border: 1px solid rgba(110, 231, 183, 0.2);
+      font-size: 11.5px;
+      color: #d1fae5;
+      line-height: 1.45;
+    }
+
+    .gemini-drawer.open {
+      display: block;
+    }
+
+    .todays-signal-box {
+      background: rgba(11, 12, 15, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9px;
+      padding: 9px 12px;
+    }
+
+    .signal-box-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signal-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .signal-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .signal-item-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .signal-reason {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+
+    /* Middle 3-Card Row matching reference screenshot */
+    .middle-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 1fr 0.92fr;
+      gap: 13px;
+      margin-bottom: 13px;
+    }
+
+    @media (max-width: 1280px) {
+      .middle-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 13px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .sub-tabs {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .pill-tab {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .pill-tab:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .pill-tab.active {
+      background: var(--accent-mint);
+      color: #06281e;
+    }
+
+    /* Interactive Chart & Floating Crosshair Tooltip */
+    .chart-wrap {
+      width: 100%;
+      height: 148px;
+      margin-bottom: 8px;
+      position: relative;
+      cursor: crosshair;
+    }
+
+    .chart-tooltip {
+      position: absolute;
+      top: 6px;
+      left: 54px;
+      background: rgba(16, 18, 23, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(110, 231, 183, 0.35);
+      border-radius: 8px;
+      padding: 7px 10px;
+      font-size: 11px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      z-index: 10;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      min-width: 175px;
+    }
+
+    .chart-tooltip.visible {
+      opacity: 1;
+    }
+
+    .tt-date {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 3px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tt-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      margin-top: 2px;
+    }
+
+    .mini-stats-table {
+      margin-top: auto;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 12px;
+    }
+
+    .mini-stat-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    .mini-stat-label {
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .mini-stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    /* Center Card: Portfolio Exchange / Value Card */
+    .hero-val-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 2px 0 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-number {
+      font-size: 28px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-sublabel {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .movement-box {
+      text-align: right;
+    }
+
+    .movement-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .movement-badge.up { color: var(--accent-mint); }
+    .movement-badge.down { color: var(--accent-red); }
+
+    .ohlc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9px;
+      padding: 9px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .ohlc-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .ohlc-lbl {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+    }
+
+    .range-slider-wrap {
+      margin-bottom: 12px;
+    }
+
+    .range-slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .range-bar-track {
+      height: 6px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent-lime), var(--accent-purple), #374151);
+      position: relative;
+    }
+
+    .range-bar-thumb {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--accent-purple);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: left 0.25s ease;
+    }
+
+    .return-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 9px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .ret-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .ret-lbl {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+    }
+
+    /* Right Card: Strength Meter Gauge */
+    .gauge-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 8px;
+      position: relative;
+    }
+
+    .gauge-center-text {
+      position: absolute;
+      bottom: 4px;
+      text-align: center;
+    }
+
+    .gauge-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .gauge-sub {
+      font-size: 11px;
+      color: var(--accent-mint);
+      font-weight: 600;
+    }
+
+    .strength-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 9px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .str-stat-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .str-stat-lbl {
+      font-size: 10px;
+      color: var(--text-secondary);
+      margin-top: 1px;
+    }
+
+    /* Compact Single-Row Mutual Fund & Savings Comparison Ribbon */
+    .alternatives-ribbon {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 13px;
+    }
+
+    .alt-ribbon-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .alt-ribbon-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alt-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    @media (max-width: 1200px) {
+      .alt-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .alt-mini-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+
+    .alt-mini-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .alt-mini-card.is-model {
+      background: rgba(110, 231, 183, 0.09);
+      border-color: rgba(110, 231, 183, 0.42);
+    }
+
+    .alt-mini-left {
+      overflow: hidden;
+    }
+
+    .alt-mini-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .alt-mini-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .alt-mini-right {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .alt-mini-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .alt-mini-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    /* Bottom 2-Card Row */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.58fr 1fr;
+      gap: 13px;
+    }
+
+    @media (max-width: 1200px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .data-table td {
+      padding: 9px 9px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .inst-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .inst-ticker {
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .inst-name {
+      font-size: 10.5px;
+      color: var(--text-secondary);
+    }
+
+    .badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .badge.buy {
+      background: rgba(52, 211, 153, 0.16);
+      color: var(--accent-mint);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+
+    .badge.hold {
+      background: rgba(167, 139, 250, 0.16);
+      color: var(--accent-purple);
+      border: 1px solid rgba(167, 139, 250, 0.35);
+    }
+
+    .badge.trim {
+      background: rgba(248, 113, 113, 0.16);
+      color: var(--accent-red);
+      border: 1px solid rgba(248, 113, 113, 0.35);
+    }
+
+    .badge.watch {
+      background: rgba(251, 191, 36, 0.15);
+      color: var(--accent-amber);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .pos-text { color: var(--accent-mint); }
+    .neg-text { color: var(--accent-red); }
+
+    /* Mini Volume Bar Sparkline */
+    .vol-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 20px;
+      width: 64px;
+    }
+
+    .v-bar {
+      flex: 1;
+      border-radius: 1px;
+      min-height: 3px;
+    }
+
+    .v-bar.up { background: var(--accent-mint); }
+    .v-bar.down { background: #64748b; }
+
+    /* Right Bottom Card: Horizontal Allocation Bars with Reference-Style Floating Tooltip */
+    .alloc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-top: 4px;
+    }
+
+    .alloc-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 110px;
+      align-items: center;
+      gap: 9px;
+      font-size: 11.5px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .alloc-label {
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+    }
+
+    .alloc-track {
+      height: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .alloc-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-mint));
+      transition: width 0.35s ease;
+    }
+
+    .alloc-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    .alloc-floating-tip {
+      position: absolute;
+      right: 118px;
+      top: -28px;
+      background: #242936;
+      border: 1px solid rgba(110, 231, 183, 0.4);
+      color: var(--text-primary);
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-family: 'JetBrains Mono', monospace;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: all 0.14s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      white-space: nowrap;
+      z-index: 5;
+    }
+
+    .alloc-row:hover .alloc-floating-tip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .alloc-row:hover .alloc-label,
+    .alloc-row:hover .alloc-val {
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-title">Market insight</span>
+      <span class="brand-badge" id="sidebarCapBadge">$7K MODEL</span>
+    </div>
+
+    <div class="nav-section-label">Main Views</div>
+    <ul class="nav-list" id="viewNavList">
+      <li>
+        <button class="nav-btn active" onclick="setTableView('holdings', this)">
+          <span class="nav-btn-left">📊 Dashboard Overview</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn" onclick="setTableView('alternatives', this)">
+          <span class="nav-btn-left">🏦 Vs. Mutual Funds & HYSA</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn" onclick="setTableView('audit', this)">
+          <span class="nav-btn-left">🎯 Model Trade Audit</span>
+        </button>
+      </li>
+      <li>
+        <button class="nav-btn" onclick="setTableView('watchlist', this)">
+          <span class="nav-btn-left">🔍 19-Asset Signals</span>
+        </button>
+      </li>
+    </ul>
+
+    <div class="nav-section-label">
+      <span>Daily AI Snapshots</span>
+      <span id="dayCountLabel"></span>
+    </div>
+    <ul class="nav-list" id="sidebarDayList"></ul>
+
+    <div class="sidebar-footer">
+      <strong>Self-Learning Daily Tracker</strong>
+      Every weekday at 4:30 PM ET, Gemini + the quant engine scores the market, audits past trades, updates mutual fund comparisons, and adds a new Day Tab.
+      <div style="margin-top:6px;font-size:9.5px;color:var(--text-muted);">Educational simulation only — not financial advice.</div>
+    </div>
+  </aside>
+
+  <!-- Main Dashboard -->
+  <main class="main-content">
+    <header class="top-header">
+      <div class="page-title-wrap">
+        <h1 class="page-title" id="headerTitle">Dashboard</h1>
+        <div class="day-step-controls">
+          <button class="step-btn" id="prevDayBtn" onclick="stepDay(-1)">◀ Prev Day</button>
+          <button class="step-btn" id="nextDayBtn" onclick="stepDay(1)">Next Day ▶</button>
+        </div>
+        <span class="live-status-pill">
+          <span class="pulse-dot"></span>
+          <span id="lastUpdatedBadge">Updated Today</span>
+        </span>
+      </div>
+      <div class="header-controls">
+        <div class="capital-select-wrap" title="Simulate how any starting budget scales across the AI Model & Mutual Funds">
+          <span>Sim Budget:</span>
+          <select id="capitalScaleSelect" class="capital-select" onchange="onCapitalScaleChange()">
+            <option value="1000">$1,000</option>
+            <option value="5000">$5,000</option>
+            <option value="7000" selected>$7,000 (Base)</option>
+            <option value="10000">$10,000</option>
+            <option value="25000">$25,000</option>
+            <option value="50000">$50,000</option>
+          </select>
+        </div>
+        <input
+          type="text"
+          id="tickerSearch"
+          class="search-box"
+          placeholder="Search ticker or fund..."
+          oninput="renderBottomTable()"
+        />
+      </div>
+    </header>
+
+    <!-- Top Market Ribbon -->
+    <section class="market-ribbon" id="marketRibbon"></section>
+
+    <!-- Compact Executive Briefing & Action Drawer -->
+    <section class="ai-briefing-card">
+      <div>
+        <div class="ai-briefing-header">
+          <span class="ai-briefing-title">🤖 Gemini AI + Self-Learning Executive Digest</span>
+          <span id="briefingDateBadge" class="day-pill"></span>
+        </div>
+        <p class="ai-briefing-text" id="aiBriefingText"></p>
+        <div class="executive-chips-row" id="selfLearningStrip"></div>
+        <div class="gemini-drawer" id="geminiMemoryDrawer"></div>
+      </div>
+      <div class="todays-signal-box">
+        <div class="signal-box-title">
+          <span>Model Action On This Day</span>
+          <span id="signalCountBadge" style="color: var(--accent-mint);"></span>
+        </div>
+        <div id="todaysActionsList"></div>
+      </div>
+    </section>
+
+    <!-- Middle 3-Card Row -->
+    <section class="middle-grid">
+      <!-- Card 1: Interactive Trajectory Chart with Hover Crosshair -->
+      <div class="card">
+        <div class="card-header">
+          <div class="sub-tabs">
+            <button class="pill-tab active" id="chartTabCompare" onclick="setChartMode('compare')">VS MUTUAL FUNDS</button>
+            <button class="pill-tab" id="chartTabModel" onclick="setChartMode('model')">MODEL CURVE</button>
+            <button class="pill-tab" id="chartTabAlpha" onclick="setChartMode('alpha')">EDGE VS S&P ($)</button>
+          </div>
+          <span style="font-size: 10.5px; color: var(--text-muted);" id="chartSubtitle">Hover chart to inspect day</span>
+        </div>
+        <div class="chart-wrap" id="trajectoryChartWrap">
+          <div class="chart-tooltip" id="chartTooltip"></div>
+          <div id="trajectorySvgMount" style="width:100%;height:100%;"></div>
+        </div>
+        <div class="mini-stats-table">
+          <div class="mini-stat-row">
+            <span class="mini-stat-label"><span class="legend-dot" style="background:#6ee7b7;"></span>AI Model</span>
+            <span class="mini-stat-val" id="statFollowedModel">$7,000.00</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label"><span class="legend-dot" style="background:#a78bfa;"></span>S&P 500 Fund</span>
+            <span class="mini-stat-val" id="statPassiveSpy">$7,000.00</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label"><span class="legend-dot" style="background:#a5f3fc;"></span>60/40 Balanced</span>
+            <span class="mini-stat-val" id="statBalanced6040">$7,000.00</span>
+          </div>
+          <div class="mini-stat-row">
+            <span class="mini-stat-label"><span class="legend-dot" style="background:#fbbf24;"></span>4.5% HYSA Cash</span>
+            <span class="mini-stat-val" id="statHysaCash">$7,000.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Portfolio Exchange / Outcome Summary -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" id="centerCardTitle">Simulated $7,000 Portfolio</span>
+          <span class="day-pill" id="selectedDayTag">Day Snapshot</span>
+        </div>
+        <div class="hero-val-row">
+          <div>
+            <div class="hero-number" id="heroPortfolioValue">$7,000.00</div>
+            <div class="hero-sublabel">Value if model trades were executed</div>
+          </div>
+          <div class="movement-box">
+            <div class="movement-badge up" id="heroDayMovement">+$0.00 (+0.00%)</div>
+            <div class="hero-sublabel">Day Movement</div>
+          </div>
+        </div>
+
+        <div class="ohlc-grid">
+          <div>
+            <div class="ohlc-val" style="color: var(--accent-mint);" id="boxDayOpen">$7,000.00</div>
+            <div class="ohlc-lbl">Day open</div>
+          </div>
+          <div>
+            <div class="ohlc-val" style="color: var(--accent-cyan);" id="boxDayHigh">$7,000.00</div>
+            <div class="ohlc-lbl">Day high</div>
+          </div>
+          <div>
+            <div class="ohlc-val" style="color: var(--accent-red);" id="boxDayLow">$7,000.00</div>
+            <div class="ohlc-lbl">Day low</div>
+          </div>
+        </div>
+
+        <div class="range-slider-wrap">
+          <div class="range-slider-header">
+            <span id="rangeMinLabel">Low: $6,900</span>
+            <span>Portfolio Value Range</span>
+            <span id="rangeMaxLabel">High: $7,100</span>
+          </div>
+          <div class="range-bar-track">
+            <div class="range-bar-thumb" id="rangeThumb" style="left: 50%;"></div>
+          </div>
+        </div>
+
+        <div class="return-compare-grid">
+          <div>
+            <div class="ret-val" id="vsCashOutcome">+$0.00</div>
+            <div class="ret-lbl">Outcome vs. Not Investing</div>
+          </div>
+          <div>
+            <div class="ret-val" id="vsSpyAlpha">+$0.00</div>
+            <div class="ret-lbl">Model Edge vs. S&P 500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Upgraded Strength Meter Gauge -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Strength meter</span>
+          <span style="font-size: 10.5px; color: var(--text-secondary);">Self-Adaptive Signal Engine</span>
+        </div>
+        <div class="gauge-container">
+          <svg width="220" height="122" viewBox="0 0 230 130">
+            <defs>
+              <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <path d="M 25 115 A 90 90 0 0 1 205 115" fill="none" stroke="#222632" stroke-width="20" />
+            <path d="M 25 115 A 90 90 0 0 1 58 45" fill="none" stroke="#a5f3fc" stroke-width="20" />
+            <path d="M 58 45 A 90 90 0 0 1 172 45" fill="none" stroke="#a78bfa" stroke-width="20" />
+            <path d="M 172 45 A 90 90 0 0 1 205 115" fill="none" stroke="#d9f99d" stroke-width="20" />
+            <!-- Needle Line & Tip -->
+            <line id="gaugeNeedleLine" x1="115" y1="112" x2="115" y2="35" stroke="rgba(255,255,255,0.45)" stroke-width="2.2" stroke-linecap="round" />
+            <circle cx="115" cy="112" r="4.5" fill="#9ca3af" />
+            <circle id="gaugeNeedleDot" cx="115" cy="25" r="7" fill="#ffffff" stroke="#0b0c0f" stroke-width="3" filter="url(#glowFilter)" />
+          </svg>
+          <div class="gauge-center-text">
+            <div class="gauge-title" id="gaugeScoreText">54.3 / 100</div>
+            <div class="gauge-sub" id="gaugeRegimeText">Balanced Accumulation</div>
+          </div>
+        </div>
+
+        <div class="strength-stats-grid">
+          <div>
+            <div class="str-stat-val pos-text" id="strBuyPct">0% ↗</div>
+            <div class="str-stat-lbl">Buy Signals</div>
+          </div>
+          <div>
+            <div class="str-stat-val" style="color: var(--accent-purple);" id="strHoldPct">0% →</div>
+            <div class="str-stat-lbl">Hold Signals</div>
+          </div>
+          <div>
+            <div class="str-stat-val neg-text" id="strTrimPct">0% ↘</div>
+            <div class="str-stat-lbl">Trim / Watch</div>
+          </div>
+          <div>
+            <div class="str-stat-val" id="strWinRate">0%</div>
+            <div class="str-stat-lbl">Trade Win Rate</div>
+          </div>
+          <div>
+            <div class="str-stat-val" id="strInvestedDollar">$0</div>
+            <div class="str-stat-lbl">Invested ($)</div>
+          </div>
+          <div>
+            <div class="str-stat-val" id="strCashDollar">$0</div>
+            <div class="str-stat-lbl">Cash Dry Powder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact 1-Row Mutual Fund & Savings Comparison Ribbon -->
+    <section class="alternatives-ribbon">
+      <div class="alt-ribbon-header">
+        <div class="alt-ribbon-title">
+          <span>🏦 Mutual Fund & Savings Leaderboard (<span id="altDateLabel">Today</span>)</span>
+          <span class="day-pill pos" id="modelRankBadge">Rank #1</span>
+        </div>
+        <button class="drawer-toggle-btn" onclick="toggleAllAlternatives()" id="toggleAltBtn">
+          Show All 8 Options ▾
+        </button>
+      </div>
+      <div class="alt-strip" id="alternativesGrid"></div>
+    </section>
+
+    <!-- Bottom 2-Card Row (Immediately Visible Above/Near Fold) -->
+    <section class="bottom-grid">
+      <div class="card">
+        <div class="card-header" style="flex-wrap: wrap; gap: 8px;">
+          <span class="card-title" id="bottomTableTitle">Active Model Positions & Real-World Outcome</span>
+          <div class="sub-tabs">
+            <button class="pill-tab active" id="tblTabHoldings" onclick="setTableView('holdings')">Active Portfolio</button>
+            <button class="pill-tab" id="tblTabAlternatives" onclick="setTableView('alternatives')">Vs. Mutual Funds (8)</button>
+            <button class="pill-tab" id="tblTabAudit" onclick="setTableView('audit')">All Trade Calls (What-If)</button>
+            <button class="pill-tab" id="tblTabWatchlist" onclick="setTableView('watchlist')">19-Asset Scores</button>
+          </div>
+        </div>
+        <div style="overflow-x: auto;">
+          <table class="data-table">
+            <thead id="bottomTableHead"></thead>
+            <tbody id="bottomTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bottom Right: Today's Value ($7,000 Allocation Breakdown with Reference Floating Tooltip) -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title" id="allocCardTitle">Today's Value (Allocation)</span>
+          <span class="mono" style="font-size: 11.5px; color: var(--accent-mint);" id="allocTotalLabel">$7,000.00</span>
+        </div>
+        <div class="alloc-list" id="allocationBarsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="portfolio_data.js"></script>
+  <script>
+    let appData = window.MARKET_INSIGHT_DATA || null;
+    let selectedDayIdx = 0;
+    let currentChartMode = 'compare';
+    let currentTableView = 'holdings';
+    let showAll8Alternatives = false;
+    let capitalScale = 1.0; // 1.0 = $7,000 base
+
+    function scaled(val) {
+      return Number(val || 0) * capitalScale;
+    }
+
+    function fmtMoney(val, showSign = false) {
+      const num = Number(val || 0);
+      const sign = num >= 0 ? (showSign ? '+' : '') : '-';
+      return sign + '$' + Math.abs(num).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function fmtPct(val, showSign = true) {
+      const num = Number(val || 0);
+      const sign = num >= 0 ? (showSign ? '+' : '') : '';
+      return sign + num.toFixed(2) + '%';
+    }
+
+    function onCapitalScaleChange() {
+      const sel = Number(document.getElementById('capitalScaleSelect').value || 7000);
+      capitalScale = sel / 7000.0;
+      const kLabel = sel >= 1000 ? `$${(sel / 1000).toFixed(sel % 1000 === 0 ? 0 : 1)}K` : `$${sel}`;
+      document.getElementById('sidebarCapBadge').textContent = `${kLabel} MODEL`;
+      document.getElementById('centerCardTitle').textContent = `Simulated $${sel.toLocaleString()} Portfolio`;
+      renderDaySelectors();
+      renderSelectedDayDashboard();
+    }
+
+    function stepDay(delta) {
+      if (!appData || !appData.day_tabs) return;
+      const next = Math.max(0, Math.min(appData.day_tabs.length - 1, selectedDayIdx + delta));
+      selectDayTab(next);
+    }
+
+    function toggleGeminiDrawer() {
+      const dr = document.getElementById('geminiMemoryDrawer');
+      if (dr) dr.classList.toggle('open');
+    }
+
+    function toggleAllAlternatives() {
+      showAll8Alternatives = !showAll8Alternatives;
+      document.getElementById('toggleAltBtn').textContent =
+        showAll8Alternatives ? 'Show Compact Top 4 ▴' : 'Show All 8 Options ▾';
+      renderAlternativesGrid(appData.day_tabs[selectedDayIdx]);
+    }
+
+    function renderSparklineSVG(points, isUp) {
+      if (!points || points.length < 2) return '';
+      const min = Math.min(...points);
+      const max = Math.max(...points);
+      const range = max - min || 1;
+      const w = 60, h = 20;
+      const coords = points.map((p, i) => {
+        const x = (i / (points.length - 1)) * w;
+        const y = h - 3 - ((p - min) / range) * (h - 6);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+      const stroke = isUp ? '#6ee7b7' : '#f87171';
+      return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+        <polyline fill="none" stroke="${stroke}" stroke-width="1.8" points="${coords}" />
+      </svg>`;
+    }
+
+    function renderMarketRibbon() {
+      const el = document.getElementById('marketRibbon');
+      if (!appData || !appData.market_ribbon) return;
+      el.innerHTML = appData.market_ribbon.map(item => `
+        <div class="ribbon-item">
+          <div class="ribbon-top">
+            <span>${item.label}</span>
+            <span class="ribbon-chg ${item.up ? 'up' : 'down'}">${item.up ? '↗' : '↘'} ${fmtPct(item.pct)}</span>
+          </div>
+          <div class="ribbon-bottom">
+            <span class="ribbon-price">${Number(item.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            ${renderSparklineSVG(item.spark, item.up)}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectDayTab(index) {
+      selectedDayIdx = index;
+      renderDaySelectors();
+      renderSelectedDayDashboard();
+    }
+
+    function renderDaySelectors() {
+      const tabs = appData.day_tabs || [];
+      document.getElementById('dayCountLabel').textContent = `${tabs.length} Days`;
+      document.getElementById('prevDayBtn').disabled = selectedDayIdx <= 0;
+      document.getElementById('nextDayBtn').disabled = selectedDayIdx >= tabs.length - 1;
+
+      const sidebarList = document.getElementById('sidebarDayList');
+      sidebarList.innerHTML = tabs.map((t, idx) => {
+        const g = t.portfolio.total_gain_pct;
+        const cls = g >= 0 ? 'pos' : 'neg';
+        return `
+          <li>
+            <button class="nav-btn ${idx === selectedDayIdx ? 'active' : ''}" onclick="selectDayTab(${idx})">
+              <span class="nav-btn-left">
+                <span class="timeline-dot"></span>
+                <span>${t.tab_label}</span>
+              </span>
+              <span class="day-pill ${cls}">${fmtPct(g)}</span>
+            </button>
+          </li>
+        `;
+      }).join('');
+    }
+
+    function renderAlternativesGrid(tab) {
+      const grid = document.getElementById('alternativesGrid');
+      const alts = tab.alternative_options || [];
+      document.getElementById('altDateLabel').textContent = tab.date;
+
+      const modelOpt = alts.find(a => a.is_model);
+      if (modelOpt) {
+        document.getElementById('modelRankBadge').textContent =
+          `AI Model Rank: #${modelOpt.rank} of ${alts.length}`;
+      }
+
+      // In compact 4-card mode, show Top 2 + S&P 500 + Your AI Model
+      let visible = alts;
+      if (!showAll8Alternatives && alts.length > 4) {
+        const picked = [];
+        for (const a of alts) {
+          if (picked.length < 2 || a.id === 'spy_mutual' || a.is_model) {
+            if (!picked.some(x => x.id === a.id)) picked.push(a);
+          }
+        }
+        while (picked.length < 4) {
+          const next = alts.find(a => !picked.some(x => x.id === a.id));
+          if (!next) break;
+          picked.push(next);
+        }
+        visible = picked.slice(0, 4);
+      }
+
+      grid.innerHTML = visible.map(opt => {
+        const up = opt.gain_dollars >= 0;
+        return `
+          <div class="alt-mini-card ${opt.is_model ? 'is-model' : ''}" onclick="setTableView('alternatives')">
+            <div class="alt-mini-left">
+              <div class="alt-mini-name">#${opt.rank} ${opt.is_model ? '🤖 ' : ''}${opt.name}</div>
+              <div class="alt-mini-sub" title="${opt.subtitle}">${opt.subtitle}</div>
+            </div>
+            <div class="alt-mini-right">
+              <div class="alt-mini-val">${fmtMoney(scaled(opt.value))}</div>
+              <div class="alt-mini-pct ${up ? 'pos-text' : 'neg-text'}">${fmtMoney(scaled(opt.gain_dollars), true)} (${fmtPct(opt.gain_pct)})</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderSelectedDayDashboard() {
+      const tab = appData.day_tabs[selectedDayIdx];
+      if (!tab) return;
+      const p = tab.portfolio;
+      const sm = tab.strength_meter;
+      const al = tab.adaptive_learning || {};
+      const gem = tab.gemini_insight || {};
+
+      document.getElementById('headerTitle').textContent = `Dashboard — ${tab.tab_label}`;
+      document.getElementById('lastUpdatedBadge').textContent = `${tab.date} (${appData.last_updated})`;
+      document.getElementById('briefingDateBadge').textContent = tab.date;
+      document.getElementById('aiBriefingText').textContent = tab.ai_briefing;
+
+      const slEl = document.getElementById('selfLearningStrip');
+      if (al.trend_weight !== undefined) {
+        slEl.innerHTML = `
+          <span class="weight-chip">🧠 Trend: ${al.trend_weight.toFixed(2)}x</span>
+          <span class="weight-chip">Dip RSI: ${al.dip_rsi_weight.toFixed(2)}x</span>
+          <span class="weight-chip">Rel Str: ${al.rel_strength_weight.toFixed(2)}x</span>
+          <span class="weight-chip">Buy Gate: ${al.buy_threshold}/100</span>
+          ${al.cooldown_tickers && al.cooldown_tickers.length
+            ? `<span class="weight-chip" style="color:var(--accent-red);">Cooldown: ${al.cooldown_tickers.join(', ')}</span>`
+            : ''}
+          <button class="drawer-toggle-btn" onclick="toggleGeminiDrawer()">📰 Catalyst & Memory Log ▾</button>
+        `;
+      }
+
+      const gemEl = document.getElementById('geminiMemoryDrawer');
+      if (gemEl) {
+        gemEl.innerHTML = `
+          <div><strong>📰 News Catalyst & Risk Veto:</strong> ${gem.catalyst_headline || 'Evaluated top relative-strength leaders.'} <span style="color:var(--accent-amber);">(${gem.veto_note || ''})</span></div>
+          <div style="margin-top:4px;"><strong>📓 Lesson Saved to Memory:</strong> ${gem.lesson_learned || al.learning_note || ''}</div>
+        `;
+      }
+
+      const actions = tab.todays_actions || [];
+      document.getElementById('signalCountBadge').textContent = `${actions.length} Signal(s)`;
+      document.getElementById('todaysActionsList').innerHTML = actions.map(a => {
+        const badgeCls = a.action.includes('BUY') ? 'buy' : (a.action.includes('TRIM') ? 'trim' : 'hold');
+        return `
+          <div class="signal-item">
+            <div class="signal-item-top">
+              <span><span class="badge ${badgeCls}">${a.action}</span> <strong>${a.ticker}</strong> (${a.name})</span>
+              <span class="mono">${fmtMoney(scaled(a.rec_dollars))} @ $${a.rec_price.toFixed(2)}</span>
+            </div>
+            <div class="signal-reason">${a.reason}</div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('selectedDayTag').textContent = tab.date;
+      document.getElementById('heroPortfolioValue').textContent = fmtMoney(scaled(p.total_value));
+      const movEl = document.getElementById('heroDayMovement');
+      movEl.textContent = `${p.day_change_dollars >= 0 ? '↗ ' : '↘ '}${fmtMoney(scaled(p.day_change_dollars), true)} (${fmtPct(p.day_change_pct)})`;
+      movEl.className = `movement-badge ${p.day_change_dollars >= 0 ? 'up' : 'down'}`;
+
+      document.getElementById('boxDayOpen').textContent = fmtMoney(scaled(p.day_open));
+      document.getElementById('boxDayHigh').textContent = fmtMoney(scaled(p.day_high));
+      document.getElementById('boxDayLow').textContent = fmtMoney(scaled(p.day_low));
+
+      const allVals = appData.day_tabs.map(d => scaled(d.portfolio.total_value)).concat([scaled(7000)]);
+      const minV = Math.min(...allVals) * 0.998;
+      const maxV = Math.max(...allVals) * 1.002;
+      document.getElementById('rangeMinLabel').textContent = `Low: ${fmtMoney(minV)}`;
+      document.getElementById('rangeMaxLabel').textContent = `High: ${fmtMoney(maxV)}`;
+      const pctPos = Math.max(5, Math.min(95, ((scaled(p.total_value) - minV) / ((maxV - minV) || 1)) * 100));
+      document.getElementById('rangeThumb').style.left = `${pctPos}%`;
+
+      const vsCashEl = document.getElementById('vsCashOutcome');
+      vsCashEl.textContent = `${fmtMoney(scaled(p.total_gain_dollars), true)} (${fmtPct(p.total_gain_pct)})`;
+      vsCashEl.className = `ret-val ${p.total_gain_dollars >= 0 ? 'pos-text' : 'neg-text'}`;
+
+      const vsSpyEl = document.getElementById('vsSpyAlpha');
+      vsSpyEl.textContent = `${fmtMoney(scaled(p.alpha_dollars), true)} (${fmtPct(p.alpha_pct)})`;
+      vsSpyEl.className = `ret-val ${p.alpha_dollars >= 0 ? 'pos-text' : 'neg-text'}`;
+
+      document.getElementById('statFollowedModel').textContent = `${fmtMoney(scaled(p.total_value))} (${fmtPct(p.total_gain_pct)})`;
+      document.getElementById('statFollowedModel').className = `mini-stat-val ${p.total_gain_dollars >= 0 ? 'pos-text' : 'neg-text'}`;
+      document.getElementById('statPassiveSpy').textContent = `${fmtMoney(scaled(p.spy_benchmark_value))} (${fmtPct(p.spy_gain_pct)})`;
+
+      const balGainPct = ((p.balanced_60_40_value - 7000) / 7000) * 100;
+      document.getElementById('statBalanced6040').textContent = `${fmtMoney(scaled(p.balanced_60_40_value))} (${fmtPct(balGainPct)})`;
+
+      const hysaGainPct = ((p.hysa_value - 7000) / 7000) * 100;
+      document.getElementById('statHysaCash').textContent = `${fmtMoney(scaled(p.hysa_value))} (${fmtPct(hysaGainPct)})`;
+
+      // Upgraded Strength Meter Needle + Dot
+      document.getElementById('gaugeScoreText').textContent = `${sm.score} / 100`;
+      document.getElementById('gaugeRegimeText').textContent = sm.regime;
+      const norm = Math.max(0, Math.min(1, sm.score / 100));
+      const angleRad = Math.PI * (1 - norm);
+      const cx = 115 + 90 * Math.cos(angleRad);
+      const cy = 115 - 90 * Math.sin(angleRad);
+      const lx = 115 + 72 * Math.cos(angleRad);
+      const ly = 112 - 72 * Math.sin(angleRad);
+      document.getElementById('gaugeNeedleDot').setAttribute('cx', cx.toFixed(1));
+      document.getElementById('gaugeNeedleDot').setAttribute('cy', cy.toFixed(1));
+      document.getElementById('gaugeNeedleLine').setAttribute('x2', lx.toFixed(1));
+      document.getElementById('gaugeNeedleLine').setAttribute('y2', ly.toFixed(1));
+
+      document.getElementById('strBuyPct').textContent = `${sm.buy_pct}% ↗`;
+      document.getElementById('strHoldPct').textContent = `${sm.hold_pct}% →`;
+      document.getElementById('strTrimPct').textContent = `${sm.trim_pct}% ↘`;
+      document.getElementById('strWinRate').textContent = `${p.win_rate}%`;
+      document.getElementById('strInvestedDollar').textContent = fmtMoney(scaled(p.invested_value));
+      document.getElementById('strCashDollar').textContent = fmtMoney(scaled(p.cash_reserve));
+
+      renderAlternativesGrid(tab);
+      renderTrajectoryChart();
+      renderBottomTable();
+      renderAllocationBars(tab);
+    }
+
+    function setChartMode(mode) {
+      currentChartMode = mode;
+      document.getElementById('chartTabModel').classList.toggle('active', mode === 'model');
+      document.getElementById('chartTabCompare').classList.toggle('active', mode === 'compare');
+      document.getElementById('chartTabAlpha').classList.toggle('active', mode === 'alpha');
+      renderTrajectoryChart();
+    }
+
+    function renderTrajectoryChart() {
+      const mount = document.getElementById('trajectorySvgMount');
+      const tabs = appData.day_tabs.slice(0, selectedDayIdx + 1);
+      if (!tabs.length) return;
+
+      const w = 420, h = 148, padL = 50, padR = 14, padT = 12, padB = 22;
+      const plotW = w - padL - padR;
+      const plotH = h - padT - padB;
+      const baseCap = scaled(7000);
+
+      let series1 = [], seriesSpy = [], seriesBal = [], seriesHysa = [];
+      if (currentChartMode === 'alpha') {
+        series1 = [0, ...tabs.map(t => scaled(t.portfolio.alpha_dollars))];
+      } else {
+        series1 = [baseCap, ...tabs.map(t => scaled(t.portfolio.total_value))];
+        seriesSpy = [baseCap, ...tabs.map(t => scaled(t.portfolio.spy_benchmark_value))];
+        seriesBal = [baseCap, ...tabs.map(t => scaled(t.portfolio.balanced_60_40_value || 7000))];
+        seriesHysa = [baseCap, ...tabs.map(t => scaled(t.portfolio.hysa_value || 7000))];
+      }
+
+      const labels = ['Start', ...tabs.map(t => t.date.slice(5))];
+      const allNums = currentChartMode === 'compare'
+        ? series1.concat(seriesSpy, seriesBal, seriesHysa)
+        : series1;
+      const minY = Math.min(...allNums);
+      const maxY = Math.max(...allNums);
+      const span = (maxY - minY) || 10;
+
+      const toCoords = (arr) => arr.map((v, i) => {
+        const x = padL + (i / Math.max(1, arr.length - 1)) * plotW;
+        const y = padT + plotH - ((v - minY) / span) * plotH;
+        return [x, y];
+      });
+
+      const pts1 = toCoords(series1);
+      const poly1 = pts1.map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+      const area1 = `${pts1[0][0].toFixed(1)},${padT + plotH} ${poly1} ${pts1[pts1.length - 1][0].toFixed(1)},${padT + plotH}`;
+
+      let extraLinesSVG = '';
+      if (currentChartMode === 'compare') {
+        const polySpy = toCoords(seriesSpy).map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+        const polyBal = toCoords(seriesBal).map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+        const polyHysa = toCoords(seriesHysa).map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' ');
+        extraLinesSVG = `
+          <polyline fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="2 3" points="${polyHysa}" />
+          <polyline fill="none" stroke="#a5f3fc" stroke-width="1.8" stroke-dasharray="5 3" points="${polyBal}" />
+          <polyline fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="4 3" points="${polySpy}" />
+        `;
+      }
+
+      const yTop = currentChartMode === 'alpha' ? fmtMoney(maxY, true) : `$${Math.round(maxY).toLocaleString()}`;
+      const yMid = currentChartMode === 'alpha' ? fmtMoney((maxY + minY) / 2, true) : `$${Math.round((maxY + minY) / 2).toLocaleString()}`;
+      const yBot = currentChartMode === 'alpha' ? fmtMoney(minY, true) : `$${Math.round(minY).toLocaleString()}`;
+
+      // Invisible interactive hover columns for each point
+      const colW = plotW / Math.max(1, pts1.length);
+      const hitRects = pts1.map((p, i) => `
+        <rect x="${(p[0] - colW / 2).toFixed(1)}" y="${padT}" width="${colW.toFixed(1)}" height="${plotH}"
+          fill="transparent"
+          onmouseenter="showChartTooltip(${i}, ${p[0].toFixed(1)}, ${p[1].toFixed(1)})"
+          onclick="${i > 0 ? `selectDayTab(${i - 1})` : ''}" />
+      `).join('');
+
+      mount.innerHTML = `
+        <svg width="100%" height="100%" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" onmouseleave="hideChartTooltip()">
+          <defs>
+            <linearGradient id="mintGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.32"/>
+              <stop offset="100%" stop-color="#6ee7b7" stop-opacity="0.0"/>
+            </linearGradient>
+          </defs>
+          <line x1="${padL}" y1="${padT}" x2="${w - padR}" y2="${padT}" stroke="rgba(255,255,255,0.05)" />
+          <line x1="${padL}" y1="${padT + plotH / 2}" x2="${w - padR}" y2="${padT + plotH / 2}" stroke="rgba(255,255,255,0.05)" />
+          <line x1="${padL}" y1="${padT + plotH}" x2="${w - padR}" y2="${padT + plotH}" stroke="rgba(255,255,255,0.08)" />
+          <text x="4" y="${padT + 4}" fill="#64748b" font-size="9.5" font-family="JetBrains Mono">${yTop}</text>
+          <text x="4" y="${padT + plotH / 2 + 3}" fill="#64748b" font-size="9.5" font-family="JetBrains Mono">${yMid}</text>
+          <text x="4" y="${padT + plotH}" fill="#64748b" font-size="9.5" font-family="JetBrains Mono">${yBot}</text>
+          <polygon fill="url(#mintGrad)" points="${area1}" />
+          ${extraLinesSVG}
+          <polyline fill="none" stroke="#6ee7b7" stroke-width="2.4" points="${poly1}" />
+          <line id="hoverCrosshair" x1="-10" y1="${padT}" x2="-10" y2="${padT + plotH}" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 2" />
+          ${pts1.map((p) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3.2" fill="#0b0c0f" stroke="#6ee7b7" stroke-width="2" />`).join('')}
+          ${pts1.map((p, i) => `<text x="${p[0].toFixed(1)}" y="${h - 4}" fill="#64748b" font-size="9" text-anchor="middle">${labels[i]}</text>`).join('')}
+          ${hitRects}
+        </svg>
+      `;
+    }
+
+    function showChartTooltip(ptIdx, svgX, svgY) {
+      const tt = document.getElementById('chartTooltip');
+      const ch = document.getElementById('hoverCrosshair');
+      if (ch) {
+        ch.setAttribute('x1', svgX);
+        ch.setAttribute('x2', svgX);
+      }
+      const baseCap = scaled(7000);
+      if (ptIdx === 0) {
+        tt.innerHTML = `
+          <div class="tt-date"><span>Sim Start Baseline</span><span>Day 0</span></div>
+          <div class="tt-row"><span style="color:#6ee7b7;">AI Model:</span><span>${fmtMoney(baseCap)}</span></div>
+          <div class="tt-row"><span style="color:#a78bfa;">S&P 500:</span><span>${fmtMoney(baseCap)}</span></div>
+        `;
+      } else {
+        const d = appData.day_tabs[ptIdx - 1];
+        const p = d.portfolio;
+        tt.innerHTML = `
+          <div class="tt-date"><span>${d.date}</span><span style="color:var(--accent-mint);">${d.tab_label}</span></div>
+          <div class="tt-row"><span style="color:#6ee7b7;">AI Model:</span><span>${fmtMoney(scaled(p.total_value))} (${fmtPct(p.total_gain_pct)})</span></div>
+          <div class="tt-row"><span style="color:#a78bfa;">S&P 500:</span><span>${fmtMoney(scaled(p.spy_benchmark_value))} (${fmtPct(p.spy_gain_pct)})</span></div>
+          <div class="tt-row"><span style="color:#a5f3fc;">60/40 Fund:</span><span>${fmtMoney(scaled(p.balanced_60_40_value))}</span></div>
+          <div class="tt-row"><span style="color:#fbbf24;">4.5% HYSA:</span><span>${fmtMoney(scaled(p.hysa_value))}</span></div>
+        `;
+      }
+      tt.classList.add('visible');
+    }
+
+    function hideChartTooltip() {
+      const tt = document.getElementById('chartTooltip');
+      const ch = document.getElementById('hoverCrosshair');
+      if (tt) tt.classList.remove('visible');
+      if (ch) {
+        ch.setAttribute('x1', -10);
+        ch.setAttribute('x2', -10);
+      }
+    }
+
+    function setTableView(view, sidebarBtn) {
+      currentTableView = view;
+      document.getElementById('tblTabHoldings').classList.toggle('active', view === 'holdings');
+      document.getElementById('tblTabAlternatives').classList.toggle('active', view === 'alternatives');
+      document.getElementById('tblTabAudit').classList.toggle('active', view === 'audit');
+      document.getElementById('tblTabWatchlist').classList.toggle('active', view === 'watchlist');
+      if (sidebarBtn) {
+        document.querySelectorAll('#viewNavList .nav-btn').forEach(b => b.classList.remove('active'));
+        sidebarBtn.classList.add('active');
+      }
+      renderBottomTable();
+    }
+
+    function renderVolBars(sparkline) {
+      if (!sparkline || !sparkline.length) return '';
+      return `<div class="vol-bars">${sparkline.map(b =>
+        `<div class="v-bar ${b.up ? 'up' : 'down'}" style="height:${Math.max(15, b.h)}%"></div>`
+      ).join('')}</div>`;
+    }
+
+    function renderBottomTable() {
+      const tab = appData.day_tabs[selectedDayIdx];
+      if (!tab) return;
+      const q = (document.getElementById('tickerSearch').value || '').trim().toUpperCase();
+      const thead = document.getElementById('bottomTableHead');
+      const tbody = document.getElementById('bottomTableBody');
+      const title = document.getElementById('bottomTableTitle');
+
+      if (currentTableView === 'holdings') {
+        title.textContent = `Active Model Positions (${tab.date})`;
+        thead.innerHTML = `
+          <tr>
+            <th>INSTRUMENT</th>
+            <th>SIGNAL / SETUP</th>
+            <th>ENTRY → NOW</th>
+            <th>RETURN %</th>
+            <th>OUTCOME ($ VALUE)</th>
+            <th>VOLUME</th>
+          </tr>
+        `;
+        const rows = (tab.holdings || []).filter(h => !q || h.ticker.includes(q) || h.name.toUpperCase().includes(q));
+        tbody.innerHTML = rows.map(h => {
+          const badgeCls = h.signal.toLowerCase();
+          return `
+            <tr title="${h.reason}">
+              <td>
+                <div class="inst-cell">
+                  <span class="inst-ticker">${h.ticker} <span style="font-size:10px;color:var(--text-muted);font-weight:500;">(${(h.shares * capitalScale).toFixed(3)} sh)</span></span>
+                  <span class="inst-name">${h.name} • ${h.sector}</span>
+                </div>
+              </td>
+              <td>
+                <span class="badge ${badgeCls}">${h.signal}</span>
+                <div style="font-size:10px;color:var(--text-secondary);margin-top:2px;">${h.setup_tag}</div>
+              </td>
+              <td class="mono">$${h.avg_entry.toFixed(2)} → <strong>$${h.current_price.toFixed(2)}</strong></td>
+              <td class="mono ${h.pnl_pct >= 0 ? 'pos-text' : 'neg-text'}">${fmtPct(h.pnl_pct)}</td>
+              <td class="mono">
+                <strong>${fmtMoney(scaled(h.market_value))}</strong>
+                <div style="font-size:10px;" class="${h.pnl_dollars >= 0 ? 'pos-text' : 'neg-text'}">
+                  ${fmtMoney(scaled(h.pnl_dollars), true)} vs. skipping
+                </div>
+              </td>
+              <td>${renderVolBars(h.sparkline)}</td>
+            </tr>
+          `;
+        }).join('');
+      } else if (currentTableView === 'alternatives') {
+        title.textContent = `Head-to-Head: AI Model vs. Mutual Funds, ETFs & Savings (${tab.date})`;
+        thead.innerHTML = `
+          <tr>
+            <th>RANK & OPTION</th>
+            <th>CATEGORY</th>
+            <th>SIMULATED VALUE</th>
+            <th>TOTAL GAIN / LOSS</th>
+            <th>AI MODEL VS. THIS OPTION</th>
+          </tr>
+        `;
+        const rows = (tab.alternative_options || []).filter(o => !q || o.name.toUpperCase().includes(q) || o.subtitle.toUpperCase().includes(q));
+        tbody.innerHTML = rows.map(o => `
+          <tr style="${o.is_model ? 'background:rgba(110,231,183,0.07);' : ''}">
+            <td>
+              <div class="inst-cell">
+                <span class="inst-ticker"><span class="day-pill">#${o.rank}</span> ${o.is_model ? '🤖 ' : ''}${o.name}</span>
+                <span class="inst-name">${o.subtitle}</span>
+              </div>
+            </td>
+            <td><span class="badge ${o.is_model ? 'buy' : 'hold'}">${o.category}</span></td>
+            <td class="mono"><strong>${fmtMoney(scaled(o.value))}</strong></td>
+            <td class="mono ${o.gain_dollars >= 0 ? 'pos-text' : 'neg-text'}">
+              ${fmtMoney(scaled(o.gain_dollars), true)} (${fmtPct(o.gain_pct)})
+            </td>
+            <td class="mono ${o.model_edge_dollars >= 0 ? 'pos-text' : 'neg-text'}">
+              ${o.is_model ? '— Baseline —' : `${fmtMoney(scaled(o.model_edge_dollars), true)} (${fmtPct(o.model_edge_pct)})`}
+            </td>
+          </tr>
+        `).join('');
+      } else if (currentTableView === 'audit') {
+        title.textContent = `All Model Trade Calls & "Had I Done The Trade" Audit (Up to ${tab.date})`;
+        thead.innerHTML = `
+          <tr>
+            <th>DATE & TICKER</th>
+            <th>RECOMMENDATION</th>
+            <th>REC PRICE → NOW</th>
+            <th>REAL OUTCOME (%)</th>
+            <th>HAD YOU TAKEN TRADE vs. NOT</th>
+          </tr>
+        `;
+        const rows = (tab.audited_recommendations || []).filter(r => !q || r.ticker.includes(q) || r.name.toUpperCase().includes(q));
+        tbody.innerHTML = rows.map(r => {
+          const badgeCls = r.action.includes('BUY') ? 'buy' : (r.action.includes('TRIM') ? 'trim' : 'hold');
+          return `
+            <tr>
+              <td>
+                <div class="inst-cell">
+                  <span class="inst-ticker">${r.ticker} <span class="day-pill">${r.date}</span></span>
+                  <span class="inst-name">${r.name}</span>
+                </div>
+              </td>
+              <td>
+                <span class="badge ${badgeCls}">${r.action}</span>
+                <div style="font-size:10px;color:var(--text-secondary);margin-top:2px;">${r.reason}</div>
+              </td>
+              <td class="mono">$${r.rec_price.toFixed(2)} → <strong>$${r.current_price.toFixed(2)}</strong></td>
+              <td class="mono ${r.outcome_pct >= 0 ? 'pos-text' : 'neg-text'}">${fmtPct(r.outcome_pct)}</td>
+              <td class="mono">
+                <span class="${r.outcome_dollars >= 0 ? 'pos-text' : 'neg-text'}"><strong>${fmtMoney(scaled(r.outcome_dollars), true)}</strong></span>
+                <span style="color:var(--text-muted);font-size:10.5px;"> (on ${fmtMoney(scaled(r.rec_dollars))} | $0.00 if skipped)</span>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } else {
+        title.textContent = `Full 19-Asset Model Quantitative Scores (${tab.date})`;
+        thead.innerHTML = `
+          <tr>
+            <th>INSTRUMENT</th>
+            <th>MODEL SCORE</th>
+            <th>SIGNAL & SETUP</th>
+            <th>PRICE & 20D REL STR</th>
+            <th>RSI (14)</th>
+            <th>VOLUME</th>
+          </tr>
+        `;
+        const rows = (tab.watchlist_scores || []).filter(s => !q || s.ticker.includes(q) || s.name.toUpperCase().includes(q));
+        tbody.innerHTML = rows.map(s => `
+          <tr>
+            <td>
+              <div class="inst-cell">
+                <span class="inst-ticker">${s.ticker}</span>
+                <span class="inst-name">${s.name} • ${s.bucket}</span>
+              </div>
+            </td>
+            <td class="mono"><strong>${s.score}</strong> / 100</td>
+            <td>
+              <span class="badge ${s.signal.toLowerCase()}">${s.signal}</span>
+              <div style="font-size:10px;color:var(--text-secondary);margin-top:2px;">${s.reason}</div>
+            </td>
+            <td class="mono">
+              $${s.price.toFixed(2)}
+              <div style="font-size:10px;" class="${s.rel_strength_20d >= 0 ? 'pos-text' : 'neg-text'}">
+                ${fmtPct(s.rel_strength_20d)} vs SPY
+              </div>
+            </td>
+            <td class="mono">${s.rsi14}</td>
+            <td>${renderVolBars(s.sparkline)}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    function renderAllocationBars(tab) {
+      const el = document.getElementById('allocationBarsList');
+      document.getElementById('allocTotalLabel').textContent = fmtMoney(scaled(tab.portfolio.total_value));
+      const allocs = tab.allocations || [];
+      const maxPct = Math.max(...allocs.map(a => a.pct), 25);
+
+      el.innerHTML = allocs.map(a => {
+        const barW = Math.max(6, (a.pct / maxPct) * 100);
+        return `
+          <div class="alloc-row">
+            <span class="alloc-label">${a.label}</span>
+            <div class="alloc-track">
+              <div class="alloc-fill" style="width: ${barW.toFixed(1)}%;"></div>
+            </div>
+            <span class="alloc-val">${fmtMoney(scaled(a.value))} (${a.pct.toFixed(1)}%)</span>
+            <div class="alloc-floating-tip">
+              <div style="color:var(--accent-mint);font-weight:700;">${a.ticker}</div>
+              <div>${fmtMoney(scaled(a.value))} (${a.pct.toFixed(2)}%)</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    if (appData && appData.day_tabs && appData.day_tabs.length > 0) {
+      selectedDayIdx = appData.day_tabs.length - 1;
+      renderMarketRibbon();
+      renderDaySelectors();
+      renderSelectedDayDashboard();
+    }
+  </script>
+</body>
+</html>
