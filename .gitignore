@@ -1,0 +1,5 @@
+.env
+.github_token
+deploy_to_github.py
+__pycache__/
+*.pyc
