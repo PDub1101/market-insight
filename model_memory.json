@@ -1,0 +1,14 @@
+{
+  "model_version": "2.0-gemini-hybrid",
+  "lessons_learned": [
+    {
+      "date": "2026-10-26",
+      "lesson": "When broad tech indices consolidate, pure RSI dip-buys in high-beta tech lag behind Dividend Value (SCHD) and 60/40 Balanced funds; prioritize relative strength leaders above both 20d and 50d MAs."
+    },
+    {
+      "date": "2026-10-27",
+      "lesson": "On 2026-10-27, Dividend Value Mutual Fund led the 8-option leaderboard (+2.57%); combining relative strength (1.00x weight) with news-catalyst filtering keeps portfolio win rate at 71.4%."
+    }
+  ],
+  "veto_history": []
+}
