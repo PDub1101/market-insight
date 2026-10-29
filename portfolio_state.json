@@ -2,17 +2,16 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-27 05:22 PM ET",
+  "last_updated": "2026-10-29 12:13 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4073.1,
-      "change": 34.7,
-      "pct": 0.86,
-      "up": true,
+      "price": 4061.9,
+      "change": -12.7,
+      "pct": -0.31,
+      "up": false,
       "spark": [
-        4157.0,
         4216.3,
         4190.6,
         4177.3,
@@ -25,18 +24,18 @@
         4060.4,
         4007.9,
         4038.4,
-        4073.1
+        4074.6,
+        4061.9
       ]
     },
     {
       "label": "DOW 30",
       "symbol": "^DJI",
-      "price": 52377.57,
-      "change": 15.99,
-      "pct": 0.03,
+      "price": 52475.1,
+      "change": 97.53,
+      "pct": 0.19,
       "up": true,
       "spark": [
-        51231.64,
         51654.95,
         51850.55,
         51670.1,
@@ -49,18 +48,18 @@
         52867.98,
         52215.16,
         52361.58,
-        52377.57
+        52377.57,
+        52475.1
       ]
     },
     {
       "label": "S&P 500",
       "symbol": "^GSPC",
-      "price": 7722.6,
-      "change": 45.83,
-      "pct": 0.6,
+      "price": 7743.98,
+      "change": 21.38,
+      "pct": 0.28,
       "up": true,
       "spark": [
-        7765.36,
         7811.54,
         7807.24,
         7805.45,
@@ -73,18 +72,18 @@
         7663.43,
         7623.68,
         7676.77,
-        7722.6
+        7722.6,
+        7743.98
       ]
     },
     {
       "label": "NASDAQ",
       "symbol": "^IXIC",
-      "price": 26477.81,
-      "change": 308.43,
-      "pct": 1.18,
+      "price": 26549.85,
+      "change": 72.04,
+      "pct": 0.27,
       "up": true,
       "spark": [
-        27193.34,
         27366.17,
         27245.9,
         27204.38,
@@ -97,18 +96,18 @@
         26008.86,
         25955.34,
         26169.38,
-        26477.81
+        26477.81,
+        26549.85
       ]
     },
     {
       "label": "RUSSELL 2K",
       "symbol": "^RUT",
-      "price": 2818.87,
-      "change": 32.45,
-      "pct": 1.16,
+      "price": 2830.51,
+      "change": 11.64,
+      "pct": 0.41,
       "up": true,
       "spark": [
-        2794.13,
         2806.98,
         2794.48,
         2783.37,
@@ -121,18 +120,18 @@
         2784.03,
         2775.9,
         2786.42,
-        2818.87
+        2818.87,
+        2830.51
       ]
     },
     {
       "label": "VIX VOL",
       "symbol": "^VIX",
-      "price": 17.52,
-      "change": -0.87,
-      "pct": -4.73,
+      "price": 16.91,
+      "change": -0.61,
+      "pct": -3.48,
       "up": false,
       "spark": [
-        15.41,
         14.84,
         15.21,
         15.27,
@@ -145,7 +144,8 @@
         19.03,
         19.45,
         18.39,
-        17.52
+        17.52,
+        16.91
       ]
     }
   ],
@@ -17199,15 +17199,15 @@
       "date": "2026-10-27",
       "tab_label": "Today \u2022 Oct 27 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-27 05:22 PM ET",
+      "updated_at": "2026-10-29 12:13 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
         "invested_value": 6436.46,
         "cash_reserve": 517.94,
-        "day_open": 6917.21,
-        "day_high": 6996.93,
-        "day_low": 6889.64,
+        "day_open": 6917.91,
+        "day_high": 6996.99,
+        "day_low": 6889.63,
         "day_change_dollars": 41.69,
         "day_change_pct": 0.6,
         "total_gain_dollars": -45.6,
@@ -17342,18 +17342,18 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest LLY catalyst: \"Eli Lilly international business chief Jonsson to retire; Yuffa to head global markets unit\" (Reuters).",
+        "catalyst_headline": "Latest LLY catalyst: \"Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings\" (Investor's Business Daily).",
         "veto_note": "Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-10-27, Dividend Value Mutual Fund led the 8-option leaderboard (+2.57%); combining relative strength (1.00x weight) with news-catalyst filtering keeps portfolio win rate at 71.4%.",
         "headlines_scanned": [
-          "[MSFT] Artificial Intelligence (AI) in Pharmacovigilance Global Market Report 2026 | Capitalize on 19.6% CAGR to 2030 as Oracle, Microsoft, Google and IQVIA Accelerate Automation (GlobeNewswire)",
-          "[MSFT] Artificial Intelligence (AI)-Driven Drug Safety and Pharmacovigilance Platforms Market Report 2026 | Capitalize on 20.2% CAGR with Microsoft, IBM, Oracle, IQVIA, and Veeva (GlobeNewswire)",
-          "[PLTR] Veteran Bank Tweaks Palantir Stock Price Target for 2027 (GuruFocus.com)",
-          "[PLTR] Disruptive raises $10B fund to make big bets on at least 10 companies (TechCrunch)",
-          "[LLY] Eli Lilly international business chief Jonsson to retire; Yuffa to head global markets unit (Reuters)",
-          "[LLY] Patrik Jonsson to retire after 36 years; Ilya Yuffa named president, Lilly Global Markets (PR Newswire)"
+          "[MSFT] Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings (Investor's Business Daily)",
+          "[MSFT] MSFT Stock Gains 3% After-Hours As AI Demand Powers Q1 Cloud Revenue, Q2 Guidance Beat With Positive Cash Flows (Stocktwits)",
+          "[PLTR] IPO Edge NYSE Firesides Scheduled for Dec 7 (IPO-Edge.com)",
+          "[PLTR] Palantir Technologies Inc. (PLTR) Stock Sinks As Market Gains: Here's Why (Zacks)",
+          "[LLY] Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings (Investor's Business Daily)",
+          "[LLY] Eli Lilly (LLY) Finds A New Lead In Diabetes As It Recasts Management (Simply Wall St.)"
         ],
-        "ai_briefing": "On 2026-10-27, the $7,000 AI Model closed at $6,954.40 (-45.60 / -0.65%), with Trade Win Rate at 71.4%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,029.04, 60/40 Balanced Fund is at $7,046.28, and 4.5% High-Yield Savings is at $7,006.91. Gemini Catalyst Check: Latest LLY catalyst: \"Eli Lilly international business chief Jonsson to retire; Yuffa to head global markets unit\" (Reuters). Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-10-27, the $7,000 AI Model closed at $6,954.40 (-45.60 / -0.65%), with Trade Win Rate at 71.4%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,029.04, 60/40 Balanced Fund is at $7,046.28, and 4.5% High-Yield Savings is at $7,006.91. Gemini Catalyst Check: Latest LLY catalyst: \"Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings\" (Investor's Business Daily). Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
         "score": 58.0,
@@ -17365,7 +17365,7 @@
         "hold_pct": 15.8,
         "trim_pct": 57.9
       },
-      "ai_briefing": "On 2026-10-27, the $7,000 AI Model closed at $6,954.40 (-45.60 / -0.65%), with Trade Win Rate at 71.4%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,029.04, 60/40 Balanced Fund is at $7,046.28, and 4.5% High-Yield Savings is at $7,006.91. Gemini Catalyst Check: Latest LLY catalyst: \"Eli Lilly international business chief Jonsson to retire; Yuffa to head global markets unit\" (Reuters). Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-10-27, the $7,000 AI Model closed at $6,954.40 (-45.60 / -0.65%), with Trade Win Rate at 71.4%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,029.04, 60/40 Balanced Fund is at $7,046.28, and 4.5% High-Yield Savings is at $7,006.91. Gemini Catalyst Check: Latest LLY catalyst: \"Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings\" (Investor's Business Daily). Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-10-27-BUY-LLY",
@@ -17537,7 +17537,7 @@
               "close": 712.2
             },
             {
-              "h": 45,
+              "h": 46,
               "up": true,
               "close": 721.25
             }
@@ -17617,7 +17617,7 @@
               "close": 532.6
             },
             {
-              "h": 78,
+              "h": 79,
               "up": false,
               "close": 531.33
             }
@@ -17697,7 +17697,7 @@
               "close": 249.09
             },
             {
-              "h": 60,
+              "h": 61,
               "up": true,
               "close": 253.1
             }
@@ -17777,7 +17777,7 @@
               "close": 198.84
             },
             {
-              "h": 57,
+              "h": 60,
               "up": false,
               "close": 198.73
             }
@@ -17937,7 +17937,7 @@
               "close": 343.91
             },
             {
-              "h": 65,
+              "h": 67,
               "up": true,
               "close": 347.1
             }
@@ -17962,12 +17962,12 @@
           "reason": "Trading below 50d moving average ($665.65) \u2022 Deeply oversold (RSI 24.1)",
           "sparkline": [
             {
-              "h": 49,
+              "h": 48,
               "up": true,
               "close": 742.96
             },
             {
-              "h": 45,
+              "h": 44,
               "up": true,
               "close": 762.5
             },
@@ -17982,7 +17982,7 @@
               "close": 736.72
             },
             {
-              "h": 41,
+              "h": 40,
               "up": false,
               "close": 709.33
             },
@@ -17992,17 +17992,17 @@
               "close": 705.44
             },
             {
-              "h": 34,
+              "h": 33,
               "up": false,
               "close": 694.25
             },
             {
-              "h": 58,
+              "h": 57,
               "up": true,
               "close": 697.52
             },
             {
-              "h": 80,
+              "h": 79,
               "up": false,
               "close": 648.85
             },
@@ -18012,7 +18012,7 @@
               "close": 642.62
             },
             {
-              "h": 61,
+              "h": 60,
               "up": false,
               "close": 630.56
             },
@@ -18390,7 +18390,7 @@
           "rsi14": 50.9,
           "sma20": 528.99,
           "sma50": 510.19,
-          "vol_ratio": 0.96,
+          "vol_ratio": 0.97,
           "score": 89.2,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -18454,7 +18454,7 @@
               "close": 532.6
             },
             {
-              "h": 78,
+              "h": 79,
               "up": false,
               "close": 531.33
             }
@@ -18467,7 +18467,7 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 198.73,
-          "day_open": 198.02,
+          "day_open": 198.12,
           "day_high": 201.83,
           "day_low": 196.79,
           "day_pct": -0.06,
@@ -18477,7 +18477,7 @@
           "rsi14": 53.5,
           "sma20": 196.67,
           "sma50": 185.77,
-          "vol_ratio": 0.87,
+          "vol_ratio": 0.9,
           "score": 87.6,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -18541,7 +18541,7 @@
               "close": 198.84
             },
             {
-              "h": 57,
+              "h": 60,
               "up": false,
               "close": 198.73
             }
@@ -18651,7 +18651,7 @@
           "rsi14": 64.3,
           "sma20": 340.07,
           "sma50": 331.06,
-          "vol_ratio": 1.0,
+          "vol_ratio": 1.03,
           "score": 80.3,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -18715,7 +18715,7 @@
               "close": 343.91
             },
             {
-              "h": 65,
+              "h": 67,
               "up": true,
               "close": 347.1
             }
@@ -18728,7 +18728,7 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 992.13,
-          "day_open": 1002.09,
+          "day_open": 1002.1,
           "day_high": 1002.82,
           "day_low": 989.04,
           "day_pct": -1.3,
@@ -18738,7 +18738,7 @@
           "rsi14": 69.6,
           "sma20": 965.63,
           "sma50": 940.52,
-          "vol_ratio": 1.04,
+          "vol_ratio": 1.05,
           "score": 78.8,
           "signal": "HOLD",
           "setup_tag": "Trend Hold",
@@ -18802,7 +18802,7 @@
               "close": 1005.16
             },
             {
-              "h": 72,
+              "h": 73,
               "up": false,
               "close": 992.13
             }
@@ -18816,7 +18816,7 @@
           "max_weight": 0.22,
           "price": 769.66,
           "day_open": 767.34,
-          "day_high": 771.13,
+          "day_high": 771.14,
           "day_low": 765.21,
           "day_pct": 0.56,
           "ret_5d": 0.08,
@@ -18825,7 +18825,7 @@
           "rsi14": 43.7,
           "sma20": 770.41,
           "sma50": 767.53,
-          "vol_ratio": 0.7,
+          "vol_ratio": 0.72,
           "score": 76.8,
           "signal": "BUY",
           "setup_tag": "Tactical Dip Buy",
@@ -18904,7 +18904,7 @@
           "price": 542.99,
           "day_open": 547.97,
           "day_high": 548.6,
-          "day_low": 542.92,
+          "day_low": 542.9,
           "day_pct": -1.02,
           "ret_5d": 0.59,
           "ret_20d": 8.09,
@@ -18912,7 +18912,7 @@
           "rsi14": 80.4,
           "sma20": 522.89,
           "sma50": 512.61,
-          "vol_ratio": 0.68,
+          "vol_ratio": 0.69,
           "score": 70.2,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -18999,7 +18999,7 @@
           "rsi14": 35.8,
           "sma20": 443.17,
           "sma50": 434.2,
-          "vol_ratio": 0.78,
+          "vol_ratio": 0.79,
           "score": 65.7,
           "signal": "HOLD",
           "setup_tag": "Tactical Dip Buy",
@@ -19077,7 +19077,7 @@
           "max_weight": 0.09,
           "price": 560.26,
           "day_open": 539.49,
-          "day_high": 563.91,
+          "day_high": 563.92,
           "day_low": 538.5,
           "day_pct": 5.45,
           "ret_5d": 4.77,
@@ -19163,8 +19163,8 @@
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 721.25,
-          "day_open": 715.1,
-          "day_high": 722.86,
+          "day_open": 715.12,
+          "day_high": 722.87,
           "day_low": 713.59,
           "day_pct": 1.27,
           "ret_5d": 0.5,
@@ -19173,7 +19173,7 @@
           "rsi14": 33.4,
           "sma20": 733.18,
           "sma50": 725.26,
-          "vol_ratio": 0.83,
+          "vol_ratio": 0.85,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -19237,7 +19237,7 @@
               "close": 712.2
             },
             {
-              "h": 45,
+              "h": 46,
               "up": true,
               "close": 721.25
             }
@@ -19252,7 +19252,7 @@
           "price": 35.12,
           "day_open": 35.15,
           "day_high": 35.2,
-          "day_low": 35.06,
+          "day_low": 35.05,
           "day_pct": -0.51,
           "ret_5d": 1.24,
           "ret_20d": 6.91,
@@ -19324,7 +19324,7 @@
               "close": 35.3
             },
             {
-              "h": 74,
+              "h": 75,
               "up": false,
               "close": 35.12
             }
@@ -19338,8 +19338,8 @@
           "max_weight": 0.1,
           "price": 335.79,
           "day_open": 337.04,
-          "day_high": 337.5,
-          "day_low": 334.51,
+          "day_high": 337.51,
+          "day_low": 334.5,
           "day_pct": 0.52,
           "ret_5d": 0.16,
           "ret_20d": 0.24,
@@ -19347,7 +19347,7 @@
           "rsi14": 59.0,
           "sma20": 333.61,
           "sma50": 344.33,
-          "vol_ratio": 0.63,
+          "vol_ratio": 0.65,
           "score": 48.6,
           "signal": "WATCH",
           "setup_tag": "Below 50d Trend",
@@ -19411,7 +19411,7 @@
               "close": 334.04
             },
             {
-              "h": 33,
+              "h": 34,
               "up": true,
               "close": 335.79
             }
@@ -19424,8 +19424,8 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 253.1,
-          "day_open": 250.35,
-          "day_high": 254.67,
+          "day_open": 250.43,
+          "day_high": 254.68,
           "day_low": 248.71,
           "day_pct": 1.61,
           "ret_5d": -3.63,
@@ -19434,7 +19434,7 @@
           "rsi14": 44.4,
           "sma20": 254.9,
           "sma50": 255.21,
-          "vol_ratio": 0.95,
+          "vol_ratio": 0.96,
           "score": 48.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -19498,7 +19498,7 @@
               "close": 249.09
             },
             {
-              "h": 60,
+              "h": 61,
               "up": true,
               "close": 253.1
             }
@@ -19511,9 +19511,9 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 320.58,
-          "day_open": 316.98,
+          "day_open": 317.0,
           "day_high": 323.88,
-          "day_low": 316.9,
+          "day_low": 316.86,
           "day_pct": 1.19,
           "ret_5d": -5.79,
           "ret_20d": -5.97,
@@ -19521,7 +19521,7 @@
           "rsi14": 24.6,
           "sma20": 340.77,
           "sma50": 341.89,
-          "vol_ratio": 1.19,
+          "vol_ratio": 1.2,
           "score": 41.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -19585,7 +19585,7 @@
               "close": 316.8
             },
             {
-              "h": 97,
+              "h": 98,
               "up": true,
               "close": 320.58
             }
@@ -19598,7 +19598,7 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 217.94,
-          "day_open": 218.3,
+          "day_open": 218.31,
           "day_high": 219.19,
           "day_low": 215.53,
           "day_pct": 0.9,
@@ -19608,7 +19608,7 @@
           "rsi14": 32.2,
           "sma20": 224.44,
           "sma50": 222.16,
-          "vol_ratio": 0.82,
+          "vol_ratio": 0.83,
           "score": 38.5,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -19672,7 +19672,7 @@
               "close": 216.0
             },
             {
-              "h": 66,
+              "h": 67,
               "up": true,
               "close": 217.94
             }
@@ -19695,7 +19695,7 @@
           "rsi14": 31.9,
           "sma20": 68.5,
           "sma50": 73.71,
-          "vol_ratio": 1.13,
+          "vol_ratio": 1.14,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -19782,7 +19782,7 @@
           "rsi14": 46.3,
           "sma20": 378.06,
           "sma50": 393.17,
-          "vol_ratio": 0.65,
+          "vol_ratio": 0.68,
           "score": 33.8,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -19846,7 +19846,7 @@
               "close": 367.82
             },
             {
-              "h": 29,
+              "h": 30,
               "up": true,
               "close": 372.28
             }
@@ -19859,7 +19859,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 342.33,
-          "day_open": 339.38,
+          "day_open": 339.87,
           "day_high": 345.67,
           "day_low": 336.87,
           "day_pct": 4.0,
@@ -19869,7 +19869,7 @@
           "rsi14": 33.2,
           "sma20": 347.05,
           "sma50": 354.48,
-          "vol_ratio": 1.18,
+          "vol_ratio": 1.19,
           "score": 32.8,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -19933,7 +19933,7 @@
               "close": 329.17
             },
             {
-              "h": 85,
+              "h": 86,
               "up": true,
               "close": 342.33
             }
@@ -19946,9 +19946,9 @@
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 620.19,
-          "day_open": 627.03,
+          "day_open": 627.07,
           "day_high": 628.46,
-          "day_low": 619.22,
+          "day_low": 619.21,
           "day_pct": -1.64,
           "ret_5d": -10.67,
           "ret_20d": -16.05,
@@ -19956,7 +19956,7 @@
           "rsi14": 24.1,
           "sma20": 707.47,
           "sma50": 665.65,
-          "vol_ratio": 2.61,
+          "vol_ratio": 2.65,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -19965,12 +19965,12 @@
           "stop_price": 582.98,
           "sparkline": [
             {
-              "h": 49,
+              "h": 48,
               "up": true,
               "close": 742.96
             },
             {
-              "h": 45,
+              "h": 44,
               "up": true,
               "close": 762.5
             },
@@ -19985,7 +19985,7 @@
               "close": 736.72
             },
             {
-              "h": 41,
+              "h": 40,
               "up": false,
               "close": 709.33
             },
@@ -19995,17 +19995,17 @@
               "close": 705.44
             },
             {
-              "h": 34,
+              "h": 33,
               "up": false,
               "close": 694.25
             },
             {
-              "h": 58,
+              "h": 57,
               "up": true,
               "close": 697.52
             },
             {
-              "h": 80,
+              "h": 79,
               "up": false,
               "close": 648.85
             },
@@ -20015,7 +20015,7 @@
               "close": 642.62
             },
             {
-              "h": 61,
+              "h": 60,
               "up": false,
               "close": 630.56
             },
