@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-29 12:13 AM ET",
+  "last_updated": "2026-10-29 01:12 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4061.9,
-      "change": -12.7,
-      "pct": -0.31,
+      "price": 4056.5,
+      "change": -18.1,
+      "pct": -0.44,
       "up": false,
       "spark": [
         4216.3,
@@ -25,7 +25,7 @@
         4007.9,
         4038.4,
         4074.6,
-        4061.9
+        4056.5
       ]
     },
     {
@@ -17199,7 +17199,7 @@
       "date": "2026-10-27",
       "tab_label": "Today \u2022 Oct 27 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-29 12:13 AM ET",
+      "updated_at": "2026-10-29 01:12 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -17346,12 +17346,12 @@
         "veto_note": "Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-10-27, Dividend Value Mutual Fund led the 8-option leaderboard (+2.57%); combining relative strength (1.00x weight) with news-catalyst filtering keeps portfolio win rate at 71.4%.",
         "headlines_scanned": [
-          "[MSFT] Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings (Investor's Business Daily)",
-          "[MSFT] MSFT Stock Gains 3% After-Hours As AI Demand Powers Q1 Cloud Revenue, Q2 Guidance Beat With Positive Cash Flows (Stocktwits)",
+          "[MSFT] NiSource Inc (NI) (Q3 2026) Earnings Call Highlights: $40 Billion Capital Plan, Microsoft Deal ... (GuruFocus.com)",
+          "[MSFT] U.S. stock futures drop as Alphabet slides on soft earnings, Microsoft firms (Investing.com)",
           "[PLTR] IPO Edge NYSE Firesides Scheduled for Dec 7 (IPO-Edge.com)",
           "[PLTR] Palantir Technologies Inc. (PLTR) Stock Sinks As Market Gains: Here's Why (Zacks)",
           "[LLY] Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings (Investor's Business Daily)",
-          "[LLY] Eli Lilly (LLY) Finds A New Lead In Diabetes As It Recasts Management (Simply Wall St.)"
+          "[LLY] Eli Lilly (LLY) Stock May Be 25% Undervalued Despite Retatrutide Trial News (Simply Wall St.)"
         ],
         "ai_briefing": "On 2026-10-27, the $7,000 AI Model closed at $6,954.40 (-45.60 / -0.65%), with Trade Win Rate at 71.4%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,029.04, 60/40 Balanced Fund is at $7,046.28, and 4.5% High-Yield Savings is at $7,006.91. Gemini Catalyst Check: Latest LLY catalyst: \"Dow Jones Futures: Microsoft Rises, But Google, ServiceNow, Fortinet Dive On Earnings\" (Investor's Business Daily). Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk."
       },
