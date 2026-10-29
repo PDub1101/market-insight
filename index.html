@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Market Insight — $7,000 Self-Learning AI Model & Mutual Fund Comparator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2403,12 +2406,32 @@
       }).join('');
     }
 
-    if (appData && appData.day_tabs && appData.day_tabs.length > 0) {
-      selectedDayIdx = appData.day_tabs.length - 1;
-      renderMarketRibbon();
-      renderDaySelectors();
-      renderSelectedDayDashboard();
+    function bootApp() {
+      if (appData && appData.day_tabs && appData.day_tabs.length > 0) {
+        selectedDayIdx = appData.day_tabs.length - 1;
+        renderMarketRibbon();
+        renderDaySelectors();
+        renderSelectedDayDashboard();
+      }
     }
+
+    // Always fetch fresh JSON data with a timestamp cache-buster so users never see stale browser cache
+    async function loadFreshDataAndStart() {
+      try {
+        const resp = await fetch('portfolio_state.json?t=' + Date.now());
+        if (resp.ok) {
+          const fresh = await resp.json();
+          if (fresh && fresh.day_tabs && fresh.day_tabs.length > 0) {
+            appData = fresh;
+          }
+        }
+      } catch (err) {
+        console.warn('Live fetch fallback to bundled data:', err);
+      }
+      bootApp();
+    }
+
+    loadFreshDataAndStart();
   </script>
 </body>
 </html>
