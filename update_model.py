@@ -296,8 +296,29 @@ def fetch_yahoo_chart(symbol: str, range_str: str = "6mo", interval: str = "1d")
         dedup: Dict[str, Dict[str, Any]] = {}
         for b in bars:
             dedup[b["date"]] = b
+
+        # If Yahoo hasn't finalized the 1d array for today yet, synthesize it from real-time meta
+        meta = r0.get("meta", {})
+        reg_time = meta.get("regularMarketTime")
+        reg_price = meta.get("regularMarketPrice")
+        if reg_time and reg_price is not None:
+            reg_dt_str = dt.datetime.fromtimestamp(reg_time, tz=dt.timezone.utc).strftime("%Y-%m-%d")
+            if reg_dt_str not in dedup:
+                day_open = meta.get("regularMarketDayOpen") or reg_price
+                day_high = meta.get("regularMarketDayHigh") or reg_price
+                day_low = meta.get("regularMarketDayLow") or reg_price
+                day_vol = meta.get("regularMarketVolume") or 0
+                dedup[reg_dt_str] = {
+                    "date": reg_dt_str,
+                    "open": round(float(day_open), 2),
+                    "high": round(float(day_high), 2),
+                    "low": round(float(day_low), 2),
+                    "close": round(float(reg_price), 2),
+                    "volume": int(day_vol),
+                }
+
         sorted_bars = [dedup[k] for k in sorted(dedup.keys())]
-        return {"symbol": symbol, "meta": r0.get("meta", {}), "bars": sorted_bars}
+        return {"symbol": symbol, "meta": meta, "bars": sorted_bars}
     except Exception as exc:
         print(f"[warn] Could not fetch {symbol}: {exc}", file=sys.stderr)
         return None
