@@ -2,9 +2,11 @@ name: Daily $7K Stock Model Cloud Update
 
 on:
   schedule:
-    # Runs at 4:35 PM ET on Weekdays (Mon-Fri) after US market close
-    - cron: "35 20 * * 1-5"
-    - cron: "35 21 * * 1-5"
+    # Runs after US market close on Weekdays (Mon-Fri) with staggered retries across afternoon/evening
+    - cron: "15 20 * * 1-5"  # 4:15 PM ET (20:15 UTC)
+    - cron: "45 20 * * 1-5"  # 4:45 PM ET (20:45 UTC)
+    - cron: "30 21 * * 1-5"  # 5:30 PM ET (21:30 UTC)
+    - cron: "00 23 * * 1-5"  # 7:00 PM ET (23:00 UTC)
   workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions tab
 
 permissions:
