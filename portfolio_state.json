@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-29 09:04 PM ET",
+  "last_updated": "2026-10-30 01:15 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4022.0,
-      "change": -29.6,
-      "pct": -0.73,
+      "price": 4013.7,
+      "change": -37.9,
+      "pct": -0.94,
       "up": false,
       "spark": [
         4190.6,
@@ -25,7 +25,7 @@
         4038.4,
         4074.6,
         4051.6,
-        4022.0
+        4013.7
       ]
     },
     {
@@ -23171,7 +23171,7 @@
       "date": "2026-10-29",
       "tab_label": "Today \u2022 Oct 29 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-29 09:04 PM ET",
+      "updated_at": "2026-10-30 01:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
