@@ -2,13 +2,13 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-30 12:25 AM ET",
+  "last_updated": "2026-10-29 09:04 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4022.1,
-      "change": -29.5,
+      "price": 4022.0,
+      "change": -29.6,
       "pct": -0.73,
       "up": false,
       "spark": [
@@ -25,7 +25,7 @@
         4038.4,
         4074.6,
         4051.6,
-        4022.1
+        4022.0
       ]
     },
     {
@@ -20166,7 +20166,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": false,
-      "updated_at": "2026-10-29 11:57 PM ET",
+      "updated_at": "2026-10-29 09:03 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -23171,7 +23171,7 @@
       "date": "2026-10-29",
       "tab_label": "Today \u2022 Oct 29 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-30 12:25 AM ET",
+      "updated_at": "2026-10-29 09:04 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -23320,8 +23320,8 @@
         "headlines_scanned": [
           "[COST] First Google Search, Now Amazon Retail. Tech\u2019s Moneymakers Are Stumbling. (Barrons.com)",
           "[COST] Costco (COST) Ascends While Market Falls: Some Facts to Note (Zacks)",
+          "[AAPL] Steve Jobs' Son Says GLP-1 Weight Loss Drugs Could Be Among Most Important Medicines Ever, With Potential Impact on Cancer (Benzinga)",
           "[AAPL] Apple Stocks Rise 1.8% With a $900 MacBook Pricing Step (GuruFocus.com)",
-          "[AAPL] Apple's Q4 Earnings Loom: Buy or Sell AAPL Stock Ahead of Results? (Zacks)",
           "[MSFT] Cash is king, as investors draw new battle lines in AI spending boom (Reuters)",
           "[MSFT] Billionaire Bill Gates Just Issued a Blunt Warning About Artificial Intelligence (Motley Fool)"
         ],
