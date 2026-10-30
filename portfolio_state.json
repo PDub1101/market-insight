@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-30 02:24 AM ET",
+  "last_updated": "2026-10-30 05:09 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4022.6,
-      "change": -8.8,
-      "pct": -0.22,
+      "price": 3884.7,
+      "change": -146.7,
+      "pct": -3.64,
       "up": false,
       "spark": [
         4177.3,
@@ -25,18 +25,17 @@
         4074.6,
         4051.6,
         4031.4,
-        4022.6
+        3884.7
       ]
     },
     {
       "label": "DOW 30",
       "symbol": "^DJI",
-      "price": 52342.56,
-      "change": -132.54,
-      "pct": -0.25,
+      "price": 51770.31,
+      "change": -572.25,
+      "pct": -1.09,
       "up": false,
       "spark": [
-        51850.55,
         51670.1,
         51621.48,
         52177.69,
@@ -49,18 +48,18 @@
         52361.58,
         52377.57,
         52475.1,
-        52342.56
+        52342.56,
+        51770.31
       ]
     },
     {
       "label": "S&P 500",
       "symbol": "^GSPC",
-      "price": 7720.39,
-      "change": -23.59,
-      "pct": -0.3,
+      "price": 7580.07,
+      "change": -140.32,
+      "pct": -1.82,
       "up": false,
       "spark": [
-        7807.24,
         7805.45,
         7718.94,
         7744.06,
@@ -73,18 +72,18 @@
         7676.77,
         7722.6,
         7743.98,
-        7720.39
+        7720.39,
+        7580.07
       ]
     },
     {
       "label": "NASDAQ",
       "symbol": "^IXIC",
-      "price": 26184.72,
-      "change": -365.13,
-      "pct": -1.38,
+      "price": 25437.0,
+      "change": -747.72,
+      "pct": -2.86,
       "up": false,
       "spark": [
-        27245.9,
         27204.38,
         26692.87,
         26713.03,
@@ -97,18 +96,18 @@
         26169.38,
         26477.81,
         26549.85,
-        26184.72
+        26184.72,
+        25437.0
       ]
     },
     {
       "label": "RUSSELL 2K",
       "symbol": "^RUT",
-      "price": 2859.22,
-      "change": 28.71,
-      "pct": 1.01,
-      "up": true,
+      "price": 2811.84,
+      "change": -47.38,
+      "pct": -1.66,
+      "up": false,
       "spark": [
-        2794.48,
         2783.37,
         2729.53,
         2767.27,
@@ -121,18 +120,18 @@
         2786.42,
         2818.87,
         2830.51,
-        2859.22
+        2859.22,
+        2811.84
       ]
     },
     {
       "label": "VIX VOL",
       "symbol": "^VIX",
-      "price": 17.2,
-      "change": 0.29,
-      "pct": 1.71,
+      "price": 19.42,
+      "change": 2.22,
+      "pct": 12.91,
       "up": true,
       "spark": [
-        15.21,
         15.27,
         16.87,
         16.46,
@@ -145,7 +144,8 @@
         18.39,
         17.52,
         16.91,
-        17.2
+        17.2,
+        19.42
       ]
     }
   ],
@@ -192,9 +192,9 @@
         "name": "Amazon.com Inc.",
         "sector": "Cloud & Retail",
         "bucket": "Core",
-        "shares": 1.920366,
+        "shares": 1.15222,
         "avg_entry_price": 262.45,
-        "cost_basis": 504.0,
+        "cost_basis": 302.4,
         "entry_date": "2026-10-19",
         "entry_reason": "Outperforming S&P 500 by +2.5% over 20d",
         "setup_tag": "Trend Hold"
@@ -204,9 +204,9 @@
         "name": "Palantir Technologies",
         "sector": "Enterprise AI",
         "bucket": "Swing",
-        "shares": 3.966006,
+        "shares": 2.379604,
         "avg_entry_price": 194.15,
-        "cost_basis": 770.0,
+        "cost_basis": 462.0,
         "entry_date": "2026-10-19",
         "entry_reason": "Confirmed uptrend above 20d ($194.10) & 50d ($183.01) MAs \u2022 Healthy momentum zone (RSI 56.4)",
         "setup_tag": "Steady Momentum"
@@ -228,9 +228,9 @@
         "name": "Eli Lilly & Co.",
         "sector": "Healthcare",
         "bucket": "Defensive",
-        "shares": 0.360882,
+        "shares": 0.216529,
         "avg_entry_price": 1263.19,
-        "cost_basis": 455.86,
+        "cost_basis": 273.52,
         "entry_date": "2026-10-19",
         "entry_reason": "Confirmed uptrend above 20d ($1182.54) & 50d ($1181.44) MAs \u2022 Healthy momentum zone (RSI 61.5)",
         "setup_tag": "Steady Momentum"
@@ -240,9 +240,9 @@
         "name": "Apple Inc.",
         "sector": "Consumer Tech",
         "bucket": "Core",
-        "shares": 1.113402,
-        "avg_entry_price": 339.5,
-        "cost_basis": 378.0,
+        "shares": 2.669099,
+        "avg_entry_price": 342.49,
+        "cost_basis": 914.14,
         "entry_date": "2026-10-20",
         "entry_reason": "Confirmed uptrend above 20d ($337.61) & 50d ($326.92) MAs \u2022 Healthy momentum zone (RSI 60.5)",
         "setup_tag": "Steady Momentum"
@@ -272,7 +272,7 @@
         "setup_tag": "Steady Momentum"
       }
     },
-    "cash": 510.11,
+    "cash": 655.29,
     "spy_benchmark_shares": 9.132658,
     "benchmarks_init": {
       "start_date": "2026-10-19",
@@ -535,6 +535,62 @@
         "shares": 0.419013,
         "score": 87.9,
         "reason": "Tactical Add ($417 @ $996.08): Confirmed uptrend above 20d ($973.31) & 50d ($941.73) MAs \u2022 Outperforming S&P 500 by +8.2% over 20d"
+      },
+      {
+        "id": "2026-10-30-TRIM-AMZN",
+        "date": "2026-10-30",
+        "action": "TRIM",
+        "ticker": "AMZN",
+        "name": "Amazon.com Inc.",
+        "sector": "Cloud & Retail",
+        "setup_tag": "Below 50d Trend",
+        "rec_price": 240.35,
+        "rec_dollars": 184.62,
+        "shares": 0.768146,
+        "score": 36.0,
+        "reason": "Trimmed 40% ($185) at $240.35 (-8.4% vs entry) \u2014 Trading below 50d moving average ($254.28) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)"
+      },
+      {
+        "id": "2026-10-30-TRIM-PLTR",
+        "date": "2026-10-30",
+        "action": "TRIM",
+        "ticker": "PLTR",
+        "name": "Palantir Technologies",
+        "sector": "Enterprise AI",
+        "setup_tag": "Oversold Bounce Watch",
+        "rec_price": 184.11,
+        "rec_dollars": 292.07,
+        "shares": 1.586402,
+        "score": 37.2,
+        "reason": "Trimmed 40% ($292) at $184.11 (-5.2% vs entry) \u2014 Trading below 50d moving average ($186.90) \u2022 Deeply oversold (RSI 30.8)"
+      },
+      {
+        "id": "2026-10-30-TRIM-LLY",
+        "date": "2026-10-30",
+        "action": "TRIM",
+        "ticker": "LLY",
+        "name": "Eli Lilly & Co.",
+        "sector": "Healthcare",
+        "setup_tag": "Breakout Accumulation",
+        "rec_price": 1417.54,
+        "rec_dollars": 204.63,
+        "shares": 0.144353,
+        "score": 87.1,
+        "reason": "Trimmed 40% ($205) at $1417.54 (+12.2% vs entry) \u2014 Confirmed uptrend above 20d ($1246.01) & 50d ($1197.14) MAs \u2022 Short-term extended (RSI 79.9 > 73)"
+      },
+      {
+        "id": "2026-10-30-BUY-AAPL",
+        "date": "2026-10-30",
+        "action": "BUY",
+        "ticker": "AAPL",
+        "name": "Apple Inc.",
+        "sector": "Consumer Tech",
+        "setup_tag": "Steady Momentum",
+        "rec_price": 344.63,
+        "rec_dollars": 536.14,
+        "shares": 1.555697,
+        "score": 96.0,
+        "reason": "Tactical Add ($536 @ $344.63): Confirmed uptrend above 20d ($342.08) & 50d ($333.04) MAs \u2022 Healthy momentum zone (RSI 54.9)"
       }
     ]
   },
@@ -23169,9 +23225,9 @@
     {
       "day_index": 9,
       "date": "2026-10-29",
-      "tab_label": "Today \u2022 Oct 29 (Live)",
+      "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": false,
-      "updated_at": "2026-10-30 02:24 AM ET",
+      "updated_at": "2026-10-30 05:09 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -23314,18 +23370,11 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "AMZN shows institutional relative strength with clean technical support.",
-        "veto_note": "Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
-        "lesson_learned": "On 2026-10-29, Dividend Value Mutual Fund led the 8-option leaderboard (+4.00%); combining relative strength (1.05x weight) with news-catalyst filtering keeps portfolio win rate at 66.7%.",
-        "headlines_scanned": [
-          "[COST] First Google Search, Now Amazon Retail. Tech\u2019s Moneymakers Are Stumbling. (Barrons.com)",
-          "[COST] Costco (COST) Ascends While Market Falls: Some Facts to Note (Zacks)",
-          "[AAPL] Steve Jobs' Son Says GLP-1 Weight Loss Drugs Could Be Among Most Important Medicines Ever, With Potential Impact on Cancer (Benzinga)",
-          "[AAPL] Apple Stocks Rise 1.8% With a $900 MacBook Pricing Step (GuruFocus.com)",
-          "[MSFT] Cramer Calls Microsoft a Buy, Says Alphabet Carries Too Much Baggage (BeInCrypto)",
-          "[MSFT] Amazon burns cash, Intel flags weak PC demand as AI boom's costs ripple across markets (Reuters)"
-        ],
-        "ai_briefing": "On 2026-10-29, the $7,000 AI Model closed at $6,969.38 (-30.62 / -0.44%), with Trade Win Rate at 66.7%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,026.30, 60/40 Balanced Fund is at $7,046.40, and 4.5% High-Yield Savings is at $7,008.63. Gemini Catalyst Check: AMZN shows institutional relative strength with clean technical support. Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk."
+        "catalyst_headline": "Evaluated 19 assets on 2026-10-29; prioritized relative strength leaders above 50-day support.",
+        "veto_note": "Cooldown active on AMZN, META",
+        "lesson_learned": "Self-Learning Update (Historical Win Rate 64% across 11 calls): trimmed Dip weight to 0.78x; boosted Trend weight to 1.16x; raised Relative Strength weight to 1.05x to favor S&P 500 outperformers; applied cooldown penalty (-7 pts) to lagging pick(s): AMZN, META. Active BUY threshold set to 69.5/100.",
+        "headlines_scanned": [],
+        "ai_briefing": "On 2026-10-29, the $7,000 AI Model closed at $6,969.38 (-30.62 / -0.44%), vs. $7,026.30 in an S&P 500 Mutual Fund, $7,046.40 in a 60/40 Balanced Mutual Fund, and $7,008.63 in a 4.5% High-Yield Savings Account. Best holding: LLY (+39.88, +8.75%). Today's action: TRIM AMZN ($312 @ $243.79), TRIM LLY ($330 @ $1,373.70), BUY COST ($417 @ $996.08)."
       },
       "strength_meter": {
         "score": 57.6,
@@ -23337,7 +23386,7 @@
         "hold_pct": 10.5,
         "trim_pct": 63.2
       },
-      "ai_briefing": "On 2026-10-29, the $7,000 AI Model closed at $6,969.38 (-30.62 / -0.44%), with Trade Win Rate at 66.7%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,026.30, 60/40 Balanced Fund is at $7,046.40, and 4.5% High-Yield Savings is at $7,008.63. Gemini Catalyst Check: AMZN shows institutional relative strength with clean technical support. Vetoed dip-adds on AMZN, META due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-10-29, the $7,000 AI Model closed at $6,969.38 (-30.62 / -0.44%), vs. $7,026.30 in an S&P 500 Mutual Fund, $7,046.40 in a 60/40 Balanced Mutual Fund, and $7,008.63 in a 4.5% High-Yield Savings Account. Best holding: LLY (+39.88, +8.75%). Today's action: TRIM AMZN ($312 @ $243.79), TRIM LLY ($330 @ $1,373.70), BUY COST ($417 @ $996.08).",
       "todays_actions": [
         {
           "id": "2026-10-29-TRIM-AMZN",
@@ -23457,7 +23506,7 @@
               "close": 772.31
             },
             {
-              "h": 62,
+              "h": 63,
               "up": false,
               "close": 769.36
             }
@@ -23537,7 +23586,7 @@
               "close": 725.61
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 715.34
             }
@@ -23567,7 +23616,7 @@
               "close": 533.69
             },
             {
-              "h": 62,
+              "h": 61,
               "up": true,
               "close": 539.44
             },
@@ -23587,7 +23636,7 @@
               "close": 531.87
             },
             {
-              "h": 36,
+              "h": 35,
               "up": true,
               "close": 532.95
             },
@@ -23602,7 +23651,7 @@
               "close": 524.51
             },
             {
-              "h": 49,
+              "h": 48,
               "up": true,
               "close": 532.6
             },
@@ -23882,7 +23931,7 @@
           "reason": "Trading below 50d moving average ($254.67) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)",
           "sparkline": [
             {
-              "h": 42,
+              "h": 41,
               "up": false,
               "close": 254.08
             },
@@ -23892,17 +23941,17 @@
               "close": 254.76
             },
             {
-              "h": 48,
+              "h": 47,
               "up": false,
               "close": 250.0
             },
             {
-              "h": 67,
+              "h": 66,
               "up": true,
               "close": 262.45
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 262.63
             },
@@ -23912,27 +23961,27 @@
               "close": 262.37
             },
             {
-              "h": 58,
+              "h": 57,
               "up": false,
               "close": 250.38
             },
             {
-              "h": 31,
+              "h": 30,
               "up": false,
               "close": 248.0
             },
             {
-              "h": 39,
+              "h": 38,
               "up": true,
               "close": 249.09
             },
             {
-              "h": 41,
+              "h": 40,
               "up": true,
               "close": 253.1
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 254.6
             },
@@ -24177,7 +24226,7 @@
               "close": 578.44
             },
             {
-              "h": 58,
+              "h": 59,
               "up": false,
               "close": 566.42
             }
@@ -24633,7 +24682,7 @@
           "rsi14": 66.5,
           "sma20": 341.54,
           "sma50": 332.37,
-          "vol_ratio": 1.1,
+          "vol_ratio": 1.11,
           "score": 82.9,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -24734,7 +24783,7 @@
               "close": 533.69
             },
             {
-              "h": 62,
+              "h": 61,
               "up": true,
               "close": 539.44
             },
@@ -24754,7 +24803,7 @@
               "close": 531.87
             },
             {
-              "h": 36,
+              "h": 35,
               "up": true,
               "close": 532.95
             },
@@ -24769,7 +24818,7 @@
               "close": 524.51
             },
             {
-              "h": 49,
+              "h": 48,
               "up": true,
               "close": 532.6
             },
@@ -24981,7 +25030,7 @@
           "rsi14": 42.1,
           "sma20": 771.16,
           "sma50": 767.63,
-          "vol_ratio": 1.05,
+          "vol_ratio": 1.06,
           "score": 76.8,
           "signal": "BUY",
           "setup_tag": "Tactical Dip Buy",
@@ -25045,7 +25094,7 @@
               "close": 772.31
             },
             {
-              "h": 62,
+              "h": 63,
               "up": false,
               "close": 769.36
             }
@@ -25242,7 +25291,7 @@
           "rsi14": 42.0,
           "sma20": 576.9,
           "sma50": 547.58,
-          "vol_ratio": 0.85,
+          "vol_ratio": 0.86,
           "score": 61.8,
           "signal": "HOLD",
           "setup_tag": "Tactical Dip Buy",
@@ -25306,7 +25355,7 @@
               "close": 578.44
             },
             {
-              "h": 58,
+              "h": 59,
               "up": false,
               "close": 566.42
             }
@@ -25329,7 +25378,7 @@
           "rsi14": 86.4,
           "sma20": 34.06,
           "sma50": 34.11,
-          "vol_ratio": 1.07,
+          "vol_ratio": 1.08,
           "score": 54.7,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -25393,7 +25442,7 @@
               "close": 35.09
             },
             {
-              "h": 83,
+              "h": 84,
               "up": true,
               "close": 35.61
             }
@@ -25503,7 +25552,7 @@
           "rsi14": 33.8,
           "sma20": 731.14,
           "sma50": 725.41,
-          "vol_ratio": 1.03,
+          "vol_ratio": 1.05,
           "score": 50.3,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -25567,7 +25616,7 @@
               "close": 725.61
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 715.34
             }
@@ -25654,7 +25703,7 @@
               "close": 439.51
             },
             {
-              "h": 37,
+              "h": 38,
               "up": false,
               "close": 431.81
             }
@@ -25677,7 +25726,7 @@
           "rsi14": 15.6,
           "sma20": 337.09,
           "sma50": 340.29,
-          "vol_ratio": 5.43,
+          "vol_ratio": 5.46,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -25696,7 +25745,7 @@
               "close": 349.22
             },
             {
-              "h": 21,
+              "h": 20,
               "up": false,
               "close": 340.59
             },
@@ -25731,7 +25780,7 @@
               "close": 316.8
             },
             {
-              "h": 21,
+              "h": 20,
               "up": true,
               "close": 320.58
             },
@@ -25851,7 +25900,7 @@
           "rsi14": 34.1,
           "sma20": 254.95,
           "sma50": 254.67,
-          "vol_ratio": 2.35,
+          "vol_ratio": 2.4,
           "score": 36.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -25860,7 +25909,7 @@
           "stop_price": 229.16,
           "sparkline": [
             {
-              "h": 42,
+              "h": 41,
               "up": false,
               "close": 254.08
             },
@@ -25870,17 +25919,17 @@
               "close": 254.76
             },
             {
-              "h": 48,
+              "h": 47,
               "up": false,
               "close": 250.0
             },
             {
-              "h": 67,
+              "h": 66,
               "up": true,
               "close": 262.45
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 262.63
             },
@@ -25890,27 +25939,27 @@
               "close": 262.37
             },
             {
-              "h": 58,
+              "h": 57,
               "up": false,
               "close": 250.38
             },
             {
-              "h": 31,
+              "h": 30,
               "up": false,
               "close": 248.0
             },
             {
-              "h": 39,
+              "h": 38,
               "up": true,
               "close": 249.09
             },
             {
-              "h": 41,
+              "h": 40,
               "up": true,
               "close": 253.1
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 254.6
             },
@@ -26002,7 +26051,7 @@
               "close": 61.99
             },
             {
-              "h": 44,
+              "h": 45,
               "up": true,
               "close": 62.05
             }
@@ -26025,7 +26074,7 @@
           "rsi14": 34.7,
           "sma20": 222.93,
           "sma50": 221.99,
-          "vol_ratio": 0.76,
+          "vol_ratio": 0.77,
           "score": 28.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -26089,7 +26138,7 @@
               "close": 215.38
             },
             {
-              "h": 60,
+              "h": 61,
               "up": false,
               "close": 213.66
             }
@@ -26112,7 +26161,7 @@
           "rsi14": 27.8,
           "sma20": 696.76,
           "sma50": 668.6,
-          "vol_ratio": 1.44,
+          "vol_ratio": 1.45,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -26262,6 +26311,3195 @@
           "pnl_pct": 0.0
         }
       ]
+    },
+    {
+      "day_index": 10,
+      "date": "2026-10-30",
+      "tab_label": "Today \u2022 Oct 30 (Live)",
+      "is_backtest": false,
+      "updated_at": "2026-10-30 05:09 PM ET",
+      "portfolio": {
+        "starting_capital": 7000.0,
+        "total_value": 6836.96,
+        "invested_value": 6181.67,
+        "cash_reserve": 655.29,
+        "day_open": 6885.18,
+        "day_high": 6925.05,
+        "day_low": 6773.64,
+        "day_change_dollars": -132.42,
+        "day_change_pct": -1.9,
+        "total_gain_dollars": -163.04,
+        "total_gain_pct": -2.33,
+        "uninvested_cash_value": 7000.0,
+        "spy_benchmark_value": 6901.73,
+        "spy_gain_dollars": -98.27,
+        "spy_gain_pct": -1.4,
+        "balanced_60_40_value": 6977.84,
+        "hysa_value": 7009.5,
+        "alpha_dollars": -64.77,
+        "alpha_pct": -0.93,
+        "win_rate": 54.5
+      },
+      "alternative_options": [
+        {
+          "id": "schd_dividend",
+          "name": "Dividend Value Mutual Fund",
+          "subtitle": "SCHD / VDADX (High-Dividend Blue Chips)",
+          "category": "Income Mutual Fund",
+          "value": 7314.84,
+          "is_model": false,
+          "rank": 1,
+          "gain_dollars": 314.84,
+          "gain_pct": 4.5,
+          "model_edge_dollars": -477.88,
+          "model_edge_pct": -6.83
+        },
+        {
+          "id": "hysa_cash",
+          "name": "High-Yield Savings (4.50% APY)",
+          "subtitle": "FDIC Insured Savings (~+$0.86/day guaranteed)",
+          "category": "Risk-Free Bank Savings",
+          "value": 7009.5,
+          "is_model": false,
+          "rank": 2,
+          "gain_dollars": 9.5,
+          "gain_pct": 0.14,
+          "model_edge_dollars": -172.54,
+          "model_edge_pct": -2.46
+        },
+        {
+          "id": "uninvested_cash",
+          "name": "Standard Checking (Do Nothing)",
+          "subtitle": "0.00% Interest Uninvested Cash",
+          "category": "Uninvested Baseline",
+          "value": 7000.0,
+          "is_model": false,
+          "rank": 3,
+          "gain_dollars": 0.0,
+          "gain_pct": 0.0,
+          "model_edge_dollars": -163.04,
+          "model_edge_pct": -2.33
+        },
+        {
+          "id": "balanced_60_40",
+          "name": "60/40 Balanced Mutual Fund",
+          "subtitle": "VBIAX Style (60% Stocks / 40% US Bonds)",
+          "category": "Retirement Mutual Fund",
+          "value": 6977.84,
+          "is_model": false,
+          "rank": 4,
+          "gain_dollars": -22.16,
+          "gain_pct": -0.32,
+          "model_edge_dollars": -140.88,
+          "model_edge_pct": -2.01
+        },
+        {
+          "id": "spy_mutual",
+          "name": "S&P 500 Index Mutual Fund",
+          "subtitle": "VFIAX / SPY (500 Largest US Companies)",
+          "category": "Stock Mutual Fund",
+          "value": 6901.73,
+          "is_model": false,
+          "rank": 5,
+          "gain_dollars": -98.27,
+          "gain_pct": -1.4,
+          "model_edge_dollars": -64.77,
+          "model_edge_pct": -0.93
+        },
+        {
+          "id": "model",
+          "name": "Market Insight AI Model ($7K)",
+          "subtitle": "Gemini + Self-Learning Quant Engine",
+          "category": "AI Active Model",
+          "value": 6836.96,
+          "is_model": true,
+          "rank": 6,
+          "gain_dollars": -163.04,
+          "gain_pct": -2.33,
+          "model_edge_dollars": 0.0,
+          "model_edge_pct": 0.0
+        },
+        {
+          "id": "qqq_growth",
+          "name": "Tech Growth Mutual Fund / ETF",
+          "subtitle": "QQQ / VITAX (100 Largest Nasdaq Leaders)",
+          "category": "Aggressive Growth Fund",
+          "value": 6728.42,
+          "is_model": false,
+          "rank": 7,
+          "gain_dollars": -271.58,
+          "gain_pct": -3.88,
+          "model_edge_dollars": 108.54,
+          "model_edge_pct": 1.55
+        },
+        {
+          "id": "gold_fund",
+          "name": "Gold Bullion Fund (GLD)",
+          "subtitle": "Physical Gold Inflation Hedge",
+          "category": "Precious Metals",
+          "value": 6559.19,
+          "is_model": false,
+          "rank": 8,
+          "gain_dollars": -440.81,
+          "gain_pct": -6.3,
+          "model_edge_dollars": 277.77,
+          "model_edge_pct": 3.97
+        }
+      ],
+      "adaptive_learning": {
+        "trend_weight": 1.12,
+        "dip_rsi_weight": 0.78,
+        "rel_strength_weight": 1.12,
+        "breakout_vol_weight": 1.0,
+        "buy_threshold": 72.5,
+        "cooldown_tickers": [
+          "AMZN",
+          "PLTR",
+          "META",
+          "AMD"
+        ],
+        "learning_note": "Self-Learning Update (Historical Win Rate 42% across 12 calls): trimmed Dip weight to 0.78x; boosted Trend weight to 1.12x; raised Relative Strength weight to 1.12x to favor S&P 500 outperformers; applied cooldown penalty (-7 pts) to lagging pick(s): AMZN, PLTR, META, AMD. Active BUY threshold set to 72.5/100."
+      },
+      "gemini_insight": {
+        "engine": "Gemini Hybrid Catalyst & Quant Engine",
+        "catalyst_headline": "AMZN shows institutional relative strength with clean technical support.",
+        "veto_note": "Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+        "lesson_learned": "On 2026-10-30, Dividend Value Mutual Fund led the 8-option leaderboard (+4.50%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 54.5%.",
+        "headlines_scanned": [
+          "[AAPL] Dow Jones Futures: Stock Market Sells Off As Apple, Palantir, Midterm Elections Loom; What To Do (Investor's Business Daily)",
+          "[COST] Levi Strauss Faces Class Action Lawsuit Over Tariff Refunds (Sourcing Journal)",
+          "[COST] How New Rules And Robotaxi Pressure At Uber Technologies (UBER) Has Changed Its Investment Story (Simply Wall St.)",
+          "[LLY] BofA Makes Major Call on Eli Lilly Stock (GuruFocus.com)",
+          "[LLY] Eli Lilly Stocks Rise 3.4% With Higher Sales but Lower EPS Guidance (GuruFocus.com)",
+          "[MSFT] CME vs. Morningstar: Scale vs. Consistent Trajectories in Revenue (Motley Fool)"
+        ],
+        "ai_briefing": "On 2026-10-30, the $7,000 AI Model closed at $6,836.96 (-163.04 / -2.33%), with Trade Win Rate at 54.5%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,901.73, 60/40 Balanced Fund is at $6,977.84, and 4.5% High-Yield Savings is at $7,009.50. Gemini Catalyst Check: AMZN shows institutional relative strength with clean technical support. Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
+      },
+      "strength_meter": {
+        "score": 53.2,
+        "regime": "Defensive Selective",
+        "buy_count": 3,
+        "hold_count": 1,
+        "trim_count": 15,
+        "buy_pct": 15.8,
+        "hold_pct": 5.3,
+        "trim_pct": 78.9
+      },
+      "ai_briefing": "On 2026-10-30, the $7,000 AI Model closed at $6,836.96 (-163.04 / -2.33%), with Trade Win Rate at 54.5%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,901.73, 60/40 Balanced Fund is at $6,977.84, and 4.5% High-Yield Savings is at $7,009.50. Gemini Catalyst Check: AMZN shows institutional relative strength with clean technical support. Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "todays_actions": [
+        {
+          "id": "2026-10-30-TRIM-AMZN",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "setup_tag": "Below 50d Trend",
+          "rec_price": 240.35,
+          "rec_dollars": 184.62,
+          "shares": 0.768146,
+          "score": 36.0,
+          "reason": "Trimmed 40% ($185) at $240.35 (-8.4% vs entry) \u2014 Trading below 50d moving average ($254.28) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)"
+        },
+        {
+          "id": "2026-10-30-TRIM-PLTR",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "sector": "Enterprise AI",
+          "setup_tag": "Oversold Bounce Watch",
+          "rec_price": 184.11,
+          "rec_dollars": 292.07,
+          "shares": 1.586402,
+          "score": 37.2,
+          "reason": "Trimmed 40% ($292) at $184.11 (-5.2% vs entry) \u2014 Trading below 50d moving average ($186.90) \u2022 Deeply oversold (RSI 30.8)"
+        },
+        {
+          "id": "2026-10-30-TRIM-LLY",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Breakout Accumulation",
+          "rec_price": 1417.54,
+          "rec_dollars": 204.63,
+          "shares": 0.144353,
+          "score": 87.1,
+          "reason": "Trimmed 40% ($205) at $1417.54 (+12.2% vs entry) \u2014 Confirmed uptrend above 20d ($1246.01) & 50d ($1197.14) MAs \u2022 Short-term extended (RSI 79.9 > 73)"
+        },
+        {
+          "id": "2026-10-30-BUY-AAPL",
+          "date": "2026-10-30",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Consumer Tech",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 344.63,
+          "rec_dollars": 536.14,
+          "shares": 1.555697,
+          "score": 96.0,
+          "reason": "Tactical Add ($536 @ $344.63): Confirmed uptrend above 20d ($342.08) & 50d ($333.04) MAs \u2022 Healthy momentum zone (RSI 54.9)"
+        }
+      ],
+      "holdings": [
+        {
+          "ticker": "SPY",
+          "name": "SPDR S&P 500 ETF",
+          "sector": "Index Anchor",
+          "bucket": "Core",
+          "shares": 1.8265,
+          "avg_entry": 766.48,
+          "current_price": 755.72,
+          "day_pct": -1.77,
+          "cost_basis": 1400.0,
+          "market_value": 1380.35,
+          "pnl_dollars": -19.65,
+          "pnl_pct": -1.4,
+          "score": 55.5,
+          "signal": "WATCH",
+          "setup_tag": "Tactical Dip Buy",
+          "reason": "Trading below 50d moving average ($767.49) \u2022 Attractive swing entry on cooldown (RSI 34.3)",
+          "sparkline": [
+            {
+              "h": 56,
+              "up": true,
+              "close": 771.79
+            },
+            {
+              "h": 83,
+              "up": false,
+              "close": 763.25
+            },
+            {
+              "h": 50,
+              "up": true,
+              "close": 766.48
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 769.05
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 773.09
+            },
+            {
+              "h": 70,
+              "up": false,
+              "close": 763.96
+            },
+            {
+              "h": 43,
+              "up": false,
+              "close": 759.97
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 765.37
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 769.66
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 772.31
+            },
+            {
+              "h": 52,
+              "up": false,
+              "close": 769.36
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 755.72
+            }
+          ]
+        },
+        {
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust",
+          "sector": "Tech Index",
+          "bucket": "Core",
+          "shares": 1.3642,
+          "avg_entry": 718.36,
+          "current_price": 690.49,
+          "day_pct": -3.47,
+          "cost_basis": 980.0,
+          "market_value": 941.98,
+          "pnl_dollars": -38.02,
+          "pnl_pct": -3.88,
+          "score": 42.0,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($725.00) \u2022 Deeply oversold (RSI 28.7)",
+          "sparkline": [
+            {
+              "h": 59,
+              "up": true,
+              "close": 728.0
+            },
+            {
+              "h": 79,
+              "up": false,
+              "close": 709.8
+            },
+            {
+              "h": 44,
+              "up": true,
+              "close": 718.36
+            },
+            {
+              "h": 36,
+              "up": false,
+              "close": 717.63
+            },
+            {
+              "h": 38,
+              "up": true,
+              "close": 725.2
+            },
+            {
+              "h": 76,
+              "up": false,
+              "close": 704.47
+            },
+            {
+              "h": 36,
+              "up": false,
+              "close": 704.4
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 712.2
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 721.25
+            },
+            {
+              "h": 36,
+              "up": true,
+              "close": 725.61
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 715.34
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 690.49
+            }
+          ]
+        },
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Consumer Tech",
+          "bucket": "Core",
+          "shares": 2.6691,
+          "avg_entry": 342.49,
+          "current_price": 344.63,
+          "day_pct": -1.23,
+          "cost_basis": 914.14,
+          "market_value": 919.85,
+          "pnl_dollars": 5.71,
+          "pnl_pct": 0.62,
+          "score": 96.0,
+          "signal": "BUY",
+          "setup_tag": "Steady Momentum",
+          "reason": "Confirmed uptrend above 20d ($342.08) & 50d ($333.04) MAs \u2022 Healthy momentum zone (RSI 54.9)",
+          "sparkline": [
+            {
+              "h": 59,
+              "up": false,
+              "close": 342.0
+            },
+            {
+              "h": 88,
+              "up": true,
+              "close": 343.46
+            },
+            {
+              "h": 51,
+              "up": false,
+              "close": 342.94
+            },
+            {
+              "h": 53,
+              "up": false,
+              "close": 339.5
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 343.99
+            },
+            {
+              "h": 69,
+              "up": true,
+              "close": 348.22
+            },
+            {
+              "h": 58,
+              "up": false,
+              "close": 347.73
+            },
+            {
+              "h": 63,
+              "up": false,
+              "close": 343.91
+            },
+            {
+              "h": 59,
+              "up": true,
+              "close": 347.1
+            },
+            {
+              "h": 53,
+              "up": false,
+              "close": 343.83
+            },
+            {
+              "h": 63,
+              "up": true,
+              "close": 348.91
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 344.63
+            }
+          ]
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Cloud & AI",
+          "bucket": "Core",
+          "shares": 1.5744,
+          "avg_entry": 533.52,
+          "current_price": 521.91,
+          "day_pct": -1.55,
+          "cost_basis": 840.0,
+          "market_value": 821.72,
+          "pnl_dollars": -18.28,
+          "pnl_pct": -2.18,
+          "score": 82.2,
+          "signal": "BUY",
+          "setup_tag": "Tactical Dip Buy",
+          "reason": "Constructive dip toward 50d support ($512.91) \u2022 Attractive swing entry on cooldown (RSI 36.2)",
+          "sparkline": [
+            {
+              "h": 61,
+              "up": true,
+              "close": 539.44
+            },
+            {
+              "h": 63,
+              "up": false,
+              "close": 529.05
+            },
+            {
+              "h": 46,
+              "up": true,
+              "close": 533.52
+            },
+            {
+              "h": 37,
+              "up": false,
+              "close": 531.87
+            },
+            {
+              "h": 35,
+              "up": true,
+              "close": 532.95
+            },
+            {
+              "h": 54,
+              "up": false,
+              "close": 521.08
+            },
+            {
+              "h": 35,
+              "up": true,
+              "close": 524.51
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 532.6
+            },
+            {
+              "h": 50,
+              "up": false,
+              "close": 531.33
+            },
+            {
+              "h": 73,
+              "up": false,
+              "close": 531.01
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 530.14
+            },
+            {
+              "h": 90,
+              "up": false,
+              "close": 521.91
+            }
+          ]
+        },
+        {
+          "ticker": "COST",
+          "name": "Costco Wholesale",
+          "sector": "Consumer Staples",
+          "bucket": "Defensive",
+          "shares": 0.6562,
+          "avg_entry": 991.25,
+          "current_price": 1012.28,
+          "day_pct": 1.63,
+          "cost_basis": 650.44,
+          "market_value": 664.24,
+          "pnl_dollars": 13.8,
+          "pnl_pct": 2.12,
+          "score": 90.1,
+          "signal": "BUY",
+          "setup_tag": "Trend Hold",
+          "reason": "Confirmed uptrend above 20d ($977.89) & 50d ($943.30) MAs \u2022 Outperforming S&P 500 by +11.8% over 20d",
+          "sparkline": [
+            {
+              "h": 89,
+              "up": false,
+              "close": 978.01
+            },
+            {
+              "h": 74,
+              "up": true,
+              "close": 989.11
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 995.53
+            },
+            {
+              "h": 64,
+              "up": false,
+              "close": 994.61
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 998.31
+            },
+            {
+              "h": 84,
+              "up": true,
+              "close": 1018.21
+            },
+            {
+              "h": 71,
+              "up": false,
+              "close": 1003.32
+            },
+            {
+              "h": 70,
+              "up": true,
+              "close": 1005.16
+            },
+            {
+              "h": 66,
+              "up": false,
+              "close": 992.13
+            },
+            {
+              "h": 51,
+              "up": false,
+              "close": 982.73
+            },
+            {
+              "h": 47,
+              "up": true,
+              "close": 996.08
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 1012.28
+            }
+          ]
+        },
+        {
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "sector": "Enterprise AI",
+          "bucket": "Swing",
+          "shares": 2.3796,
+          "avg_entry": 194.15,
+          "current_price": 184.11,
+          "day_pct": -6.27,
+          "cost_basis": 462.0,
+          "market_value": 438.11,
+          "pnl_dollars": -23.89,
+          "pnl_pct": -5.17,
+          "score": 37.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($186.90) \u2022 Deeply oversold (RSI 30.8)",
+          "sparkline": [
+            {
+              "h": 74,
+              "up": true,
+              "close": 200.5
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 186.03
+            },
+            {
+              "h": 72,
+              "up": true,
+              "close": 194.15
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 192.6
+            },
+            {
+              "h": 64,
+              "up": true,
+              "close": 201.72
+            },
+            {
+              "h": 69,
+              "up": false,
+              "close": 196.19
+            },
+            {
+              "h": 53,
+              "up": true,
+              "close": 196.75
+            },
+            {
+              "h": 49,
+              "up": true,
+              "close": 198.84
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 198.73
+            },
+            {
+              "h": 62,
+              "up": false,
+              "close": 196.81
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 196.42
+            },
+            {
+              "h": 81,
+              "up": false,
+              "close": 184.11
+            }
+          ]
+        },
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "bucket": "Defensive",
+          "shares": 0.2165,
+          "avg_entry": 1263.19,
+          "current_price": 1417.54,
+          "day_pct": 3.19,
+          "cost_basis": 273.52,
+          "market_value": 306.94,
+          "pnl_dollars": 33.42,
+          "pnl_pct": 12.22,
+          "score": 87.1,
+          "signal": "TRIM",
+          "setup_tag": "Breakout Accumulation",
+          "reason": "Confirmed uptrend above 20d ($1246.01) & 50d ($1197.14) MAs \u2022 Short-term extended (RSI 79.9 > 73)",
+          "sparkline": [
+            {
+              "h": 75,
+              "up": true,
+              "close": 1251.61
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 1257.03
+            },
+            {
+              "h": 39,
+              "up": false,
+              "close": 1240.34
+            },
+            {
+              "h": 59,
+              "up": true,
+              "close": 1283.66
+            },
+            {
+              "h": 37,
+              "up": false,
+              "close": 1270.75
+            },
+            {
+              "h": 53,
+              "up": true,
+              "close": 1306.69
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 1273.46
+            },
+            {
+              "h": 42,
+              "up": true,
+              "close": 1279.14
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 1281.91
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 1288.3
+            },
+            {
+              "h": 87,
+              "up": true,
+              "close": 1373.7
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 1417.54
+            }
+          ]
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "bucket": "Core",
+          "shares": 1.1522,
+          "avg_entry": 262.45,
+          "current_price": 240.35,
+          "day_pct": -1.41,
+          "cost_basis": 302.4,
+          "market_value": 276.94,
+          "pnl_dollars": -25.46,
+          "pnl_pct": -8.42,
+          "score": 36.0,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($254.28) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)",
+          "sparkline": [
+            {
+              "h": 33,
+              "up": true,
+              "close": 254.76
+            },
+            {
+              "h": 39,
+              "up": false,
+              "close": 250.0
+            },
+            {
+              "h": 54,
+              "up": true,
+              "close": 262.45
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 262.63
+            },
+            {
+              "h": 30,
+              "up": false,
+              "close": 262.37
+            },
+            {
+              "h": 47,
+              "up": false,
+              "close": 250.38
+            },
+            {
+              "h": 24,
+              "up": false,
+              "close": 248.0
+            },
+            {
+              "h": 31,
+              "up": true,
+              "close": 249.09
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 253.1
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 254.6
+            },
+            {
+              "h": 81,
+              "up": false,
+              "close": 243.79
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 240.35
+            }
+          ]
+        },
+        {
+          "ticker": "META",
+          "name": "Meta Platforms",
+          "sector": "Digital Ads & AI",
+          "bucket": "Swing",
+          "shares": 0.3929,
+          "avg_entry": 705.44,
+          "current_price": 614.99,
+          "day_pct": -1.53,
+          "cost_basis": 277.2,
+          "market_value": 241.66,
+          "pnl_dollars": -35.54,
+          "pnl_pct": -12.82,
+          "score": 27.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($669.98) \u2022 Deeply oversold (RSI 17.6)",
+          "sparkline": [
+            {
+              "h": 33,
+              "up": true,
+              "close": 736.72
+            },
+            {
+              "h": 40,
+              "up": false,
+              "close": 709.33
+            },
+            {
+              "h": 32,
+              "up": false,
+              "close": 705.44
+            },
+            {
+              "h": 33,
+              "up": false,
+              "close": 694.25
+            },
+            {
+              "h": 57,
+              "up": true,
+              "close": 697.52
+            },
+            {
+              "h": 79,
+              "up": false,
+              "close": 648.85
+            },
+            {
+              "h": 29,
+              "up": false,
+              "close": 642.62
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 630.56
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 620.19
+            },
+            {
+              "h": 68,
+              "up": false,
+              "close": 612.49
+            },
+            {
+              "h": 61,
+              "up": true,
+              "close": 624.52
+            },
+            {
+              "h": 49,
+              "up": false,
+              "close": 614.99
+            }
+          ]
+        },
+        {
+          "ticker": "AMD",
+          "name": "Advanced Micro Devices",
+          "sector": "Semiconductors",
+          "bucket": "Swing",
+          "shares": 0.3761,
+          "avg_entry": 552.72,
+          "current_price": 504.8,
+          "day_pct": -10.88,
+          "cost_basis": 207.9,
+          "market_value": 189.88,
+          "pnl_dollars": -18.02,
+          "pnl_pct": -8.67,
+          "score": 21.0,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($548.29) \u2022 Lagging S&P 500 (-18.6% over 20d)",
+          "sparkline": [
+            {
+              "h": 73,
+              "up": true,
+              "close": 562.23
+            },
+            {
+              "h": 57,
+              "up": false,
+              "close": 528.75
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 538.05
+            },
+            {
+              "h": 38,
+              "up": false,
+              "close": 534.74
+            },
+            {
+              "h": 46,
+              "up": true,
+              "close": 552.72
+            },
+            {
+              "h": 71,
+              "up": false,
+              "close": 507.93
+            },
+            {
+              "h": 38,
+              "up": true,
+              "close": 516.79
+            },
+            {
+              "h": 42,
+              "up": true,
+              "close": 531.28
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 560.26
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 578.44
+            },
+            {
+              "h": 43,
+              "up": false,
+              "close": 566.42
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 504.8
+            }
+          ]
+        }
+      ],
+      "audited_recommendations": [
+        {
+          "id": "2026-10-30-BUY-AAPL",
+          "date": "2026-10-30",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Consumer Tech",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 344.63,
+          "rec_dollars": 536.14,
+          "shares": 1.555697,
+          "score": 96.0,
+          "reason": "Tactical Add ($536 @ $344.63): Confirmed uptrend above 20d ($342.08) & 50d ($333.04) MAs \u2022 Healthy momentum zone (RSI 54.9)",
+          "current_price": 344.63,
+          "outcome_pct": 0.0,
+          "outcome_dollars": 0.0,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-30-TRIM-LLY",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Breakout Accumulation",
+          "rec_price": 1417.54,
+          "rec_dollars": 204.63,
+          "shares": 0.144353,
+          "score": 87.1,
+          "reason": "Trimmed 40% ($205) at $1417.54 (+12.2% vs entry) \u2014 Confirmed uptrend above 20d ($1246.01) & 50d ($1197.14) MAs \u2022 Short-term extended (RSI 79.9 > 73)",
+          "current_price": 1417.54,
+          "outcome_pct": 0.0,
+          "outcome_dollars": 0.0,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-30-TRIM-PLTR",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "sector": "Enterprise AI",
+          "setup_tag": "Oversold Bounce Watch",
+          "rec_price": 184.11,
+          "rec_dollars": 292.07,
+          "shares": 1.586402,
+          "score": 37.2,
+          "reason": "Trimmed 40% ($292) at $184.11 (-5.2% vs entry) \u2014 Trading below 50d moving average ($186.90) \u2022 Deeply oversold (RSI 30.8)",
+          "current_price": 184.11,
+          "outcome_pct": 0.0,
+          "outcome_dollars": 0.0,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-30-TRIM-AMZN",
+          "date": "2026-10-30",
+          "action": "TRIM",
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "setup_tag": "Below 50d Trend",
+          "rec_price": 240.35,
+          "rec_dollars": 184.62,
+          "shares": 0.768146,
+          "score": 36.0,
+          "reason": "Trimmed 40% ($185) at $240.35 (-8.4% vs entry) \u2014 Trading below 50d moving average ($254.28) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)",
+          "current_price": 240.35,
+          "outcome_pct": 0.0,
+          "outcome_dollars": 0.0,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-29-BUY-COST",
+          "date": "2026-10-29",
+          "action": "BUY",
+          "ticker": "COST",
+          "name": "Costco Wholesale",
+          "sector": "Consumer Staples",
+          "setup_tag": "Trend Hold",
+          "rec_price": 996.08,
+          "rec_dollars": 417.37,
+          "shares": 0.419013,
+          "score": 87.9,
+          "reason": "Tactical Add ($417 @ $996.08): Confirmed uptrend above 20d ($973.31) & 50d ($941.73) MAs \u2022 Outperforming S&P 500 by +8.2% over 20d",
+          "current_price": 1012.28,
+          "outcome_pct": 1.63,
+          "outcome_dollars": 6.8,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-29-TRIM-LLY",
+          "date": "2026-10-29",
+          "action": "TRIM",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Breakout Accumulation",
+          "rec_price": 1373.7,
+          "rec_dollars": 330.5,
+          "shares": 0.240588,
+          "score": 80.3,
+          "reason": "Trimmed 40% ($330) at $1373.70 (+8.7% vs entry) \u2014 Confirmed uptrend above 20d ($1232.28) & 50d ($1193.68) MAs \u2022 Short-term extended (RSI 77.6 > 73)",
+          "current_price": 1417.54,
+          "outcome_pct": 3.19,
+          "outcome_dollars": 10.54,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-29-TRIM-AMZN",
+          "date": "2026-10-29",
+          "action": "TRIM",
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "setup_tag": "Below 50d Trend",
+          "rec_price": 243.79,
+          "rec_dollars": 312.11,
+          "shares": 1.280244,
+          "score": 36.0,
+          "reason": "Trimmed 40% ($312) at $243.79 (-7.1% vs entry) \u2014 Trading below 50d moving average ($254.67) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)",
+          "current_price": 240.35,
+          "outcome_pct": -1.41,
+          "outcome_dollars": -4.4,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-28-BUY-COST",
+          "date": "2026-10-28",
+          "action": "BUY",
+          "ticker": "COST",
+          "name": "Costco Wholesale",
+          "sector": "Consumer Staples",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 982.73,
+          "rec_dollars": 233.07,
+          "shares": 0.237166,
+          "score": 94.1,
+          "reason": "Tactical Add ($233 @ $982.73): Confirmed uptrend above 20d ($969.25) & 50d ($940.95) MAs \u2022 Healthy momentum zone (RSI 63.3)",
+          "current_price": 1012.28,
+          "outcome_pct": 3.01,
+          "outcome_dollars": 7.02,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-27-BUY-LLY",
+          "date": "2026-10-27",
+          "action": "BUY",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Trend Hold",
+          "rec_price": 1281.91,
+          "rec_dollars": 423.77,
+          "shares": 0.330577,
+          "score": 80.5,
+          "reason": "Tactical Add ($424 @ $1281.91): Confirmed uptrend above 20d ($1214.52) & 50d ($1190.56) MAs \u2022 Outperforming S&P 500 by +7.5% over 20d",
+          "current_price": 1417.54,
+          "outcome_pct": 10.58,
+          "outcome_dollars": 44.83,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-26-HOLD-MSFT",
+          "date": "2026-10-26",
+          "action": "HOLD / CONVICTION",
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Cloud & AI",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 532.6,
+          "rec_dollars": 838.55,
+          "shares": 1.574449,
+          "score": 90.8,
+          "reason": "Maintain disciplined allocation; #1 model score (90.8/100): Confirmed uptrend above 20d ($527.87) & 50d ($509.17) MAs \u2022 Healthy momentum zone (RSI 51.9)",
+          "current_price": 521.91,
+          "outcome_pct": -2.01,
+          "outcome_dollars": -16.85,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-23-TRIM-META",
+          "date": "2026-10-23",
+          "action": "TRIM",
+          "ticker": "META",
+          "name": "Meta Platforms",
+          "sector": "Digital Ads & AI",
+          "setup_tag": "Oversold Bounce Watch",
+          "rec_price": 642.62,
+          "rec_dollars": 168.34,
+          "shares": 0.261964,
+          "score": 27.2,
+          "reason": "Trimmed 40% ($168) at $642.62 (-8.9% vs entry) \u2014 Trading below 50d moving average ($663.81) \u2022 Deeply oversold (RSI 24.3)",
+          "current_price": 614.99,
+          "outcome_pct": -4.3,
+          "outcome_dollars": -7.24,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-22-TRIM-LLY",
+          "date": "2026-10-22",
+          "action": "TRIM",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Breakout Accumulation",
+          "rec_price": 1306.69,
+          "rec_dollars": 235.98,
+          "shares": 0.180596,
+          "score": 85.5,
+          "reason": "Trimmed 40% ($236) at $1306.69 (+5.3% vs entry) \u2014 Confirmed uptrend above 20d ($1200.44) & 50d ($1185.32) MAs \u2022 Short-term extended (RSI 77.9 > 73)",
+          "current_price": 1417.54,
+          "outcome_pct": 8.48,
+          "outcome_dollars": 20.01,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-22-TRIM-META",
+          "date": "2026-10-22",
+          "action": "TRIM",
+          "ticker": "META",
+          "name": "Meta Platforms",
+          "sector": "Digital Ads & AI",
+          "setup_tag": "Oversold Bounce Watch",
+          "rec_price": 648.85,
+          "rec_dollars": 283.29,
+          "shares": 0.436607,
+          "score": 27.2,
+          "reason": "Trimmed 40% ($283) at $648.85 (-8.0% vs entry) \u2014 Trading below 50d moving average ($662.86) \u2022 Deeply oversold (RSI 30.3)",
+          "current_price": 614.99,
+          "outcome_pct": -5.22,
+          "outcome_dollars": -14.79,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-21-BUY-AMD",
+          "date": "2026-10-21",
+          "action": "BUY",
+          "ticker": "AMD",
+          "name": "Advanced Micro Devices",
+          "sector": "Semiconductors",
+          "setup_tag": "Tactical Dip Buy",
+          "rec_price": 552.72,
+          "rec_dollars": 207.9,
+          "shares": 0.37614,
+          "score": 73.7,
+          "reason": "Tactical Add ($208 @ $552.72): Constructive dip toward 50d support ($541.10) \u2022 Attractive swing entry on cooldown (RSI 35.1)",
+          "current_price": 504.8,
+          "outcome_pct": -8.67,
+          "outcome_dollars": -18.02,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-20-BUY-AAPL",
+          "date": "2026-10-20",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Consumer Tech",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 339.5,
+          "rec_dollars": 378.0,
+          "shares": 1.113402,
+          "score": 82.0,
+          "reason": "Tactical Add ($378 @ $339.50): Confirmed uptrend above 20d ($337.61) & 50d ($326.92) MAs \u2022 Healthy momentum zone (RSI 60.5)",
+          "current_price": 344.63,
+          "outcome_pct": 1.51,
+          "outcome_dollars": 5.71,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-19-BUY-LLY",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 1240.34,
+          "rec_dollars": 560.0,
+          "shares": 0.451489,
+          "score": 89.3,
+          "reason": "Confirmed uptrend above 20d ($1182.54) & 50d ($1181.44) MAs \u2022 Healthy momentum zone (RSI 61.5)",
+          "current_price": 1417.54,
+          "outcome_pct": 14.29,
+          "outcome_dollars": 80.02,
+          "if_skipped_dollars": 0.0,
+          "status": "WIN"
+        },
+        {
+          "id": "2026-10-19-BUY-META",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "META",
+          "name": "Meta Platforms",
+          "sector": "Digital Ads & AI",
+          "setup_tag": "Tactical Dip Buy",
+          "rec_price": 705.44,
+          "rec_dollars": 770.0,
+          "shares": 1.091517,
+          "score": 73.3,
+          "reason": "Constructive dip toward 50d support ($657.51) \u2022 Attractive swing entry on cooldown (RSI 39.2)",
+          "current_price": 614.99,
+          "outcome_pct": -12.82,
+          "outcome_dollars": -98.71,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-19-BUY-PLTR",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "sector": "Enterprise AI",
+          "setup_tag": "Steady Momentum",
+          "rec_price": 194.15,
+          "rec_dollars": 770.0,
+          "shares": 3.966006,
+          "score": 88.5,
+          "reason": "Confirmed uptrend above 20d ($194.10) & 50d ($183.01) MAs \u2022 Healthy momentum zone (RSI 56.4)",
+          "current_price": 184.11,
+          "outcome_pct": -5.17,
+          "outcome_dollars": -39.81,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-19-BUY-AMZN",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "setup_tag": "Trend Hold",
+          "rec_price": 262.45,
+          "rec_dollars": 840.0,
+          "shares": 3.20061,
+          "score": 59.4,
+          "reason": "Outperforming S&P 500 by +2.5% over 20d",
+          "current_price": 240.35,
+          "outcome_pct": -8.42,
+          "outcome_dollars": -70.73,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-19-BUY-MSFT",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Cloud & AI",
+          "setup_tag": "Trend Hold",
+          "rec_price": 533.52,
+          "rec_dollars": 840.0,
+          "shares": 1.574449,
+          "score": 90.1,
+          "reason": "Confirmed uptrend above 20d ($521.82) & 50d ($506.20) MAs \u2022 Outperforming S&P 500 by +7.3% over 20d",
+          "current_price": 521.91,
+          "outcome_pct": -2.18,
+          "outcome_dollars": -18.31,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-19-BUY-QQQ",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust",
+          "sector": "Tech Index",
+          "setup_tag": "Tactical Dip Buy",
+          "rec_price": 718.36,
+          "rec_dollars": 980.0,
+          "shares": 1.364218,
+          "score": 59.0,
+          "reason": "Trading below 50d moving average ($726.68) \u2022 Attractive swing entry on cooldown (RSI 38.8)",
+          "current_price": 690.49,
+          "outcome_pct": -3.88,
+          "outcome_dollars": -38.02,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        },
+        {
+          "id": "2026-10-19-BUY-SPY",
+          "date": "2026-10-19",
+          "action": "BUY",
+          "ticker": "SPY",
+          "name": "SPDR S&P 500 ETF",
+          "sector": "Index Anchor",
+          "setup_tag": "Below 50d Trend",
+          "rec_price": 766.48,
+          "rec_dollars": 1400.0,
+          "shares": 1.826532,
+          "score": 53.0,
+          "reason": "Trading below 50d moving average ($768.37) \u2022 Healthy momentum zone (RSI 52.2)",
+          "current_price": 755.72,
+          "outcome_pct": -1.4,
+          "outcome_dollars": -19.6,
+          "if_skipped_dollars": 0.0,
+          "status": "DRAW/LAG"
+        }
+      ],
+      "watchlist_scores": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Consumer Tech",
+          "bucket": "Core",
+          "max_weight": 0.12,
+          "price": 344.63,
+          "day_open": 346.68,
+          "day_high": 349.19,
+          "day_low": 342.35,
+          "day_pct": -1.23,
+          "ret_5d": -0.89,
+          "ret_20d": 3.28,
+          "rel_strength_20d": 5.09,
+          "rsi14": 54.9,
+          "sma20": 342.08,
+          "sma50": 333.04,
+          "vol_ratio": 1.75,
+          "score": 96.0,
+          "signal": "BUY",
+          "setup_tag": "Steady Momentum",
+          "reason": "Confirmed uptrend above 20d ($342.08) & 50d ($333.04) MAs \u2022 Healthy momentum zone (RSI 54.9)",
+          "target_price": 372.2,
+          "stop_price": 323.95,
+          "sparkline": [
+            {
+              "h": 59,
+              "up": false,
+              "close": 342.0
+            },
+            {
+              "h": 88,
+              "up": true,
+              "close": 343.46
+            },
+            {
+              "h": 51,
+              "up": false,
+              "close": 342.94
+            },
+            {
+              "h": 53,
+              "up": false,
+              "close": 339.5
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 343.99
+            },
+            {
+              "h": 69,
+              "up": true,
+              "close": 348.22
+            },
+            {
+              "h": 58,
+              "up": false,
+              "close": 347.73
+            },
+            {
+              "h": 63,
+              "up": false,
+              "close": 343.91
+            },
+            {
+              "h": 59,
+              "up": true,
+              "close": 347.1
+            },
+            {
+              "h": 53,
+              "up": false,
+              "close": 343.83
+            },
+            {
+              "h": 63,
+              "up": true,
+              "close": 348.91
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 344.63
+            }
+          ]
+        },
+        {
+          "ticker": "COST",
+          "name": "Costco Wholesale",
+          "sector": "Consumer Staples",
+          "bucket": "Defensive",
+          "max_weight": 0.1,
+          "price": 1012.28,
+          "day_open": 1013.0,
+          "day_high": 1021.25,
+          "day_low": 1006.56,
+          "day_pct": 1.63,
+          "ret_5d": 0.89,
+          "ret_20d": 9.95,
+          "rel_strength_20d": 11.76,
+          "rsi14": 68.0,
+          "sma20": 977.89,
+          "sma50": 943.3,
+          "vol_ratio": 1.63,
+          "score": 90.1,
+          "signal": "BUY",
+          "setup_tag": "Trend Hold",
+          "reason": "Confirmed uptrend above 20d ($977.89) & 50d ($943.30) MAs \u2022 Outperforming S&P 500 by +11.8% over 20d",
+          "target_price": 1093.26,
+          "stop_price": 951.54,
+          "sparkline": [
+            {
+              "h": 89,
+              "up": false,
+              "close": 978.01
+            },
+            {
+              "h": 74,
+              "up": true,
+              "close": 989.11
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 995.53
+            },
+            {
+              "h": 64,
+              "up": false,
+              "close": 994.61
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 998.31
+            },
+            {
+              "h": 84,
+              "up": true,
+              "close": 1018.21
+            },
+            {
+              "h": 71,
+              "up": false,
+              "close": 1003.32
+            },
+            {
+              "h": 70,
+              "up": true,
+              "close": 1005.16
+            },
+            {
+              "h": 66,
+              "up": false,
+              "close": 992.13
+            },
+            {
+              "h": 51,
+              "up": false,
+              "close": 982.73
+            },
+            {
+              "h": 47,
+              "up": true,
+              "close": 996.08
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 1012.28
+            }
+          ]
+        },
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly & Co.",
+          "sector": "Healthcare",
+          "bucket": "Defensive",
+          "max_weight": 0.09,
+          "price": 1417.54,
+          "day_open": 1428.83,
+          "day_high": 1449.68,
+          "day_low": 1409.0,
+          "day_pct": 3.19,
+          "ret_5d": 11.31,
+          "ret_20d": 24.04,
+          "rel_strength_20d": 25.84,
+          "rsi14": 79.9,
+          "sma20": 1246.01,
+          "sma50": 1197.14,
+          "vol_ratio": 2.12,
+          "score": 87.1,
+          "signal": "TRIM",
+          "setup_tag": "Breakout Accumulation",
+          "reason": "Confirmed uptrend above 20d ($1246.01) & 50d ($1197.14) MAs \u2022 Short-term extended (RSI 79.9 > 73)",
+          "target_price": 1530.94,
+          "stop_price": 1332.49,
+          "sparkline": [
+            {
+              "h": 75,
+              "up": true,
+              "close": 1251.61
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 1257.03
+            },
+            {
+              "h": 39,
+              "up": false,
+              "close": 1240.34
+            },
+            {
+              "h": 59,
+              "up": true,
+              "close": 1283.66
+            },
+            {
+              "h": 37,
+              "up": false,
+              "close": 1270.75
+            },
+            {
+              "h": 53,
+              "up": true,
+              "close": 1306.69
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 1273.46
+            },
+            {
+              "h": 42,
+              "up": true,
+              "close": 1279.14
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 1281.91
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 1288.3
+            },
+            {
+              "h": 87,
+              "up": true,
+              "close": 1373.7
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 1417.54
+            }
+          ]
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Cloud & AI",
+          "bucket": "Core",
+          "max_weight": 0.14,
+          "price": 521.91,
+          "day_open": 525.27,
+          "day_high": 526.0,
+          "day_low": 514.35,
+          "day_pct": -1.55,
+          "ret_5d": -0.5,
+          "ret_20d": 0.85,
+          "rel_strength_20d": 2.65,
+          "rsi14": 36.2,
+          "sma20": 530.98,
+          "sma50": 512.91,
+          "vol_ratio": 1.68,
+          "score": 82.2,
+          "signal": "BUY",
+          "setup_tag": "Tactical Dip Buy",
+          "reason": "Constructive dip toward 50d support ($512.91) \u2022 Attractive swing entry on cooldown (RSI 36.2)",
+          "target_price": 563.66,
+          "stop_price": 490.6,
+          "sparkline": [
+            {
+              "h": 61,
+              "up": true,
+              "close": 539.44
+            },
+            {
+              "h": 63,
+              "up": false,
+              "close": 529.05
+            },
+            {
+              "h": 46,
+              "up": true,
+              "close": 533.52
+            },
+            {
+              "h": 37,
+              "up": false,
+              "close": 531.87
+            },
+            {
+              "h": 35,
+              "up": true,
+              "close": 532.95
+            },
+            {
+              "h": 54,
+              "up": false,
+              "close": 521.08
+            },
+            {
+              "h": 35,
+              "up": true,
+              "close": 524.51
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 532.6
+            },
+            {
+              "h": 50,
+              "up": false,
+              "close": 531.33
+            },
+            {
+              "h": 73,
+              "up": false,
+              "close": 531.01
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 530.14
+            },
+            {
+              "h": 90,
+              "up": false,
+              "close": 521.91
+            }
+          ]
+        },
+        {
+          "ticker": "SCHD",
+          "name": "Schwab US Dividend Equity",
+          "sector": "Dividend Value Fund",
+          "bucket": "Defensive",
+          "max_weight": 0.16,
+          "price": 35.78,
+          "day_open": 35.97,
+          "day_high": 36.1,
+          "day_low": 35.72,
+          "day_pct": 0.48,
+          "ret_5d": 1.45,
+          "ret_20d": 9.35,
+          "rel_strength_20d": 11.16,
+          "rsi14": 86.2,
+          "sma20": 34.22,
+          "sma50": 34.13,
+          "vol_ratio": 1.23,
+          "score": 80.1,
+          "signal": "TRIM",
+          "setup_tag": "Overbought / Trim",
+          "reason": "Confirmed uptrend above 20d ($34.22) & 50d ($34.13) MAs \u2022 Short-term extended (RSI 86.2 > 73)",
+          "target_price": 38.64,
+          "stop_price": 33.63,
+          "sparkline": [
+            {
+              "h": 100,
+              "up": true,
+              "close": 34.1
+            },
+            {
+              "h": 87,
+              "up": true,
+              "close": 34.35
+            },
+            {
+              "h": 70,
+              "up": false,
+              "close": 34.24
+            },
+            {
+              "h": 72,
+              "up": true,
+              "close": 34.69
+            },
+            {
+              "h": 67,
+              "up": false,
+              "close": 34.66
+            },
+            {
+              "h": 99,
+              "up": true,
+              "close": 35.4
+            },
+            {
+              "h": 77,
+              "up": false,
+              "close": 35.27
+            },
+            {
+              "h": 85,
+              "up": true,
+              "close": 35.3
+            },
+            {
+              "h": 75,
+              "up": false,
+              "close": 35.12
+            },
+            {
+              "h": 74,
+              "up": false,
+              "close": 35.09
+            },
+            {
+              "h": 84,
+              "up": true,
+              "close": 35.61
+            },
+            {
+              "h": 95,
+              "up": true,
+              "close": 35.78
+            }
+          ]
+        },
+        {
+          "ticker": "BRK-B",
+          "name": "Berkshire Hathaway",
+          "sector": "Financials",
+          "bucket": "Defensive",
+          "max_weight": 0.12,
+          "price": 542.49,
+          "day_open": 549.88,
+          "day_high": 550.3,
+          "day_low": 542.32,
+          "day_pct": 0.1,
+          "ret_5d": 0.06,
+          "ret_20d": 7.93,
+          "rel_strength_20d": 9.73,
+          "rsi14": 73.1,
+          "sma20": 529.08,
+          "sma50": 515.11,
+          "vol_ratio": 1.05,
+          "score": 80.1,
+          "signal": "TRIM",
+          "setup_tag": "Overbought / Trim",
+          "reason": "Confirmed uptrend above 20d ($529.08) & 50d ($515.11) MAs \u2022 Short-term extended (RSI 73.1 > 73)",
+          "target_price": 585.89,
+          "stop_price": 509.94,
+          "sparkline": [
+            {
+              "h": 73,
+              "up": false,
+              "close": 525.68
+            },
+            {
+              "h": 72,
+              "up": true,
+              "close": 532.02
+            },
+            {
+              "h": 84,
+              "up": true,
+              "close": 532.23
+            },
+            {
+              "h": 93,
+              "up": true,
+              "close": 539.82
+            },
+            {
+              "h": 90,
+              "up": false,
+              "close": 538.99
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 546.97
+            },
+            {
+              "h": 76,
+              "up": false,
+              "close": 542.19
+            },
+            {
+              "h": 82,
+              "up": true,
+              "close": 548.56
+            },
+            {
+              "h": 54,
+              "up": false,
+              "close": 542.99
+            },
+            {
+              "h": 58,
+              "up": false,
+              "close": 540.34
+            },
+            {
+              "h": 73,
+              "up": true,
+              "close": 541.96
+            },
+            {
+              "h": 79,
+              "up": true,
+              "close": 542.49
+            }
+          ]
+        },
+        {
+          "ticker": "JPM",
+          "name": "JPMorgan Chase",
+          "sector": "Banking",
+          "bucket": "Defensive",
+          "max_weight": 0.1,
+          "price": 337.04,
+          "day_open": 345.29,
+          "day_high": 345.29,
+          "day_low": 335.12,
+          "day_pct": -1.9,
+          "ret_5d": 1.65,
+          "ret_20d": 1.4,
+          "rel_strength_20d": 3.21,
+          "rsi14": 53.1,
+          "sma20": 334.79,
+          "sma50": 343.29,
+          "vol_ratio": 1.14,
+          "score": 62.2,
+          "signal": "HOLD",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($343.29) \u2022 Healthy momentum zone (RSI 53.1)",
+          "target_price": 364.0,
+          "stop_price": 316.82,
+          "sparkline": [
+            {
+              "h": 100,
+              "up": false,
+              "close": 335.53
+            },
+            {
+              "h": 97,
+              "up": true,
+              "close": 339.72
+            },
+            {
+              "h": 80,
+              "up": false,
+              "close": 333.53
+            },
+            {
+              "h": 71,
+              "up": true,
+              "close": 335.26
+            },
+            {
+              "h": 66,
+              "up": false,
+              "close": 335.19
+            },
+            {
+              "h": 71,
+              "up": true,
+              "close": 336.54
+            },
+            {
+              "h": 55,
+              "up": false,
+              "close": 331.58
+            },
+            {
+              "h": 72,
+              "up": true,
+              "close": 334.04
+            },
+            {
+              "h": 54,
+              "up": true,
+              "close": 335.79
+            },
+            {
+              "h": 60,
+              "up": true,
+              "close": 339.3
+            },
+            {
+              "h": 67,
+              "up": true,
+              "close": 343.58
+            },
+            {
+              "h": 90,
+              "up": false,
+              "close": 337.04
+            }
+          ]
+        },
+        {
+          "ticker": "SPY",
+          "name": "SPDR S&P 500 ETF",
+          "sector": "Index Anchor",
+          "bucket": "Core",
+          "max_weight": 0.22,
+          "price": 755.72,
+          "day_open": 761.38,
+          "day_high": 761.46,
+          "day_low": 750.36,
+          "day_pct": -1.77,
+          "ret_5d": -0.56,
+          "ret_20d": -1.81,
+          "rel_strength_20d": 0.0,
+          "rsi14": 34.3,
+          "sma20": 770.47,
+          "sma50": 767.49,
+          "vol_ratio": 2.05,
+          "score": 55.5,
+          "signal": "WATCH",
+          "setup_tag": "Tactical Dip Buy",
+          "reason": "Trading below 50d moving average ($767.49) \u2022 Attractive swing entry on cooldown (RSI 34.3)",
+          "target_price": 816.18,
+          "stop_price": 710.38,
+          "sparkline": [
+            {
+              "h": 56,
+              "up": true,
+              "close": 771.79
+            },
+            {
+              "h": 83,
+              "up": false,
+              "close": 763.25
+            },
+            {
+              "h": 50,
+              "up": true,
+              "close": 766.48
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 769.05
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 773.09
+            },
+            {
+              "h": 70,
+              "up": false,
+              "close": 763.96
+            },
+            {
+              "h": 43,
+              "up": false,
+              "close": 759.97
+            },
+            {
+              "h": 41,
+              "up": true,
+              "close": 765.37
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 769.66
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 772.31
+            },
+            {
+              "h": 52,
+              "up": false,
+              "close": 769.36
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 755.72
+            }
+          ]
+        },
+        {
+          "ticker": "GLD",
+          "name": "SPDR Gold Shares",
+          "sector": "Precious Metals",
+          "bucket": "Defensive",
+          "max_weight": 0.08,
+          "price": 355.78,
+          "day_open": 361.45,
+          "day_high": 361.68,
+          "day_low": 354.67,
+          "day_pct": -3.47,
+          "ret_5d": -2.95,
+          "ret_20d": -6.41,
+          "rel_strength_20d": -4.6,
+          "rsi14": 26.5,
+          "sma20": 375.76,
+          "sma50": 390.57,
+          "vol_ratio": 2.02,
+          "score": 45.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($390.57) \u2022 Deeply oversold (RSI 26.5)",
+          "target_price": 384.24,
+          "stop_price": 334.43,
+          "sparkline": [
+            {
+              "h": 50,
+              "up": true,
+              "close": 382.71
+            },
+            {
+              "h": 52,
+              "up": false,
+              "close": 382.01
+            },
+            {
+              "h": 29,
+              "up": false,
+              "close": 379.69
+            },
+            {
+              "h": 34,
+              "up": false,
+              "close": 377.65
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 378.95
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 369.0
+            },
+            {
+              "h": 58,
+              "up": false,
+              "close": 366.61
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 367.82
+            },
+            {
+              "h": 30,
+              "up": true,
+              "close": 372.28
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 373.51
+            },
+            {
+              "h": 52,
+              "up": false,
+              "close": 368.57
+            },
+            {
+              "h": 92,
+              "up": false,
+              "close": 355.78
+            }
+          ]
+        },
+        {
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust",
+          "sector": "Tech Index",
+          "bucket": "Core",
+          "max_weight": 0.18,
+          "price": 690.49,
+          "day_open": 697.13,
+          "day_high": 698.63,
+          "day_low": 683.45,
+          "day_pct": -3.47,
+          "ret_5d": -1.97,
+          "ret_20d": -7.88,
+          "rel_strength_20d": -6.07,
+          "rsi14": 28.7,
+          "sma20": 728.19,
+          "sma50": 725.0,
+          "vol_ratio": 2.31,
+          "score": 42.0,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($725.00) \u2022 Deeply oversold (RSI 28.7)",
+          "target_price": 745.73,
+          "stop_price": 649.06,
+          "sparkline": [
+            {
+              "h": 59,
+              "up": true,
+              "close": 728.0
+            },
+            {
+              "h": 79,
+              "up": false,
+              "close": 709.8
+            },
+            {
+              "h": 44,
+              "up": true,
+              "close": 718.36
+            },
+            {
+              "h": 36,
+              "up": false,
+              "close": 717.63
+            },
+            {
+              "h": 38,
+              "up": true,
+              "close": 725.2
+            },
+            {
+              "h": 76,
+              "up": false,
+              "close": 704.47
+            },
+            {
+              "h": 36,
+              "up": false,
+              "close": 704.4
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 712.2
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 721.25
+            },
+            {
+              "h": 36,
+              "up": true,
+              "close": 725.61
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 715.34
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 690.49
+            }
+          ]
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet Inc.",
+          "sector": "Internet & AI",
+          "bucket": "Core",
+          "max_weight": 0.12,
+          "price": 279.84,
+          "day_open": 281.11,
+          "day_high": 283.14,
+          "day_low": 276.92,
+          "day_pct": -1.4,
+          "ret_5d": -12.61,
+          "ret_20d": -18.53,
+          "rel_strength_20d": -16.72,
+          "rsi14": 14.1,
+          "sma20": 333.91,
+          "sma50": 339.07,
+          "vol_ratio": 2.11,
+          "score": 39.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($339.07) \u2022 Deeply oversold (RSI 14.1)",
+          "target_price": 302.23,
+          "stop_price": 263.05,
+          "sparkline": [
+            {
+              "h": 15,
+              "up": true,
+              "close": 349.22
+            },
+            {
+              "h": 20,
+              "up": false,
+              "close": 340.59
+            },
+            {
+              "h": 15,
+              "up": true,
+              "close": 344.18
+            },
+            {
+              "h": 15,
+              "up": false,
+              "close": 340.28
+            },
+            {
+              "h": 21,
+              "up": false,
+              "close": 334.76
+            },
+            {
+              "h": 20,
+              "up": false,
+              "close": 324.22
+            },
+            {
+              "h": 15,
+              "up": false,
+              "close": 320.21
+            },
+            {
+              "h": 17,
+              "up": false,
+              "close": 316.8
+            },
+            {
+              "h": 20,
+              "up": true,
+              "close": 320.58
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 324.89
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 283.82
+            },
+            {
+              "h": 47,
+              "up": false,
+              "close": 279.84
+            }
+          ]
+        },
+        {
+          "ticker": "NFLX",
+          "name": "Netflix Inc.",
+          "sector": "Streaming Media",
+          "bucket": "Swing",
+          "max_weight": 0.09,
+          "price": 62.08,
+          "day_open": 62.66,
+          "day_high": 63.05,
+          "day_low": 61.64,
+          "day_pct": 0.05,
+          "ret_5d": -5.73,
+          "ret_20d": -7.43,
+          "rel_strength_20d": -5.62,
+          "rsi14": 25.0,
+          "sma20": 67.58,
+          "sma50": 72.67,
+          "vol_ratio": 1.16,
+          "score": 37.5,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($72.67) \u2022 Deeply oversold (RSI 25.0)",
+          "target_price": 67.05,
+          "stop_price": 58.36,
+          "sparkline": [
+            {
+              "h": 40,
+              "up": true,
+              "close": 72.61
+            },
+            {
+              "h": 44,
+              "up": false,
+              "close": 70.53
+            },
+            {
+              "h": 33,
+              "up": false,
+              "close": 69.85
+            },
+            {
+              "h": 66,
+              "up": false,
+              "close": 68.69
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 65.04
+            },
+            {
+              "h": 58,
+              "up": true,
+              "close": 67.05
+            },
+            {
+              "h": 37,
+              "up": false,
+              "close": 65.85
+            },
+            {
+              "h": 54,
+              "up": false,
+              "close": 63.9
+            },
+            {
+              "h": 48,
+              "up": false,
+              "close": 62.52
+            },
+            {
+              "h": 41,
+              "up": false,
+              "close": 61.99
+            },
+            {
+              "h": 45,
+              "up": true,
+              "close": 62.05
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 62.08
+            }
+          ]
+        },
+        {
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "sector": "Enterprise AI",
+          "bucket": "Swing",
+          "max_weight": 0.08,
+          "price": 184.11,
+          "day_open": 193.76,
+          "day_high": 193.92,
+          "day_low": 183.68,
+          "day_pct": -6.27,
+          "ret_5d": -6.42,
+          "ret_20d": -2.46,
+          "rel_strength_20d": -0.65,
+          "rsi14": 30.8,
+          "sma20": 197.25,
+          "sma50": 186.9,
+          "vol_ratio": 1.19,
+          "score": 37.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($186.90) \u2022 Deeply oversold (RSI 30.8)",
+          "target_price": 198.84,
+          "stop_price": 173.06,
+          "sparkline": [
+            {
+              "h": 74,
+              "up": true,
+              "close": 200.5
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 186.03
+            },
+            {
+              "h": 72,
+              "up": true,
+              "close": 194.15
+            },
+            {
+              "h": 45,
+              "up": false,
+              "close": 192.6
+            },
+            {
+              "h": 64,
+              "up": true,
+              "close": 201.72
+            },
+            {
+              "h": 69,
+              "up": false,
+              "close": 196.19
+            },
+            {
+              "h": 53,
+              "up": true,
+              "close": 196.75
+            },
+            {
+              "h": 49,
+              "up": true,
+              "close": 198.84
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 198.73
+            },
+            {
+              "h": 62,
+              "up": false,
+              "close": 196.81
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 196.42
+            },
+            {
+              "h": 81,
+              "up": false,
+              "close": 184.11
+            }
+          ]
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Cloud & Retail",
+          "bucket": "Core",
+          "max_weight": 0.12,
+          "price": 240.35,
+          "day_open": 232.53,
+          "day_high": 241.55,
+          "day_low": 229.36,
+          "day_pct": -1.41,
+          "ret_5d": -3.08,
+          "ret_20d": -4.44,
+          "rel_strength_20d": -2.63,
+          "rsi14": 33.7,
+          "sma20": 254.39,
+          "sma50": 254.28,
+          "vol_ratio": 2.75,
+          "score": 36.0,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($254.28) \u2022 Self-learning cooldown (-7 pts due to recent drawdown)",
+          "target_price": 259.58,
+          "stop_price": 225.93,
+          "sparkline": [
+            {
+              "h": 33,
+              "up": true,
+              "close": 254.76
+            },
+            {
+              "h": 39,
+              "up": false,
+              "close": 250.0
+            },
+            {
+              "h": 54,
+              "up": true,
+              "close": 262.45
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 262.63
+            },
+            {
+              "h": 30,
+              "up": false,
+              "close": 262.37
+            },
+            {
+              "h": 47,
+              "up": false,
+              "close": 250.38
+            },
+            {
+              "h": 24,
+              "up": false,
+              "close": 248.0
+            },
+            {
+              "h": 31,
+              "up": true,
+              "close": 249.09
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 253.1
+            },
+            {
+              "h": 33,
+              "up": true,
+              "close": 254.6
+            },
+            {
+              "h": 81,
+              "up": false,
+              "close": 243.79
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 240.35
+            }
+          ]
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Semiconductors",
+          "bucket": "Swing",
+          "max_weight": 0.14,
+          "price": 204.64,
+          "day_open": 208.94,
+          "day_high": 209.05,
+          "day_low": 200.92,
+          "day_pct": -4.22,
+          "ret_5d": -3.0,
+          "ret_20d": -12.53,
+          "rel_strength_20d": -10.72,
+          "rsi14": 31.0,
+          "sma20": 221.46,
+          "sma50": 221.75,
+          "vol_ratio": 1.67,
+          "score": 34.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($221.75) \u2022 Deeply oversold (RSI 31.0)",
+          "target_price": 221.01,
+          "stop_price": 192.36,
+          "sparkline": [
+            {
+              "h": 77,
+              "up": true,
+              "close": 217.23
+            },
+            {
+              "h": 73,
+              "up": false,
+              "close": 214.13
+            },
+            {
+              "h": 59,
+              "up": true,
+              "close": 217.09
+            },
+            {
+              "h": 48,
+              "up": false,
+              "close": 216.47
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 221.97
+            },
+            {
+              "h": 76,
+              "up": false,
+              "close": 212.21
+            },
+            {
+              "h": 48,
+              "up": false,
+              "close": 210.96
+            },
+            {
+              "h": 55,
+              "up": true,
+              "close": 216.0
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 217.94
+            },
+            {
+              "h": 56,
+              "up": false,
+              "close": 215.38
+            },
+            {
+              "h": 47,
+              "up": false,
+              "close": 213.66
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 204.64
+            }
+          ]
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom Inc.",
+          "sector": "Semiconductors",
+          "bucket": "Swing",
+          "max_weight": 0.1,
+          "price": 326.08,
+          "day_open": 330.71,
+          "day_high": 331.98,
+          "day_low": 319.3,
+          "day_pct": -5.48,
+          "ret_5d": 1.37,
+          "ret_20d": -8.18,
+          "rel_strength_20d": -6.37,
+          "rsi14": 37.3,
+          "sma20": 345.7,
+          "sma50": 352.81,
+          "vol_ratio": 1.68,
+          "score": 30.4,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($352.81) \u2022 Lagging S&P 500 (-6.4% over 20d)",
+          "target_price": 352.17,
+          "stop_price": 306.52,
+          "sparkline": [
+            {
+              "h": 78,
+              "up": true,
+              "close": 344.33
+            },
+            {
+              "h": 82,
+              "up": false,
+              "close": 328.75
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 334.59
+            },
+            {
+              "h": 44,
+              "up": false,
+              "close": 334.37
+            },
+            {
+              "h": 47,
+              "up": true,
+              "close": 337.8
+            },
+            {
+              "h": 77,
+              "up": false,
+              "close": 323.24
+            },
+            {
+              "h": 44,
+              "up": false,
+              "close": 321.68
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 329.17
+            },
+            {
+              "h": 70,
+              "up": true,
+              "close": 342.33
+            },
+            {
+              "h": 62,
+              "up": true,
+              "close": 351.81
+            },
+            {
+              "h": 47,
+              "up": false,
+              "close": 345.0
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 326.08
+            }
+          ]
+        },
+        {
+          "ticker": "TSM",
+          "name": "Taiwan Semiconductor",
+          "sector": "Foundry",
+          "bucket": "Swing",
+          "max_weight": 0.1,
+          "price": 406.13,
+          "day_open": 414.08,
+          "day_high": 418.09,
+          "day_low": 400.12,
+          "day_pct": -5.95,
+          "ret_5d": -2.96,
+          "ret_20d": -14.1,
+          "rel_strength_20d": -12.29,
+          "rsi14": 35.6,
+          "sma20": 437.63,
+          "sma50": 434.92,
+          "vol_ratio": 1.91,
+          "score": 28.0,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($434.92) \u2022 Lagging S&P 500 (-12.3% over 20d)",
+          "target_price": 438.62,
+          "stop_price": 381.76,
+          "sparkline": [
+            {
+              "h": 100,
+              "up": true,
+              "close": 422.25
+            },
+            {
+              "h": 74,
+              "up": false,
+              "close": 412.61
+            },
+            {
+              "h": 55,
+              "up": true,
+              "close": 420.22
+            },
+            {
+              "h": 56,
+              "up": true,
+              "close": 425.08
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 431.89
+            },
+            {
+              "h": 73,
+              "up": false,
+              "close": 412.35
+            },
+            {
+              "h": 42,
+              "up": true,
+              "close": 418.51
+            },
+            {
+              "h": 43,
+              "up": true,
+              "close": 424.37
+            },
+            {
+              "h": 40,
+              "up": true,
+              "close": 436.87
+            },
+            {
+              "h": 36,
+              "up": true,
+              "close": 439.51
+            },
+            {
+              "h": 38,
+              "up": false,
+              "close": 431.81
+            },
+            {
+              "h": 97,
+              "up": false,
+              "close": 406.13
+            }
+          ]
+        },
+        {
+          "ticker": "META",
+          "name": "Meta Platforms",
+          "sector": "Digital Ads & AI",
+          "bucket": "Swing",
+          "max_weight": 0.11,
+          "price": 614.99,
+          "day_open": 614.51,
+          "day_high": 626.37,
+          "day_low": 610.14,
+          "day_pct": -1.53,
+          "ret_5d": -4.3,
+          "ret_20d": -15.53,
+          "rel_strength_20d": -13.72,
+          "rsi14": 17.6,
+          "sma20": 691.11,
+          "sma50": 669.98,
+          "vol_ratio": 1.11,
+          "score": 27.2,
+          "signal": "TRIM",
+          "setup_tag": "Oversold Bounce Watch",
+          "reason": "Trading below 50d moving average ($669.98) \u2022 Deeply oversold (RSI 17.6)",
+          "target_price": 664.19,
+          "stop_price": 578.09,
+          "sparkline": [
+            {
+              "h": 33,
+              "up": true,
+              "close": 736.72
+            },
+            {
+              "h": 40,
+              "up": false,
+              "close": 709.33
+            },
+            {
+              "h": 32,
+              "up": false,
+              "close": 705.44
+            },
+            {
+              "h": 33,
+              "up": false,
+              "close": 694.25
+            },
+            {
+              "h": 57,
+              "up": true,
+              "close": 697.52
+            },
+            {
+              "h": 79,
+              "up": false,
+              "close": 648.85
+            },
+            {
+              "h": 29,
+              "up": false,
+              "close": 642.62
+            },
+            {
+              "h": 60,
+              "up": false,
+              "close": 630.56
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 620.19
+            },
+            {
+              "h": 68,
+              "up": false,
+              "close": 612.49
+            },
+            {
+              "h": 61,
+              "up": true,
+              "close": 624.52
+            },
+            {
+              "h": 49,
+              "up": false,
+              "close": 614.99
+            }
+          ]
+        },
+        {
+          "ticker": "AMD",
+          "name": "Advanced Micro Devices",
+          "sector": "Semiconductors",
+          "bucket": "Swing",
+          "max_weight": 0.09,
+          "price": 504.8,
+          "day_open": 508.51,
+          "day_high": 520.4,
+          "day_low": 492.24,
+          "day_pct": -10.88,
+          "ret_5d": -2.32,
+          "ret_20d": -20.37,
+          "rel_strength_20d": -18.56,
+          "rsi14": 35.5,
+          "sma20": 570.44,
+          "sma50": 548.29,
+          "vol_ratio": 2.03,
+          "score": 21.0,
+          "signal": "TRIM",
+          "setup_tag": "Below 50d Trend",
+          "reason": "Trading below 50d moving average ($548.29) \u2022 Lagging S&P 500 (-18.6% over 20d)",
+          "target_price": 545.18,
+          "stop_price": 474.51,
+          "sparkline": [
+            {
+              "h": 73,
+              "up": true,
+              "close": 562.23
+            },
+            {
+              "h": 57,
+              "up": false,
+              "close": 528.75
+            },
+            {
+              "h": 51,
+              "up": true,
+              "close": 538.05
+            },
+            {
+              "h": 38,
+              "up": false,
+              "close": 534.74
+            },
+            {
+              "h": 46,
+              "up": true,
+              "close": 552.72
+            },
+            {
+              "h": 71,
+              "up": false,
+              "close": 507.93
+            },
+            {
+              "h": 38,
+              "up": true,
+              "close": 516.79
+            },
+            {
+              "h": 42,
+              "up": true,
+              "close": 531.28
+            },
+            {
+              "h": 52,
+              "up": true,
+              "close": 560.26
+            },
+            {
+              "h": 48,
+              "up": true,
+              "close": 578.44
+            },
+            {
+              "h": 43,
+              "up": false,
+              "close": 566.42
+            },
+            {
+              "h": 100,
+              "up": false,
+              "close": 504.8
+            }
+          ]
+        }
+      ],
+      "allocations": [
+        {
+          "label": "SPY \u2022 Index Anchor",
+          "ticker": "SPY",
+          "value": 1380.35,
+          "pct": 20.19,
+          "pnl_pct": -1.4
+        },
+        {
+          "label": "QQQ \u2022 Tech Index",
+          "ticker": "QQQ",
+          "value": 941.98,
+          "pct": 13.78,
+          "pnl_pct": -3.88
+        },
+        {
+          "label": "AAPL \u2022 Consumer Tech",
+          "ticker": "AAPL",
+          "value": 919.85,
+          "pct": 13.45,
+          "pnl_pct": 0.62
+        },
+        {
+          "label": "MSFT \u2022 Cloud & AI",
+          "ticker": "MSFT",
+          "value": 821.72,
+          "pct": 12.02,
+          "pnl_pct": -2.18
+        },
+        {
+          "label": "COST \u2022 Consumer Staples",
+          "ticker": "COST",
+          "value": 664.24,
+          "pct": 9.72,
+          "pnl_pct": 2.12
+        },
+        {
+          "label": "PLTR \u2022 Enterprise AI",
+          "ticker": "PLTR",
+          "value": 438.11,
+          "pct": 6.41,
+          "pnl_pct": -5.17
+        },
+        {
+          "label": "LLY \u2022 Healthcare",
+          "ticker": "LLY",
+          "value": 306.94,
+          "pct": 4.49,
+          "pnl_pct": 12.22
+        },
+        {
+          "label": "AMZN \u2022 Cloud & Retail",
+          "ticker": "AMZN",
+          "value": 276.94,
+          "pct": 4.05,
+          "pnl_pct": -8.42
+        },
+        {
+          "label": "META \u2022 Digital Ads & AI",
+          "ticker": "META",
+          "value": 241.66,
+          "pct": 3.53,
+          "pnl_pct": -12.82
+        },
+        {
+          "label": "AMD \u2022 Semiconductors",
+          "ticker": "AMD",
+          "value": 189.88,
+          "pct": 2.78,
+          "pnl_pct": -8.67
+        },
+        {
+          "label": "CASH \u2022 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 655.29,
+          "pct": 9.58,
+          "pnl_pct": 0.0
+        }
+      ]
     }
   ],
   "model_memory": {
@@ -26282,6 +29520,10 @@
       {
         "date": "2026-10-29",
         "lesson": "On 2026-10-29, Dividend Value Mutual Fund led the 8-option leaderboard (+4.00%); combining relative strength (1.05x weight) with news-catalyst filtering keeps portfolio win rate at 66.7%."
+      },
+      {
+        "date": "2026-10-30",
+        "lesson": "On 2026-10-30, Dividend Value Mutual Fund led the 8-option leaderboard (+4.50%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 54.5%."
       }
     ],
     "veto_history": []
