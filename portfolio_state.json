@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-30 05:09 PM ET",
+  "last_updated": "2026-10-30 11:49 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3884.7,
-      "change": -146.7,
-      "pct": -3.64,
+      "price": 3884.9,
+      "change": -146.5,
+      "pct": -3.63,
       "up": false,
       "spark": [
         4177.3,
@@ -25,7 +25,7 @@
         4074.6,
         4051.6,
         4031.4,
-        3884.7
+        3884.9
       ]
     },
     {
@@ -26317,7 +26317,7 @@
       "date": "2026-10-30",
       "tab_label": "Today \u2022 Oct 30 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-30 05:09 PM ET",
+      "updated_at": "2026-10-30 11:49 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -26466,12 +26466,12 @@
         "veto_note": "Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-10-30, Dividend Value Mutual Fund led the 8-option leaderboard (+4.50%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 54.5%.",
         "headlines_scanned": [
-          "[AAPL] Dow Jones Futures: Stock Market Sells Off As Apple, Palantir, Midterm Elections Loom; What To Do (Investor's Business Daily)",
+          "[AAPL] What Are Dell Investors Betting On? (Trefis)",
+          "[AAPL] Strong Growth Momentum and Rising Revisions Fuel Bright Earnings Outlook (Zacks)",
+          "[COST] Stock Market Today, Oct. 30: Amazon Misses Revenue and Earnings Expectations (Motley Fool)",
           "[COST] Levi Strauss Faces Class Action Lawsuit Over Tariff Refunds (Sourcing Journal)",
-          "[COST] How New Rules And Robotaxi Pressure At Uber Technologies (UBER) Has Changed Its Investment Story (Simply Wall St.)",
-          "[LLY] BofA Makes Major Call on Eli Lilly Stock (GuruFocus.com)",
-          "[LLY] Eli Lilly Stocks Rise 3.4% With Higher Sales but Lower EPS Guidance (GuruFocus.com)",
-          "[MSFT] CME vs. Morningstar: Scale vs. Consistent Trajectories in Revenue (Motley Fool)"
+          "[LLY] What Eli Lilly and Company (LLY) Said on Its Q3 Earnings Call (MarketBeat)",
+          "[LLY] Novo Nordisk (NYSE:NVO) Could Be 61% Undervalued Following Rising GLP 1 Competition (Simply Wall St.)"
         ],
         "ai_briefing": "On 2026-10-30, the $7,000 AI Model closed at $6,836.96 (-163.04 / -2.33%), with Trade Win Rate at 54.5%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,901.73, 60/40 Balanced Fund is at $6,977.84, and 4.5% High-Yield Savings is at $7,009.50. Gemini Catalyst Check: AMZN shows institutional relative strength with clean technical support. Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
@@ -28644,7 +28644,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 279.84,
-          "day_open": 281.11,
+          "day_open": 281.09,
           "day_high": 283.14,
           "day_low": 276.92,
           "day_pct": -1.4,
@@ -28731,7 +28731,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 62.08,
-          "day_open": 62.66,
+          "day_open": 62.65,
           "day_high": 63.05,
           "day_low": 61.64,
           "day_pct": 0.05,
@@ -28992,7 +28992,7 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 204.64,
-          "day_open": 208.94,
+          "day_open": 208.88,
           "day_high": 209.05,
           "day_low": 200.92,
           "day_pct": -4.22,
