@@ -1,920 +1,1411 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="slate">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Market Insight — A $7,000 Autonomous Stock Model Journal</title>
+  <title>Market Insight — Plain-English $7,000 Investment Tracker</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-page: #fbfbf9;
-      --bg-subtle: #f5f4ef;
-      --bg-card: #ffffff;
-      --bg-card-hover: #faf9f5;
-      --border-subtle: #e8e6df;
-      --border-strong: #d0cdc3;
-      --text-primary: #1c1e21;
-      --text-secondary: #525c6a;
-      --text-muted: #858f9e;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      
-      --forest-green: #1b6a4f;
-      --forest-bg: #eaf5ee;
-      --forest-border: #c4e4d0;
-      
-      --terracotta: #c2413a;
-      --terracotta-bg: #fdf0ee;
-      --terracotta-border: #f6c8c4;
-      
-      --warm-amber: #b45309;
-      --amber-bg: #fef7e7;
-      --amber-border: #fce1b2;
-      
-      --ink-navy: #1e293b;
-      --navy-bg: #edf2f7;
-      --navy-border: #cbd5e1;
-      
-      --gold: #b48316;
-      --gold-bg: #fcf6ea;
-      --gold-border: #f5e2b8;
+    /* ==========================================================================
+       1. SOFT MATTE SLATE (DEFAULT CALM DARK MODE — ZERO NEON) & CLEAN LIGHT MODE
+       ========================================================================== */
+    :root,
+    html[data-theme="slate"] {
+      --bg-page: #11141b;
+      --bg-header: rgba(17, 20, 27, 0.92);
+      --bg-ribbon: #151922;
+      --bg-card: #181d27;
+      --bg-card-alt: #1d2330;
+      --bg-card-hover: #222938;
+      --bg-highlight: #1e2636;
+      --border-subtle: #262e3d;
+      --border-strong: #364156;
 
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
-      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
-      --radius-sm: 6px;
+      --text-primary: #eef1f7;
+      --text-secondary: #a5b0c2;
+      --text-muted: #737f94;
+
+      --accent-primary: #6b93e8;
+      --accent-primary-bg: rgba(107, 147, 232, 0.14);
+      --accent-primary-border: rgba(107, 147, 232, 0.32);
+
+      --pos: #3eb481;
+      --pos-bg: rgba(62, 180, 129, 0.13);
+      --pos-border: rgba(62, 180, 129, 0.30);
+
+      --neg: #e26d67;
+      --neg-bg: rgba(226, 109, 103, 0.13);
+      --neg-border: rgba(226, 109, 103, 0.30);
+
+      --warn: #dfa247;
+      --warn-bg: rgba(223, 162, 71, 0.13);
+      --warn-border: rgba(223, 162, 71, 0.30);
+
+      --pill-active-bg: #eef1f7;
+      --pill-active-text: #11141b;
+
+      --chart-grid: #252c3b;
+      --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.22);
+      --shadow-modal: 0 22px 54px rgba(0, 0, 0, 0.55);
+    }
+
+    html[data-theme="light"] {
+      --bg-page: #f3f5f8;
+      --bg-header: rgba(255, 255, 255, 0.94);
+      --bg-ribbon: #ebedf2;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f7f8fb;
+      --bg-card-hover: #f0f3f8;
+      --bg-highlight: #f2f6fd;
+      --border-subtle: #e2e6ef;
+      --border-strong: #c8d0df;
+
+      --text-primary: #141821;
+      --text-secondary: #4a5568;
+      --text-muted: #778296;
+
+      --accent-primary: #2d5ec7;
+      --accent-primary-bg: rgba(45, 94, 199, 0.09);
+      --accent-primary-border: rgba(45, 94, 199, 0.26);
+
+      --pos: #157a50;
+      --pos-bg: #e8f6ef;
+      --pos-border: #bfe5d1;
+
+      --neg: #c63d37;
+      --neg-bg: #fdeeed;
+      --neg-border: #f5c6c4;
+
+      --warn: #a86408;
+      --warn-bg: #fef6e6;
+      --warn-border: #f6dca8;
+
+      --pill-active-bg: #182032;
+      --pill-active-text: #ffffff;
+
+      --chart-grid: #e5e8f0;
+      --shadow-card: 0 2px 10px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.03);
+      --shadow-modal: 0 20px 48px rgba(16, 24, 40, 0.18);
+    }
+
+    :root {
+      --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 18px;
-      --radius-pill: 9999px;
+      --radius-pill: 999px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg-page);
+      background: var(--bg-page);
       color: var(--text-primary);
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       font-size: 15px;
-      line-height: 1.55;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding-bottom: 80px;
+      padding-bottom: 84px;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    a {
-      color: var(--ink-navy);
-      text-decoration: none;
+    button, select {
+      font-family: inherit;
     }
 
-    /* Masthead Header */
-    .masthead {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 16px 24px;
+    /* ==========================================================================
+       2. STICKY TOP BAR, CONTROLS & MARKET RIBBON
+       ========================================================================== */
+    .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      box-shadow: var(--shadow-sm);
+      z-index: 60;
+      background: var(--bg-header);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
     }
-    .masthead-inner {
-      max-width: 1280px;
+    .topbar-inner {
+      max-width: 1220px;
       margin: 0 auto;
+      padding: 13px 24px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 14px;
       flex-wrap: wrap;
     }
-    .brand-wrap {
+    .brand {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 12px;
     }
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-primary);
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--accent-primary-bg);
+      border: 1px solid var(--accent-primary-border);
+      color: var(--accent-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 15px;
     }
-    .brand-tag {
-      font-size: 13px;
+    .brand-name {
+      font-family: var(--font-heading);
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+    .brand-sub {
+      font-size: 12.5px;
       color: var(--text-muted);
       font-weight: 500;
     }
 
-    .masthead-controls {
+    .controls-row {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .scale-select-wrap {
-      display: flex;
+    .control-chip {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
+      gap: 7px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
-      background: var(--bg-subtle);
       padding: 6px 12px;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--border-subtle);
+      font-size: 13px;
+      font-weight: 500;
     }
-    .scale-select {
+    .control-chip select {
       background: transparent;
       border: none;
-      font-family: var(--font-sans);
-      font-weight: 600;
       color: var(--text-primary);
+      font-weight: 700;
       font-size: 13px;
       cursor: pointer;
       outline: none;
     }
-    .live-status-pill {
+    .control-chip select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+    .toggle-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
       font-weight: 600;
-      padding: 4px 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .toggle-btn:hover {
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+    }
+    .toggle-btn.active {
+      background: var(--accent-primary-bg);
+      border-color: var(--accent-primary-border);
+      color: var(--accent-primary);
+    }
+
+    .ribbon {
+      background: var(--bg-ribbon);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 7px 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .ribbon-inner {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .ribbon-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+    }
+    .ribbon-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .ribbon-price {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .ribbon-chg {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 5px;
+    }
+    .ribbon-chg.pos { color: var(--pos); background: var(--pos-bg); }
+    .ribbon-chg.neg { color: var(--neg); background: var(--neg-bg); }
+
+    /* ==========================================================================
+       3. PAGE CONTAINER & DAY SELECTOR BAR
+       ========================================================================== */
+    .page-wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 20px 24px 0;
+    }
+
+    .day-bar-wrap {
+      margin-bottom: 26px;
+    }
+    .day-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 9px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .day-bar-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .updated-stamp {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .day-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+    }
+    .day-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 15px;
       border-radius: var(--radius-pill);
-      background: var(--forest-bg);
-      color: var(--forest-green);
-      border: 1px solid var(--forest-border);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .day-pill:hover {
+      border-color: var(--border-strong);
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+    }
+    .day-pill.active {
+      background: var(--pill-active-bg);
+      color: var(--pill-active-text);
+      border-color: var(--pill-active-bg);
     }
     .live-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: var(--forest-green);
-      animation: pulse 2s infinite ease-in-out;
+      background: var(--pos);
+      display: inline-block;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    /* Market Ribbon */
-    .ribbon-bar {
-      background: var(--bg-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-      padding: 8px 24px;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    .ribbon-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    .ribbon-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      color: var(--text-secondary);
-    }
-    .ribbon-label {
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    .ribbon-val {
-      font-family: var(--font-mono);
-      font-weight: 600;
-    }
-    .ribbon-pct {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      padding: 1px 5px;
-      border-radius: 4px;
-      font-size: 11.5px;
-    }
-    .ribbon-pct.up {
-      color: var(--forest-green);
-      background: var(--forest-bg);
-    }
-    .ribbon-pct.down {
-      color: var(--terracotta);
-      background: var(--terracotta-bg);
+    .day-pill.active .live-dot {
+      background: #3eb481;
     }
 
-    /* Main Container */
-    .container {
-      max-width: 1280px;
-      margin: 24px auto 0;
-      padding: 0 24px;
-    }
-
-    /* Day Navigation Tabs */
-    .nav-tabs-bar {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 12px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--border-subtle);
-      scrollbar-width: thin;
-    }
-    .nav-tab-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-pill);
-      font-family: var(--font-sans);
-      font-size: 13.5px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      white-space: nowrap;
-    }
-    .nav-tab-btn:hover {
-      background: var(--bg-card-hover);
-      color: var(--text-primary);
-      border-color: var(--border-strong);
-    }
-    .nav-tab-btn.active {
-      background: var(--ink-navy);
-      color: #ffffff;
-      border-color: var(--ink-navy);
-      font-weight: 600;
-      box-shadow: var(--shadow-sm);
-    }
-    .nav-tab-badge {
-      font-size: 11px;
-      padding: 1px 6px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    .nav-tab-btn.active .nav-tab-badge {
-      background: rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-    }
-
-    /* Executive Briefing Hero Card */
-    .hero-card {
+    /* ==========================================================================
+       4. CHAPTER / SECTION BLOCKS (SPACIOUS VERTICAL STORYTELLING)
+       ========================================================================== */
+    .chapter {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 32px 36px;
-      box-shadow: var(--shadow-md);
+      padding: 28px 30px;
       margin-bottom: 28px;
+      box-shadow: var(--shadow-card);
     }
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-    .hero-pretitle {
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-    .hero-headline {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.25;
-      color: var(--text-primary);
-      max-width: 820px;
-    }
-    .hero-meta-badges {
-      display: flex;
-      gap: 8px;
+    .chapter-eyebrow {
+      display: inline-flex;
       align-items: center;
-      margin-top: 10px;
-    }
-    .hero-pill {
-      font-size: 12px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--bg-subtle);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-subtle);
-    }
-
-    /* Metrics Quad */
-    .metrics-quad {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .metric-box {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 16px 20px;
-      transition: all 0.15s ease;
-    }
-    .metric-box:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-strong);
-    }
-    .metric-label {
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
-    .metric-value {
-      font-size: 28px;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-primary);
-      line-height: 1.1;
-    }
-    .metric-sub {
-      margin-top: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .metric-sub.pos {
-      color: var(--forest-green);
-    }
-    .metric-sub.neg {
-      color: var(--terracotta);
-    }
-    .metric-sub.neutral {
-      color: var(--text-secondary);
-    }
-
-    /* Plain English Commentary Box */
-    .story-memo {
-      background: #fdfdfc;
-      border-left: 3px solid var(--ink-navy);
-      padding: 18px 22px;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--text-primary);
-      margin-top: 8px;
-      border-top: 1px solid var(--border-subtle);
-      border-right: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .story-memo-title {
+      gap: 7px;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.6px;
-      color: var(--ink-navy);
+      color: var(--accent-primary);
       margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
-
-    /* Grid Layout: Wide Canvas */
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 28px;
-      margin-bottom: 32px;
+    .chapter-title {
+      font-family: var(--font-heading);
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -0.35px;
+      color: var(--text-primary);
+      line-height: 1.3;
     }
-    @media (max-width: 1024px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-      }
+    .chapter-desc {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      margin-top: 5px;
+      max-width: 880px;
     }
-
-    /* Section Header */
-    .section-head {
+    .chapter-header-row {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 16px;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 8px;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
     }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 22px;
+
+    /* Jump Navigation inside Day View */
+    .quick-jump {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .jump-link {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .jump-link:hover {
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+    }
+
+    /* ==========================================================================
+       5. SECTION 1: EXECUTIVE SUMMARY CARDS & PLAIN-ENGLISH STORY
+       ========================================================================== */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 22px 0;
+    }
+    @media (max-width: 960px) {
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+    .stat-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .stat-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+    .stat-note {
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 7px;
+      color: var(--text-secondary);
+    }
+    .txt-pos { color: var(--pos) !important; font-weight: 600; }
+    .txt-neg { color: var(--neg) !important; font-weight: 600; }
+    .txt-warn { color: var(--warn) !important; font-weight: 600; }
+
+    .plain-story-box {
+      background: var(--bg-highlight);
+      border: 1px solid var(--accent-primary-border);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+    }
+    .plain-story-heading {
+      font-family: var(--font-heading);
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-primary);
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* Standard Card */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 24px;
-    }
-
-    /* 8-Alternative Leaderboard */
-    .leaderboard-list {
+    .story-bullets {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 11px;
     }
-    .alt-row {
+    .story-bullet {
       display: grid;
-      grid-template-columns: 36px 1fr auto;
-      gap: 14px;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      align-items: start;
+      font-size: 14.5px;
+      color: var(--text-primary);
+      line-height: 1.55;
+    }
+    .bullet-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-primary-bg);
+      color: var(--accent-primary);
+      font-weight: 700;
+      font-size: 12.5px;
+      display: flex;
       align-items: center;
-      padding: 12px 16px;
-      background: var(--bg-card);
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .story-bullet strong {
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       6. SECTION 2: INTERACTIVE CHART & 8-OPTION COMPARISON CARDS
+       ========================================================================== */
+    .chart-box {
+      background: var(--bg-card-alt);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .chart-toggles {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      align-items: center;
+    }
+    .series-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      opacity: 0.55;
       transition: all 0.15s ease;
     }
-    .alt-row:hover {
-      background: var(--bg-card-hover);
+    .series-pill.on {
+      opacity: 1;
+      color: var(--text-primary);
       border-color: var(--border-strong);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-sm);
     }
-    .alt-row.is-model {
-      background: #fafaf7;
-      border: 2px solid var(--ink-navy);
-      box-shadow: var(--shadow-md);
+    .series-swatch {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
     }
-    .rank-badge {
-      width: 32px;
-      height: 32px;
+    .chart-svg-wrap {
+      position: relative;
+      width: 100%;
+    }
+    .chart-svg {
+      width: 100%;
+      height: 290px;
+      display: block;
+      cursor: crosshair;
+    }
+    .chart-tooltip {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      box-shadow: var(--shadow-card);
+      pointer-events: none;
+      display: none;
+      z-index: 15;
+      min-width: 235px;
+      font-size: 12.5px;
+    }
+    .chart-tooltip-date {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 7px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .chart-tooltip-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 2px 0;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 860px) {
+      .options-grid { grid-template-columns: 1fr; }
+    }
+    .option-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: border-color 0.15s ease;
+    }
+    .option-card:hover {
+      border-color: var(--border-strong);
+    }
+    .option-card.is-our-model {
+      background: var(--bg-highlight);
+      border: 2px solid var(--accent-primary);
+    }
+    .option-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .option-rank-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rank-circle {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      background: var(--bg-subtle);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 700;
       color: var(--text-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
-      font-weight: 700;
-      font-family: var(--font-mono);
+      flex-shrink: 0;
     }
-    .rank-badge.rank-1 {
-      background: var(--gold-bg);
-      color: var(--gold);
-      border: 1px solid var(--gold-border);
+    .rank-circle.top1 {
+      background: var(--warn-bg);
+      border-color: var(--warn-border);
+      color: var(--warn);
     }
-    .alt-info {
-      overflow: hidden;
-    }
-    .alt-title {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .alt-desc {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      margin-top: 2px;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .alt-values {
-      text-align: right;
-    }
-    .alt-val {
-      font-size: 16px;
-      font-weight: 700;
-      font-family: var(--font-mono);
-      color: var(--text-primary);
-    }
-    .alt-gain {
-      font-size: 12.5px;
-      font-weight: 600;
-      font-family: var(--font-mono);
-      margin-top: 2px;
-    }
-    .alt-gain.pos {
-      color: var(--forest-green);
-    }
-    .alt-gain.neg {
-      color: var(--terracotta);
-    }
-
-    /* Comparison Bar Chart inside Leaderboard */
-    .bar-track {
-      height: 6px;
-      width: 100%;
-      background: var(--bg-subtle);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-top: 8px;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 3px;
-      transition: width 0.4s ease;
-    }
-    .bar-fill.model { background: var(--ink-navy); }
-    .bar-fill.win { background: var(--forest-green); }
-    .bar-fill.loss { background: var(--terracotta); }
-    .bar-fill.neutral { background: var(--text-muted); }
-
-    /* Today's Action Card */
-    .action-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px 28px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 24px;
-    }
-    .action-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-    .action-badge.BUY {
-      background: var(--forest-bg);
-      color: var(--forest-green);
-      border: 1px solid var(--forest-border);
-    }
-    .action-badge.TRIM {
-      background: var(--terracotta-bg);
-      color: var(--terracotta);
-      border: 1px solid var(--terracotta-border);
-    }
-    .action-badge.HOLD {
-      background: var(--amber-bg);
-      color: var(--warm-amber);
-      border: 1px solid var(--amber-border);
-    }
-
-    .action-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
+    .option-name {
+      font-family: var(--font-heading);
+      font-size: 15.5px;
       font-weight: 700;
       color: var(--text-primary);
-      margin-bottom: 10px;
+      line-height: 1.25;
     }
-    .action-detail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 12px;
-      background: var(--bg-subtle);
-      padding: 14px 18px;
-      border-radius: var(--radius-md);
-      margin: 14px 0;
-      border: 1px solid var(--border-subtle);
-    }
-    .action-stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
-    .action-stat-val {
-      font-family: var(--font-mono);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-    .action-reason {
-      font-size: 14.5px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin: 12px 0;
-    }
-    .outcome-box {
-      margin-top: 14px;
-      padding: 12px 16px;
-      border-radius: var(--radius-md);
-      background: #fdfaf3;
-      border: 1px solid #fae8c8;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13.5px;
-    }
-    .outcome-box.positive {
-      background: var(--forest-bg);
-      border-color: var(--forest-border);
-      color: var(--forest-green);
-    }
-    .outcome-box.negative {
-      background: var(--terracotta-bg);
-      border-color: var(--terracotta-border);
-      color: var(--terracotta);
-    }
-
-    /* Sub Tabs (Holdings vs Watchlist) */
-    .view-subtabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-    .view-subtab-btn {
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-subtle);
-      color: var(--text-secondary);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .view-subtab-btn.active {
-      background: var(--ink-navy);
-      color: #ffffff;
-      border-color: var(--ink-navy);
-    }
-
-    /* Editorial Data Tables */
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      background: var(--bg-card);
-    }
-    table.editorial-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13.5px;
-      text-align: left;
-    }
-    table.editorial-table th {
-      background: var(--bg-subtle);
-      padding: 10px 14px;
-      font-size: 11.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    table.editorial-table td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--border-subtle);
-      color: var(--text-primary);
-    }
-    table.editorial-table tr:last-child td {
-      border-bottom: none;
-    }
-    table.editorial-table tr.clickable {
-      cursor: pointer;
-      transition: background 0.1s ease;
-    }
-    table.editorial-table tr.clickable:hover {
-      background: var(--bg-card-hover);
-    }
-    .ticker-chip {
-      font-family: var(--font-mono);
-      font-weight: 700;
-      color: var(--ink-navy);
+    .option-tag {
       display: inline-block;
-      padding: 2px 6px;
-      background: var(--bg-subtle);
-      border-radius: 4px;
-      border: 1px solid var(--border-subtle);
-    }
-    .stock-sub {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-    .pill-signal {
       font-size: 11px;
       font-weight: 700;
       padding: 2px 8px;
       border-radius: var(--radius-pill);
-      text-transform: uppercase;
+      background: var(--accent-primary-bg);
+      color: var(--accent-primary);
+      margin-left: 6px;
     }
-    .pill-signal.BUY { background: var(--forest-bg); color: var(--forest-green); }
-    .pill-signal.TRIM { background: var(--terracotta-bg); color: var(--terracotta); }
-    .pill-signal.HOLD { background: var(--amber-bg); color: var(--warm-amber); }
-
-    /* Interactive Comparison Chart (SVG) */
-    .chart-container {
+    .option-money {
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .option-val {
+      font-family: var(--font-mono);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .option-chg {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    .option-explain {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .option-bar-track {
+      height: 6px;
       background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 28px;
+      border-radius: 4px;
+      overflow: hidden;
     }
-    .chart-header {
+    .option-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+    .option-vs-footer {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .chart-legend {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      padding: 3px 8px;
-      border-radius: 4px;
-      transition: background 0.15s ease;
-    }
-    .legend-item:hover {
-      background: var(--bg-subtle);
-    }
-    .legend-line {
-      width: 14px;
-      height: 3px;
-      border-radius: 2px;
-    }
-    .chart-svg {
-      width: 100%;
-      height: 280px;
-      overflow: visible;
+      padding-top: 6px;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    /* Modal Dossier */
+    /* ==========================================================================
+       7. SECTION 3: TODAY'S MOVES & COMPLETE CHRONOLOGICAL ACTION TRACKER
+       ========================================================================== */
+    .todays-moves-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .move-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .move-card:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+    }
+    .action-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .action-pill.BUY { background: var(--pos-bg); color: var(--pos); border: 1px solid var(--pos-border); }
+    .action-pill.TRIM { background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn-border); }
+    .action-pill.HOLD { background: var(--accent-primary-bg); color: var(--accent-primary); border: 1px solid var(--accent-primary-border); }
+
+    .move-headline {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 10px 0 6px;
+    }
+    .move-meta {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .move-why {
+      font-size: 14px;
+      color: var(--text-primary);
+      line-height: 1.55;
+    }
+
+    .scorecard-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 820px) {
+      .scorecard-strip { grid-template-columns: repeat(2, 1fr); }
+    }
+    .sc-item-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .sc-item-val {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-top: 2px;
+    }
+    .sc-item-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .filter-pill {
+      padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card-alt);
+      color: var(--text-secondary);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-pill:hover {
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+    .filter-pill.active {
+      background: var(--pill-active-bg);
+      color: var(--pill-active-text);
+      border-color: var(--pill-active-bg);
+    }
+
+    .trade-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .trade-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 250px;
+      gap: 16px;
+      align-items: center;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .trade-row:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+    }
+    @media (max-width: 860px) {
+      .trade-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+    .trade-date-col {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+    }
+    .trade-date {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .trade-main-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+    .trade-main-why {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .trade-outcome-box {
+      padding: 10px 13px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      line-height: 1.45;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+    }
+    .trade-outcome-box.win {
+      background: var(--pos-bg);
+      border-color: var(--pos-border);
+    }
+    .trade-outcome-box.loss {
+      background: var(--neg-bg);
+      border-color: var(--neg-border);
+    }
+    .trade-outcome-box.new {
+      background: var(--accent-primary-bg);
+      border-color: var(--accent-primary-border);
+    }
+    .trade-outcome-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    /* ==========================================================================
+       8. SECTION 4: VISUAL ALLOCATION BAR & HOLDINGS TABLE
+       ========================================================================== */
+    .alloc-stacked-bar {
+      display: flex;
+      height: 18px;
+      width: 100%;
+      border-radius: 9px;
+      overflow: hidden;
+      gap: 2px;
+      margin-bottom: 14px;
+      background: var(--bg-card-alt);
+    }
+    .alloc-seg {
+      height: 100%;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+    .alloc-seg:hover {
+      opacity: 0.8;
+    }
+    .alloc-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .alloc-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 5px 10px;
+      font-size: 12.5px;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+    .alloc-chip:hover {
+      border-color: var(--border-strong);
+    }
+    .alloc-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: var(--bg-card-alt);
+    }
+    table.clean-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13.5px;
+    }
+    table.clean-table th {
+      padding: 11px 14px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.45px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      white-space: nowrap;
+    }
+    table.clean-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+    }
+    table.clean-table tr:last-child td {
+      border-bottom: none;
+    }
+    table.clean-table tbody tr {
+      cursor: pointer;
+      transition: background 0.12s ease;
+    }
+    table.clean-table tbody tr:hover {
+      background: var(--bg-card-hover);
+    }
+    .t-sym {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--accent-primary);
+      background: var(--accent-primary-bg);
+      padding: 2px 7px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .t-name {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-left: 6px;
+    }
+    .t-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    /* ==========================================================================
+       9. SECTION 5: AI LEARNING DIARY & WEIGHT CARDS
+       ========================================================================== */
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .learning-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .learning-grid { grid-template-columns: 1fr; }
+    }
+    .learn-card {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 15px 16px;
+    }
+    .learn-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+    }
+    .learn-val {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .learn-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .lesson-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lesson-item {
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .lesson-date {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin-bottom: 4px;
+    }
+
+    /* ==========================================================================
+       10. STOCK INSPECTOR MODAL (PLAIN-ENGLISH DOSSIER)
+       ========================================================================== */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(4px);
-      z-index: 100;
+      background: rgba(9, 12, 18, 0.68);
+      backdrop-filter: blur(5px);
+      z-index: 120;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 18px;
     }
-    .modal-card {
+    .modal-sheet {
       background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border-strong);
       border-radius: var(--radius-lg);
-      width: 100%;
       max-width: 680px;
+      width: 100%;
       max-height: 90vh;
       overflow-y: auto;
-      box-shadow: var(--shadow-lg);
-      padding: 28px 32px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow-modal);
       position: relative;
     }
-    .modal-close-btn {
+    .modal-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-subtle);
-      width: 32px;
-      height: 32px;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      font-size: 16px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card-alt);
       color: var(--text-secondary);
+      font-size: 16px;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .modal-close-btn:hover {
-      background: var(--border-subtle);
+    .modal-close:hover {
       color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+    .temp-track {
+      height: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #3eb481 0%, #6b93e8 50%, #dfa247 75%, #e26d67 100%);
+      position: relative;
+      margin: 12px 0 6px;
+    }
+    .temp-thumb {
+      position: absolute;
+      top: -4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #11141b;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.35);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-card {
-        padding: 20px;
-      }
-      .hero-headline {
-        font-size: 24px;
-      }
-      .metrics-quad {
-        grid-template-columns: 1fr 1fr;
-      }
-      .container {
-        padding: 0 16px;
-      }
-      .masthead {
-        padding: 12px 16px;
-      }
+    @media (max-width: 680px) {
+      .chapter { padding: 20px 18px; }
+      .page-wrap { padding: 16px 14px 0; }
+      .topbar-inner { padding: 12px 14px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="masthead-inner">
-      <div class="brand-wrap">
-        <h1 class="brand-title">Market Insight</h1>
-        <span class="brand-tag">A $7,000 Autonomous Stock Model Journal</span>
+  <!-- Sticky Top Bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark">$7K</div>
+        <div>
+          <div class="brand-name">Market Insight</div>
+          <div class="brand-sub">Plain-English $7,000 Stock Model &amp; Benchmark Tracker</div>
+        </div>
       </div>
-      <div class="masthead-controls">
-        <div class="scale-select-wrap">
-          <span>Starting Capital:</span>
-          <select id="capitalScaleSelect" class="scale-select" onchange="onCapitalScaleChange()">
+
+      <div class="controls-row">
+        <div class="control-chip" title="See what your numbers would look like with a different starting investment">
+          <span>Starting Amount:</span>
+          <select id="capitalScaleSelect" onchange="onCapitalScaleChange()">
             <option value="1000">$1,000</option>
-            <option value="7000" selected>$7,000 (Standard)</option>
+            <option value="7000" selected>$7,000 (Actual)</option>
             <option value="10000">$10,000</option>
             <option value="25000">$25,000</option>
             <option value="50000">$50,000</option>
             <option value="100000">$100,000</option>
           </select>
         </div>
-        <div class="live-status-pill">
-          <span class="live-dot"></span>
-          <span id="mastheadStatusText">Live Market Model</span>
-        </div>
+
+        <button class="toggle-btn" id="mathToggleBtn" onclick="toggleRawMath()" title="Switch between everyday English and raw technical numbers (RSI, 20d/50d moving averages)">
+          <span id="mathToggleLabel">🔢 Show Raw Math</span>
+        </button>
+
+        <button class="toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch between calm Soft Slate dark mode and clean Light mode">
+          <span id="themeToggleLabel">☀️ Light Mode</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Market Indices Ribbon -->
-  <div class="ribbon-bar">
-    <div class="ribbon-inner" id="marketRibbonList">
-      <!-- Populated via JS -->
-    </div>
+  <!-- Live Market Indices Strip -->
+  <div class="ribbon">
+    <div class="ribbon-inner" id="marketRibbonList"></div>
   </div>
 
-  <main class="container">
-    <!-- Day Navigation Bar -->
-    <nav class="nav-tabs-bar" id="dayTabsList">
-      <!-- Populated via JS -->
-    </nav>
-
-    <!-- Main Dynamic Content Wrapper -->
-    <div id="dynamicPageContent">
-      <!-- Populated via JS (Day Tab, Overview Tab, or Memory Tab) -->
+  <!-- Main Content -->
+  <main class="page-wrap">
+    <div class="day-bar-wrap">
+      <div class="day-bar-header">
+        <span class="day-bar-label">Pick any trading day to inspect, or view the All-Days Summary:</span>
+        <span class="updated-stamp" id="lastUpdatedStamp"></span>
+      </div>
+      <nav class="day-tabs" id="dayTabsList"></nav>
     </div>
+
+    <div id="dynamicPageContent"></div>
   </main>
 
-  <!-- Stock Dossier Modal -->
+  <!-- Plain-English Stock Inspector Modal -->
   <div class="modal-backdrop" id="stockModalBackdrop" onclick="if(event.target===this)closeStockModal()">
-    <div class="modal-card" id="stockModalContent">
-      <!-- Populated dynamically via openStockModal() -->
-    </div>
+    <div class="modal-sheet" id="stockModalContent"></div>
   </div>
 
-  <!-- Dynamic Data Loader with Live Cache-Busting -->
   <script src="portfolio_data.js"></script>
   <script>
+    /* ==========================================================================
+       STATE & PREFERENCES
+       ========================================================================== */
     let appData = window.MARKET_INSIGHT_DATA || null;
-    let selectedDayIdx = 0; // index into day_tabs, or 'overview', or 'memory'
+    let selectedView = 0;       // integer day index, or 'overview', or 'memory'
     let capitalScale = 1.0;
-    let activeSubTab = 'holdings'; // 'holdings' | 'watchlist' | 'trades'
+    let showRawMath = false;
+    let tradeFilter = 'all';    // 'all' | 'buy' | 'trim' | 'win' | 'lag'
+    let watchFilter = 'all';    // 'all' | 'BUY' | 'HOLD' | 'TRIM'
 
+    // Active series on the head-to-head chart (all 8 toggleable!)
+    const CHART_SERIES_META = [
+      { id: 'model',           name: 'Our AI Model',              color: '#6b93e8', width: 3.4, on: true },
+      { id: 'schd_dividend',   name: 'Dividend Value (SCHD)',     color: '#3eb481', width: 2.2, on: true },
+      { id: 'spy_mutual',      name: 'S&P 500 Index (SPY)',       color: '#dfa247', width: 2.2, on: true },
+      { id: 'balanced_60_40',  name: '60/40 Balanced Fund',       color: '#a78bfa', width: 2.0, on: true },
+      { id: 'hysa_cash',       name: '4.5% High-Yield Savings',   color: '#94a3b8', width: 1.8, on: true, dashed: true },
+      { id: 'qqq_growth',      name: 'Tech Growth (QQQ)',         color: '#38bdf8', width: 1.9, on: false },
+      { id: 'gold_fund',       name: 'Gold Bullion (GLD)',        color: '#f59e0b', width: 1.9, on: false },
+      { id: 'uninvested_cash', name: '0% Checking Cash',          color: '#64748b', width: 1.4, on: false, dashed: true }
+    ];
+
+    const ALLOC_COLORS = [
+      '#5b8def', '#3eb481', '#a78bfa', '#dfa247', '#38bdf8',
+      '#f472b6', '#fb923c', '#818cf8', '#2dd4bf', '#94a3b8', '#64748b'
+    ];
+
+    // Plain-English dictionary explaining each of the 8 investment options
+    const OPTION_PLAIN_ENGLISH = {
+      model: "Our active stock-picking experiment: splits money across individual stocks & ETFs, trims positions when they overheat or break down, and holds spare cash.",
+      schd_dividend: "A low-fee fund (like Schwab SCHD) that owns ~100 established, profitable US companies—such as Coca-Cola, Home Depot, and AbbVie—that pay steady cash dividends.",
+      qqq_growth: "Tracks the Nasdaq-100 (heavily concentrated in tech giants like Apple, Nvidia, Microsoft, and Amazon). Rises fast in tech rallies, drops harder in tech selloffs.",
+      balanced_60_40: "A classic retirement-style mix: 60% in S&P 500 US stocks for growth + 40% in US bonds (AGG) to cushion stock-market drops.",
+      spy_mutual: "The standard baseline most investors buy (like Vanguard VFIAX or SPY)—automatically owns a slice of the 500 largest US companies.",
+      hysa_cash: "A modern online bank savings account paying 4.50% annual interest. Zero stock-market risk; earns steady interest every single day.",
+      uninvested_cash: "Leaving your money sitting in a standard 0% checking account doing nothing. Never drops, never grows.",
+      gold_fund: "Tracks physical gold bullion prices (GLD). Investors often use gold as a hedge against inflation, though its price still moves up and down."
+    };
+
+    /* ==========================================================================
+       FORMATTING & PLAIN-ENGLISH TRANSLATION ENGINE
+       ========================================================================== */
     function scaled(val) {
       return Number(val || 0) * capitalScale;
     }
 
-    function fmtMoney(val, showSign = false) {
+    function baseStartDollars() {
+      return Math.round(7000 * capitalScale);
+    }
+
+    function fmtMoney(val, showPlus = false) {
       const num = Number(val || 0);
-      const sign = num >= 0 ? (showSign ? '+' : '') : '-';
+      const sign = num > 0.004 ? (showPlus ? '+' : '') : (num < -0.004 ? '-' : '');
       return sign + '$' + Math.abs(num).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
-    function fmtPct(val, showSign = true) {
+    function fmtPct(val, showPlus = true) {
       const num = Number(val || 0);
-      const sign = num >= 0 ? (showSign ? '+' : '') : '';
+      const sign = num > 0.004 ? (showPlus ? '+' : '') : '';
       return sign + num.toFixed(2) + '%';
+    }
+
+    function normalizeActionType(rawAction) {
+      const s = String(rawAction || 'HOLD').toUpperCase();
+      if (s.includes('BUY')) return 'BUY';
+      if (s.includes('TRIM') || s.includes('SELL')) return 'TRIM';
+      return 'HOLD';
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Translates technical Python model strings into natural, conversational English!
+    function translateReasonToPlainEnglish(rawReason, rawAction) {
+      if (!rawReason) return "Selected based on steady price trend and risk balance.";
+      if (showRawMath) return rawReason;
+
+      const act = normalizeActionType(rawAction);
+      let s = String(rawReason);
+      const parts = [];
+
+      // Check for Trimmed prefix: "Trimmed 40% ($330) at $1373.70 (+8.7% vs entry)"
+      const trimMatch = s.match(/Trimmed\s+(\d+%)\s+\(\$[\d,.]+\)\s+at\s+\$([\d,.]+)\s+\(([+-]?[\d.]+)%\s+vs\s+entry\)/i);
+      if (trimMatch) {
+        const pctSold = trimMatch[1];
+        const px = trimMatch[2];
+        const vsEntry = parseFloat(trimMatch[3]);
+        if (vsEntry >= 0) {
+          parts.push(`Sold ${pctSold} of our shares at $${px} to lock in a +${vsEntry.toFixed(1)}% profit`);
+        } else {
+          parts.push(`Sold ${pctSold} of our shares at $${px} (${vsEntry.toFixed(1)}% below our buy price) to cut risk and prevent a deeper loss`);
+        }
+      }
+
+      // Trend phrases
+      if (/Confirmed uptrend above 20d.*50d/i.test(s)) {
+        parts.push(parts.length ? "while the stock is climbing above both its 1-month and 2.5-month averages" : "Climbing steadily above both its 1-month and 2.5-month average prices");
+      } else if (/Constructive dip toward 50d support/i.test(s)) {
+        parts.push(parts.length ? "after a mild pullback toward its 2.5-month support floor" : "Pulled back slightly to a calmer price near its 2.5-month average while keeping its broader uptrend intact");
+      } else if (/Trading below 50d moving average/i.test(s)) {
+        parts.push(parts.length ? "because the stock slipped below its 2.5-month average trend" : "Currently trading below its 2.5-month average price (showing downward pressure)");
+      }
+
+      // RSI / Momentum phrases
+      if (/Short-term extended \(RSI ([\d.]+)/i.test(s)) {
+        parts.push("and a fast recent jump left the price temporarily overheated");
+      } else if (/Healthy momentum zone/i.test(s)) {
+        parts.push("with a healthy, balanced price temperature (not overheated)");
+      } else if (/Attractive swing entry on cooldown/i.test(s)) {
+        parts.push("after cooling off to a more reasonable entry price");
+      } else if (/Deeply oversold/i.test(s)) {
+        parts.push("after heavy selling pushed the stock to a beaten-down level");
+      }
+
+      // Relative strength vs S&P 500
+      const outMatch = s.match(/Outperforming S&P 500 by \+?([\d.]+)% over 20d/i);
+      if (outMatch) {
+        parts.push(`and beating the S&P 500 market average by +${outMatch[1]}% over the past month`);
+      }
+      const lagMatch = s.match(/Lagging S&P 500 \(-?([\d.]+)% over 20d\)/i);
+      if (lagMatch) {
+        parts.push(`and trailing behind the S&P 500 by ${lagMatch[1]}% over the past month`);
+      }
+
+      // Cooldown penalty
+      if (/Self-learning cooldown/i.test(s)) {
+        parts.push("— currently placed in the AI's cooldown penalty box due to recent losses");
+      }
+
+      if (parts.length === 0) {
+        return s.replace(/•/g, ' — ');
+      }
+
+      let sentence = parts.join(', ').replace(/, —/g, ' —').replace(/, and /g, ' and ');
+      sentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
+      if (!sentence.endsWith('.')) sentence += '.';
+      return sentence;
+    }
+
+    function describePriceTemp(rsi) {
+      const v = Number(rsi || 50);
+      if (showRawMath) return `RSI ${v.toFixed(1)}`;
+      if (v <= 32) return "Deep Bargain / Beaten Down";
+      if (v <= 43) return "Cooled Off / Dip Zone";
+      if (v <= 66) return "Healthy Normal Price";
+      if (v <= 72) return "Warm / Strong Demand";
+      return "Overheated / Pricey";
+    }
+
+    function describeTrendSimple(s) {
+      if (showRawMath) {
+        return `20d: ${fmtMoney(s.sma20)} | 50d: ${fmtMoney(s.sma50)}`;
+      }
+      const p = Number(s.price || 0);
+      const m20 = Number(s.sma20 || p);
+      const m50 = Number(s.sma50 || p);
+      if (p >= m20 && m20 >= m50) return "↗ Steady Uptrend";
+      if (p >= m50 && p < m20) return "↔ Mild Pullback in Uptrend";
+      if (p >= m20 && p < m50) return "↗ Trying to Recover";
+      return "↘ Sliding Below Average";
+    }
+
+    function describeWatchVerdict(s, heldSet) {
+      const sig = normalizeActionType(s.signal);
+      const isHeld = heldSet.has(s.ticker);
+      if (sig === 'BUY') {
+        return isHeld
+          ? { text: "Strong — Already Own", cls: "BUY" }
+          : { text: "Top Buy Candidate", cls: "BUY" };
+      }
+      if (sig === 'HOLD') {
+        return isHeld
+          ? { text: "Steady — Holding", cls: "HOLD" }
+          : { text: "Watching — Fair", cls: "HOLD" };
+      }
+      if (Number(s.rsi14 || 50) > 72) {
+        return { text: "Wait — Too Overheated", cls: "TRIM" };
+      }
+      return isHeld
+        ? { text: "Trim / Reduce Risk", cls: "TRIM" }
+        : { text: "Avoiding — Weak Trend", cls: "TRIM" };
+    }
+
+    /* ==========================================================================
+       THEME & CONTROLS
+       ========================================================================== */
+    function initTheme() {
+      const saved = localStorage.getItem('mi_theme') || 'slate';
+      applyTheme(saved);
+    }
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('mi_theme', theme);
+      const lbl = document.getElementById('themeToggleLabel');
+      if (lbl) {
+        lbl.textContent = theme === 'slate' ? '☀️ Light Mode' : '🌙 Soft Slate';
+      }
+    }
+
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'slate';
+      applyTheme(cur === 'slate' ? 'light' : 'slate');
+    }
+
+    function toggleRawMath() {
+      showRawMath = !showRawMath;
+      const btn = document.getElementById('mathToggleBtn');
+      const lbl = document.getElementById('mathToggleLabel');
+      if (btn) btn.classList.toggle('active', showRawMath);
+      if (lbl) lbl.textContent = showRawMath ? '🗣️ Plain English' : '🔢 Show Raw Math';
+      renderCurrentView();
     }
 
     function onCapitalScaleChange() {
@@ -923,53 +1414,50 @@
       renderCurrentView();
     }
 
-    /* Market Ribbon */
+    /* ==========================================================================
+       RIBBON & TOP DAY SELECTOR
+       ========================================================================== */
     function renderMarketRibbon() {
       const el = document.getElementById('marketRibbonList');
-      if (!appData || !appData.market_ribbon) return;
+      if (!el || !appData || !appData.market_ribbon) return;
       el.innerHTML = appData.market_ribbon.map(item => {
-        const isUp = item.pct >= 0;
-        const sign = isUp ? '+' : '';
-        const pctClass = isUp ? 'up' : 'down';
+        const up = Number(item.pct || 0) >= 0;
         return `
           <div class="ribbon-item">
-            <span class="ribbon-label">${item.label}</span>
-            <span class="ribbon-val">${fmtMoney(item.price)}</span>
-            <span class="ribbon-pct ${pctClass}">${sign}${item.pct.toFixed(2)}%</span>
+            <span class="ribbon-name">${escapeHtml(item.label)}</span>
+            <span class="ribbon-price">${Number(item.price || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+            <span class="ribbon-chg ${up ? 'pos' : 'neg'}">${fmtPct(item.pct)}</span>
           </div>
         `;
       }).join('');
     }
 
-    /* Render Top Day Navigation Tabs */
-    function renderDaySelectors() {
+    function renderDayTabs() {
       const el = document.getElementById('dayTabsList');
-      if (!appData || !appData.day_tabs) return;
+      const stamp = document.getElementById('lastUpdatedStamp');
+      if (!el || !appData || !appData.day_tabs) return;
+      if (stamp && appData.last_updated) {
+        stamp.textContent = `Last automatic update: ${appData.last_updated}`;
+      }
 
-      let html = '';
-      // Overview Tab
-      html += `
-        <button class="nav-tab-btn ${selectedDayIdx === 'overview' ? 'active' : ''}" onclick="selectTab('overview')">
-          <span>📊 Overview (All Days)</span>
+      let html = `
+        <button class="day-pill ${selectedView === 'overview' ? 'active' : ''}" onclick="selectView('overview')">
+          📊 All-Days Summary (${appData.day_tabs.length} Days)
+        </button>
+        <button class="day-pill ${selectedView === 'memory' ? 'active' : ''}" onclick="selectView('memory')">
+          🧠 How the AI Is Learning
         </button>
       `;
 
-      // AI Brain & Memory Tab
-      html += `
-        <button class="nav-tab-btn ${selectedDayIdx === 'memory' ? 'active' : ''}" onclick="selectTab('memory')">
-          <span>🧠 AI Brain & Journal</span>
-        </button>
-      `;
-
-      // Chronological Day Tabs
       appData.day_tabs.forEach((tab, idx) => {
         const isLatest = idx === appData.day_tabs.length - 1;
-        const label = tab.tab_label.replace('Today •', 'Today').replace('Day ', 'Day ');
-        const badge = isLatest ? '<span class="nav-tab-badge">Latest</span>' : '';
+        const cleanLabel = isLatest
+          ? `Today • ${tab.date.slice(5)} (Latest)`
+          : `Day ${tab.day_index} • ${tab.date.slice(5)}`;
         html += `
-          <button class="nav-tab-btn ${selectedDayIdx === idx ? 'active' : ''}" onclick="selectTab(${idx})">
-            <span>${label}</span>
-            ${badge}
+          <button class="day-pill ${selectedView === idx ? 'active' : ''}" id="dayPill-${idx}" onclick="selectView(${idx})">
+            ${isLatest ? '<span class="live-dot"></span>' : ''}
+            <span>${escapeHtml(cleanLabel)}</span>
           </button>
         `;
       });
@@ -977,562 +1465,1219 @@
       el.innerHTML = html;
     }
 
-    function selectTab(idx) {
-      selectedDayIdx = idx;
-      renderDaySelectors();
+    function selectView(view) {
+      selectedView = view;
+      renderDayTabs();
       renderCurrentView();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    /* Master Render Router */
     function renderCurrentView() {
       const container = document.getElementById('dynamicPageContent');
-      if (selectedDayIdx === 'overview') {
-        container.innerHTML = buildOverviewView();
-      } else if (selectedDayIdx === 'memory') {
-        container.innerHTML = buildMemoryView();
+      if (!container || !appData) return;
+
+      if (selectedView === 'overview') {
+        container.innerHTML = buildAllDaysOverview();
+      } else if (selectedView === 'memory') {
+        container.innerHTML = buildLearningDeepDive();
       } else {
-        const tab = appData.day_tabs[selectedDayIdx];
-        if (tab) {
-          container.innerHTML = buildDayView(tab);
-          initChart(tab);
-        }
+        const tab = appData.day_tabs[selectedView] || appData.day_tabs[appData.day_tabs.length - 1];
+        container.innerHTML = buildSingleDayPage(tab, selectedView);
+        renderInteractiveChart(selectedView);
       }
     }
 
-    /* Build Day View (The Main Editorial Briefing) */
-    function buildDayView(tab) {
+    /* ==========================================================================
+       SINGLE DAY PAGE — ALL 5 SPACIOUS PLAIN-ENGLISH CHAPTERS
+       ========================================================================== */
+    function buildPlainEnglishBullets(tab, dayIdx) {
       const p = tab.portfolio;
-      const chgSign = p.day_change_dollars >= 0 ? '+' : '';
-      const totalChgSign = p.total_gain_dollars >= 0 ? '+' : '';
-      const dayClass = p.day_change_dollars >= 0 ? 'pos' : 'neg';
-      const totalClass = p.total_gain_dollars >= 0 ? 'pos' : 'neg';
-
-      // Find standing rank
       const alts = tab.alternative_options || [];
-      const modelAlt = alts.find(a => a.is_model) || { rank: 4 };
+      const leader = alts[0];
+      const modelAlt = alts.find(a => a.is_model) || { rank: 7 };
+      const spyAlt = alts.find(a => a.id === 'spy_mutual');
+      const startStr = fmtMoney(scaled(p.starting_capital));
+      const totalStr = fmtMoney(scaled(p.total_value));
+      const dayMoveStr = fmtMoney(scaled(p.day_change_dollars), true);
 
-      // Headline Story Title
-      const leadHeadline = tab.gemini_insight && tab.gemini_insight.lesson_learned
-        ? tab.gemini_insight.lesson_learned
-        : `Executive Briefing: Navigating the ${tab.tab_label} Session`;
+      // Bullet 1: Where your money stands & how today went vs S&P 500
+      let b1 = '';
+      if (dayIdx === 0) {
+        b1 = `<strong>Day 1 Kickoff (${tab.date}):</strong> We started with <strong>${startStr}</strong> and put <strong>${fmtMoney(scaled(p.invested_value))}</strong> to work across ${(tab.holdings || []).length} initial stocks &amp; index funds while keeping <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> safely on the sidelines as spare cash.`;
+      } else {
+        const prevTab = appData.day_tabs[dayIdx - 1];
+        const spyPrev = prevTab ? prevTab.portfolio.spy_benchmark_value : p.starting_capital;
+        const spyTodayMove = p.spy_benchmark_value - spyPrev;
+        const beatSpyToday = p.day_change_dollars >= spyTodayMove;
+        b1 = `<strong>How your money moved today:</strong> Your portfolio moved <strong>${dayMoveStr} (${fmtPct(p.day_change_pct)})</strong> today to close at <strong>${totalStr}</strong>. By comparison, a standard S&amp;P 500 fund moved <strong>${fmtMoney(scaled(spyTodayMove), true)}</strong> today${beatSpyToday ? ' — meaning our portfolio held up better than the S&amp;P 500 in today\'s session.' : '.'}`;
+      }
 
-      const aiMemo = tab.gemini_insight && tab.gemini_insight.ai_briefing
-        ? tab.gemini_insight.ai_briefing
-        : tab.ai_briefing || "The model continues disciplined allocation between active equities and capital defense reserves.";
+      // Bullet 2: What the model did today in plain English
+      const actions = tab.todays_actions || [];
+      let b2 = '';
+      if (dayIdx === 0) {
+        const names = actions.map(a => `${a.ticker} (${fmtMoney(scaled(a.rec_dollars))})`).join(', ');
+        b2 = `<strong>What the model bought on Day 1:</strong> Built a diversified starter portfolio across 7 core and growth names: ${escapeHtml(names)}.`;
+      } else if (actions.length === 0) {
+        b2 = `<strong>What the model did today:</strong> Made <strong>no trades today</strong> — kept existing positions steady and preserved <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> in spare cash.`;
+      } else if (actions.length === 1) {
+        const a = actions[0];
+        const actType = normalizeActionType(a.action);
+        if (actType === 'BUY') {
+          b2 = `<strong>Today's move — Bought ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}):</strong> Put <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> of cash into ${escapeHtml(a.ticker)} at <strong>${fmtMoney(a.rec_price)}/share</strong>. In plain English: ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action)).replace(/^[A-Z]/, c => c.toLowerCase())}`;
+        } else if (actType === 'TRIM') {
+          b2 = `<strong>Today's move — Sold part of ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}):</strong> Trimmed <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> at <strong>${fmtMoney(a.rec_price)}/share</strong>. ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action))}`;
+        } else {
+          b2 = `<strong>Today's move — Held steady (no new buys or sales):</strong> Kept our top conviction position in <strong>${escapeHtml(a.name)} (${escapeHtml(a.ticker)})</strong> rather than trading just for the sake of trading.`;
+        }
+      } else {
+        const summaries = actions.map(a => {
+          const t = normalizeActionType(a.action);
+          if (t === 'BUY') return `bought <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
+          if (t === 'TRIM') return `sold <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
+          return `held <strong>${escapeHtml(a.ticker)}</strong>`;
+        });
+        b2 = `<strong>Today's moves (${actions.length} portfolio adjustments):</strong> The model ${summaries.join(', then ')} — freeing up money from overheated or lagging stocks and rotating it into steadier performers. (See full plain-English breakdown in Section 3 below.)`;
+      }
+
+      // Bullet 3: Honest plain-English comparison vs passive options + winners/drags
+      const holdings = tab.holdings || [];
+      const winners = holdings.filter(h => Number(h.pnl_dollars || 0) > 0).sort((a, b) => b.pnl_dollars - a.pnl_dollars);
+      const losers = holdings.filter(h => Number(h.pnl_dollars || 0) < 0).sort((a, b) => a.pnl_dollars - b.pnl_dollars);
+
+      let b3 = '';
+      if (leader && !leader.is_model) {
+        const gap = Math.abs(leader.value - p.total_value);
+        const spyGap = spyAlt ? (p.total_value - spyAlt.value) : 0;
+        const winText = winners.length > 0
+          ? `${winners.length} of your ${holdings.length} current holdings are profitable (led by <strong>${escapeHtml(winners[0].ticker)} ${fmtMoney(scaled(winners[0].pnl_dollars), true)}</strong>)`
+          : `your holdings are still settling in`;
+        const dragText = losers.length > 0
+          ? `, while early tech dips like <strong>${escapeHtml(losers[0].ticker)} (${fmtMoney(scaled(losers[0].pnl_dollars), true)})</strong> have held the total ${spyGap >= 0 ? `${fmtMoney(scaled(spyGap))} ahead of` : `${fmtMoney(scaled(Math.abs(spyGap)))} behind`} the S&amp;P 500.`
+          : `.`;
+        b3 = `<strong>Why we rank #${modelAlt.rank} of 8 right now:</strong> Steady dividend stocks (<strong>${escapeHtml(leader.name)}</strong>, up ${fmtPct(leader.gain_pct)}) currently lead by ${fmtMoney(scaled(gap))}. Inside our portfolio, ${winText}${dragText}`;
+      } else {
+        b3 = `<strong>Leaderboard check:</strong> Our model is currently <strong>#1 out of all 8 investment options</strong> at ${totalStr}!`;
+      }
+
+      // Optional Bullet 4: Risk Veto (stocks the AI intentionally refused to buy today)
+      const cooldowns = (tab.adaptive_learning && tab.adaptive_learning.cooldown_tickers) || [];
+      let b4 = '';
+      if (cooldowns.length > 0) {
+        b4 = `<strong>Guardrail active (stocks the AI refused to chase today):</strong> Even though <strong>${escapeHtml(cooldowns.join(' and '))}</strong> look "cheaper" after dropping, the model blocked buying any more shares because their short-term trend is still pointing down.`;
+      }
+
+      return [b1, b2, b3, b4].filter(Boolean);
+    }
+
+    function buildSingleDayPage(tab, dayIdx) {
+      const p = tab.portfolio;
+      const alts = tab.alternative_options || [];
+      const modelAlt = alts.find(a => a.is_model) || { rank: 7 };
+      const leader = alts[0] || { name: 'S&P 500', value: p.total_value, gain_pct: 0 };
+      const bullets = buildPlainEnglishBullets(tab, dayIdx);
+      const holdings = tab.holdings || [];
+      const cashPct = p.total_value > 0 ? ((p.cash_reserve / p.total_value) * 100).toFixed(1) : '0.0';
+
+      const overallUp = p.total_gain_dollars >= 0;
+      const dayUp = p.day_change_dollars >= 0;
+
+      const headlineText = dayIdx === appData.day_tabs.length - 1
+        ? `Your ${fmtMoney(scaled(p.starting_capital))} portfolio is at ${fmtMoney(scaled(p.total_value))} (${fmtMoney(scaled(p.day_change_dollars), true)} today)`
+        : `Day ${tab.day_index} (${tab.date}): Portfolio closed at ${fmtMoney(scaled(p.total_value))} (${fmtMoney(scaled(p.day_change_dollars), true)} on the day)`;
 
       return `
-        <!-- Hero Executive Briefing -->
-        <section class="hero-card">
-          <div class="hero-top">
-            <div>
-              <div class="hero-pretitle">Daily Session Briefing • ${tab.date}</div>
-              <h2 class="hero-headline">${leadHeadline}</h2>
-              <div class="hero-meta-badges">
-                <span class="hero-pill">Simulation Day ${tab.day_index} of ${appData.day_tabs.length}</span>
-                <span class="hero-pill">Regime: ${tab.strength_meter ? tab.strength_meter.regime : 'Active Management'}</span>
-                <span class="hero-pill">Win Rate: ${p.win_rate ? p.win_rate.toFixed(0) : '70'}%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="metrics-quad">
-            <div class="metric-box">
-              <div class="metric-label">Model Portfolio Value</div>
-              <div class="metric-value">${fmtMoney(scaled(p.total_value))}</div>
-              <div class="metric-sub ${dayClass}">
-                <span>${chgSign}${fmtMoney(scaled(p.day_change_dollars))} (${fmtPct(p.day_change_pct)}) today</span>
-              </div>
-            </div>
-
-            <div class="metric-box">
-              <div class="metric-label">Total Net Return</div>
-              <div class="metric-value" style="color: ${p.total_gain_dollars >= 0 ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                ${totalChgSign}${fmtMoney(scaled(p.total_gain_dollars))}
-              </div>
-              <div class="metric-sub ${totalClass}">
-                <span>${fmtPct(p.total_gain_pct)} on initial ${fmtMoney(scaled(p.starting_capital))}</span>
-              </div>
-            </div>
-
-            <div class="metric-box">
-              <div class="metric-label">Benchmark Standing</div>
-              <div class="metric-value">#${modelAlt.rank} <span style="font-size:16px;font-weight:500;color:var(--text-muted)">of 8 Options</span></div>
-              <div class="metric-sub neutral">
-                <span>Leader: ${alts[0] ? alts[0].name.replace(' Mutual Fund', '') : 'S&P 500'} (${fmtPct(alts[0] ? alts[0].gain_pct : 0)})</span>
-              </div>
-            </div>
-
-            <div class="metric-box">
-              <div class="metric-label">Cash Buffer Reserve</div>
-              <div class="metric-value">${fmtMoney(scaled(p.cash_reserve))}</div>
-              <div class="metric-sub neutral">
-                <span>${((p.cash_reserve / p.total_value) * 100).toFixed(1)}% safe in reserve</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="story-memo">
-            <div class="story-memo-title">
-              <span>💡 Session Takeaway & Risk Memo</span>
-            </div>
-            <div>${aiMemo}</div>
-          </div>
-        </section>
-
-        <!-- Interactive Benchmark Growth Comparison Chart -->
-        <section class="chart-container">
-          <div class="chart-header">
-            <div>
-              <div class="section-title">The $7,000 Head-to-Head Growth Trajectory</div>
-              <div class="section-subtitle">How $7,000 evolved across active AI vs. passive index funds, savings & gold from Day 1 to Today</div>
-            </div>
-            <div class="chart-legend" id="chartLegendBox">
-              <!-- Built via JS -->
-            </div>
-          </div>
-          <svg class="chart-svg" id="benchmarkSvgChart" viewBox="0 0 900 280">
-            <!-- Rendered via JS -->
-          </svg>
-        </section>
-
-        <!-- Main 2-Column Grid: Leaderboard & Action / Holdings -->
-        <div class="main-grid">
-          <!-- Left Column: The 8-Option Leaderboard -->
-          <div>
-            <div class="section-head">
-              <div class="section-title">🏆 8-Option Performance Leaderboard</div>
-              <span class="section-subtitle">Ranked by ending value</span>
-            </div>
-            <div class="leaderboard-list">
-              ${buildLeaderboardRows(alts, p.starting_capital)}
-            </div>
-          </div>
-
-          <!-- Right Column: Today's Action & Portfolio Holdings -->
-          <div>
-            <!-- Today's Action Card -->
-            <div class="action-card">
-              <div class="section-head" style="margin-bottom:12px;padding-bottom:6px;">
-                <div class="section-title" style="font-size:18px;">🎯 Today's Recommended Action</div>
-                <span class="section-subtitle">${tab.date}</span>
-              </div>
-              ${buildActionCardContent(tab)}
-            </div>
-
-            <!-- Holdings & Watchlist Sub-Tabs -->
-            <div class="card" style="padding: 20px;">
-              <div class="view-subtabs">
-                <button class="view-subtab-btn ${activeSubTab === 'holdings' ? 'active' : ''}" onclick="switchSubTab('holdings')">
-                  💼 Current Holdings (${(tab.holdings || []).length})
-                </button>
-                <button class="view-subtab-btn ${activeSubTab === 'watchlist' ? 'active' : ''}" onclick="switchSubTab('watchlist')">
-                  🔍 Market Watchlist (${(tab.watchlist_scores || []).length})
-                </button>
-                <button class="view-subtab-btn ${activeSubTab === 'trades' ? 'active' : ''}" onclick="switchSubTab('trades')">
-                  📜 All Recommendations (${(tab.audited_recommendations || []).length})
-                </button>
-              </div>
-
-              <div id="subTabContentArea">
-                ${buildSubTabContent(tab)}
-              </div>
-            </div>
-          </div>
+        <!-- Quick Jump Links -->
+        <div class="quick-jump">
+          <a class="jump-link" href="#sec-summary">1. Daily Summary</a>
+          <a class="jump-link" href="#sec-compare">2. Compare 8 Investment Options</a>
+          <a class="jump-link" href="#sec-actions">3. Everything Done &amp; Trade Results</a>
+          <a class="jump-link" href="#sec-holdings">4. Current Portfolio (${holdings.length} Stocks + Cash)</a>
+          <a class="jump-link" href="#sec-radar">5. Watchlist &amp; How AI Is Learning</a>
         </div>
+
+        <!-- ================================================================
+             SECTION 1: PLAIN-ENGLISH DAILY SUMMARY
+             ================================================================ -->
+        <section class="chapter" id="sec-summary">
+          <div class="chapter-eyebrow">Section 1 • Day ${tab.day_index} of ${appData.day_tabs.length} • ${escapeHtml(tab.date)}</div>
+          <h1 class="chapter-title">${headlineText}</h1>
+          <p class="chapter-desc">
+            Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Every weekday after the US stock market closes at 4:00 PM ET, this page records what the AI model did and compares your real dollar balance against 7 everyday alternatives.
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-label">Current Portfolio Value</div>
+              <div class="stat-num">${fmtMoney(scaled(p.total_value))}</div>
+              <div class="stat-note">Started with ${fmtMoney(scaled(p.starting_capital))}</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-label">Total Profit / Loss Since Day 1</div>
+              <div class="stat-num ${overallUp ? 'txt-pos' : 'txt-neg'}">${fmtMoney(scaled(p.total_gain_dollars), true)}</div>
+              <div class="stat-note">
+                Overall: <span class="${overallUp ? 'txt-pos' : 'txt-neg'}">${fmtPct(p.total_gain_pct)}</span>
+                &nbsp;•&nbsp; Today: <span class="${dayUp ? 'txt-pos' : 'txt-neg'}">${fmtMoney(scaled(p.day_change_dollars), true)}</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-label">Standing vs. 8 Choices</div>
+              <div class="stat-num">#${modelAlt.rank} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">of 8</span></div>
+              <div class="stat-note">
+                ${leader.is_model
+                  ? '<span class="txt-pos">Currently leading all alternatives!</span>'
+                  : `#1 is ${escapeHtml(leader.name.replace(' Mutual Fund', ''))} (${fmtMoney(scaled(leader.value))})`}
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-label">How Your Money Is Split</div>
+              <div class="stat-num">${holdings.length} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">Stocks + Cash</span></div>
+              <div class="stat-note">${fmtMoney(scaled(p.invested_value))} invested • <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> (${cashPct}%) cash</div>
+            </div>
+          </div>
+
+          <div class="plain-story-box">
+            <div class="plain-story-heading">🗣️ Today in Plain English — What Happened &amp; Why</div>
+            <div class="story-bullets">
+              ${bullets.map((b, i) => `
+                <div class="story-bullet">
+                  <div class="bullet-num">${i + 1}</div>
+                  <div>${b}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION 2: HEAD-TO-HEAD COMPARISON ACROSS 8 INVESTMENT OPTIONS
+             ================================================================ -->
+        <section class="chapter" id="sec-compare">
+          <div class="chapter-header-row">
+            <div>
+              <div class="chapter-eyebrow">Section 2 • Head-to-Head Comparison</div>
+              <h2 class="chapter-title">What If You Put ${fmtMoney(scaled(p.starting_capital))} Into Simpler Options Instead?</h2>
+              <p class="chapter-desc">
+                All 8 choices started with the exact same ${fmtMoney(scaled(p.starting_capital))} on Day 1 (${escapeHtml(appData.created_at || '2026-10-19')}). Hover over the chart to compare any day, or click the colored pills to turn lines on and off.
+              </p>
+            </div>
+          </div>
+
+          <div class="chart-box">
+            <div class="chart-toggles" id="chartSeriesPills"></div>
+            <div class="chart-svg-wrap">
+              <div class="chart-tooltip" id="chartHoverTooltip"></div>
+              <svg class="chart-svg" id="comparisonChartSvg" viewBox="0 0 920 290"></svg>
+            </div>
+          </div>
+
+          <div class="options-grid">
+            ${buildAll8OptionCards(alts, p.total_value, p.starting_capital)}
+          </div>
+        </section>
+
+        <!-- ================================================================
+             SECTION 3: EVERYTHING THE MODEL HAS DONE & WHETHER IT WORKED
+             ================================================================ -->
+        <section class="chapter" id="sec-actions">
+          <div class="chapter-header-row">
+            <div>
+              <div class="chapter-eyebrow">Section 3 • Complete Decision &amp; Trade Log</div>
+              <h2 class="chapter-title">Everything the Model Has Done — And Whether Each Move Helped</h2>
+              <p class="chapter-desc">
+                First are the exact move(s) made on <strong>${escapeHtml(tab.date)}</strong>, followed by the full history of every buy, protective trim (sale), and hold since Day 1—graded against real market prices.
+              </p>
+            </div>
+          </div>
+
+          ${buildSelectedDayMovesBlock(tab)}
+          ${buildTradeScorecardAndHistory(tab)}
+        </section>
+
+        <!-- ================================================================
+             SECTION 4: INSIDE YOUR PORTFOLIO RIGHT NOW
+             ================================================================ -->
+        <section class="chapter" id="sec-holdings">
+          <div class="chapter-header-row">
+            <div>
+              <div class="chapter-eyebrow">Section 4 • Current Holdings &amp; Cash</div>
+              <h2 class="chapter-title">Where Every Dollar of Your ${fmtMoney(scaled(p.total_value))} Is Right Now</h2>
+              <p class="chapter-desc">
+                Click any colored slice or stock row below to open a plain-English popup explaining its 12-day price chart, profit target, and safety exit price.
+              </p>
+            </div>
+          </div>
+
+          ${buildAllocationVisual(tab)}
+          ${buildHoldingsTable(tab)}
+        </section>
+
+        <!-- ================================================================
+             SECTION 5: 19-STOCK WATCHLIST & HOW THE AI IS LEARNING
+             ================================================================ -->
+        <section class="chapter" id="sec-radar">
+          <div class="chapter-header-row">
+            <div>
+              <div class="chapter-eyebrow">Section 5 • Market Radar &amp; Self-Learning Adjustments</div>
+              <h2 class="chapter-title">All 19 Stocks Monitored Today &amp; How the Model Adjusted Its Strategy</h2>
+              <p class="chapter-desc">
+                Every afternoon the model grades 19 major stocks and ETFs from 0 to 100, checks financial news headlines, and updates its own strategy based on which past trades made or lost money.
+              </p>
+            </div>
+          </div>
+
+          ${buildAdaptiveLearningSummary(tab)}
+          ${buildWatchlistSection(tab)}
+        </section>
       `;
     }
 
-    function switchSubTab(sub) {
-      activeSubTab = sub;
-      const tab = appData.day_tabs[selectedDayIdx];
-      if (tab) {
-        document.getElementById('subTabContentArea').innerHTML = buildSubTabContent(tab);
-        // update subtab buttons
-        document.querySelectorAll('.view-subtab-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.textContent.toLowerCase().includes(sub));
-        });
-      }
-    }
-
-    /* SubTab: Holdings, Watchlist, or All Trades */
-    function buildSubTabContent(tab) {
-      if (activeSubTab === 'watchlist') {
-        const list = tab.watchlist_scores || [];
-        return `
-          <div class="table-wrap">
-            <table class="editorial-table">
-              <thead>
-                <tr>
-                  <th>Ticker</th>
-                  <th>Price</th>
-                  <th>RSI (14)</th>
-                  <th>Trend (SMA)</th>
-                  <th>AI Score</th>
-                  <th>Signal</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${list.map(s => `
-                  <tr class="clickable" onclick="openStockModal('${s.ticker}')">
-                    <td>
-                      <span class="ticker-chip">${s.ticker}</span>
-                      <div class="stock-sub">${s.name}</div>
-                    </td>
-                    <td style="font-family:var(--font-mono);font-weight:600;">${fmtMoney(s.price)}</td>
-                    <td style="font-family:var(--font-mono);">${s.rsi14 ? s.rsi14.toFixed(1) : '50.0'}</td>
-                    <td>
-                      <span style="font-size:12px;font-weight:600;color:${s.price >= s.sma20 ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                        ${s.price >= s.sma20 ? 'Above 20d' : 'Below 20d'}
-                      </span>
-                    </td>
-                    <td style="font-family:var(--font-mono);font-weight:700;">${s.score.toFixed(1)}</td>
-                    <td><span class="pill-signal ${s.signal}">${s.signal}</span></td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-      } else if (activeSubTab === 'trades') {
-        const trades = tab.audited_recommendations || [];
-        return `
-          <div class="table-wrap">
-            <table class="editorial-table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Action</th>
-                  <th>Stock</th>
-                  <th>Rec Price</th>
-                  <th>Now Price</th>
-                  <th>Outcome</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${trades.map(t => {
-                  const isPos = t.pct_outcome >= 0;
-                  return `
-                    <tr class="clickable" onclick="openStockModal('${t.ticker}')">
-                      <td style="font-size:12px;color:var(--text-muted);">${t.date}</td>
-                      <td><span class="pill-signal ${t.action}">${t.action}</span></td>
-                      <td><span class="ticker-chip">${t.ticker}</span></td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(t.rec_price)}</td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(t.current_price)}</td>
-                      <td style="font-family:var(--font-mono);font-weight:700;color:${isPos ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                        ${fmtPct(t.pct_outcome)}
-                      </td>
-                    </tr>
-                  `;
-                }).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-      } else {
-        // Holdings Table (Default)
-        const holdings = tab.holdings || [];
-        if (holdings.length === 0) {
-          return `<div style="text-align:center;padding:24px;color:var(--text-muted);">100% Cash Buffer held today.</div>`;
-        }
-        return `
-          <div class="table-wrap">
-            <table class="editorial-table">
-              <thead>
-                <tr>
-                  <th>Holding</th>
-                  <th>Shares</th>
-                  <th>Entry</th>
-                  <th>Current</th>
-                  <th>Value</th>
-                  <th>P&L</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${holdings.map(h => {
-                  const isPos = h.gain_dollars >= 0;
-                  const sign = isPos ? '+' : '';
-                  return `
-                    <tr class="clickable" onclick="openStockModal('${h.ticker}')">
-                      <td>
-                        <span class="ticker-chip">${h.ticker}</span>
-                        <div class="stock-sub">${h.name}</div>
-                      </td>
-                      <td style="font-family:var(--font-mono);">${h.shares.toFixed(2)}</td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(h.avg_entry_price)}</td>
-                      <td style="font-family:var(--font-mono);font-weight:600;">${fmtMoney(h.current_price)}</td>
-                      <td style="font-family:var(--font-mono);font-weight:700;">${fmtMoney(scaled(h.value))}</td>
-                      <td style="font-family:var(--font-mono);font-weight:600;color:${isPos ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                        ${sign}${fmtMoney(scaled(h.gain_dollars))} (${fmtPct(h.gain_pct)})
-                      </td>
-                    </tr>
-                  `;
-                }).join('')}
-              </tbody>
-            </table>
-          </div>
-        `;
-      }
-    }
-
-    /* Leaderboard Rows Builder */
-    function buildLeaderboardRows(alts, startingCap) {
+    /* ==========================================================================
+       SECTION 2 HELPERS: 8 OPTION CARDS & INTERACTIVE HOVER CHART
+       ========================================================================== */
+    function buildAll8OptionCards(alts, modelVal, startCap) {
       if (!alts || alts.length === 0) return '';
-      const maxVal = Math.max(...alts.map(a => a.value), 7200);
+      const values = alts.map(a => a.value);
+      const minV = Math.min(...values, startCap * 0.96);
+      const maxV = Math.max(...values, startCap * 1.03);
 
       return alts.map(a => {
-        const isPos = a.gain_dollars >= 0;
-        const sign = isPos ? '+' : '';
-        const pctWidth = Math.max(10, Math.min(100, ((a.value - (startingCap * 0.9)) / (maxVal - (startingCap * 0.9))) * 100));
-        const rankClass = a.rank === 1 ? 'rank-1' : '';
-        const fillClass = a.is_model ? 'model' : (isPos ? 'win' : 'loss');
+        const up = a.gain_dollars >= 0;
+        const barPct = maxV > minV ? Math.max(10, Math.min(100, ((a.value - minV) / (maxV - minV)) * 100)) : 50;
+        const barColor = a.is_model ? 'var(--accent-primary)' : (up ? 'var(--pos)' : 'var(--neg)');
+        const desc = OPTION_PLAIN_ENGLISH[a.id] || a.subtitle || '';
+
+        let vsLine = '';
+        if (a.is_model) {
+          vsLine = `<span style="color:var(--accent-primary)">★ This is our active $7,000 experiment</span><span>Rank #${a.rank} of 8</span>`;
+        } else {
+          const diff = modelVal - a.value; // positive means our model is ahead of this option
+          if (Math.abs(diff) < 0.05) {
+            vsLine = `<span>Tied with our AI model</span><span>${escapeHtml(a.category || '')}</span>`;
+          } else if (diff > 0) {
+            vsLine = `<span class="txt-pos">Our AI model is ${fmtMoney(scaled(diff))} ahead of this choice</span><span>${escapeHtml(a.category || '')}</span>`;
+          } else {
+            vsLine = `<span>This choice is <strong>${fmtMoney(scaled(Math.abs(diff)))} ahead</strong> of our AI model</span><span>${escapeHtml(a.category || '')}</span>`;
+          }
+        }
 
         return `
-          <div class="alt-row ${a.is_model ? 'is-model' : ''}">
-            <div class="rank-badge ${rankClass}">#${a.rank}</div>
-            <div class="alt-info">
-              <div class="alt-title">
-                <span>${a.name}</span>
-                ${a.is_model ? '<span class="pill-signal BUY" style="font-size:10px;padding:1px 6px;">Our Model</span>' : ''}
+          <div class="option-card ${a.is_model ? 'is-our-model' : ''}">
+            <div>
+              <div class="option-top">
+                <div class="option-rank-wrap">
+                  <div class="rank-circle ${a.rank === 1 ? 'top1' : ''}">#${a.rank}</div>
+                  <div>
+                    <div class="option-name">
+                      ${escapeHtml(a.name)}
+                      ${a.is_model ? '<span class="option-tag">Our Model</span>' : ''}
+                    </div>
+                  </div>
+                </div>
+                <div class="option-money">
+                  <div class="option-val">${fmtMoney(scaled(a.value))}</div>
+                  <div class="option-chg ${up ? 'txt-pos' : 'txt-neg'}">
+                    ${fmtMoney(scaled(a.gain_dollars), true)} (${fmtPct(a.gain_pct)})
+                  </div>
+                </div>
               </div>
-              <div class="alt-desc">${a.subtitle}</div>
-              <div class="bar-track">
-                <div class="bar-fill ${fillClass}" style="width: ${pctWidth.toFixed(1)}%;"></div>
-              </div>
+              <p class="option-explain" style="margin-top:8px;">${escapeHtml(desc)}</p>
             </div>
-            <div class="alt-values">
-              <div class="alt-val">${fmtMoney(scaled(a.value))}</div>
-              <div class="alt-gain ${isPos ? 'pos' : 'neg'}">${sign}${fmtMoney(scaled(a.gain_dollars))} (${fmtPct(a.gain_pct)})</div>
+
+            <div>
+              <div class="option-bar-track">
+                <div class="option-bar-fill" style="width:${barPct.toFixed(1)}%;background:${barColor};"></div>
+              </div>
+              <div class="option-vs-footer" style="margin-top:8px;">
+                ${vsLine}
+              </div>
             </div>
           </div>
         `;
       }).join('');
     }
 
-    /* Action Card Content */
-    function buildActionCardContent(tab) {
-      const actions = tab.todays_actions || [];
-      if (!actions || actions.length === 0) {
-        return `
-          <div class="action-badge HOLD">HOLD CASH & DEFEND</div>
-          <h3 class="action-title">Maintain 100% Cash Defense</h3>
-          <p class="action-reason">No candidate passed the composite quantitative threshold with adequate risk-reward. Cash is safely preserved.</p>
+    function toggleChartSeries(seriesId) {
+      const item = CHART_SERIES_META.find(s => s.id === seriesId);
+      if (!item) return;
+      // Keep at least 1 line visible
+      const activeCount = CHART_SERIES_META.filter(s => s.on).length;
+      if (item.on && activeCount <= 1) return;
+      item.on = !item.on;
+      const upToIdx = typeof selectedView === 'number' ? selectedView : appData.day_tabs.length - 1;
+      renderInteractiveChart(upToIdx);
+    }
+
+    function renderInteractiveChart(upToDayIdx) {
+      const pillsEl = document.getElementById('chartSeriesPills');
+      const svg = document.getElementById('comparisonChartSvg');
+      const tooltip = document.getElementById('chartHoverTooltip');
+      if (!svg || !pillsEl || !appData || !appData.day_tabs) return;
+
+      // Render toggle pills
+      pillsEl.innerHTML = `<span style="font-size:12px;font-weight:600;color:var(--text-muted);margin-right:4px;">Click to show/hide lines:</span>` +
+        CHART_SERIES_META.map(s => `
+          <button class="series-pill ${s.on ? 'on' : ''}" onclick="toggleChartSeries('${s.id}')">
+            <span class="series-swatch" style="background:${s.color}"></span>
+            <span>${escapeHtml(s.name)}</span>
+          </button>
+        `).join('');
+
+      const days = appData.day_tabs;
+      const activeSeries = CHART_SERIES_META.filter(s => s.on);
+
+      // Extract scaled values per day for each series
+      const seriesPoints = activeSeries.map(s => {
+        const pts = days.map(d => {
+          const opt = (d.alternative_options || []).find(a => a.id === s.id);
+          const rawVal = opt ? opt.value : (s.id === 'model' ? d.portfolio.total_value : d.portfolio.starting_capital);
+          return scaled(rawVal);
+        });
+        return { ...s, pts };
+      });
+
+      let minV = scaled(6950);
+      let maxV = scaled(7050);
+      seriesPoints.forEach(s => {
+        s.pts.forEach(v => {
+          if (v < minV) minV = v;
+          if (v > maxV) maxV = v;
+        });
+      });
+      const padRange = Math.max((maxV - minV) * 0.14, scaled(18));
+      minV -= padRange;
+      maxV += padRange;
+
+      const W = 920, H = 290, padL = 74, padR = 24, padT = 22, padB = 34;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+
+      const getX = i => days.length <= 1 ? padL + plotW / 2 : padL + (i / (days.length - 1)) * plotW;
+      const getY = v => padT + plotH - ((v - minV) / (maxV - minV)) * plotH;
+
+      let out = '';
+
+      // Horizontal grid lines + dollar axis labels
+      const gridSteps = 4;
+      for (let g = 0; g <= gridSteps; g++) {
+        const val = minV + (g / gridSteps) * (maxV - minV);
+        const y = getY(val);
+        out += `
+          <line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="var(--chart-grid)" stroke-width="1" />
+          <text x="${padL - 10}" y="${(y + 4).toFixed(1)}" fill="var(--text-muted)" font-size="11.5" font-family="var(--font-mono)" text-anchor="end">${fmtMoney(val)}</text>
         `;
       }
 
-      const topAct = actions[0];
-      const badgeClass = topAct.action || 'HOLD';
-      const actionName = topAct.action === 'BUY' ? `Tactical Buy: ${topAct.name} (${topAct.ticker})` : `${topAct.action}: ${topAct.ticker}`;
+      // Highlight vertical marker for the currently selected day tab
+      if (typeof upToDayIdx === 'number' && upToDayIdx >= 0 && upToDayIdx < days.length) {
+        const selX = getX(upToDayIdx);
+        out += `<line x1="${selX.toFixed(1)}" y1="${padT}" x2="${selX.toFixed(1)}" y2="${H - padB}" stroke="var(--accent-primary)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.65" />`;
+      }
+
+      // X-axis date labels
+      days.forEach((d, i) => {
+        const x = getX(i);
+        out += `<text x="${x.toFixed(1)}" y="${H - 10}" fill="var(--text-muted)" font-size="11.5" font-family="var(--font-mono)" text-anchor="middle">${d.date.slice(5)}</text>`;
+      });
+
+      // Draw each active line + dots
+      seriesPoints.forEach(s => {
+        const dPath = s.pts.map((v, i) => `${i === 0 ? 'M' : 'L'} ${getX(i).toFixed(1)} ${getY(v).toFixed(1)}`).join(' ');
+        const dashAttr = s.dashed ? 'stroke-dasharray="5,4"' : '';
+        out += `<path d="${dPath}" fill="none" stroke="${s.color}" stroke-width="${s.width}" ${dashAttr} stroke-linecap="round" stroke-linejoin="round" />`;
+        s.pts.forEach((v, i) => {
+          const r = s.id === 'model' ? 4.2 : 2.8;
+          out += `<circle cx="${getX(i).toFixed(1)}" cy="${getY(v).toFixed(1)}" r="${r}" fill="${s.color}" />`;
+        });
+      });
+
+      // Dynamic hover crosshair line
+      out += `<line id="chartHoverLine" x1="0" y1="${padT}" x2="0" y2="${H - padB}" stroke="var(--text-muted)" stroke-width="1" style="display:none" />`;
+
+      svg.innerHTML = out;
+
+      // Attach interactive mouse/touch hover scrubbing
+      const hoverLine = document.getElementById('chartHoverLine');
+      function handleMove(clientX) {
+        const rect = svg.getBoundingClientRect();
+        const relX = ((clientX - rect.left) / rect.width) * W;
+        let bestIdx = 0;
+        let bestDist = Infinity;
+        days.forEach((_, i) => {
+          const dist = Math.abs(getX(i) - relX);
+          if (dist < bestDist) { bestDist = dist; bestIdx = i; }
+        });
+        const snapX = getX(bestIdx);
+        if (hoverLine) {
+          hoverLine.setAttribute('x1', snapX);
+          hoverLine.setAttribute('x2', snapX);
+          hoverLine.style.display = 'block';
+        }
+        if (tooltip) {
+          const dayObj = days[bestIdx];
+          const rows = seriesPoints
+            .map(s => ({ name: s.name, color: s.color, val: s.pts[bestIdx] }))
+            .sort((a, b) => b.val - a.val);
+          tooltip.innerHTML = `
+            <div class="chart-tooltip-date">Day ${dayObj.day_index} • ${dayObj.date}</div>
+            ${rows.map(r => `
+              <div class="chart-tooltip-row">
+                <span style="display:inline-flex;align-items:center;gap:6px;color:var(--text-secondary);">
+                  <span style="width:8px;height:8px;border-radius:50%;background:${r.color};display:inline-block;"></span>
+                  ${escapeHtml(r.name)}
+                </span>
+                <strong class="mono" style="color:var(--text-primary);">${fmtMoney(r.val)}</strong>
+              </div>
+            `).join('')}
+          `;
+          tooltip.style.display = 'block';
+          const placeRight = snapX < W * 0.55;
+          tooltip.style.left = placeRight ? 'auto' : '16px';
+          tooltip.style.right = placeRight ? '16px' : 'auto';
+        }
+      }
+
+      svg.onmousemove = e => handleMove(e.clientX);
+      svg.ontouchmove = e => { if (e.touches && e.touches[0]) handleMove(e.touches[0].clientX); };
+      svg.onmouseleave = () => {
+        if (hoverLine) hoverLine.style.display = 'none';
+        if (tooltip) tooltip.style.display = 'none';
+      };
+    }
+
+    /* ==========================================================================
+       SECTION 3 HELPERS: SELECTED DAY'S MOVES + FULL AUDIT HISTORY
+       ========================================================================== */
+    function describeTradeOutcomePlainEnglish(rec, currentTabDate) {
+      const act = normalizeActionType(rec.action);
+      const isToday = rec.date === currentTabDate;
+      const outDollars = scaled(rec.outcome_dollars || 0);
+      const outPct = Number(rec.outcome_pct || 0);
+
+      if (isToday && Math.abs(outPct) < 0.01) {
+        return {
+          cls: 'new',
+          isWin: null,
+          title: `🆕 Executed Today at Close (${fmtMoney(rec.rec_price)})`,
+          detail: act === 'BUY'
+            ? `Bought at today's 4:00 PM closing price. Real-world profit/loss tracking starts tomorrow.`
+            : act === 'TRIM'
+            ? `Sold shares today at ${fmtMoney(rec.rec_price)} to move ${fmtMoney(scaled(rec.rec_dollars))} back into cash.`
+            : `Kept existing shares steady through today's close.`
+        };
+      }
+
+      if (act === 'TRIM') {
+        // For a TRIM (sale), rec.outcome_dollars = (current_price - rec_price) * shares.
+        // If current_price < rec_price (outDollars <= 0), selling SAVED Math.abs(outDollars)!
+        if (outDollars <= 0) {
+          const saved = Math.abs(outDollars);
+          return {
+            cls: 'win',
+            isWin: true,
+            title: `✅ Smart Sale: Saved ${fmtMoney(saved)}`,
+            detail: `Sold at ${fmtMoney(rec.rec_price)}; stock is now ${fmtMoney(rec.current_price)} (${fmtPct(outPct)} lower). Selling early protected ${fmtMoney(saved)}!`
+          };
+        } else {
+          return {
+            cls: 'loss',
+            isWin: false,
+            title: `⚠️ Trimmed Early (Stock Rose ${fmtPct(outPct)})`,
+            detail: `Sold at ${fmtMoney(rec.rec_price)} to lock in safety; stock later climbed to ${fmtMoney(rec.current_price)} (+${fmtMoney(outDollars)}).`
+          };
+        }
+      }
+
+      if (act === 'HOLD') {
+        const up = outDollars >= 0;
+        return {
+          cls: up ? 'win' : '',
+          isWin: up,
+          title: `${up ? '✅ Steady Hold' : '↔ Held Through Dip'}: ${fmtMoney(outDollars, true)} (${fmtPct(outPct)})`,
+          detail: `Was ${fmtMoney(rec.rec_price)} when held → Now ${fmtMoney(rec.current_price)}.`
+        };
+      }
+
+      // Standard BUY
+      if (outDollars >= 0) {
+        return {
+          cls: 'win',
+          isWin: true,
+          title: `✅ Winning Buy: ${fmtMoney(outDollars, true)} (${fmtPct(outPct)})`,
+          detail: `Bought at ${fmtMoney(rec.rec_price)} → Now ${fmtMoney(rec.current_price)}. Earned ${fmtMoney(outDollars)} more than leaving cash idle.`
+        };
+      } else {
+        return {
+          cls: 'loss',
+          isWin: false,
+          title: `❌ Losing Buy So Far: ${fmtMoney(outDollars, true)} (${fmtPct(outPct)})`,
+          detail: `Bought at ${fmtMoney(rec.rec_price)} → Now ${fmtMoney(rec.current_price)}. Keeping cash would have saved ${fmtMoney(Math.abs(outDollars))}.`
+        };
+      }
+    }
+
+    function buildSelectedDayMovesBlock(tab) {
+      const actions = tab.todays_actions || [];
+      if (actions.length === 0) {
+        return `
+          <div style="margin-bottom:22px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:8px;">What the Model Did on ${escapeHtml(tab.date)}:</div>
+            <div class="move-card">
+              <span class="action-pill HOLD">🛡️ Hold &amp; Wait</span>
+              <div class="move-headline">No Trades Made Today — Preserved Cash &amp; Existing Positions</div>
+              <p class="move-why">No new stock cleared the model's safety and trend bar today, so it avoided forcing a mediocre trade.</p>
+            </div>
+          </div>
+        `;
+      }
 
       return `
-        <div class="action-badge ${badgeClass}">${topAct.action} ORDER EXECUTED</div>
-        <h3 class="action-title">${actionName}</h3>
-        
-        <div class="action-detail-grid">
-          <div>
-            <div class="action-stat-label">Shares Added</div>
-            <div class="action-stat-val">${topAct.shares ? topAct.shares.toFixed(2) : '1.00'} shs</div>
+        <div style="margin-bottom:24px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+            Move${actions.length > 1 ? 's' : ''} Executed on ${escapeHtml(tab.date)} (${actions.length} ${actions.length === 1 ? 'Action' : 'Actions'}):
           </div>
-          <div>
-            <div class="action-stat-label">Cost Allocated</div>
-            <div class="action-stat-val">${fmtMoney(scaled(topAct.cost || 350))}</div>
-          </div>
-          <div>
-            <div class="action-stat-label">Execution Price</div>
-            <div class="action-stat-val">${fmtMoney(topAct.rec_price || 0)}</div>
-          </div>
-          <div>
-            <div class="action-stat-label">Setup Pattern</div>
-            <div class="action-stat-val" style="font-size:12px;">${topAct.setup_tag || 'Trend Leader'}</div>
-          </div>
-        </div>
-
-        <p class="action-reason">${topAct.reason || 'Strategic capital placement based on relative strength and risk-adjusted momentum.'}</p>
-        
-        <div class="outcome-box positive">
-          <span>✅</span>
-          <div>
-            <strong>Had you taken this trade vs. left cash idle:</strong>
-            <div>Position is tracking in alignment with target safety gates (+12% profit objective, -6% stop-loss).</div>
+          <div class="todays-moves-grid">
+            ${actions.map(a => {
+              const act = normalizeActionType(a.action);
+              const badgeWord = act === 'BUY' ? '🟢 Bought Shares' : (act === 'TRIM' ? '🟠 Sold / Trimmed 40%' : '🔵 Held Steady');
+              const verbTitle = act === 'BUY'
+                ? `Bought ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker})`
+                : act === 'TRIM'
+                ? `Sold ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker})`
+                : `Kept ${fmtMoney(scaled(a.rec_dollars))} in ${a.name} (${a.ticker})`;
+              const sh = Number(a.shares || 0) * capitalScale;
+              return `
+                <div class="move-card" onclick="openStockModal('${escapeHtml(a.ticker)}')">
+                  <span class="action-pill ${act}">${badgeWord}</span>
+                  <div class="move-headline">${escapeHtml(verbTitle)}</div>
+                  <div class="move-meta">${sh.toFixed(3)} shares @ ${fmtMoney(a.rec_price)}/share</div>
+                  <p class="move-why">${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action))}</p>
+                </div>
+              `;
+            }).join('')}
           </div>
         </div>
       `;
     }
 
-    /* Interactive Multi-Line Benchmark Chart */
-    function initChart(currentTab) {
-      const svg = document.getElementById('benchmarkSvgChart');
-      const legendBox = document.getElementById('chartLegendBox');
-      if (!svg || !appData || !appData.day_tabs) return;
-
-      const days = appData.day_tabs;
-      if (days.length === 0) return;
-
-      // Extract trajectories
-      const seriesList = [
-        { id: 'model', name: 'Our $7K AI Model', color: '#1e293b', width: 3.5, pts: [] },
-        { id: 'spy', name: 'S&P 500 (SPY)', color: '#1b6a4f', width: 2, pts: [] },
-        { id: 'bal', name: '60/40 Balanced', color: '#b45309', width: 2, pts: [] },
-        { id: 'schd', name: 'Dividend Value', color: '#8b5cf6', width: 2, pts: [] },
-        { id: 'hysa', name: 'High-Yield Savings', color: '#64748b', width: 1.5, pts: [] },
-      ];
-
-      let minVal = 6800;
-      let maxVal = 7250;
-
-      days.forEach(d => {
-        const p = d.portfolio;
-        const alts = d.alternative_options || [];
-        const schd = alts.find(a => a.id === 'schd_dividend') || { value: p.total_value };
-
-        seriesList[0].pts.push({ date: d.date, val: p.total_value });
-        seriesList[1].pts.push({ date: d.date, val: p.spy_benchmark_value });
-        seriesList[2].pts.push({ date: d.date, val: p.balanced_60_40_value });
-        seriesList[3].pts.push({ date: d.date, val: schd.value });
-        seriesList[4].pts.push({ date: d.date, val: p.hysa_value });
-
-        [p.total_value, p.spy_benchmark_value, p.balanced_60_40_value, schd.value, p.hysa_value].forEach(v => {
-          if (v < minVal) minVal = Math.floor(v - 25);
-          if (v > maxVal) maxVal = Math.ceil(v + 25);
-        });
-      });
-
-      // SVG Dimensions
-      const W = 900;
-      const H = 280;
-      const padX = 65;
-      const padY = 35;
-      const chartW = W - padX - 30;
-      const chartH = H - (padY * 2);
-
-      function getX(i) {
-        if (days.length <= 1) return padX;
-        return padX + (i / (days.length - 1)) * chartW;
-      }
-      function getY(v) {
-        return H - padY - ((v - minVal) / (maxVal - minVal)) * chartH;
-      }
-
-      // Legend
-      legendBox.innerHTML = seriesList.map(s => `
-        <div class="legend-item">
-          <div class="legend-line" style="background: ${s.color};"></div>
-          <span>${s.name}</span>
-        </div>
-      `).join('');
-
-      let svgHtml = '';
-      // Grid lines
-      const steps = 4;
-      for (let i = 0; i <= steps; i++) {
-        const val = minVal + (i / steps) * (maxVal - minVal);
-        const y = getY(val);
-        svgHtml += `
-          <line x1="${padX}" y1="${y}" x2="${W - 20}" y2="${y}" stroke="#e8e6df" stroke-width="1" stroke-dasharray="3,3" />
-          <text x="${padX - 8}" y="${y + 4}" fill="#858f9e" font-size="11" font-family="var(--font-mono)" text-anchor="end">${fmtMoney(val)}</text>
-        `;
-      }
-
-      // Date labels on X
-      days.forEach((d, i) => {
-        const x = getX(i);
-        const shortDate = d.date.slice(5);
-        svgHtml += `
-          <text x="${x}" y="${H - 10}" fill="#858f9e" font-size="11" font-family="var(--font-mono)" text-anchor="middle">${shortDate}</text>
-        `;
-      });
-
-      // Series Paths
-      seriesList.forEach(s => {
-        const pathData = s.pts.map((pt, i) => `${i === 0 ? 'M' : 'L'} ${getX(i).toFixed(1)} ${getY(pt.val).toFixed(1)}`).join(' ');
-        svgHtml += `<path d="${pathData}" fill="none" stroke="${s.color}" stroke-width="${s.width}" stroke-linecap="round" stroke-linejoin="round" />`;
-
-        // Points
-        s.pts.forEach((pt, i) => {
-          const cx = getX(i);
-          const cy = getY(pt.val);
-          const isCurrentTab = d => d.date === currentTab.date;
-          svgHtml += `
-            <circle cx="${cx}" cy="${cy}" r="${s.id === 'model' ? 4.5 : 3}" fill="${s.color}" stroke="#ffffff" stroke-width="1.5" />
-          `;
-        });
-      });
-
-      svg.innerHTML = svgHtml;
+    function setTradeFilter(f) {
+      tradeFilter = f;
+      renderCurrentView();
+      const el = document.getElementById('sec-actions');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    /* Modal: Open Stock Inspector Dossier */
+    function buildTradeScorecardAndHistory(tab) {
+      const recs = tab.audited_recommendations || [];
+      let evaluatedCount = 0;
+      let winCount = 0;
+      let trimSavedDollars = 0;
+      let bestBuy = null;
+      let worstBuy = null;
+
+      const enriched = recs.map(r => {
+        const act = normalizeActionType(r.action);
+        const out = describeTradeOutcomePlainEnglish(r, tab.date);
+        if (out.isWin !== null) {
+          evaluatedCount++;
+          if (out.isWin) winCount++;
+        }
+        if (act === 'TRIM' && Number(r.outcome_dollars || 0) < 0) {
+          trimSavedDollars += Math.abs(scaled(r.outcome_dollars));
+        }
+        if (act === 'BUY' && r.date !== tab.date) {
+          if (!bestBuy || r.outcome_dollars > bestBuy.outcome_dollars) bestBuy = r;
+          if (!worstBuy || r.outcome_dollars < worstBuy.outcome_dollars) worstBuy = r;
+        }
+        return { raw: r, act, out };
+      });
+
+      const winRatePct = evaluatedCount > 0 ? Math.round((winCount / evaluatedCount) * 100) : 0;
+
+      const filtered = enriched.filter(item => {
+        if (tradeFilter === 'buy') return item.act === 'BUY';
+        if (tradeFilter === 'trim') return item.act === 'TRIM';
+        if (tradeFilter === 'win') return item.out.isWin === true;
+        if (tradeFilter === 'lag') return item.out.isWin === false;
+        return true;
+      });
+
+      return `
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+          All-Time Decision Scorecard (Day 1 Through ${escapeHtml(tab.date)}):
+        </div>
+
+        <div class="scorecard-strip">
+          <div>
+            <div class="sc-item-label">Decisions That Helped</div>
+            <div class="sc-item-val txt-pos">${winCount} of ${evaluatedCount} (${winRatePct}%)</div>
+            <div class="sc-item-sub">${recs.length} total logged moves (${recs.length - evaluatedCount} new today)</div>
+          </div>
+          <div>
+            <div class="sc-item-label">Saved by Trimming Early</div>
+            <div class="sc-item-val ${trimSavedDollars > 0 ? 'txt-pos' : ''}">${fmtMoney(trimSavedDollars, true)}</div>
+            <div class="sc-item-sub">Losses avoided after selling weak/hot shares</div>
+          </div>
+          <div>
+            <div class="sc-item-label">Best Stock Pick So Far</div>
+            <div class="sc-item-val txt-pos">${bestBuy ? `${escapeHtml(bestBuy.ticker)} (${fmtMoney(scaled(bestBuy.outcome_dollars), true)})` : '—'}</div>
+            <div class="sc-item-sub">${bestBuy ? `${fmtPct(bestBuy.outcome_pct)} since ${bestBuy.date}` : 'Tracking'}</div>
+          </div>
+          <div>
+            <div class="sc-item-label">Biggest Drag So Far</div>
+            <div class="sc-item-val ${worstBuy && worstBuy.outcome_dollars < 0 ? 'txt-neg' : ''}">${worstBuy ? `${escapeHtml(worstBuy.ticker)} (${fmtMoney(scaled(worstBuy.outcome_dollars), true)})` : '—'}</div>
+            <div class="sc-item-sub">${worstBuy ? `${fmtPct(worstBuy.outcome_pct)} since ${worstBuy.date}` : 'None'}</div>
+          </div>
+        </div>
+
+        <div class="filter-pills">
+          <button class="filter-pill ${tradeFilter === 'all' ? 'active' : ''}" onclick="setTradeFilter('all')">All Moves (${enriched.length})</button>
+          <button class="filter-pill ${tradeFilter === 'buy' ? 'active' : ''}" onclick="setTradeFilter('buy')">Buys Only (${enriched.filter(x => x.act === 'BUY').length})</button>
+          <button class="filter-pill ${tradeFilter === 'trim' ? 'active' : ''}" onclick="setTradeFilter('trim')">Sales / Trims (${enriched.filter(x => x.act === 'TRIM').length})</button>
+          <button class="filter-pill ${tradeFilter === 'win' ? 'active' : ''}" onclick="setTradeFilter('win')">Moves That Helped (${enriched.filter(x => x.out.isWin === true).length})</button>
+          <button class="filter-pill ${tradeFilter === 'lag' ? 'active' : ''}" onclick="setTradeFilter('lag')">Moves That Lagged (${enriched.filter(x => x.out.isWin === false).length})</button>
+        </div>
+
+        <div class="trade-list">
+          ${filtered.map(({ raw, act, out }) => {
+            const actionVerb = act === 'BUY'
+              ? `Bought ${fmtMoney(scaled(raw.rec_dollars))} of ${raw.name} (${raw.ticker})`
+              : act === 'TRIM'
+              ? `Sold (Trimmed) ${fmtMoney(scaled(raw.rec_dollars))} of ${raw.name} (${raw.ticker})`
+              : `Held ${fmtMoney(scaled(raw.rec_dollars))} in ${raw.name} (${raw.ticker})`;
+            const pillWord = act === 'BUY' ? 'BUY' : (act === 'TRIM' ? 'SOLD / TRIM' : 'HOLD');
+            return `
+              <div class="trade-row" onclick="openStockModal('${escapeHtml(raw.ticker)}')">
+                <div class="trade-date-col">
+                  <span class="trade-date">${escapeHtml(raw.date)}</span>
+                  <span class="action-pill ${act}">${pillWord}</span>
+                </div>
+                <div>
+                  <div class="trade-main-title">${escapeHtml(actionVerb)} <span class="mono" style="font-size:13px;font-weight:500;color:var(--text-muted)">@ ${fmtMoney(raw.rec_price)}</span></div>
+                  <div class="trade-main-why">${escapeHtml(translateReasonToPlainEnglish(raw.reason, raw.action))}</div>
+                </div>
+                <div class="trade-outcome-box ${out.cls}">
+                  <div class="trade-outcome-title">${escapeHtml(out.title)}</div>
+                  <div style="color:var(--text-secondary)">${escapeHtml(out.detail)}</div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       SECTION 4 HELPERS: STACKED ALLOCATION BAR & HOLDINGS TABLE
+       ========================================================================== */
+    function renderMiniSparkSvg(sparkArr) {
+      if (!sparkArr || sparkArr.length < 2) return '';
+      const closes = sparkArr.map(pt => typeof pt === 'object' ? Number(pt.close || 0) : Number(pt || 0));
+      const minC = Math.min(...closes);
+      const maxC = Math.max(...closes);
+      const span = maxC - minC || 1;
+      const W = 82, H = 26;
+      const pts = closes.map((c, i) => {
+        const x = (i / (closes.length - 1)) * W;
+        const y = H - 3 - ((c - minC) / span) * (H - 6);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+      const up = closes[closes.length - 1] >= closes[0];
+      const stroke = up ? 'var(--pos)' : 'var(--neg)';
+      return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><polyline fill="none" stroke="${stroke}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="${pts}" /></svg>`;
+    }
+
+    function buildAllocationVisual(tab) {
+      const allocs = tab.allocations || [];
+      if (allocs.length === 0) return '';
+
+      return `
+        <div class="alloc-stacked-bar">
+          ${allocs.map((a, i) => {
+            const color = a.ticker === 'CASH' ? '#64748b' : ALLOC_COLORS[i % ALLOC_COLORS.length];
+            const clickAttr = a.ticker === 'CASH' ? '' : `onclick="openStockModal('${escapeHtml(a.ticker)}')"`;
+            return `<div class="alloc-seg" style="width:${Math.max(1.5, a.pct)}%;background:${color};" title="${escapeHtml(a.ticker)}: ${fmtMoney(scaled(a.value))} (${a.pct.toFixed(1)}%)" ${clickAttr}></div>`;
+          }).join('')}
+        </div>
+
+        <div class="alloc-chips">
+          ${allocs.map((a, i) => {
+            const color = a.ticker === 'CASH' ? '#64748b' : ALLOC_COLORS[i % ALLOC_COLORS.length];
+            const clickAttr = a.ticker === 'CASH' ? '' : `onclick="openStockModal('${escapeHtml(a.ticker)}')"`;
+            return `
+              <div class="alloc-chip" ${clickAttr}>
+                <span class="alloc-dot" style="background:${color}"></span>
+                <strong>${escapeHtml(a.ticker === 'CASH' ? 'Cash Reserve' : a.ticker)}</strong>
+                <span class="mono" style="color:var(--text-secondary)">${fmtMoney(scaled(a.value))} (${a.pct.toFixed(1)}%)</span>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function buildHoldingsTable(tab) {
+      const holdings = tab.holdings || [];
+      const p = tab.portfolio;
+      if (holdings.length === 0) {
+        return `<div class="stat-card">100% of your portfolio (${fmtMoney(scaled(p.cash_reserve))}) is currently sitting safely in cash.</div>`;
+      }
+
+      return `
+        <div class="table-scroll">
+          <table class="clean-table">
+            <thead>
+              <tr>
+                <th>Company You Own</th>
+                <th>Money Put In</th>
+                <th>Worth Today</th>
+                <th>Your Profit / Loss</th>
+                <th>12-Day Trend</th>
+                <th>Plain-English Health Check</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${holdings.map(h => {
+                const pnlUp = Number(h.pnl_dollars || 0) >= 0;
+                const dayUp = Number(h.day_pct || 0) >= 0;
+                const sh = Number(h.shares || 0) * capitalScale;
+                return `
+                  <tr onclick="openStockModal('${escapeHtml(h.ticker)}')">
+                    <td>
+                      <div>
+                        <span class="t-sym">${escapeHtml(h.ticker)}</span>
+                        <span class="t-name">${escapeHtml(h.name)}</span>
+                      </div>
+                      <div class="t-sub">${escapeHtml(h.sector)} • ${sh.toFixed(3)} shares (Bought @ ${fmtMoney(h.avg_entry)})</div>
+                    </td>
+                    <td class="mono">${fmtMoney(scaled(h.cost_basis))}</td>
+                    <td>
+                      <div class="mono" style="font-weight:700;">${fmtMoney(scaled(h.market_value))}</div>
+                      <div class="t-sub mono">${fmtMoney(h.current_price)}/sh (<span class="${dayUp ? 'txt-pos' : 'txt-neg'}">${fmtPct(h.day_pct)} today</span>)</div>
+                    </td>
+                    <td>
+                      <div class="mono ${pnlUp ? 'txt-pos' : 'txt-neg'}">${fmtMoney(scaled(h.pnl_dollars), true)}</div>
+                      <div class="t-sub mono ${pnlUp ? 'txt-pos' : 'txt-neg'}">${fmtPct(h.pnl_pct)} total</div>
+                    </td>
+                    <td>${renderMiniSparkSvg(h.sparkline)}</td>
+                    <td style="max-width:300px;font-size:13px;color:var(--text-secondary);">
+                      ${escapeHtml(translateReasonToPlainEnglish(h.reason, h.signal))}
+                    </td>
+                  </tr>
+                `;
+              }).join('')}
+              <tr style="cursor:default;background:var(--bg-card);">
+                <td>
+                  <span class="t-sym" style="background:var(--bg-card-alt);color:var(--text-secondary);">CASH</span>
+                  <span class="t-name">Uninvested Cash Reserve</span>
+                  <div class="t-sub">Ready for future opportunities &amp; cushions market dips</div>
+                </td>
+                <td class="mono">${fmtMoney(scaled(p.cash_reserve))}</td>
+                <td class="mono" style="font-weight:700;">${fmtMoney(scaled(p.cash_reserve))}</td>
+                <td class="mono" style="color:var(--text-muted);">$0.00 (0.00%)</td>
+                <td></td>
+                <td style="font-size:13px;color:var(--text-muted);">Protected from stock market swings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       SECTION 5 HELPERS: AI LEARNING CARDS + 19-STOCK WATCHLIST
+       ========================================================================== */
+    function describeMultiplierPlain(w, upWord, downWord) {
+      const v = Number(w || 1.0);
+      if (showRawMath) return `${v.toFixed(2)}x multiplier`;
+      const diffPct = Math.round((v - 1.0) * 100);
+      if (Math.abs(diffPct) <= 1) return "Normal Standard Weight";
+      if (diffPct > 0) return `Boosted +${diffPct}% (${upWord})`;
+      return `Reduced ${diffPct}% (${downWord})`;
+    }
+
+    function buildAdaptiveLearningSummary(tab) {
+      const al = tab.adaptive_learning || {};
+      const cooldowns = al.cooldown_tickers || [];
+      return `
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+          How the AI Adjusted Its Own Rules for This Session:
+        </div>
+        <div class="learning-grid">
+          <div class="learn-card">
+            <div class="learn-title">Preference for Steady Uptrends</div>
+            <div class="learn-val">${showRawMath ? `${Number(al.trend_weight || 1).toFixed(2)}x` : describeMultiplierPlain(al.trend_weight, 'Favoring Winners', 'Dialed Back').split(' (')[0]}</div>
+            <div class="learn-desc">Gives extra priority to companies already climbing above their 1-month and 2.5-month averages.</div>
+          </div>
+
+          <div class="learn-card">
+            <div class="learn-title">Appetite for Dip-Buying</div>
+            <div class="learn-val">${showRawMath ? `${Number(al.dip_rsi_weight || 1).toFixed(2)}x` : describeMultiplierPlain(al.dip_rsi_weight, 'More Bargain Hunting', 'More Cautious').split(' (')[0]}</div>
+            <div class="learn-desc">Because buying falling tech dips lagged earlier, the AI automatically became pickier about "cheap" falling stocks.</div>
+          </div>
+
+          <div class="learn-card">
+            <div class="learn-title">Minimum Score Required to Buy</div>
+            <div class="learn-val">${Number(al.buy_threshold || 70).toFixed(1)} <span style="font-size:13px;font-weight:600;color:var(--text-muted)">/ 100</span></div>
+            <div class="learn-desc">A stock must earn at least ${Number(al.buy_threshold || 70).toFixed(1)} points out of 100 before the model spends spare cash on it.</div>
+          </div>
+
+          <div class="learn-card">
+            <div class="learn-title">Stocks in the "Penalty Box"</div>
+            <div class="learn-val ${cooldowns.length ? 'txt-warn' : 'txt-pos'}">${cooldowns.length ? escapeHtml(cooldowns.join(', ')) : 'None'}</div>
+            <div class="learn-desc">${cooldowns.length ? 'Deducting 7 points from recent losers so the model refuses to double down while they slide.' : 'No stocks are currently on cooldown penalty.'}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function setWatchFilter(f) {
+      watchFilter = f;
+      renderCurrentView();
+      const el = document.getElementById('sec-radar');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function buildWatchlistSection(tab) {
+      const list = tab.watchlist_scores || [];
+      const heldSet = new Set((tab.holdings || []).map(h => h.ticker));
+
+      const filtered = list.filter(s => {
+        if (watchFilter === 'all') return true;
+        return normalizeActionType(s.signal) === watchFilter;
+      });
+
+      return `
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:22px 0 12px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text-muted);">
+            19-Stock Radar (Click any row for its plain-English chart &amp; target prices):
+          </div>
+          <div class="filter-pills" style="margin-bottom:0;">
+            <button class="filter-pill ${watchFilter === 'all' ? 'active' : ''}" onclick="setWatchFilter('all')">All (${list.length})</button>
+            <button class="filter-pill ${watchFilter === 'BUY' ? 'active' : ''}" onclick="setWatchFilter('BUY')">Strong / Buy Zone (${list.filter(s => normalizeActionType(s.signal) === 'BUY').length})</button>
+            <button class="filter-pill ${watchFilter === 'HOLD' ? 'active' : ''}" onclick="setWatchFilter('HOLD')">Neutral / Watch (${list.filter(s => normalizeActionType(s.signal) === 'HOLD').length})</button>
+            <button class="filter-pill ${watchFilter === 'TRIM' ? 'active' : ''}" onclick="setWatchFilter('TRIM')">Avoiding / Hot (${list.filter(s => normalizeActionType(s.signal) === 'TRIM').length})</button>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table class="clean-table">
+            <thead>
+              <tr>
+                <th>Stock</th>
+                <th>Price &amp; Today</th>
+                <th>Price Temperature</th>
+                <th>1–2 Month Direction</th>
+                <th>AI Score</th>
+                <th>Plain-English Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${filtered.map(s => {
+                const up = Number(s.day_pct || 0) >= 0;
+                const verdict = describeWatchVerdict(s, heldSet);
+                return `
+                  <tr onclick="openStockModal('${escapeHtml(s.ticker)}')">
+                    <td>
+                      <div>
+                        <span class="t-sym">${escapeHtml(s.ticker)}</span>
+                        <span class="t-name">${escapeHtml(s.name)}</span>
+                      </div>
+                      <div class="t-sub">${escapeHtml(s.sector)}${heldSet.has(s.ticker) ? ' • <strong>Currently Owned</strong>' : ''}</div>
+                    </td>
+                    <td class="mono">
+                      <div style="font-weight:700;">${fmtMoney(s.price)}</div>
+                      <div class="t-sub ${up ? 'txt-pos' : 'txt-neg'}">${fmtPct(s.day_pct)}</div>
+                    </td>
+                    <td style="font-size:13px;">${escapeHtml(describePriceTemp(s.rsi14))}</td>
+                    <td style="font-size:13px;">${escapeHtml(describeTrendSimple(s))}</td>
+                    <td class="mono" style="font-weight:700;">${Number(s.score || 0).toFixed(1)} <span style="font-weight:400;color:var(--text-muted)">/ 100</span></td>
+                    <td><span class="action-pill ${verdict.cls}">${escapeHtml(verdict.text)}</span></td>
+                  </tr>
+                `;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    /* ==========================================================================
+       ALL-DAYS SUMMARY VIEW & AI LEARNING DEEP-DIVE VIEW
+       ========================================================================== */
+    function buildAllDaysOverview() {
+      const days = appData.day_tabs || [];
+      return `
+        <section class="chapter">
+          <div class="chapter-eyebrow">All-Days Chronological Summary</div>
+          <h1 class="chapter-title">Day-by-Day Progress Across All ${days.length} Trading Sessions</h1>
+          <p class="chapter-desc">
+            Click any day row below to open that day's full plain-English briefing, chart, and holdings snapshot.
+          </p>
+
+          <div class="table-scroll" style="margin-top:20px;">
+            <table class="clean-table">
+              <thead>
+                <tr>
+                  <th>Session</th>
+                  <th>Our Portfolio</th>
+                  <th>Day Change</th>
+                  <th>S&amp;P 500</th>
+                  <th>60/40 Balanced</th>
+                  <th>Dividend Value</th>
+                  <th>4.5% Savings</th>
+                  <th>What the Model Did That Day</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${days.map((d, idx) => {
+                  const p = d.portfolio;
+                  const schd = (d.alternative_options || []).find(a => a.id === 'schd_dividend');
+                  const acts = d.todays_actions || [];
+                  const moveSummary = idx === 0
+                    ? `Built initial ${acts.length}-stock portfolio`
+                    : acts.length === 0
+                    ? 'Held steady'
+                    : acts.map(a => `${normalizeActionType(a.action) === 'TRIM' ? 'Sold' : normalizeActionType(a.action) === 'BUY' ? 'Bought' : 'Held'} ${a.ticker} (${fmtMoney(scaled(a.rec_dollars))})`).join(', ');
+                  return `
+                    <tr onclick="selectView(${idx})">
+                      <td>
+                        <strong>Day ${d.day_index}</strong>
+                        <div class="t-sub mono">${escapeHtml(d.date)}</div>
+                      </td>
+                      <td class="mono" style="font-weight:700;">${fmtMoney(scaled(p.total_value))}</td>
+                      <td class="mono ${p.day_change_dollars >= 0 ? 'txt-pos' : 'txt-neg'}">
+                        ${fmtMoney(scaled(p.day_change_dollars), true)} (${fmtPct(p.day_change_pct)})
+                      </td>
+                      <td class="mono">${fmtMoney(scaled(p.spy_benchmark_value))}</td>
+                      <td class="mono">${fmtMoney(scaled(p.balanced_60_40_value))}</td>
+                      <td class="mono">${schd ? fmtMoney(scaled(schd.value)) : '—'}</td>
+                      <td class="mono">${fmtMoney(scaled(p.hysa_value))}</td>
+                      <td style="font-size:13px;color:var(--text-secondary);">${escapeHtml(moveSummary)}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      `;
+    }
+
+    function buildLearningDeepDive() {
+      const days = appData.day_tabs || [];
+      const mem = appData.model_memory || {};
+      const lessons = (mem.lessons_learned || []).slice().reverse();
+
+      return `
+        <section class="chapter">
+          <div class="chapter-eyebrow">How the Self-Learning Brain Works</div>
+          <h1 class="chapter-title">How the Model Learns From Its Own Winners &amp; Losers</h1>
+          <p class="chapter-desc">
+            Unlike a rigid formula that keeps repeating the same mistake, this model checks every past trade after the market closes. When bargain-hunting falling stocks loses money, it automatically dials back dip-buying and favors proven upward trends instead.
+          </p>
+
+          <div style="margin-top:24px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+              Daily Lessons Recorded in Memory:
+            </div>
+            <div class="lesson-timeline">
+              ${lessons.length ? lessons.map(item => `
+                <div class="lesson-item">
+                  <div class="lesson-date">${escapeHtml(item.date)}</div>
+                  <div style="font-size:14.5px;color:var(--text-primary);">${escapeHtml(item.lesson)}</div>
+                </div>
+              `).join('') : '<div class="lesson-item">Lessons accumulate automatically after each live market close.</div>'}
+            </div>
+          </div>
+
+          <div style="margin-top:28px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+              Day-by-Day Strategy Weight Shifts (Day 1 → Latest):
+            </div>
+            <div class="table-scroll">
+              <table class="clean-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Uptrend Priority</th>
+                    <th>Dip-Buy Appetite</th>
+                    <th>Beat-S&amp;P Priority</th>
+                    <th>Min Score to Buy</th>
+                    <th>Stocks on Cooldown</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${days.map((d, idx) => {
+                    const al = d.adaptive_learning || {};
+                    const cd = (al.cooldown_tickers || []).join(', ') || 'None';
+                    return `
+                      <tr onclick="selectView(${idx})">
+                        <td class="mono" style="font-weight:600;">${escapeHtml(d.date)}</td>
+                        <td>${escapeHtml(describeMultiplierPlain(al.trend_weight, 'Higher', 'Lower'))}</td>
+                        <td>${escapeHtml(describeMultiplierPlain(al.dip_rsi_weight, 'Higher', 'More Cautious'))}</td>
+                        <td>${escapeHtml(describeMultiplierPlain(al.rel_strength_weight, 'Higher', 'Lower'))}</td>
+                        <td class="mono">${Number(al.buy_threshold || 70).toFixed(1)} / 100</td>
+                        <td class="${cd !== 'None' ? 'txt-warn' : ''}" style="font-weight:600;">${escapeHtml(cd)}</td>
+                      </tr>
+                    `;
+                  }).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    /* ==========================================================================
+       PLAIN-ENGLISH STOCK INSPECTOR POPUP MODAL
+       ========================================================================== */
     function openStockModal(ticker) {
-      if (!ticker) return;
-      const tab = (selectedDayIdx !== 'overview' && selectedDayIdx !== 'memory')
-        ? appData.day_tabs[selectedDayIdx]
+      if (!ticker || ticker === 'CASH' || !appData) return;
+      const tab = typeof selectedView === 'number'
+        ? appData.day_tabs[selectedView]
         : appData.day_tabs[appData.day_tabs.length - 1];
 
       const scored = (tab.watchlist_scores || []).find(s => s.ticker === ticker);
       const held = (tab.holdings || []).find(h => h.ticker === ticker);
-      const price = scored ? scored.price : (held ? held.current_price : 0);
-      const name = scored ? scored.name : (held ? held.name : ticker);
-      const rsi = scored ? (scored.rsi14 || 50) : 50;
+      if (!scored && !held) return;
 
-      // RSI Zone Gauge Text
-      let tempLabel = 'Fair Value / Neutral (Balanced)';
-      let tempColor = 'var(--text-secondary)';
-      if (rsi < 35) { tempLabel = 'Bargain Entry Zone (Oversold)'; tempColor = 'var(--forest-green)'; }
-      else if (rsi > 70) { tempLabel = 'Overheated Zone (Caution)'; tempColor = 'var(--terracotta)'; }
+      const name = scored ? scored.name : held.name;
+      const sector = scored ? scored.sector : held.sector;
+      const price = scored ? scored.price : held.current_price;
+      const dayPct = scored ? scored.day_pct : held.day_pct;
+      const rsi = scored ? Number(scored.rsi14 || 50) : 50;
+      const targetPrice = scored && scored.target_price ? scored.target_price : price * 1.08;
+      const stopPrice = scored && scored.stop_price ? scored.stop_price : price * 0.94;
+      const spark = (scored && scored.sparkline) || (held && held.sparkline) || [];
 
-      const targetPrice = price * 1.12;
-      const stopPrice = price * 0.94;
+      // Build 12-session SVG price chart with optional entry line
+      let chartSvg = '';
+      if (spark.length >= 2) {
+        const closes = spark.map(pt => typeof pt === 'object' ? Number(pt.close || 0) : Number(pt || 0));
+        let minP = Math.min(...closes);
+        let maxP = Math.max(...closes);
+        if (held && held.avg_entry) {
+          minP = Math.min(minP, held.avg_entry);
+          maxP = Math.max(maxP, held.avg_entry);
+        }
+        const pad = Math.max((maxP - minP) * 0.15, 0.5);
+        minP -= pad; maxP += pad;
+        const W = 580, H = 155, pL = 56, pR = 16, pT = 14, pB = 22;
+        const cW = W - pL - pR, cH = H - pT - pB;
+        const gx = i => pL + (i / (closes.length - 1)) * cW;
+        const gy = v => pT + cH - ((v - minP) / (maxP - minP)) * cH;
+
+        const linePts = closes.map((c, i) => `${i === 0 ? 'M' : 'L'} ${gx(i).toFixed(1)} ${gy(c).toFixed(1)}`).join(' ');
+        const up12 = closes[closes.length - 1] >= closes[0];
+        const col = up12 ? 'var(--pos)' : 'var(--neg)';
+
+        let entryOverlay = '';
+        if (held && held.avg_entry) {
+          const ey = gy(held.avg_entry);
+          entryOverlay = `
+            <line x1="${pL}" y1="${ey.toFixed(1)}" x2="${W - pR}" y2="${ey.toFixed(1)}" stroke="var(--accent-primary)" stroke-width="1.5" stroke-dasharray="4,4" />
+            <text x="${W - pR - 4}" y="${(ey - 5).toFixed(1)}" fill="var(--accent-primary)" font-size="11" font-family="var(--font-mono)" text-anchor="end">Your Buy Price: ${fmtMoney(held.avg_entry)}</text>
+          `;
+        }
+
+        chartSvg = `
+          <div style="background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:6px;">Last ${closes.length} Trading Sessions (${fmtMoney(closes[0])} → ${fmtMoney(closes[closes.length - 1])})</div>
+            <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:150px;display:block;">
+              <text x="${pL - 6}" y="${pT + 8}" fill="var(--text-muted)" font-size="11" font-family="var(--font-mono)" text-anchor="end">${fmtMoney(maxP)}</text>
+              <text x="${pL - 6}" y="${pT + cH}" fill="var(--text-muted)" font-size="11" font-family="var(--font-mono)" text-anchor="end">${fmtMoney(minP)}</text>
+              ${entryOverlay}
+              <path d="${linePts}" fill="none" stroke="${col}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+              ${closes.map((c, i) => `<circle cx="${gx(i).toFixed(1)}" cy="${gy(c).toFixed(1)}" r="3" fill="${col}" />`).join('')}
+            </svg>
+          </div>
+        `;
+      }
+
+      // Check for matching news headlines scanned today
+      const allHeadlines = (tab.gemini_insight && tab.gemini_insight.headlines_scanned) || [];
+      const matchingNews = allHeadlines.filter(h => h.includes(`[${ticker}]`));
+
+      // Plain-English 1-month summary
+      let monthNarrative = '';
+      if (scored) {
+        const r20 = Number(scored.ret_20d || 0);
+        const rel = Number(scored.rel_strength_20d || 0);
+        monthNarrative = `Over the last month (20 trading days), ${name} has moved ${fmtPct(r20)} (${rel >= 0 ? `beating the S&P 500 by ${fmtPct(rel)}` : `trailing the S&P 500 by ${fmtPct(Math.abs(rel), false)}`}). `;
+      }
 
       const modal = document.getElementById('stockModalContent');
       modal.innerHTML = `
-        <button class="modal-close-btn" onclick="closeStockModal()">✕</button>
-        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px;">
-          <span class="ticker-chip" style="font-size:18px;padding:4px 10px;">${ticker}</span>
-          <h2 style="font-family:var(--font-serif);font-size:24px;color:var(--text-primary);">${name}</h2>
+        <button class="modal-close" onclick="closeStockModal()">✕</button>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+          <span class="t-sym" style="font-size:15px;padding:4px 10px;">${escapeHtml(ticker)}</span>
+          <span style="font-size:13px;color:var(--text-muted);font-weight:600;">${escapeHtml(sector)}</span>
         </div>
-        <div style="font-size:28px;font-weight:700;font-family:var(--font-mono);margin-bottom:16px;">
-          ${fmtMoney(price)}
-        </div>
-
-        <!-- Temperature Gauge -->
-        <div style="background:var(--bg-subtle);padding:14px 18px;border-radius:var(--radius-md);border:1px solid var(--border-subtle);margin-bottom:20px;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;">14-Day Price Temperature (RSI: ${rsi.toFixed(1)})</div>
-          <div style="font-size:15px;font-weight:600;color:${tempColor};">${tempLabel}</div>
-          <div style="height:6px;width:100%;background:#e2dfd5;border-radius:3px;margin-top:8px;position:relative;">
-            <div style="position:absolute;left:${Math.min(100, Math.max(0, rsi))}%;top:-3px;width:12px;height:12px;border-radius:50%;background:var(--ink-navy);border:2px solid #fff;"></div>
-          </div>
+        <h2 style="font-family:var(--font-heading);font-size:23px;font-weight:800;margin-bottom:4px;">${escapeHtml(name)}</h2>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px;">
+          <span class="mono" style="font-size:26px;font-weight:700;">${fmtMoney(price)}</span>
+          <span class="mono ${dayPct >= 0 ? 'txt-pos' : 'txt-neg'}" style="font-size:14px;">${fmtPct(dayPct)} on ${escapeHtml(tab.date)}</span>
         </div>
 
-        <!-- Targets Quad -->
-        <div class="metrics-quad" style="grid-template-columns:1fr 1fr;margin-bottom:20px;">
-          <div class="metric-box">
-            <div class="metric-label">Target Take-Profit (+12%)</div>
-            <div class="metric-value" style="font-size:20px;color:var(--forest-green);">${fmtMoney(targetPrice)}</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-label">Safety Stop-Loss (-6%)</div>
-            <div class="metric-value" style="font-size:20px;color:var(--terracotta);">${fmtMoney(stopPrice)}</div>
-          </div>
-        </div>
-
-        <!-- Held Position Snapshot -->
         ${held ? `
-          <div style="background:var(--forest-bg);border:1px solid var(--forest-border);padding:14px 18px;border-radius:var(--radius-md);margin-bottom:16px;">
-            <div style="font-weight:700;color:var(--forest-green);margin-bottom:4px;">Active Portfolio Holding</div>
-            <div style="font-size:13.5px;color:var(--text-primary);">
-              You own <strong>${held.shares.toFixed(2)} shares</strong> worth <strong>${fmtMoney(scaled(held.value))}</strong> (Entry: ${fmtMoney(held.avg_entry_price)} on ${held.entry_date}).
-              Net P&L: <strong>${held.gain_dollars >= 0 ? '+' : ''}${fmtMoney(scaled(held.gain_dollars))} (${fmtPct(held.gain_pct)})</strong>.
+          <div style="background:var(--bg-highlight);border:1px solid var(--accent-primary-border);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px;">
+            <div style="font-size:12.5px;font-weight:700;color:var(--accent-primary);margin-bottom:4px;">✓ Currently Inside Your Portfolio</div>
+            <div style="font-size:14px;color:var(--text-primary);">
+              You own <strong>${(held.shares * capitalScale).toFixed(3)} shares</strong> worth <strong>${fmtMoney(scaled(held.market_value))}</strong>
+              (put in ${fmtMoney(scaled(held.cost_basis))} at ${fmtMoney(held.avg_entry)}/share).
+              Current profit/loss: <strong class="${held.pnl_dollars >= 0 ? 'txt-pos' : 'txt-neg'}">${fmtMoney(scaled(held.pnl_dollars), true)} (${fmtPct(held.pnl_pct)})</strong>.
             </div>
           </div>
-        ` : `
-          <div style="background:var(--bg-subtle);border:1px solid var(--border-subtle);padding:12px 16px;border-radius:var(--radius-md);font-size:13px;color:var(--text-secondary);margin-bottom:16px;">
-            Currently on Watchlist (Not active in portfolio).
-          </div>
-        `}
+        ` : ''}
 
-        <p style="font-size:13.5px;color:var(--text-secondary);line-height:1.6;">
-          ${scored ? scored.reason : 'Disciplined equity asset monitored by quantitative models.'}
-        </p>
+        ${chartSvg}
+
+        <div style="background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px;">
+          <div style="font-size:12.5px;font-weight:700;color:var(--text-muted);margin-bottom:4px;">Plain-English Assessment (AI Score: ${scored ? scored.score.toFixed(1) : held.score.toFixed(1)} / 100)</div>
+          <p style="font-size:14px;color:var(--text-primary);line-height:1.55;">
+            ${escapeHtml(monthNarrative)}${escapeHtml(translateReasonToPlainEnglish(scored ? scored.reason : held.reason, scored ? scored.signal : held.signal))}
+          </p>
+        </div>
+
+        <div style="background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px;">
+          <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;">
+            <span style="color:var(--text-muted)">Price Temperature Gauge</span>
+            <span>${escapeHtml(describePriceTemp(rsi))} (RSI ${rsi.toFixed(1)})</span>
+          </div>
+          <div class="temp-track">
+            <div class="temp-thumb" style="left:${Math.max(3, Math.min(97, rsi))}%;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-muted);">
+            <span>0 • Deep Bargain</span>
+            <span>50 • Normal</span>
+            <span>73+ • Overheated</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:${matchingNews.length ? '16px' : '0'};">
+          <div class="stat-card" style="padding:13px 15px;">
+            <div class="stat-label">Profit-Taking Target</div>
+            <div class="stat-num txt-pos" style="font-size:20px;">${fmtMoney(targetPrice)}</div>
+            <div class="stat-note">Where the model looks to trim &amp; lock in gains</div>
+          </div>
+          <div class="stat-card" style="padding:13px 15px;">
+            <div class="stat-label">Safety Stop-Loss Exit</div>
+            <div class="stat-num txt-neg" style="font-size:20px;">${fmtMoney(stopPrice)}</div>
+            <div class="stat-note">Guardrail level to cut losses if trend breaks</div>
+          </div>
+        </div>
+
+        ${matchingNews.length ? `
+          <div style="background:var(--bg-card-alt);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:13px 16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);margin-bottom:6px;">Latest News Headlines Scanned by Model:</div>
+            ${matchingNews.map(n => `<div style="font-size:13px;color:var(--text-secondary);padding:3px 0;">• ${escapeHtml(n.replace(`[${ticker}] `, ''))}</div>`).join('')}
+          </div>
+        ` : ''}
       `;
 
       document.getElementById('stockModalBackdrop').style.display = 'flex';
@@ -1542,135 +2687,26 @@
       document.getElementById('stockModalBackdrop').style.display = 'none';
     }
 
-    /* Build Overview Matrix View */
-    function buildOverviewView() {
-      const days = appData.day_tabs || [];
-      return `
-        <section class="hero-card">
-          <div class="hero-pretitle">All-Time Performance Matrix</div>
-          <h2 class="hero-headline">Chronological Model Evolution Across All Sessions</h2>
-          <p style="color:var(--text-secondary);margin-top:8px;">Every single trading day recorded since inception with complete audit trails.</p>
-        </section>
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeStockModal();
+    });
 
-        <div class="card">
-          <div class="table-wrap">
-            <table class="editorial-table">
-              <thead>
-                <tr>
-                  <th>Day</th>
-                  <th>Date</th>
-                  <th>Model Value</th>
-                  <th>Day Return</th>
-                  <th>Total Return</th>
-                  <th>S&P 500</th>
-                  <th>60/40 Fund</th>
-                  <th>Cash Reserve</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${days.map((d, i) => {
-                  const p = d.portfolio;
-                  return `
-                    <tr class="clickable" onclick="selectTab(${i})">
-                      <td style="font-weight:700;">Day ${d.day_index}</td>
-                      <td>${d.date}</td>
-                      <td style="font-family:var(--font-mono);font-weight:700;">${fmtMoney(scaled(p.total_value))}</td>
-                      <td style="font-family:var(--font-mono);color:${p.day_change_dollars >= 0 ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                        ${p.day_change_dollars >= 0 ? '+' : ''}${fmtMoney(scaled(p.day_change_dollars))} (${fmtPct(p.day_change_pct)})
-                      </td>
-                      <td style="font-family:var(--font-mono);color:${p.total_gain_dollars >= 0 ? 'var(--forest-green)' : 'var(--terracotta)'}">
-                        ${p.total_gain_dollars >= 0 ? '+' : ''}${fmtMoney(scaled(p.total_gain_dollars))} (${fmtPct(p.total_gain_pct)})
-                      </td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(scaled(p.spy_benchmark_value))}</td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(scaled(p.balanced_60_40_value))}</td>
-                      <td style="font-family:var(--font-mono);">${fmtMoney(scaled(p.cash_reserve))}</td>
-                    </tr>
-                  `;
-                }).join('')}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      `;
-    }
-
-    /* Build AI Brain & Memory Log View */
-    function buildMemoryView() {
-      const memory = appData.model_memory || {};
-      const lessons = memory.lesson_log || [];
-      const weights = memory.weight_history || [];
-
-      return `
-        <section class="hero-card">
-          <div class="hero-pretitle">Autonomous Brain & Adaptation Log</div>
-          <h2 class="hero-headline">How the Model Learns & Re-Weights Itself Daily</h2>
-          <p style="color:var(--text-secondary);margin-top:8px;">Every evening after market close, the algorithm analyzes what worked, what failed, and shifts its mathematical weights to adapt to regime changes.</p>
-        </section>
-
-        <div class="main-grid">
-          <div>
-            <div class="section-head">
-              <div class="section-title">📖 Daily Investor's Journal & Lessons Learned</div>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:16px;">
-              ${lessons.map(l => `
-                <div class="card" style="margin-bottom:0;padding:18px 22px;">
-                  <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-                    <span style="font-size:12px;font-weight:700;color:var(--ink-navy);">${l.date}</span>
-                    <span style="font-size:12px;color:var(--text-muted);">Session Reflection</span>
-                  </div>
-                  <p style="font-size:14.5px;color:var(--text-primary);line-height:1.6;">${l.lesson}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <div>
-            <div class="section-head">
-              <div class="section-title">⚖️ Adaptive Factor Weight Evolution</div>
-            </div>
-            <div class="card" style="padding:16px;">
-              <div class="table-wrap">
-                <table class="editorial-table">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Trend</th>
-                      <th>Dip RSI</th>
-                      <th>Rel Strength</th>
-                      <th>Buy Gate</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${weights.map(w => `
-                      <tr>
-                        <td style="font-size:12px;font-weight:600;">${w.date}</td>
-                        <td style="font-family:var(--font-mono);">${w.trend_weight ? w.trend_weight.toFixed(2) : '1.00'}x</td>
-                        <td style="font-family:var(--font-mono);">${w.dip_rsi_weight ? w.dip_rsi_weight.toFixed(2) : '0.80'}x</td>
-                        <td style="font-family:var(--font-mono);">${w.rel_strength_weight ? w.rel_strength_weight.toFixed(2) : '1.00'}x</td>
-                        <td style="font-family:var(--font-mono);">${w.buy_threshold || 69.5}/100</td>
-                      </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    /* Boot Application */
+    /* ==========================================================================
+       BOOT & LIVE DATA LOADER
+       ========================================================================== */
     function bootApp() {
+      initTheme();
       if (appData && appData.day_tabs && appData.day_tabs.length > 0) {
-        selectedDayIdx = appData.day_tabs.length - 1;
+        selectedView = appData.day_tabs.length - 1;
         renderMarketRibbon();
-        renderDaySelectors();
+        renderDayTabs();
         renderCurrentView();
+        // Scroll active latest day pill into view horizontally
+        const activePill = document.getElementById(`dayPill-${selectedView}`);
+        if (activePill) activePill.scrollIntoView({ inline: 'end', block: 'nearest' });
       }
     }
 
-    // Always fetch fresh JSON data with a timestamp cache-buster so users never see stale browser cache
     async function loadFreshDataAndStart() {
       try {
         const resp = await fetch('portfolio_state.json?t=' + Date.now());
@@ -1681,7 +2717,7 @@
           }
         }
       } catch (err) {
-        console.warn('Live fetch fallback to bundled data:', err);
+        console.warn('Using bundled portfolio_data.js fallback:', err);
       }
       bootApp();
     }
