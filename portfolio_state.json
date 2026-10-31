@@ -2,7 +2,7 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-10-31 12:06 AM ET",
+  "last_updated": "2026-10-31 12:57 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
@@ -26317,7 +26317,7 @@
       "date": "2026-10-30",
       "tab_label": "Today \u2022 Oct 30 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-10-31 12:06 AM ET",
+      "updated_at": "2026-10-31 12:57 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -26466,8 +26466,8 @@
         "veto_note": "Vetoed dip-adds on AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-10-30, Dividend Value Mutual Fund led the 8-option leaderboard (+4.50%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 54.5%.",
         "headlines_scanned": [
+          "[AAPL] Big Homes, Big Loans (Barrons.com)",
           "[AAPL] What Are Dell Investors Betting On? (Trefis)",
-          "[AAPL] Strong Growth Momentum and Rising Revisions Fuel Bright Earnings Outlook (Zacks)",
           "[COST] Stock Market Today, Oct. 30: Amazon Misses Revenue and Earnings Expectations (Motley Fool)",
           "[COST] Levi Strauss Faces Class Action Lawsuit Over Tariff Refunds (Sourcing Journal)",
           "[LLY] What Eli Lilly and Company (LLY) Said on Its Q3 Earnings Call (MarketBeat)",
