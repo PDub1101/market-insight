@@ -2,14 +2,14 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-03 02:40 AM ET",
+  "last_updated": "2026-11-03 03:00 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3954.4,
-      "change": 55.5,
-      "pct": 1.42,
+      "price": 3955.8,
+      "change": 56.9,
+      "pct": 1.46,
       "up": true,
       "spark": [
         4107.9,
@@ -25,7 +25,7 @@ window.MARKET_INSIGHT_DATA = {
         4051.6,
         4031.4,
         3898.9,
-        3954.4
+        3955.8
       ]
     },
     {
@@ -29541,7 +29541,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-02",
       "tab_label": "Today \u2022 Nov 02 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-03 02:40 AM ET",
+      "updated_at": "2026-11-03 03:00 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.45,
@@ -29691,7 +29691,7 @@ window.MARKET_INSIGHT_DATA = {
         "veto_note": "Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-02, Dividend Value Mutual Fund led the 8-option leaderboard (+4.85%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 44.0%.",
         "headlines_scanned": [
-          "[AAPL] Apple may try to increase revenue by doing\u2026something with third-party AI apps (TechCrunch)",
+          "[AAPL] Dow Jones Futures: AI Trade Dives As Marvell, Lumentum Plunge; Apple Tumbles On Earnings With Midterm Elections Next (Investor's Business Daily)",
           "[COST] Target copies Costco food court with new in-store snack bar (TheStreet)",
           "[COST] IREN (NasdaqGS:IREN) Objects To Tokenized Share Trading On New Blockchain Venue (Simply Wall St.)",
           "[LLY] Eli Lilly Stock: Is It Still a Buy at $1,400? (Motley Fool)",
