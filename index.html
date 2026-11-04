@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="slate">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1157,7 +1157,11 @@
           <span id="mathToggleLabel">🔢 Show Raw Math</span>
         </button>
 
-        <button class="toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch between calm Soft Slate dark mode and clean Light mode">
+        <a href="https://pdub1101.github.io/" class="toggle-btn" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 4px;" title="Back to Portfolio">
+          <span>&larr; Portfolio</span>
+        </a>
+
+        <button class="toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Switch between clean Light mode and calm Soft Slate dark mode">
           <span id="themeToggleLabel">☀️ Light Mode</span>
         </button>
       </div>
@@ -1381,7 +1385,7 @@
        THEME & CONTROLS
        ========================================================================== */
     function initTheme() {
-      const saved = localStorage.getItem('mi_theme') || 'slate';
+      const saved = localStorage.getItem('mi_theme') || 'light';
       applyTheme(saved);
     }
 
