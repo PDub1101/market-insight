@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <script>if(window.self!==window.top){document.documentElement.classList.add("is-embedded");}</script>
-  <style>html.is-embedded #backToPortfolioBtn{display:none !important;}</style>
+  <style>html.is-embedded #backToPortfolioBtn, html.is-embedded #themeToggleBtn { display:none !important; }</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -1386,6 +1386,13 @@
     /* ==========================================================================
        THEME & CONTROLS
        ========================================================================== */
+    
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'SET_THEME' && e.data.theme) {
+        applyTheme(e.data.theme);
+      }
+    });
+
     function initTheme() {
       const saved = localStorage.getItem('mi_theme') || 'light';
       applyTheme(saved);
