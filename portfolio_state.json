@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-03 08:06 PM ET",
+  "last_updated": "2026-11-04 01:34 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3939.0,
-      "change": -30.6,
-      "pct": -0.77,
+      "price": 3962.2,
+      "change": -7.4,
+      "pct": -0.19,
       "up": false,
       "spark": [
         4170.1,
@@ -25,7 +25,7 @@
         4031.4,
         3898.9,
         3969.6,
-        3939.0
+        3962.2
       ]
     },
     {
@@ -32781,7 +32781,7 @@
       "date": "2026-11-03",
       "tab_label": "Today \u2022 Nov 03 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-03 08:06 PM ET",
+      "updated_at": "2026-11-04 01:34 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.71,
@@ -32928,7 +32928,7 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily).",
+        "catalyst_headline": "Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Pour In; AMD, Arista Rise On Earnings\" (Investor's Business Daily).",
         "veto_note": "Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-03, Dividend Value Mutual Fund led the 8-option leaderboard (+3.83%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 42.3%.",
         "headlines_scanned": [
@@ -32939,7 +32939,7 @@
           "[LLY] Top Analyst Reports for Eli Lilly, Cisco & KLA (Zacks)",
           "[LLY] Moderna Climbs 5% Ahead of Earnings, Pfizer Eases Despite Raised Outlook, Merck Slides 2% Amid New Phase 3 Trial (24/7 Wall St.)"
         ],
-        "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Pour In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
         "score": 50.4,
@@ -32951,7 +32951,7 @@
         "hold_pct": 5.3,
         "trim_pct": 84.2
       },
-      "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Pour In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-03-BUY-MSFT",
