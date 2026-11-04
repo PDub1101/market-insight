@@ -1135,10 +1135,10 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <div class="brand-mark">$7K</div>
+        <div class="brand-mark">MI</div>
         <div>
           <div class="brand-name">Market Insight</div>
-          <div class="brand-sub">Plain-English $7,000 Stock Model &amp; Benchmark Tracker</div>
+          <div class="brand-sub">Multi-Factor Quantitative Strategy &amp; Benchmark Performance</div>
         </div>
       </div>
 
@@ -1156,7 +1156,7 @@
         </div>
 
         <button class="toggle-btn" id="mathToggleBtn" onclick="toggleRawMath()" title="Switch between everyday English and raw technical numbers (RSI, 20d/50d moving averages)">
-          <span id="mathToggleLabel">🔢 Show Raw Math</span>
+          <span id="mathToggleLabel">Technical Indicators</span>
         </button>
 
         <a href="https://pdub1101.github.io/" id="backToPortfolioBtn" target="_top" class="toggle-btn" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 4px;" title="Back to Portfolio">
@@ -1179,7 +1179,7 @@
   <main class="page-wrap">
     <div class="day-bar-wrap">
       <div class="day-bar-header">
-        <span class="day-bar-label">Pick any trading day to inspect, or view the All-Days Summary:</span>
+        <span class="day-bar-label">Session History &amp; Longitudinal Forward-Testing:</span>
         <span class="updated-stamp" id="lastUpdatedStamp"></span>
       </div>
       <nav class="day-tabs" id="dayTabsList"></nav>
@@ -1417,7 +1417,7 @@
       const btn = document.getElementById('mathToggleBtn');
       const lbl = document.getElementById('mathToggleLabel');
       if (btn) btn.classList.toggle('active', showRawMath);
-      if (lbl) lbl.textContent = showRawMath ? '🗣️ Plain English' : '🔢 Show Raw Math';
+      if (lbl) lbl.textContent = showRawMath ? '🗣️ Plain English' : 'Technical Indicators';
       renderCurrentView();
     }
 
@@ -1602,11 +1602,11 @@
       return `
         <!-- Quick Jump Links -->
         <div class="quick-jump">
-          <a class="jump-link" href="#sec-summary">1. Daily Summary</a>
-          <a class="jump-link" href="#sec-compare">2. Compare 8 Investment Options</a>
-          <a class="jump-link" href="#sec-actions">3. Everything Done &amp; Trade Results</a>
-          <a class="jump-link" href="#sec-holdings">4. Current Portfolio (${holdings.length} Stocks + Cash)</a>
-          <a class="jump-link" href="#sec-radar">5. Watchlist &amp; How AI Is Learning</a>
+          <a class="jump-link" href="#sec-summary">1. Executive Summary</a>
+          <a class="jump-link" href="#sec-compare">2. Benchmark Comparison</a>
+          <a class="jump-link" href="#sec-actions">3. Executed Orders &amp; PnL</a>
+          <a class="jump-link" href="#sec-holdings">4. Portfolio Allocation (${holdings.length} Holdings)</a>
+          <a class="jump-link" href="#sec-radar">5. Factor Weights &amp; Adaptation</a>
         </div>
 
         <!-- ================================================================
@@ -1616,7 +1616,7 @@
           <div class="chapter-eyebrow">Section 1 • Day ${tab.day_index} of ${appData.day_tabs.length} • ${escapeHtml(tab.date)}</div>
           <h1 class="chapter-title">${headlineText}</h1>
           <p class="chapter-desc">
-            Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Every weekday after the US stock market closes at 4:00 PM ET, this page records what the AI model did and compares your real dollar balance against 7 everyday alternatives.
+            Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Autonomous forward-testing quantitative model evaluated daily after US market close against 7 standard asset allocation benchmarks.
           </p>
 
           <div class="stat-grid">
@@ -1653,7 +1653,7 @@
           </div>
 
           <div class="plain-story-box">
-            <div class="plain-story-heading">🗣️ Today in Plain English — What Happened &amp; Why</div>
+            <div class="plain-story-heading">Executive Commentary &amp; Daily Market Notes</div>
             <div class="story-bullets">
               ${bullets.map((b, i) => `
                 <div class="story-bullet">
@@ -1672,7 +1672,7 @@
           <div class="chapter-header-row">
             <div>
               <div class="chapter-eyebrow">Section 2 • Head-to-Head Comparison</div>
-              <h2 class="chapter-title">What If You Put ${fmtMoney(scaled(p.starting_capital))} Into Simpler Options Instead?</h2>
+              <h2 class="chapter-title">Comparative Asset Allocation &amp; Benchmark Tracking</h2>
               <p class="chapter-desc">
                 All 8 choices started with the exact same ${fmtMoney(scaled(p.starting_capital))} on Day 1 (${escapeHtml(appData.created_at || '2026-10-19')}). Hover over the chart to compare any day, or click the colored pills to turn lines on and off.
               </p>
@@ -1699,7 +1699,7 @@
           <div class="chapter-header-row">
             <div>
               <div class="chapter-eyebrow">Section 3 • Complete Decision &amp; Trade Log</div>
-              <h2 class="chapter-title">Everything the Model Has Done — And Whether Each Move Helped</h2>
+              <h2 class="chapter-title">Order Execution Log &amp; Performance Attribution</h2>
               <p class="chapter-desc">
                 First are the exact move(s) made on <strong>${escapeHtml(tab.date)}</strong>, followed by the full history of every buy, protective trim (sale), and hold since Day 1—graded against real market prices.
               </p>
@@ -1717,7 +1717,7 @@
           <div class="chapter-header-row">
             <div>
               <div class="chapter-eyebrow">Section 4 • Current Holdings &amp; Cash</div>
-              <h2 class="chapter-title">Where Every Dollar of Your ${fmtMoney(scaled(p.total_value))} Is Right Now</h2>
+              <h2 class="chapter-title">Asset Allocation &amp; Position Breakdown</h2>
               <p class="chapter-desc">
                 Click any colored slice or stock row below to open a plain-English popup explaining its 12-day price chart, profit target, and safety exit price.
               </p>
@@ -1735,7 +1735,7 @@
           <div class="chapter-header-row">
             <div>
               <div class="chapter-eyebrow">Section 5 • Market Radar &amp; Self-Learning Adjustments</div>
-              <h2 class="chapter-title">All 19 Stocks Monitored Today &amp; How the Model Adjusted Its Strategy</h2>
+              <h2 class="chapter-title">Quantitative Watchlist &amp; Dynamic Factor Weight Adaptation</h2>
               <p class="chapter-desc">
                 Every afternoon the model grades 19 major stocks and ETFs from 0 to 100, checks financial news headlines, and updates its own strategy based on which past trades made or lost money.
               </p>
@@ -1765,7 +1765,7 @@
 
         let vsLine = '';
         if (a.is_model) {
-          vsLine = `<span style="color:var(--accent-primary)">★ This is our active $7,000 experiment</span><span>Rank #${a.rank} of 8</span>`;
+          vsLine = `<span style="color:var(--accent-primary)">● Active Multi-Factor Strategy</span><span>Rank #${a.rank} of 8</span>`;
         } else {
           const diff = modelVal - a.value; // positive means our model is ahead of this option
           if (Math.abs(diff) < 0.05) {
