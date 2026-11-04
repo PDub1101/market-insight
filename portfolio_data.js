@@ -2,16 +2,17 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-04 02:54 AM ET",
+  "last_updated": "2026-11-03 08:06 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3948.7,
-      "change": 8.3,
-      "pct": 0.21,
-      "up": true,
+      "price": 3939.0,
+      "change": -30.6,
+      "pct": -0.77,
+      "up": false,
       "spark": [
+        4170.1,
         4181.1,
         4160.1,
         4142.6,
@@ -24,8 +25,7 @@ window.MARKET_INSIGHT_DATA = {
         4031.4,
         3898.9,
         3969.6,
-        3940.4,
-        3948.7
+        3939.0
       ]
     },
     {
@@ -32781,15 +32781,15 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-03",
       "tab_label": "Today \u2022 Nov 03 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-04 02:54 AM ET",
+      "updated_at": "2026-11-03 08:06 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.71,
         "invested_value": 6049.96,
         "cash_reserve": 724.75,
-        "day_open": 6718.23,
-        "day_high": 6820.15,
-        "day_low": 6694.19,
+        "day_open": 6774.73,
+        "day_high": 6820.12,
+        "day_low": 6694.32,
         "day_change_dollars": 5.26,
         "day_change_pct": 0.08,
         "total_gain_dollars": -225.29,
@@ -32928,7 +32928,7 @@ window.MARKET_INSIGHT_DATA = {
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest MSFT catalyst: \"Stock Market Election Night: Tech, AI Stocks Lead Futures Lower As ; AMD, Arista Rise On Earnings\" (Investor's Business Daily).",
+        "catalyst_headline": "Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily).",
         "veto_note": "Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-03, Dividend Value Mutual Fund led the 8-option leaderboard (+3.83%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 42.3%.",
         "headlines_scanned": [
@@ -32939,7 +32939,7 @@ window.MARKET_INSIGHT_DATA = {
           "[LLY] Top Analyst Reports for Eli Lilly, Cisco & KLA (Zacks)",
           "[LLY] Moderna Climbs 5% Ahead of Earnings, Pfizer Eases Despite Raised Outlook, Merck Slides 2% Amid New Phase 3 Trial (24/7 Wall St.)"
         ],
-        "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Tech, AI Stocks Lead Futures Lower As ; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
         "score": 50.4,
@@ -32951,7 +32951,7 @@ window.MARKET_INSIGHT_DATA = {
         "hold_pct": 5.3,
         "trim_pct": 84.2
       },
-      "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Tech, AI Stocks Lead Futures Lower As ; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-03, the $7,000 AI Model closed at $6,774.71 (-225.29 / -3.22%), with Trade Win Rate at 42.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,889.22, 60/40 Balanced Fund is at $6,957.97, and 4.5% High-Yield Savings is at $7,012.96. Gemini Catalyst Check: Latest MSFT catalyst: \"Stock Market Election Night: Futures Fall As Votes Trickle In; AMD, Arista Rise On Earnings\" (Investor's Business Daily). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AAPL, AMD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-03-BUY-MSFT",
@@ -33043,7 +33043,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 752.1
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 754.35
             }
@@ -33283,7 +33283,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 338.32
             },
             {
-              "h": 92,
+              "h": 90,
               "up": false,
               "close": 331.9
             }
@@ -33468,7 +33468,7 @@ window.MARKET_INSIGHT_DATA = {
           "reason": "Trading below 50d moving average ($186.86) \u2022 Deeply oversold (RSI 30.4)",
           "sparkline": [
             {
-              "h": 45,
+              "h": 46,
               "up": true,
               "close": 194.15
             },
@@ -33603,7 +33603,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 606.73
             },
             {
-              "h": 27,
+              "h": 26,
               "up": true,
               "close": 621.03
             }
@@ -33683,7 +33683,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 1410.99
             },
             {
-              "h": 53,
+              "h": 52,
               "up": false,
               "close": 1409.38
             }
@@ -33763,7 +33763,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 466.84
             },
             {
-              "h": 86,
+              "h": 81,
               "up": true,
               "close": 483.9
             }
@@ -34274,7 +34274,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1019.26,
-          "day_open": 1031.18,
+          "day_open": 1019.26,
           "day_high": 1034.77,
           "day_low": 1019.08,
           "day_pct": -2.05,
@@ -34361,7 +34361,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 35.55,
-          "day_open": 35.74,
+          "day_open": 35.55,
           "day_high": 35.76,
           "day_low": 35.44,
           "day_pct": -0.97,
@@ -34448,7 +34448,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.12,
           "price": 557.07,
-          "day_open": 554.22,
+          "day_open": 557.07,
           "day_high": 559.58,
           "day_low": 551.81,
           "day_pct": 0.17,
@@ -34458,7 +34458,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 75.7,
           "sma20": 534.24,
           "sma50": 517.37,
-          "vol_ratio": 1.21,
+          "vol_ratio": 1.2,
           "score": 78.8,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -34535,9 +34535,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1409.38,
-          "day_open": 1399.63,
+          "day_open": 1409.38,
           "day_high": 1437.0,
-          "day_low": 1393.47,
+          "day_low": 1393.61,
           "day_pct": -0.11,
           "ret_5d": 9.94,
           "ret_20d": 21.76,
@@ -34545,7 +34545,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 79.3,
           "sma20": 1272.0,
           "sma50": 1203.5,
-          "vol_ratio": 1.05,
+          "vol_ratio": 1.04,
           "score": 78.8,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -34609,7 +34609,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 1410.99
             },
             {
-              "h": 53,
+              "h": 52,
               "up": false,
               "close": 1409.38
             }
@@ -34622,9 +34622,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.14,
           "price": 520.99,
-          "day_open": 509.01,
+          "day_open": 520.99,
           "day_high": 523.44,
-          "day_low": 507.82,
+          "day_low": 507.85,
           "day_pct": 2.74,
           "ret_5d": -1.95,
           "ret_20d": -1.57,
@@ -34709,9 +34709,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 337.98,
-          "day_open": 340.0,
+          "day_open": 337.98,
           "day_high": 340.75,
-          "day_low": 335.82,
+          "day_low": 335.88,
           "day_pct": -0.76,
           "ret_5d": 0.65,
           "ret_20d": 2.02,
@@ -34719,7 +34719,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 53.1,
           "sma20": 335.53,
           "sma50": 342.7,
-          "vol_ratio": 0.97,
+          "vol_ratio": 0.94,
           "score": 65.4,
           "signal": "HOLD",
           "setup_tag": "Below 50d Trend",
@@ -34783,7 +34783,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 340.58
             },
             {
-              "h": 85,
+              "h": 82,
               "up": false,
               "close": 337.98
             }
@@ -34796,9 +34796,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.22,
           "price": 754.35,
-          "day_open": 752.73,
+          "day_open": 754.35,
           "day_high": 757.07,
-          "day_low": 752.39,
+          "day_low": 752.41,
           "day_pct": 0.3,
           "ret_5d": -1.99,
           "ret_20d": -3.18,
@@ -34806,7 +34806,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 38.9,
           "sma20": 768.09,
           "sma50": 767.04,
-          "vol_ratio": 0.82,
+          "vol_ratio": 0.81,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -34870,7 +34870,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 752.1
             },
             {
-              "h": 42,
+              "h": 41,
               "up": true,
               "close": 754.35
             }
@@ -34883,7 +34883,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 331.9,
-          "day_open": 325.58,
+          "day_open": 331.9,
           "day_high": 334.5,
           "day_low": 325.33,
           "day_pct": -1.9,
@@ -34893,7 +34893,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 38.5,
           "sma20": 342.27,
           "sma50": 334.05,
-          "vol_ratio": 1.48,
+          "vol_ratio": 1.46,
           "score": 53.8,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -34957,7 +34957,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 338.32
             },
             {
-              "h": 92,
+              "h": 90,
               "up": false,
               "close": 331.9
             }
@@ -34970,9 +34970,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 250.69,
-          "day_open": 248.59,
-          "day_high": 252.45,
-          "day_low": 245.88,
+          "day_open": 250.69,
+          "day_high": 252.44,
+          "day_low": 245.89,
           "day_pct": 2.06,
           "ret_5d": -0.95,
           "ret_20d": -2.19,
@@ -35057,7 +35057,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.08,
           "price": 359.26,
-          "day_open": 361.33,
+          "day_open": 359.26,
           "day_high": 361.86,
           "day_low": 358.94,
           "day_pct": -0.66,
@@ -35067,7 +35067,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 35.7,
           "sma20": 373.72,
           "sma50": 387.99,
-          "vol_ratio": 0.71,
+          "vol_ratio": 0.7,
           "score": 44.5,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -35131,7 +35131,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 361.65
             },
             {
-              "h": 35,
+              "h": 34,
               "up": false,
               "close": 359.26
             }
@@ -35144,7 +35144,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 685.28,
-          "day_open": 684.39,
+          "day_open": 685.28,
           "day_high": 688.69,
           "day_low": 683.18,
           "day_pct": 0.62,
@@ -35154,7 +35154,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 32.8,
           "sma20": 720.71,
           "sma50": 723.93,
-          "vol_ratio": 0.89,
+          "vol_ratio": 0.88,
           "score": 41.3,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -35231,8 +35231,8 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 280.03,
-          "day_open": 280.23,
-          "day_high": 281.61,
+          "day_open": 280.03,
+          "day_high": 281.6,
           "day_low": 277.2,
           "day_pct": 0.37,
           "ret_5d": -12.65,
@@ -35241,7 +35241,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 14.9,
           "sma20": 327.15,
           "sma50": 336.39,
-          "vol_ratio": 1.02,
+          "vol_ratio": 1.01,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -35318,7 +35318,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 63.42,
-          "day_open": 62.68,
+          "day_open": 63.42,
           "day_high": 63.47,
           "day_low": 61.9,
           "day_pct": 1.73,
@@ -35405,7 +35405,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 175.4,
-          "day_open": 168.18,
+          "day_open": 175.4,
           "day_high": 176.54,
           "day_low": 165.25,
           "day_pct": -1.65,
@@ -35424,7 +35424,7 @@ window.MARKET_INSIGHT_DATA = {
           "stop_price": 164.88,
           "sparkline": [
             {
-              "h": 45,
+              "h": 46,
               "up": true,
               "close": 194.15
             },
@@ -35492,7 +35492,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 206.69,
-          "day_open": 207.96,
+          "day_open": 206.69,
           "day_high": 209.14,
           "day_low": 205.93,
           "day_pct": 2.29,
@@ -35579,9 +35579,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 332.13,
-          "day_open": 328.97,
+          "day_open": 332.13,
           "day_high": 335.74,
-          "day_low": 326.6,
+          "day_low": 326.61,
           "day_pct": 3.07,
           "ret_5d": -2.98,
           "ret_20d": -11.62,
@@ -35589,7 +35589,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 43.7,
           "sma20": 341.5,
           "sma50": 351.35,
-          "vol_ratio": 0.77,
+          "vol_ratio": 0.76,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -35653,7 +35653,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 322.23
             },
             {
-              "h": 47,
+              "h": 46,
               "up": true,
               "close": 332.13
             }
@@ -35666,7 +35666,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 404.8,
-          "day_open": 404.99,
+          "day_open": 404.8,
           "day_high": 408.37,
           "day_low": 403.03,
           "day_pct": 1.55,
@@ -35753,7 +35753,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 621.03,
-          "day_open": 610.76,
+          "day_open": 621.03,
           "day_high": 624.84,
           "day_low": 610.1,
           "day_pct": 2.36,
@@ -35827,7 +35827,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 606.73
             },
             {
-              "h": 27,
+              "h": 26,
               "up": true,
               "close": 621.03
             }
@@ -35840,8 +35840,8 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 483.9,
-          "day_open": 479.99,
-          "day_high": 497.4,
+          "day_open": 483.9,
+          "day_high": 497.35,
           "day_low": 473.54,
           "day_pct": 3.65,
           "ret_5d": -13.63,
@@ -35850,7 +35850,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 36.3,
           "sma20": 553.92,
           "sma50": 548.71,
-          "vol_ratio": 1.59,
+          "vol_ratio": 1.5,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -35914,7 +35914,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 466.84
             },
             {
-              "h": 86,
+              "h": 81,
               "up": true,
               "close": 483.9
             }
