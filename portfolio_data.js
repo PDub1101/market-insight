@@ -2,17 +2,16 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-05 01:04 AM ET",
+  "last_updated": "2026-11-05 01:38 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4106.0,
-      "change": 165.6,
-      "pct": 4.2,
+      "price": 4112.2,
+      "change": 39.2,
+      "pct": 0.96,
       "up": true,
       "spark": [
-        4181.1,
         4160.1,
         4142.6,
         4150.0,
@@ -25,7 +24,8 @@ window.MARKET_INSIGHT_DATA = {
         3898.9,
         3969.6,
         3940.4,
-        4106.0
+        4073.0,
+        4112.2
       ]
     },
     {
@@ -36013,7 +36013,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-04",
       "tab_label": "Today \u2022 Nov 04 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-05 01:04 AM ET",
+      "updated_at": "2026-11-05 01:38 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.42,
@@ -36157,18 +36157,18 @@ window.MARKET_INSIGHT_DATA = {
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest AMZN catalyst: \"Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid.\" (Investor's Business Daily).",
+        "catalyst_headline": "Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily).",
         "veto_note": "Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-04, Dividend Value Mutual Fund led the 8-option leaderboard (+5.75%); combining relative strength (1.00x weight) with news-catalyst filtering keeps portfolio win rate at 59.3%.",
         "headlines_scanned": [
-          "[MSFT] Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid. (Investor's Business Daily)",
+          "[MSFT] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
           "[MSFT] Arista Networks stock gets fresh backing from Jim Cramer and Wall Street (TheStreet)",
-          "[AAPL] Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid. (Investor's Business Daily)",
+          "[AAPL] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
           "[AAPL] The Dow\u2019s Big Winners Today (The Wall Street Journal)",
-          "[AMZN] Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid. (Investor's Business Daily)",
-          "[AMZN] Amazon workers in the Greater Toronto Area launch fight for better jobs with Unifor (CNW Group)"
+          "[AMZN] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
+          "[AMZN] Amazon\u2019s Zoox Plans to Start Testing in Europe and Asia (The Wall Street Journal)"
         ],
-        "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid.\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
         "score": 55.5,
@@ -36180,7 +36180,7 @@ window.MARKET_INSIGHT_DATA = {
         "hold_pct": 5.3,
         "trim_pct": 73.7
       },
-      "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise After Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally. CoreWeave, SpaceX Skid.\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-04-BUY-AMZN",
