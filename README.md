@@ -16,6 +16,3 @@ An autonomous forward-testing stock simulation and visual dashboard built around
   7. Uninvested Checking Account (`0%`)
 
 > *Disclaimer: For educational simulation and paper-trading research only. Not financial advice.*
-
-<!-- last_sync -->
-<!-- atomic_sync_verified: 2026-11-05T21:42:00Z -->
