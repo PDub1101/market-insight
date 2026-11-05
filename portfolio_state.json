@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-05 01:38 AM ET",
+  "last_updated": "2026-11-05 03:07 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4112.2,
-      "change": 39.2,
-      "pct": 0.96,
+      "price": 4135.6,
+      "change": 62.6,
+      "pct": 1.54,
       "up": true,
       "spark": [
         4160.1,
@@ -25,7 +25,7 @@
         3969.6,
         3940.4,
         4073.0,
-        4112.2
+        4135.6
       ]
     },
     {
@@ -36013,15 +36013,15 @@
       "date": "2026-11-04",
       "tab_label": "Today \u2022 Nov 04 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-05 01:38 AM ET",
+      "updated_at": "2026-11-05 03:07 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.42,
         "invested_value": 6560.81,
         "cash_reserve": 398.61,
-        "day_open": 6959.41,
-        "day_high": 7041.04,
-        "day_low": 6860.79,
+        "day_open": 6889.49,
+        "day_high": 7052.84,
+        "day_low": 6860.67,
         "day_change_dollars": 184.71,
         "day_change_pct": 2.73,
         "total_gain_dollars": -40.58,
@@ -36157,18 +36157,18 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily).",
+        "catalyst_headline": "Latest AMZN catalyst: \"Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily).",
         "veto_note": "Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-04, Dividend Value Mutual Fund led the 8-option leaderboard (+5.75%); combining relative strength (1.00x weight) with news-catalyst filtering keeps portfolio win rate at 59.3%.",
         "headlines_scanned": [
-          "[MSFT] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
+          "[MSFT] Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
           "[MSFT] Arista Networks stock gets fresh backing from Jim Cramer and Wall Street (TheStreet)",
-          "[AAPL] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
+          "[AAPL] Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
           "[AAPL] The Dow\u2019s Big Winners Today (The Wall Street Journal)",
-          "[AMZN] Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
-          "[AMZN] Amazon\u2019s Zoox Plans to Start Testing in Europe and Asia (The Wall Street Journal)"
+          "[AMZN] Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally (Investor's Business Daily)",
+          "[AMZN] Oracle Just Dropped 14% in a Week. Is It Time to Sell, or Load Up? (TIKR)"
         ],
-        "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
         "score": 55.5,
@@ -36180,7 +36180,7 @@
         "hold_pct": 5.3,
         "trim_pct": 73.7
       },
-      "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, But Techs Tumble; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-04, the $7,000 AI Model closed at $6,959.42 (-40.58 / -0.58%), with Trade Win Rate at 59.3%. Compared to passive alternatives: S&P 500 Mutual Fund is at $7,003.01, 60/40 Balanced Fund is at $7,039.20, and 4.5% High-Yield Savings is at $7,013.82. Gemini Catalyst Check: Latest AMZN catalyst: \"Dow Jones Futures Rise, Techs Fall; Apple, Microsoft, Amazon Flash Buy Signals In Postelection Rally\" (Investor's Business Daily). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-04-BUY-AMZN",
@@ -36272,7 +36272,7 @@
               "close": 754.35
             },
             {
-              "h": 79,
+              "h": 80,
               "up": true,
               "close": 766.81
             }
@@ -36317,12 +36317,12 @@
               "close": 524.51
             },
             {
-              "h": 38,
+              "h": 37,
               "up": true,
               "close": 532.6
             },
             {
-              "h": 39,
+              "h": 38,
               "up": false,
               "close": 531.33
             },
@@ -36332,7 +36332,7 @@
               "close": 531.01
             },
             {
-              "h": 78,
+              "h": 77,
               "up": false,
               "close": 530.14
             },
@@ -36342,7 +36342,7 @@
               "close": 521.91
             },
             {
-              "h": 69,
+              "h": 68,
               "up": false,
               "close": 507.12
             },
@@ -36467,7 +36467,7 @@
               "close": 343.99
             },
             {
-              "h": 53,
+              "h": 52,
               "up": true,
               "close": 348.22
             },
@@ -36502,7 +36502,7 @@
               "close": 344.63
             },
             {
-              "h": 73,
+              "h": 72,
               "up": false,
               "close": 338.32
             },
@@ -36592,7 +36592,7 @@
               "close": 1019.26
             },
             {
-              "h": 74,
+              "h": 75,
               "up": true,
               "close": 1046.47
             }
@@ -36942,7 +36942,7 @@
               "close": 534.74
             },
             {
-              "h": 36,
+              "h": 35,
               "up": true,
               "close": 552.72
             },
@@ -36982,12 +36982,12 @@
               "close": 504.8
             },
             {
-              "h": 64,
+              "h": 63,
               "up": false,
               "close": 466.84
             },
             {
-              "h": 70,
+              "h": 69,
               "up": true,
               "close": 483.9
             },
@@ -37522,9 +37522,9 @@
           "bucket": "Core",
           "max_weight": 0.14,
           "price": 555.8,
-          "day_open": 555.8,
+          "day_open": 543.7,
           "day_high": 559.15,
-          "day_low": 542.34,
+          "day_low": 542.3,
           "day_pct": 6.68,
           "ret_5d": 4.67,
           "ret_20d": 4.92,
@@ -37561,12 +37561,12 @@
               "close": 524.51
             },
             {
-              "h": 38,
+              "h": 37,
               "up": true,
               "close": 532.6
             },
             {
-              "h": 39,
+              "h": 38,
               "up": false,
               "close": 531.33
             },
@@ -37576,7 +37576,7 @@
               "close": 531.01
             },
             {
-              "h": 78,
+              "h": 77,
               "up": false,
               "close": 530.14
             },
@@ -37586,7 +37586,7 @@
               "close": 521.91
             },
             {
-              "h": 69,
+              "h": 68,
               "up": false,
               "close": 507.12
             },
@@ -37609,8 +37609,8 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 349.51,
-          "day_open": 349.51,
-          "day_high": 354.47,
+          "day_open": 341.57,
+          "day_high": 354.5,
           "day_low": 340.99,
           "day_pct": 5.31,
           "ret_5d": 1.65,
@@ -37619,7 +37619,7 @@
           "rsi14": 55.8,
           "sma20": 342.91,
           "sma50": 334.84,
-          "vol_ratio": 2.04,
+          "vol_ratio": 2.05,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -37638,7 +37638,7 @@
               "close": 343.99
             },
             {
-              "h": 53,
+              "h": 52,
               "up": true,
               "close": 348.22
             },
@@ -37673,7 +37673,7 @@
               "close": 344.63
             },
             {
-              "h": 73,
+              "h": 72,
               "up": false,
               "close": 338.32
             },
@@ -37696,7 +37696,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 266.03,
-          "day_open": 266.03,
+          "day_open": 264.82,
           "day_high": 271.49,
           "day_low": 263.85,
           "day_pct": 6.12,
@@ -37783,7 +37783,7 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1046.47,
-          "day_open": 1046.47,
+          "day_open": 1036.83,
           "day_high": 1053.66,
           "day_low": 1028.5,
           "day_pct": 2.67,
@@ -37857,7 +37857,7 @@
               "close": 1019.26
             },
             {
-              "h": 74,
+              "h": 75,
               "up": true,
               "close": 1046.47
             }
@@ -37870,7 +37870,7 @@
           "bucket": "Defensive",
           "max_weight": 0.12,
           "price": 579.09,
-          "day_open": 579.09,
+          "day_open": 566.3,
           "day_high": 580.65,
           "day_low": 562.5,
           "day_pct": 3.95,
@@ -37880,7 +37880,7 @@
           "rsi14": 82.9,
           "sma20": 537.89,
           "sma50": 518.87,
-          "vol_ratio": 1.49,
+          "vol_ratio": 1.5,
           "score": 81.5,
           "signal": "TRIM",
           "setup_tag": "Breakout Accumulation",
@@ -37889,17 +37889,17 @@
           "stop_price": 544.34,
           "sparkline": [
             {
-              "h": 79,
+              "h": 78,
               "up": true,
               "close": 539.82
             },
             {
-              "h": 76,
+              "h": 75,
               "up": false,
               "close": 538.99
             },
             {
-              "h": 85,
+              "h": 84,
               "up": true,
               "close": 546.97
             },
@@ -37909,27 +37909,27 @@
               "close": 542.19
             },
             {
-              "h": 70,
+              "h": 69,
               "up": true,
               "close": 548.56
             },
             {
-              "h": 46,
+              "h": 45,
               "up": false,
               "close": 542.99
             },
             {
-              "h": 49,
+              "h": 48,
               "up": false,
               "close": 540.34
             },
             {
-              "h": 62,
+              "h": 61,
               "up": true,
               "close": 541.96
             },
             {
-              "h": 67,
+              "h": 66,
               "up": true,
               "close": 542.49
             },
@@ -37939,7 +37939,7 @@
               "close": 556.11
             },
             {
-              "h": 82,
+              "h": 81,
               "up": true,
               "close": 557.07
             },
@@ -37957,7 +37957,7 @@
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1417.99,
-          "day_open": 1417.99,
+          "day_open": 1440.0,
           "day_high": 1445.96,
           "day_low": 1401.59,
           "day_pct": 0.61,
@@ -37967,7 +37967,7 @@
           "rsi14": 77.0,
           "sma20": 1283.46,
           "sma50": 1207.19,
-          "vol_ratio": 1.36,
+          "vol_ratio": 1.37,
           "score": 81.5,
           "signal": "TRIM",
           "setup_tag": "Breakout Accumulation",
@@ -38044,7 +38044,7 @@
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 36.21,
-          "day_open": 36.21,
+          "day_open": 35.96,
           "day_high": 36.21,
           "day_low": 35.83,
           "day_pct": 1.86,
@@ -38131,9 +38131,9 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 352.11,
-          "day_open": 352.11,
+          "day_open": 346.0,
           "day_high": 352.33,
-          "day_low": 342.22,
+          "day_low": 342.21,
           "day_pct": 4.18,
           "ret_5d": 3.78,
           "ret_20d": 6.84,
@@ -38141,7 +38141,7 @@
           "rsi14": 64.5,
           "sma20": 336.66,
           "sma50": 342.61,
-          "vol_ratio": 1.47,
+          "vol_ratio": 1.49,
           "score": 71.0,
           "signal": "BUY",
           "setup_tag": "Breakout Accumulation",
@@ -38150,7 +38150,7 @@
           "stop_price": 330.98,
           "sparkline": [
             {
-              "h": 60,
+              "h": 59,
               "up": true,
               "close": 335.26
             },
@@ -38165,42 +38165,42 @@
               "close": 336.54
             },
             {
-              "h": 47,
+              "h": 46,
               "up": false,
               "close": 331.58
             },
             {
-              "h": 61,
+              "h": 60,
               "up": true,
               "close": 334.04
             },
             {
-              "h": 46,
+              "h": 45,
               "up": true,
               "close": 335.79
             },
             {
-              "h": 51,
+              "h": 50,
               "up": true,
               "close": 339.3
             },
             {
-              "h": 57,
+              "h": 56,
               "up": true,
               "close": 343.58
             },
             {
-              "h": 77,
+              "h": 76,
               "up": false,
               "close": 337.04
             },
             {
-              "h": 59,
+              "h": 58,
               "up": true,
               "close": 340.58
             },
             {
-              "h": 66,
+              "h": 65,
               "up": false,
               "close": 337.98
             },
@@ -38218,8 +38218,8 @@
           "bucket": "Core",
           "max_weight": 0.22,
           "price": 766.81,
-          "day_open": 766.81,
-          "day_high": 769.22,
+          "day_open": 762.99,
+          "day_high": 775.64,
           "day_low": 762.64,
           "day_pct": 1.65,
           "ret_5d": -0.71,
@@ -38228,7 +38228,7 @@
           "rsi14": 46.8,
           "sma20": 767.57,
           "sma50": 767.06,
-          "vol_ratio": 1.57,
+          "vol_ratio": 1.58,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -38292,7 +38292,7 @@
               "close": 754.35
             },
             {
-              "h": 79,
+              "h": 80,
               "up": true,
               "close": 766.81
             }
@@ -38305,7 +38305,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 66.39,
-          "day_open": 66.39,
+          "day_open": 64.55,
           "day_high": 66.78,
           "day_low": 64.02,
           "day_pct": 4.68,
@@ -38392,9 +38392,9 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 288.93,
-          "day_open": 288.93,
+          "day_open": 283.51,
           "day_high": 296.49,
-          "day_low": 283.51,
+          "day_low": 283.4,
           "day_pct": 3.18,
           "ret_5d": -11.07,
           "ret_20d": -17.57,
@@ -38479,8 +38479,8 @@
           "bucket": "Defensive",
           "max_weight": 0.08,
           "price": 372.49,
-          "day_open": 372.49,
-          "day_high": 372.98,
+          "day_open": 369.58,
+          "day_high": 372.99,
           "day_low": 369.22,
           "day_pct": 3.68,
           "ret_5d": -0.27,
@@ -38489,7 +38489,7 @@
           "rsi14": 42.1,
           "sma20": 373.55,
           "sma50": 386.88,
-          "vol_ratio": 1.29,
+          "vol_ratio": 1.35,
           "score": 38.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -38553,7 +38553,7 @@
               "close": 359.26
             },
             {
-              "h": 63,
+              "h": 65,
               "up": true,
               "close": 372.49
             }
@@ -38566,9 +38566,9 @@
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 691.95,
-          "day_open": 691.95,
+          "day_open": 688.43,
           "day_high": 701.45,
-          "day_low": 687.9,
+          "day_low": 687.87,
           "day_pct": 0.97,
           "ret_5d": -4.64,
           "ret_20d": -8.68,
@@ -38576,7 +38576,7 @@
           "rsi14": 36.4,
           "sma20": 717.42,
           "sma50": 723.56,
-          "vol_ratio": 1.5,
+          "vol_ratio": 1.51,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -38653,9 +38653,9 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 200.13,
-          "day_open": 200.13,
+          "day_open": 203.5,
           "day_high": 206.79,
-          "day_low": 199.69,
+          "day_low": 199.68,
           "day_pct": -3.17,
           "ret_5d": -7.08,
           "ret_20d": -15.72,
@@ -38740,7 +38740,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 325.48,
-          "day_open": 325.48,
+          "day_open": 326.86,
           "day_high": 334.12,
           "day_low": 321.74,
           "day_pct": -2.0,
@@ -38750,7 +38750,7 @@
           "rsi14": 42.0,
           "sma20": 338.95,
           "sma50": 350.72,
-          "vol_ratio": 1.1,
+          "vol_ratio": 1.11,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -38827,7 +38827,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 395.75,
-          "day_open": 395.75,
+          "day_open": 400.64,
           "day_high": 410.59,
           "day_low": 391.61,
           "day_pct": -2.24,
@@ -38837,7 +38837,7 @@
           "rsi14": 39.9,
           "sma20": 425.58,
           "sma50": 433.97,
-          "vol_ratio": 1.18,
+          "vol_ratio": 1.19,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -38901,7 +38901,7 @@
               "close": 404.8
             },
             {
-              "h": 65,
+              "h": 66,
               "up": false,
               "close": 395.75
             }
@@ -38914,7 +38914,7 @@
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 630.0,
-          "day_open": 630.0,
+          "day_open": 641.15,
           "day_high": 643.09,
           "day_low": 624.5,
           "day_pct": 1.44,
@@ -39001,7 +39001,7 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 171.7,
-          "day_open": 171.7,
+          "day_open": 164.95,
           "day_high": 177.43,
           "day_low": 164.6,
           "day_pct": -2.11,
@@ -39088,7 +39088,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 488.78,
-          "day_open": 488.78,
+          "day_open": 485.25,
           "day_high": 514.61,
           "day_low": 476.5,
           "day_pct": 1.01,
@@ -39098,7 +39098,7 @@
           "rsi14": 38.3,
           "sma20": 546.06,
           "sma50": 548.9,
-          "vol_ratio": 2.3,
+          "vol_ratio": 2.31,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -39112,7 +39112,7 @@
               "close": 534.74
             },
             {
-              "h": 36,
+              "h": 35,
               "up": true,
               "close": 552.72
             },
@@ -39152,12 +39152,12 @@
               "close": 504.8
             },
             {
-              "h": 64,
+              "h": 63,
               "up": false,
               "close": 466.84
             },
             {
-              "h": 70,
+              "h": 69,
               "up": true,
               "close": 483.9
             },
