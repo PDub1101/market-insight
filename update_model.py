@@ -1483,7 +1483,7 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
 
 
 def sync_to_github_if_configured() -> None:
-    """If .github_token exists locally, push updated data files to GitHub Pages."""
+    """If .github_token exists locally, push updated data files in a single atomic commit to GitHub Pages."""
     token_path = WORKSPACE_DIR / ".github_token"
     if not token_path.exists():
         return
@@ -1500,34 +1500,74 @@ def sync_to_github_if_configured() -> None:
             "Content-Type": "application/json",
             "User-Agent": "MarketInsightUpdater/1.0",
         }
+        # 1. Get HEAD commit of main
+        url_ref = "https://api.github.com/repos/PDub1101/market-insight/git/refs/heads/main"
+        req_ref = urllib.request.Request(url_ref, headers=headers)
+        with urllib.request.urlopen(req_ref, timeout=10) as r:
+            commit_sha = json.loads(r.read().decode("utf-8"))["object"]["sha"]
+
+        # 2. Get tree SHA of HEAD commit
+        url_commit = f"https://api.github.com/repos/PDub1101/market-insight/git/commits/{commit_sha}"
+        req_commit = urllib.request.Request(url_commit, headers=headers)
+        with urllib.request.urlopen(req_commit, timeout=10) as r:
+            tree_sha = json.loads(r.read().decode("utf-8"))["tree"]["sha"]
+
+        # 3. Build tree with all updated data files at once in a single commit
+        tree_items = []
         for fname in ("portfolio_data.js", "portfolio_state.json", "model_memory.json"):
             fpath = WORKSPACE_DIR / fname
             if not fpath.exists():
                 continue
-            api_url = f"https://api.github.com/repos/PDub1101/market-insight/contents/{fname}"
-            req_get = urllib.request.Request(api_url, headers=headers)
-            sha = None
-            try:
-                with urllib.request.urlopen(req_get, timeout=8) as r:
-                    sha = json.loads(r.read().decode("utf-8")).get("sha")
-            except Exception:
-                pass
-            payload: Dict[str, Any] = {
-                "message": f"Automated daily model sync: {fname}",
-                "content": base64.b64encode(fpath.read_bytes()).decode("ascii"),
-                "branch": "main",
-            }
-            if sha:
-                payload["sha"] = sha
-            req_put = urllib.request.Request(
-                api_url,
-                data=json.dumps(payload).encode("utf-8"),
-                headers=headers,
-                method="PUT",
-            )
-            with urllib.request.urlopen(req_put, timeout=12):
-                pass
-        print("Synced updated Day Tab to https://pdub1101.github.io/market-insight/")
+            tree_items.append({
+                "path": fname,
+                "mode": "100644",
+                "type": "blob",
+                "content": fpath.read_text(encoding="utf-8"),
+            })
+
+        if not tree_items:
+            return
+
+        url_tree = "https://api.github.com/repos/PDub1101/market-insight/git/trees"
+        tree_payload = {"base_tree": tree_sha, "tree": tree_items}
+        req_tree = urllib.request.Request(
+            url_tree,
+            data=json.dumps(tree_payload).encode("utf-8"),
+            headers=headers,
+            method="POST",
+        )
+        with urllib.request.urlopen(req_tree, timeout=12) as r:
+            new_tree_sha = json.loads(r.read().decode("utf-8"))["sha"]
+
+        # 4. Create one single commit
+        url_new_commit = "https://api.github.com/repos/PDub1101/market-insight/git/commits"
+        commit_payload = {
+            "message": f"Automated daily model sync ({dt.datetime.now().strftime('%Y-%m-%d')})",
+            "tree": new_tree_sha,
+            "parents": [commit_sha],
+        }
+        req_new_commit = urllib.request.Request(
+            url_new_commit,
+            data=json.dumps(commit_payload).encode("utf-8"),
+            headers=headers,
+            method="POST",
+        )
+        with urllib.request.urlopen(req_new_commit, timeout=12) as r:
+            new_commit_sha = json.loads(r.read().decode("utf-8"))["sha"]
+
+        # 5. Point main branch to new commit
+        req_patch = urllib.request.Request(
+            url_ref,
+            data=json.dumps({"sha": new_commit_sha}).encode("utf-8"),
+            headers=headers,
+            method="PATCH",
+        )
+        with urllib.request.urlopen(req_patch, timeout=12):
+            pass
+
+        print(f"Synced updated Day Tab (single commit {new_commit_sha[:8]}) to https://pdub1101.github.io/market-insight/")
+    except Exception as exc:
+        print(f"[warn] GitHub sync skipped: {exc}", file=sys.stderr)
     except Exception as exc:
         print(f"[warn] GitHub sync skipped: {exc}", file=sys.stderr)
 
