@@ -2,14 +2,14 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-06 01:08 AM ET",
+  "last_updated": "2026-11-06 01:42 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4105.8,
-      "change": 32.8,
-      "pct": 0.81,
+      "price": 4074.6,
+      "change": 1.6,
+      "pct": 0.04,
       "up": true,
       "spark": [
         4160.1,
@@ -25,7 +25,7 @@
         3969.6,
         3940.4,
         4073.0,
-        4105.8
+        4074.6
       ]
     },
     {
@@ -39273,7 +39273,7 @@
       "date": "2026-11-05",
       "tab_label": "Today \u2022 Nov 05 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-06 01:08 AM ET",
+      "updated_at": "2026-11-06 01:42 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.16,
@@ -39281,7 +39281,7 @@
         "cash_reserve": 178.61,
         "day_open": 6709.17,
         "day_high": 6999.89,
-        "day_low": 6661.93,
+        "day_low": 6661.97,
         "day_change_dollars": -250.26,
         "day_change_pct": -3.6,
         "total_gain_dollars": -290.84,
@@ -39421,12 +39421,12 @@
         "veto_note": "Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "lesson_learned": "On 2026-11-05, Dividend Value Mutual Fund led the 8-option leaderboard (+3.45%); combining relative strength (1.12x weight) with news-catalyst filtering keeps portfolio win rate at 57.1%.",
         "headlines_scanned": [
-          "[MSFT] IREN (IREN) Draws Tighter Oversight On Neocloud Data Center Projects (Simply Wall St.)",
-          "[MSFT] Oracle Stock Slides as AI Trade Swoons (The Wall Street Journal)",
-          "[AAPL] S&P 500, Nasdaq, Dow Futures Dip As Investors Step Back From AI And Tech With Nasdaq In Correction Territory \u2014  NVDA, AAPL, UBER, SOXX In Focus (Stocktwits)",
+          "[MSFT] 3 Value Stocks With Up To 38% Discount To Fair Value (Simply Wall St.)",
+          "[MSFT] Chatham Lodging Trust (CLDT) (Q3 2026) Earnings Call Highlights: Silicon Valley Surge Drives ... (GuruFocus.com)",
           "[AAPL] Dow Jones Futures Fall, Techs Bounce After Nasdaq Dives 5.5%; Nvidia, Sandisk, CoreWeave, SpaceX Plunge (Investor's Business Daily)",
-          "[AMZN] Amazon Challenges Google Shopping With Direct Product Feeds (MediaPost)",
-          "[AMZN] Stock Market Today, Nov. 5: Amazon Shares Slide as Technology Selloff Erases Early Gains (Motley Fool)"
+          "[AAPL] S&P 500, Nasdaq, Dow Futures Dip As Investors Step Back From AI And Tech With Nasdaq In Correction Territory \u2014  NVDA, AAPL, UBER, SOXX In Focus (Stocktwits)",
+          "[AMZN] Purple Innovation Inc (PRPL) Q3 2026 Earnings Call Highlights: Cash Flow Turns Positive as ... (GuruFocus.com)",
+          "[AMZN] Amazon Challenges Google Shopping With Direct Product Feeds (MediaPost)"
         ],
         "ai_briefing": "On 2026-11-05, the $7,000 AI Model closed at $6,709.16 (-290.84 / -4.15%), with Trade Win Rate at 57.1%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,694.24, 60/40 Balanced Fund is at $6,861.00, and 4.5% High-Yield Savings is at $7,014.69. Gemini Catalyst Check: Latest SCHD catalyst: \"New Dividend Growth ETF Enters the Market\" (Zacks). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
@@ -40883,7 +40883,7 @@
           "price": 535.93,
           "day_open": 535.93,
           "day_high": 557.62,
-          "day_low": 532.67,
+          "day_low": 532.7,
           "day_pct": -3.58,
           "ret_5d": 1.09,
           "ret_20d": 2.55,
@@ -41057,7 +41057,7 @@
           "price": 260.21,
           "day_open": 260.21,
           "day_high": 273.23,
-          "day_low": 252.32,
+          "day_low": 252.28,
           "day_pct": -2.19,
           "ret_5d": 6.74,
           "ret_20d": 2.42,
@@ -42188,7 +42188,7 @@
           "price": 291.53,
           "day_open": 291.53,
           "day_high": 314.0,
-          "day_low": 290.13,
+          "day_low": 290.12,
           "day_pct": -10.43,
           "ret_5d": -15.5,
           "ret_20d": -19.05,
@@ -42275,7 +42275,7 @@
           "price": 605.08,
           "day_open": 605.08,
           "day_high": 634.99,
-          "day_low": 583.8,
+          "day_low": 583.98,
           "day_pct": -3.96,
           "ret_5d": -3.11,
           "ret_20d": -16.06,
