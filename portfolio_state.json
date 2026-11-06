@@ -2,17 +2,16 @@
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-06 01:42 AM ET",
+  "last_updated": "2026-11-06 03:08 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
       "price": 4074.6,
-      "change": 1.6,
-      "pct": 0.04,
-      "up": true,
+      "change": -38.9,
+      "pct": -0.95,
+      "up": false,
       "spark": [
-        4160.1,
         4142.6,
         4150.0,
         4060.4,
@@ -25,6 +24,7 @@
         3969.6,
         3940.4,
         4073.0,
+        4113.5,
         4074.6
       ]
     },
@@ -39273,15 +39273,15 @@
       "date": "2026-11-05",
       "tab_label": "Today \u2022 Nov 05 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-06 01:42 AM ET",
+      "updated_at": "2026-11-06 03:08 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.16,
         "invested_value": 6530.55,
         "cash_reserve": 178.61,
-        "day_open": 6709.17,
-        "day_high": 6999.89,
-        "day_low": 6661.97,
+        "day_open": 6971.51,
+        "day_high": 6999.9,
+        "day_low": 6661.83,
         "day_change_dollars": -250.26,
         "day_change_pct": -3.6,
         "total_gain_dollars": -290.84,
@@ -39477,57 +39477,57 @@
           "reason": "Trading below 50d moving average ($766.40)",
           "sparkline": [
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 773.09
             },
             {
-              "h": 45,
+              "h": 43,
               "up": false,
               "close": 763.96
             },
             {
-              "h": 28,
+              "h": 27,
               "up": false,
               "close": 759.97
             },
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 765.37
             },
             {
-              "h": 24,
+              "h": 23,
               "up": true,
               "close": 769.66
             },
             {
-              "h": 25,
+              "h": 24,
               "up": true,
               "close": 772.31
             },
             {
-              "h": 33,
+              "h": 32,
               "up": false,
               "close": 769.36
             },
             {
-              "h": 64,
+              "h": 62,
               "up": false,
               "close": 755.72
             },
             {
-              "h": 42,
+              "h": 41,
               "up": false,
               "close": 752.1
             },
             {
-              "h": 27,
+              "h": 26,
               "up": true,
               "close": 754.35
             },
             {
-              "h": 51,
+              "h": 50,
               "up": true,
               "close": 766.81
             },
@@ -39612,7 +39612,7 @@
               "close": 555.8
             },
             {
-              "h": 82,
+              "h": 83,
               "up": false,
               "close": 535.93
             }
@@ -39692,7 +39692,7 @@
               "close": 349.51
             },
             {
-              "h": 83,
+              "h": 84,
               "up": false,
               "close": 344.17
             }
@@ -39717,17 +39717,17 @@
           "reason": "Trading below 50d moving average ($722.27) \u2022 Deeply oversold (RSI 30.3)",
           "sparkline": [
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 725.2
             },
             {
-              "h": 51,
+              "h": 50,
               "up": false,
               "close": 704.47
             },
             {
-              "h": 24,
+              "h": 23,
               "up": false,
               "close": 704.4
             },
@@ -39737,7 +39737,7 @@
               "close": 712.2
             },
             {
-              "h": 25,
+              "h": 24,
               "up": true,
               "close": 721.25
             },
@@ -39752,22 +39752,22 @@
               "close": 715.34
             },
             {
-              "h": 68,
+              "h": 66,
               "up": false,
               "close": 690.49
             },
             {
-              "h": 44,
+              "h": 42,
               "up": false,
               "close": 681.09
             },
             {
-              "h": 30,
+              "h": 29,
               "up": true,
               "close": 685.28
             },
             {
-              "h": 50,
+              "h": 48,
               "up": true,
               "close": 691.95
             },
@@ -39797,57 +39797,57 @@
           "reason": "Confirmed uptrend above 20d ($999.02) & 50d ($950.04) MAs \u2022 Outperforming S&P 500 by +17.7% over 20d",
           "sparkline": [
             {
-              "h": 33,
+              "h": 32,
               "up": true,
               "close": 998.31
             },
             {
-              "h": 63,
+              "h": 60,
               "up": true,
               "close": 1018.21
             },
             {
-              "h": 53,
+              "h": 51,
               "up": false,
               "close": 1003.32
             },
             {
-              "h": 53,
+              "h": 50,
               "up": true,
               "close": 1005.16
             },
             {
-              "h": 50,
+              "h": 47,
               "up": false,
               "close": 992.13
             },
             {
-              "h": 38,
+              "h": 36,
               "up": false,
               "close": 982.73
             },
             {
-              "h": 35,
+              "h": 34,
               "up": true,
               "close": 996.08
             },
             {
-              "h": 77,
+              "h": 73,
               "up": true,
               "close": 1012.28
             },
             {
-              "h": 69,
+              "h": 66,
               "up": true,
               "close": 1040.55
             },
             {
-              "h": 42,
+              "h": 40,
               "up": false,
               "close": 1019.26
             },
             {
-              "h": 57,
+              "h": 55,
               "up": true,
               "close": 1046.47
             },
@@ -39932,7 +39932,7 @@
               "close": 266.03
             },
             {
-              "h": 80,
+              "h": 81,
               "up": false,
               "close": 260.21
             }
@@ -40012,7 +40012,7 @@
               "close": 630.0
             },
             {
-              "h": 55,
+              "h": 56,
               "up": false,
               "close": 605.08
             }
@@ -40092,7 +40092,7 @@
               "close": 171.7
             },
             {
-              "h": 93,
+              "h": 94,
               "up": false,
               "close": 154.99
             }
@@ -40117,7 +40117,7 @@
           "reason": "Confirmed uptrend above 20d ($34.80) & 50d ($34.19) MAs \u2022 Healthy momentum zone (RSI 62.4)",
           "sparkline": [
             {
-              "h": 48,
+              "h": 47,
               "up": true,
               "close": 34.66
             },
@@ -40142,12 +40142,12 @@
               "close": 35.12
             },
             {
-              "h": 53,
+              "h": 52,
               "up": false,
               "close": 35.09
             },
             {
-              "h": 60,
+              "h": 59,
               "up": true,
               "close": 35.61
             },
@@ -40167,7 +40167,7 @@
               "close": 35.55
             },
             {
-              "h": 66,
+              "h": 65,
               "up": true,
               "close": 36.21
             },
@@ -40252,7 +40252,7 @@
               "close": 1417.99
             },
             {
-              "h": 91,
+              "h": 93,
               "up": false,
               "close": 1364.73
             }
@@ -40312,7 +40312,7 @@
               "close": 566.42
             },
             {
-              "h": 57,
+              "h": 56,
               "up": false,
               "close": 504.8
             },
@@ -40327,7 +40327,7 @@
               "close": 483.9
             },
             {
-              "h": 73,
+              "h": 72,
               "up": true,
               "close": 488.78
             },
@@ -40881,9 +40881,9 @@
           "bucket": "Core",
           "max_weight": 0.14,
           "price": 535.93,
-          "day_open": 535.93,
+          "day_open": 554.94,
           "day_high": 557.62,
-          "day_low": 532.7,
+          "day_low": 532.68,
           "day_pct": -3.58,
           "ret_5d": 1.09,
           "ret_20d": 2.55,
@@ -40891,7 +40891,7 @@
           "rsi14": 52.8,
           "sma20": 531.63,
           "sma50": 516.13,
-          "vol_ratio": 1.73,
+          "vol_ratio": 1.76,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -40955,7 +40955,7 @@
               "close": 555.8
             },
             {
-              "h": 82,
+              "h": 83,
               "up": false,
               "close": 535.93
             }
@@ -40968,7 +40968,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 344.17,
-          "day_open": 344.17,
+          "day_open": 353.89,
           "day_high": 355.38,
           "day_low": 342.06,
           "day_pct": -1.53,
@@ -40978,7 +40978,7 @@
           "rsi14": 50.5,
           "sma20": 343.1,
           "sma50": 335.46,
-          "vol_ratio": 1.6,
+          "vol_ratio": 1.63,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -41042,7 +41042,7 @@
               "close": 349.51
             },
             {
-              "h": 83,
+              "h": 84,
               "up": false,
               "close": 344.17
             }
@@ -41055,9 +41055,9 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 260.21,
-          "day_open": 260.21,
+          "day_open": 271.43,
           "day_high": 273.23,
-          "day_low": 252.28,
+          "day_low": 252.27,
           "day_pct": -2.19,
           "ret_5d": 6.74,
           "ret_20d": 2.42,
@@ -41065,7 +41065,7 @@
           "rsi14": 56.4,
           "sma20": 254.44,
           "sma50": 253.89,
-          "vol_ratio": 1.83,
+          "vol_ratio": 1.87,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Breakout Accumulation",
@@ -41129,7 +41129,7 @@
               "close": 266.03
             },
             {
-              "h": 80,
+              "h": 81,
               "up": false,
               "close": 260.21
             }
@@ -41142,7 +41142,7 @@
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 35.42,
-          "day_open": 35.42,
+          "day_open": 36.29,
           "day_high": 36.38,
           "day_low": 35.39,
           "day_pct": -2.18,
@@ -41152,7 +41152,7 @@
           "rsi14": 62.4,
           "sma20": 34.8,
           "sma50": 34.19,
-          "vol_ratio": 1.74,
+          "vol_ratio": 1.75,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -41161,7 +41161,7 @@
           "stop_price": 33.29,
           "sparkline": [
             {
-              "h": 48,
+              "h": 47,
               "up": true,
               "close": 34.66
             },
@@ -41186,12 +41186,12 @@
               "close": 35.12
             },
             {
-              "h": 53,
+              "h": 52,
               "up": false,
               "close": 35.09
             },
             {
-              "h": 60,
+              "h": 59,
               "up": true,
               "close": 35.61
             },
@@ -41211,7 +41211,7 @@
               "close": 35.55
             },
             {
-              "h": 66,
+              "h": 65,
               "up": true,
               "close": 36.21
             },
@@ -41229,7 +41229,7 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1065.59,
-          "day_open": 1065.59,
+          "day_open": 1070.99,
           "day_high": 1081.55,
           "day_low": 1061.0,
           "day_pct": 1.83,
@@ -41239,7 +41239,7 @@
           "rsi14": 69.6,
           "sma20": 999.02,
           "sma50": 950.04,
-          "vol_ratio": 2.01,
+          "vol_ratio": 2.11,
           "score": 95.0,
           "signal": "HOLD",
           "setup_tag": "Breakout Accumulation",
@@ -41248,57 +41248,57 @@
           "stop_price": 1001.65,
           "sparkline": [
             {
-              "h": 33,
+              "h": 32,
               "up": true,
               "close": 998.31
             },
             {
-              "h": 63,
+              "h": 60,
               "up": true,
               "close": 1018.21
             },
             {
-              "h": 53,
+              "h": 51,
               "up": false,
               "close": 1003.32
             },
             {
-              "h": 53,
+              "h": 50,
               "up": true,
               "close": 1005.16
             },
             {
-              "h": 50,
+              "h": 47,
               "up": false,
               "close": 992.13
             },
             {
-              "h": 38,
+              "h": 36,
               "up": false,
               "close": 982.73
             },
             {
-              "h": 35,
+              "h": 34,
               "up": true,
               "close": 996.08
             },
             {
-              "h": 77,
+              "h": 73,
               "up": true,
               "close": 1012.28
             },
             {
-              "h": 69,
+              "h": 66,
               "up": true,
               "close": 1040.55
             },
             {
-              "h": 42,
+              "h": 40,
               "up": false,
               "close": 1019.26
             },
             {
-              "h": 57,
+              "h": 55,
               "up": true,
               "close": 1046.47
             },
@@ -41316,7 +41316,7 @@
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1364.73,
-          "day_open": 1364.73,
+          "day_open": 1434.0,
           "day_high": 1453.0,
           "day_low": 1364.73,
           "day_pct": -3.76,
@@ -41326,7 +41326,7 @@
           "rsi14": 65.1,
           "sma20": 1293.22,
           "sma50": 1210.69,
-          "vol_ratio": 1.75,
+          "vol_ratio": 1.79,
           "score": 89.3,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -41390,7 +41390,7 @@
               "close": 1417.99
             },
             {
-              "h": 91,
+              "h": 93,
               "up": false,
               "close": 1364.73
             }
@@ -41403,7 +41403,7 @@
           "bucket": "Defensive",
           "max_weight": 0.12,
           "price": 572.33,
-          "day_open": 572.33,
+          "day_open": 584.23,
           "day_high": 586.3,
           "day_low": 571.1,
           "day_pct": -1.17,
@@ -41413,7 +41413,7 @@
           "rsi14": 74.7,
           "sma20": 540.95,
           "sma50": 520.22,
-          "vol_ratio": 2.09,
+          "vol_ratio": 2.1,
           "score": 85.0,
           "signal": "TRIM",
           "setup_tag": "Breakout Accumulation",
@@ -41447,7 +41447,7 @@
               "close": 542.99
             },
             {
-              "h": 34,
+              "h": 33,
               "up": false,
               "close": 540.34
             },
@@ -41490,7 +41490,7 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 337.34,
-          "day_open": 337.34,
+          "day_open": 358.64,
           "day_high": 359.8,
           "day_low": 335.93,
           "day_pct": -4.19,
@@ -41549,7 +41549,7 @@
               "close": 337.04
             },
             {
-              "h": 47,
+              "h": 46,
               "up": true,
               "close": 340.58
             },
@@ -41577,7 +41577,7 @@
           "bucket": "Defensive",
           "max_weight": 0.08,
           "price": 375.49,
-          "day_open": 375.49,
+          "day_open": 377.6,
           "day_high": 378.97,
           "day_low": 373.42,
           "day_pct": 0.81,
@@ -41664,7 +41664,7 @@
           "bucket": "Core",
           "max_weight": 0.22,
           "price": 733.0,
-          "day_open": 733.0,
+          "day_open": 765.47,
           "day_high": 765.97,
           "day_low": 732.71,
           "day_pct": -4.41,
@@ -41674,7 +41674,7 @@
           "rsi14": 35.5,
           "sma20": 765.53,
           "sma50": 766.4,
-          "vol_ratio": 2.95,
+          "vol_ratio": 3.06,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -41683,57 +41683,57 @@
           "stop_price": 689.02,
           "sparkline": [
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 773.09
             },
             {
-              "h": 45,
+              "h": 43,
               "up": false,
               "close": 763.96
             },
             {
-              "h": 28,
+              "h": 27,
               "up": false,
               "close": 759.97
             },
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 765.37
             },
             {
-              "h": 24,
+              "h": 23,
               "up": true,
               "close": 769.66
             },
             {
-              "h": 25,
+              "h": 24,
               "up": true,
               "close": 772.31
             },
             {
-              "h": 33,
+              "h": 32,
               "up": false,
               "close": 769.36
             },
             {
-              "h": 64,
+              "h": 62,
               "up": false,
               "close": 755.72
             },
             {
-              "h": 42,
+              "h": 41,
               "up": false,
               "close": 752.1
             },
             {
-              "h": 27,
+              "h": 26,
               "up": true,
               "close": 754.35
             },
             {
-              "h": 51,
+              "h": 50,
               "up": true,
               "close": 766.81
             },
@@ -41751,8 +41751,8 @@
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 647.05,
-          "day_open": 647.05,
-          "day_high": 683.64,
+          "day_open": 683.12,
+          "day_high": 683.65,
           "day_low": 647.05,
           "day_pct": -6.49,
           "ret_5d": -9.55,
@@ -41761,7 +41761,7 @@
           "rsi14": 30.3,
           "sma20": 712.4,
           "sma50": 722.27,
-          "vol_ratio": 2.92,
+          "vol_ratio": 2.99,
           "score": 39.4,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -41770,17 +41770,17 @@
           "stop_price": 608.23,
           "sparkline": [
             {
-              "h": 26,
+              "h": 25,
               "up": true,
               "close": 725.2
             },
             {
-              "h": 51,
+              "h": 50,
               "up": false,
               "close": 704.47
             },
             {
-              "h": 24,
+              "h": 23,
               "up": false,
               "close": 704.4
             },
@@ -41790,7 +41790,7 @@
               "close": 712.2
             },
             {
-              "h": 25,
+              "h": 24,
               "up": true,
               "close": 721.25
             },
@@ -41805,22 +41805,22 @@
               "close": 715.34
             },
             {
-              "h": 68,
+              "h": 66,
               "up": false,
               "close": 690.49
             },
             {
-              "h": 44,
+              "h": 42,
               "up": false,
               "close": 681.09
             },
             {
-              "h": 30,
+              "h": 29,
               "up": true,
               "close": 685.28
             },
             {
-              "h": 50,
+              "h": 48,
               "up": true,
               "close": 691.95
             },
@@ -41838,7 +41838,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 282.57,
-          "day_open": 282.57,
+          "day_open": 293.97,
           "day_high": 295.6,
           "day_low": 277.07,
           "day_pct": -2.2,
@@ -41848,7 +41848,7 @@
           "rsi14": 21.4,
           "sma20": 320.79,
           "sma50": 334.05,
-          "vol_ratio": 1.44,
+          "vol_ratio": 1.45,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -41925,7 +41925,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 65.56,
-          "day_open": 65.56,
+          "day_open": 67.29,
           "day_high": 67.49,
           "day_low": 64.67,
           "day_pct": -1.25,
@@ -42012,7 +42012,7 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 181.6,
-          "day_open": 181.6,
+          "day_open": 196.07,
           "day_high": 196.25,
           "day_low": 181.46,
           "day_pct": -9.26,
@@ -42022,7 +42022,7 @@
           "rsi14": 27.6,
           "sma20": 213.68,
           "sma50": 220.64,
-          "vol_ratio": 2.91,
+          "vol_ratio": 2.93,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -42036,12 +42036,12 @@
               "close": 221.97
             },
             {
-              "h": 42,
+              "h": 41,
               "up": false,
               "close": 212.21
             },
             {
-              "h": 27,
+              "h": 26,
               "up": false,
               "close": 210.96
             },
@@ -42071,7 +42071,7 @@
               "close": 204.64
             },
             {
-              "h": 40,
+              "h": 39,
               "up": false,
               "close": 202.06
             },
@@ -42099,7 +42099,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 353.1,
-          "day_open": 353.1,
+          "day_open": 379.75,
           "day_high": 380.78,
           "day_low": 351.19,
           "day_pct": -10.78,
@@ -42109,7 +42109,7 @@
           "rsi14": 31.9,
           "sma20": 420.33,
           "sma50": 432.68,
-          "vol_ratio": 3.41,
+          "vol_ratio": 3.42,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -42153,7 +42153,7 @@
               "close": 431.81
             },
             {
-              "h": 52,
+              "h": 51,
               "up": false,
               "close": 406.13
             },
@@ -42186,7 +42186,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 291.53,
-          "day_open": 291.53,
+          "day_open": 311.89,
           "day_high": 314.0,
           "day_low": 290.12,
           "day_pct": -10.43,
@@ -42196,7 +42196,7 @@
           "rsi14": 36.3,
           "sma20": 335.52,
           "sma50": 349.44,
-          "vol_ratio": 2.45,
+          "vol_ratio": 2.46,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -42230,7 +42230,7 @@
               "close": 342.33
             },
             {
-              "h": 43,
+              "h": 42,
               "up": true,
               "close": 351.81
             },
@@ -42273,9 +42273,9 @@
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 605.08,
-          "day_open": 605.08,
+          "day_open": 632.3,
           "day_high": 634.99,
-          "day_low": 583.98,
+          "day_low": 583.8,
           "day_pct": -3.96,
           "ret_5d": -3.11,
           "ret_20d": -16.06,
@@ -42283,7 +42283,7 @@
           "rsi14": 21.3,
           "sma20": 668.1,
           "sma50": 674.14,
-          "vol_ratio": 1.16,
+          "vol_ratio": 1.17,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -42347,7 +42347,7 @@
               "close": 630.0
             },
             {
-              "h": 55,
+              "h": 56,
               "up": false,
               "close": 605.08
             }
@@ -42360,7 +42360,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 404.4,
-          "day_open": 404.4,
+          "day_open": 452.5,
           "day_high": 456.2,
           "day_low": 402.1,
           "day_pct": -17.26,
@@ -42370,7 +42370,7 @@
           "rsi14": 32.9,
           "sma20": 535.25,
           "sma50": 547.37,
-          "vol_ratio": 2.97,
+          "vol_ratio": 2.99,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -42414,7 +42414,7 @@
               "close": 566.42
             },
             {
-              "h": 57,
+              "h": 56,
               "up": false,
               "close": 504.8
             },
@@ -42429,7 +42429,7 @@
               "close": 483.9
             },
             {
-              "h": 73,
+              "h": 72,
               "up": true,
               "close": 488.78
             },
@@ -42447,7 +42447,7 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 154.99,
-          "day_open": 154.99,
+          "day_open": 166.71,
           "day_high": 167.25,
           "day_low": 152.6,
           "day_pct": -9.73,
@@ -42457,7 +42457,7 @@
           "rsi14": 28.1,
           "sma20": 192.55,
           "sma50": 186.39,
-          "vol_ratio": 1.85,
+          "vol_ratio": 1.86,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -42521,7 +42521,7 @@
               "close": 171.7
             },
             {
-              "h": 93,
+              "h": 94,
               "up": false,
               "close": 154.99
             }
