@@ -506,7 +506,7 @@
     }
 
     /* ==========================================================================
-       6. SECTION 2: INTERACTIVE CHART & 8-OPTION COMPARISON CARDS
+       6. SECTION 2: INTERACTIVE CHART & 9-OPTION COMPARISON CARDS
        ========================================================================== */
     .chart-box {
       background: var(--bg-card-alt);
@@ -1408,9 +1408,10 @@
     let tradeFilter = 'all';    // 'all' | 'buy' | 'trim' | 'win' | 'lag'
     let watchFilter = 'all';    // 'all' | 'BUY' | 'HOLD' | 'TRIM'
 
-    // Active series on the head-to-head chart (all 8 toggleable!)
+    // Active series on the head-to-head chart (all 9 toggleable!)
     const CHART_SERIES_META = [
-      { id: 'model',           name: 'Our AI Model',              color: '#6b93e8', width: 3.4, on: true },
+      { id: 'model_v2',        name: 'Model v2.0 (Enhanced)',     color: '#10b981', width: 3.4, on: true },
+      { id: 'model',           name: 'Model v1.0 (Baseline)',     color: '#6b93e8', width: 2.2, on: true, dashed: true },
       { id: 'schd_dividend',   name: 'Dividend Value (SCHD)',     color: '#3eb481', width: 2.2, on: true },
       { id: 'spy_mutual',      name: 'S&P 500 Index (SPY)',       color: '#dfa247', width: 2.2, on: true },
       { id: 'balanced_60_40',  name: '60/40 Balanced Fund',       color: '#a78bfa', width: 2.0, on: true },
@@ -1427,7 +1428,8 @@
 
     // Plain-English dictionary explaining each of the 8 investment options
     const OPTION_PLAIN_ENGLISH = {
-      model: "Our active stock-picking experiment: splits money across individual stocks & ETFs, trims positions when they overheat or break down, and holds spare cash.",
+      model_v2: "Our enhanced AI Model: incorporates strict stop-losses (-7.0%), a dynamic Market Regime cash shield (holds >=35% cash when S&P 500 breaks below 50d trend), anti-whipsaw cooldowns, and real-time Gemini AI risk vetoes.",
+      model: "Our legacy baseline model: forward-tested since Oct 19, 2026 with 19 static equities, partial trims, and always ~97% invested.",
       schd_dividend: "A low-fee fund (like Schwab SCHD) that owns ~100 established, profitable US companies—such as Coca-Cola, Home Depot, and AbbVie—that pay steady cash dividends.",
       qqq_growth: "Tracks the Nasdaq-100 (heavily concentrated in tech giants like Apple, Nvidia, Microsoft, and Amazon). Rises fast in tech rallies, drops harder in tech selloffs.",
       balanced_60_40: "A classic retirement-style mix: 60% in S&P 500 US stocks for growth + 40% in US bonds (AGG) to cushion stock-market drops.",
@@ -1839,8 +1841,8 @@
             </div>
 
             <div class="stat-card">
-              <div class="stat-label">Standing vs. 8 Choices</div>
-              <div class="stat-num">#${modelAlt.rank} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">of 8</span></div>
+              <div class="stat-label">Standing vs. 9 Strategies</div>
+              <div class="stat-num">#${modelAlt.rank} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">of 9</span></div>
               <div class="stat-note">
                 ${leader.is_model
                   ? '<span class="txt-pos">Currently leading all alternatives!</span>'
@@ -1877,7 +1879,7 @@
               <div class="chapter-eyebrow">Section 2 • Head-to-Head Comparison</div>
               <h2 class="chapter-title">Comparative Asset Allocation &amp; Benchmark Tracking</h2>
               <p class="chapter-desc">
-                All 8 choices started with the exact same ${fmtMoney(scaled(p.starting_capital))} on Day 1 (${escapeHtml(appData.created_at || '2026-10-19')}). Hover over the chart to compare any day, or click the colored pills to turn lines on and off.
+                All 9 options started with the exact same ${fmtMoney(scaled(p.starting_capital))} on Day 1 (${escapeHtml(appData.created_at || '2026-10-19')}). Hover over the chart to compare any day, or click the colored pills to turn lines on and off.
               </p>
             </div>
           </div>
@@ -1976,7 +1978,7 @@
     }
 
     /* ==========================================================================
-       SECTION 2 HELPERS: 8 OPTION CARDS & INTERACTIVE HOVER CHART
+       SECTION 2 HELPERS: 9 OPTION CARDS & INTERACTIVE HOVER CHART
        ========================================================================== */
     function switchCompareView(mode) {
       const tableEl = document.getElementById('compareTableView');
@@ -1999,24 +2001,43 @@
 
     function buildCompareKpiBar(alts, modelVal, startCap) {
       if (!alts || alts.length === 0) return '';
-      const modelOpt = alts.find(a => a.is_model) || {};
-      const spyOpt = alts.find(a => a.id === 'spy' || a.name.includes('S&P 500')) || {};
+      const v2Opt = alts.find(a => a.id === 'model_v2') || {};
+      const v1Opt = alts.find(a => a.id === 'model' || (a.is_model && a.id !== 'model_v2')) || {};
+      const spyOpt = alts.find(a => a.id === 'spy_mutual' || a.name.includes('S&P 500')) || {};
       const topOpt = alts.slice().sort((a,b) => a.rank - b.rank)[0] || {};
-      const qqqOpt = alts.find(a => a.id === 'qqq' || a.name.includes('Tech Growth')) || {};
 
-      const modelUp = (modelOpt.gain_dollars || 0) >= 0;
+      const v2Up = (v2Opt.gain_dollars || 0) >= 0;
+      const v1Up = (v1Opt.gain_dollars || 0) >= 0;
       const topUp = (topOpt.gain_dollars || 0) >= 0;
-      const spyUp = (spyOpt.gain_dollars || 0) >= 0;
 
-      const qqqDiff = modelVal - (qqqOpt.value || 0);
+      const alphaV2vsV1 = (v2Opt.value || modelVal) - (v1Opt.value || modelVal);
+      const alphaPct = (v2Opt.gain_pct || 0) - (v1Opt.gain_pct || 0);
 
       return `
         <div class="compare-kpi-bar">
+          <div class="compare-kpi-card" style="border-left: 3px solid #10b981;">
+            <span class="compare-kpi-label">Model v2.0 (Enhanced)</span>
+            <span class="compare-kpi-val">${fmtMoney(scaled(v2Opt.value || modelVal))}</span>
+            <span class="compare-kpi-sub ${v2Up ? 'txt-pos' : 'txt-neg'}">
+              ${fmtMoney(scaled(v2Opt.gain_dollars || 0), true)} (${fmtPct(v2Opt.gain_pct || 0)}) • Rank #${v2Opt.rank || 4}
+            </span>
+          </div>
+
           <div class="compare-kpi-card" style="border-left: 3px solid var(--accent-primary);">
-            <span class="compare-kpi-label">Active Model NAV</span>
-            <span class="compare-kpi-val">${fmtMoney(scaled(modelVal))}</span>
-            <span class="compare-kpi-sub ${modelUp ? 'txt-pos' : 'txt-neg'}">
-              ${fmtMoney(scaled(modelOpt.gain_dollars || 0), true)} (${fmtPct(modelOpt.gain_pct || 0)}) • Rank #${modelOpt.rank || 6}
+            <span class="compare-kpi-label">Model v1.0 (Baseline)</span>
+            <span class="compare-kpi-val">${fmtMoney(scaled(v1Opt.value || modelVal))}</span>
+            <span class="compare-kpi-sub ${v1Up ? 'txt-pos' : 'txt-neg'}">
+              ${fmtMoney(scaled(v1Opt.gain_dollars || 0), true)} (${fmtPct(v1Opt.gain_pct || 0)}) • Rank #${v1Opt.rank || 7}
+            </span>
+          </div>
+
+          <div class="compare-kpi-card" style="border-left: 3px solid #38bdf8;">
+            <span class="compare-kpi-label">v2.0 Alpha over Baseline v1.0</span>
+            <span class="compare-kpi-val ${alphaV2vsV1 >= 0 ? 'txt-pos' : 'txt-neg'}">
+              ${alphaV2vsV1 >= 0 ? '+' : ''}${fmtMoney(scaled(alphaV2vsV1))}
+            </span>
+            <span class="compare-kpi-sub ${alphaPct >= 0 ? 'txt-pos' : 'txt-neg'}">
+              ${alphaPct >= 0 ? '+' : ''}${alphaPct.toFixed(2)}% outperformance
             </span>
           </div>
 
@@ -2025,24 +2046,6 @@
             <span class="compare-kpi-val">${fmtMoney(scaled(topOpt.value || 0))}</span>
             <span class="compare-kpi-sub ${topUp ? 'txt-pos' : 'txt-neg'}">
               ${escapeHtml(topOpt.name || 'Top Option')}: ${fmtPct(topOpt.gain_pct || 0)}
-            </span>
-          </div>
-
-          <div class="compare-kpi-card">
-            <span class="compare-kpi-label">S&P 500 (SPY Baseline)</span>
-            <span class="compare-kpi-val">${fmtMoney(scaled(spyOpt.value || 0))}</span>
-            <span class="compare-kpi-sub ${spyUp ? 'txt-pos' : 'txt-neg'}">
-              ${fmtPct(spyOpt.gain_pct || 0)} (${fmtMoney(scaled(spyOpt.gain_dollars || 0), true)})
-            </span>
-          </div>
-
-          <div class="compare-kpi-card">
-            <span class="compare-kpi-label">Spread vs. Nasdaq-100</span>
-            <span class="compare-kpi-val ${qqqDiff >= 0 ? 'txt-pos' : 'txt-neg'}">
-              ${fmtMoney(scaled(qqqDiff), true)}
-            </span>
-            <span class="compare-kpi-sub">
-              ${qqqDiff >= 0 ? 'Model outperforming QQQ' : 'Model trailing QQQ'}
             </span>
           </div>
         </div>
@@ -2058,29 +2061,33 @@
       const rows = alts.map(a => {
         const up = a.gain_dollars >= 0;
         const barPct = maxV > minV ? Math.max(10, Math.min(100, ((a.value - minV) / (maxV - minV)) * 100)) : 50;
-        const barColor = a.is_model ? 'var(--accent-primary)' : (up ? 'var(--pos)' : 'var(--neg)');
-        const diff = modelVal - a.value;
+        const isV2 = a.id === 'model_v2' || a.is_model_v2;
+        const isV1 = a.id === 'model' || (a.is_model && !isV2);
+        const barColor = isV2 ? '#10b981' : (isV1 ? 'var(--accent-primary)' : (up ? 'var(--pos)' : 'var(--neg)'));
+        const diff = (alts.find(x => x.id === 'model_v2') || { value: modelVal }).value - a.value;
 
         let spreadHtml = '';
-        if (a.is_model) {
-          spreadHtml = `<span class="table-tag-model">Portfolio Baseline</span>`;
+        if (isV2) {
+          spreadHtml = `<span class="table-tag-model" style="background:rgba(16,185,129,0.18);color:#10b981;border:1px solid rgba(16,185,129,0.35);">Enhanced Active</span>`;
+        } else if (isV1) {
+          spreadHtml = `<span class="table-tag-model">Baseline v1.0</span>`;
         } else if (Math.abs(diff) < 0.05) {
-          spreadHtml = `<span>Tied</span>`;
+          spreadHtml = `<span>Tied vs v2</span>`;
         } else if (diff > 0) {
-          spreadHtml = `<span class="txt-pos">+${fmtMoney(scaled(diff))} Ahead</span>`;
+          spreadHtml = `<span class="txt-pos">+${fmtMoney(scaled(diff))} Behind v2</span>`;
         } else {
-          spreadHtml = `<span class="txt-neg">-${fmtMoney(scaled(Math.abs(diff)))} Behind</span>`;
+          spreadHtml = `<span class="txt-neg">-${fmtMoney(scaled(Math.abs(diff)))} Ahead of v2</span>`;
         }
 
         return `
-          <tr class="${a.is_model ? 'row-model' : ''}">
+          <tr class="${isV2 ? 'row-model-v2' : (isV1 ? 'row-model' : '')}">
             <td style="width: 44px; text-align: center;">
-              <span class="table-rank-badge ${a.rank === 1 ? 'rank-1' : ''}">#${a.rank}</span>
+              <span class="table-rank-badge ${a.rank === 1 ? 'rank-1' : (isV2 ? 'rank-v2' : '')}">#${a.rank}</span>
             </td>
             <td>
               <div class="table-asset-name">
                 ${escapeHtml(a.name)}
-                ${a.is_model ? '<span class="table-tag-model">Active Model</span>' : ''}
+                ${isV2 ? '<span class="table-tag-model" style="background:rgba(16,185,129,0.18);color:#10b981;border:1px solid rgba(16,185,129,0.35);">v2.0 Enhanced</span>' : (isV1 ? '<span class="table-tag-model">v1.0 Baseline</span>' : '')}
               </div>
               <div class="table-asset-sub">${escapeHtml(a.subtitle || '')}</div>
             </td>
@@ -2170,7 +2177,7 @@
                   <div>
                     <div class="option-name">
                       ${escapeHtml(a.name)}
-                      ${a.is_model ? '<span class="option-tag">Our Model</span>' : ''}
+                      ${(a.id === 'model_v2' || a.is_model_v2) ? '<span class="option-tag" style="background:rgba(16,185,129,0.18);color:#10b981;border:1px solid rgba(16,185,129,0.35);">Model v2.0</span>' : (a.is_model ? '<span class="option-tag">Model v1.0</span>' : '')}
                     </div>
                   </div>
                 </div>
