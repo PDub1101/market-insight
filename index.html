@@ -2237,6 +2237,9 @@
       const seriesPoints = activeSeries.map(s => {
         const pts = days.map(d => {
           const opt = (d.alternative_options || []).find(a => a.id === s.id);
+          if (s.id === 'model_v2') {
+            return opt ? scaled(opt.value) : null;
+          }
           const rawVal = opt ? opt.value : (s.id === 'model' ? d.portfolio.total_value : d.portfolio.starting_capital);
           return scaled(rawVal);
         });
@@ -2247,8 +2250,10 @@
       let maxV = scaled(7050);
       seriesPoints.forEach(s => {
         s.pts.forEach(v => {
-          if (v < minV) minV = v;
-          if (v > maxV) maxV = v;
+          if (v !== null && v !== undefined && !isNaN(v)) {
+            if (v < minV) minV = v;
+            if (v > maxV) maxV = v;
+          }
         });
       });
       const padRange = Math.max((maxV - minV) * 0.14, scaled(18));
@@ -2289,12 +2294,31 @@
 
       // Draw each active line + dots
       seriesPoints.forEach(s => {
-        const dPath = s.pts.map((v, i) => `${i === 0 ? 'M' : 'L'} ${getX(i).toFixed(1)} ${getY(v).toFixed(1)}`).join(' ');
+        const validPts = s.pts.map((v, i) => ({ v, i })).filter(p => p.v !== null && p.v !== undefined && !isNaN(p.v));
+        if (validPts.length === 0) return;
+
+        if (validPts.length === 1) {
+          // Model v2.0 Live Fork Launch marker
+          const p = validPts[0];
+          const cx = getX(p.i).toFixed(1);
+          const cy = getY(p.v).toFixed(1);
+          out += `
+            <circle cx="${cx}" cy="${cy}" r="6" fill="${s.color}" stroke="#ffffff" stroke-width="2" />
+            <circle cx="${cx}" cy="${cy}" r="11" fill="none" stroke="${s.color}" stroke-width="1.6" opacity="0.7">
+              <animate attributeName="r" values="6;14;6" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.8;0.0;0.8" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <text x="${cx}" y="${(getY(p.v) - 13).toFixed(1)}" fill="${s.color}" font-size="11" font-weight="700" font-family="var(--font-mono)" text-anchor="middle">v2.0 Fork Launch</text>
+          `;
+          return;
+        }
+
+        const dPath = validPts.map((p, idx) => `${idx === 0 ? 'M' : 'L'} ${getX(p.i).toFixed(1)} ${getY(p.v).toFixed(1)}`).join(' ');
         const dashAttr = s.dashed ? 'stroke-dasharray="5,4"' : '';
         out += `<path d="${dPath}" fill="none" stroke="${s.color}" stroke-width="${s.width}" ${dashAttr} stroke-linecap="round" stroke-linejoin="round" />`;
-        s.pts.forEach((v, i) => {
-          const r = s.id === 'model' ? 4.2 : 2.8;
-          out += `<circle cx="${getX(i).toFixed(1)}" cy="${getY(v).toFixed(1)}" r="${r}" fill="${s.color}" />`;
+        validPts.forEach(p => {
+          const r = (s.id === 'model_v2' || s.id === 'model') ? 4.2 : 2.8;
+          out += `<circle cx="${getX(p.i).toFixed(1)}" cy="${getY(p.v).toFixed(1)}" r="${r}" fill="${s.color}" />`;
         });
       });
 
@@ -2324,6 +2348,7 @@
           const dayObj = days[bestIdx];
           const rows = seriesPoints
             .map(s => ({ name: s.name, color: s.color, val: s.pts[bestIdx] }))
+            .filter(r => r.val !== null && r.val !== undefined && !isNaN(r.val))
             .sort((a, b) => b.val - a.val);
           tooltip.innerHTML = `
             <div class="chart-tooltip-date">Day ${dayObj.day_index} • ${dayObj.date}</div>
