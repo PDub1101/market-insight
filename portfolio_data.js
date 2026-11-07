@@ -2,7 +2,7 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-07 12:07 AM ET",
+  "last_updated": "2026-11-07 12:22 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
@@ -42627,7 +42627,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-06",
       "tab_label": "Today \u2022 Nov 06 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-07 12:07 AM ET",
+      "updated_at": "2026-11-07 12:22 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.8,
@@ -42780,8 +42780,8 @@ window.MARKET_INSIGHT_DATA = {
           "[SCHD] How to Build $5,450 a Month in Tax-Free Dividend Income Inside a Roth IRA (24/7 Wall St.)",
           "[LLY] Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly (Investor's Business Daily)",
           "[LLY] Sector Update: Healthcare Stocks Edge Lower Late Afternoon (MT Newswires)",
-          "[AAPL] Dow Jones Futures: Market Needs Repair But Sandisk, Micron Look Broken; Apple, Amazon, Microsoft Strong (Investor's Business Daily)",
-          "[AAPL] ETF Zoo: How the Election Splits Big Tech (etf.com)"
+          "[AAPL] Viasat Q2 Earnings Call Highlights (MarketBeat)",
+          "[AAPL] Dow Jones Futures: Market Needs Repair But Sandisk, Micron Look Broken; Apple, Amazon, Microsoft Strong (Investor's Business Daily)"
         ],
         "ai_briefing": "On 2026-11-06, the $7,000 AI Model closed at $6,723.80 (-276.20 / -3.95%), with Trade Win Rate at 44.8%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,715.15, 60/40 Balanced Fund is at $6,871.48, and 4.5% High-Yield Savings is at $7,015.55. Gemini Catalyst Check: Latest SCHD catalyst: \"ETF Zoo: How the Election Splits Big Tech\" (etf.com). Vetoed dip-adds on PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk."
       },
