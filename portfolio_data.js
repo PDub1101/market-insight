@@ -2,7 +2,7 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight $7,000 Self-Learning Stock Model",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-07 01:02 AM ET",
+  "last_updated": "2026-11-07 02:32 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
@@ -42627,15 +42627,15 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-06",
       "tab_label": "Today \u2022 Nov 06 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-07 01:02 AM ET",
+      "updated_at": "2026-11-07 02:32 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.8,
         "invested_value": 6545.19,
         "cash_reserve": 178.61,
-        "day_open": 6723.8,
-        "day_high": 6809.57,
-        "day_low": 6671.4,
+        "day_open": 6698.11,
+        "day_high": 6809.69,
+        "day_low": 6671.11,
         "day_change_dollars": 14.64,
         "day_change_pct": 0.22,
         "total_gain_dollars": -276.2,
@@ -42780,13 +42780,13 @@ window.MARKET_INSIGHT_DATA = {
           "[SCHD] How to Build $5,450 a Month in Tax-Free Dividend Income Inside a Roth IRA (24/7 Wall St.)",
           "[LLY] Eli Lilly Is Much More Than a Weight-Loss Drug Company. Here's the Evidence (Motley Fool)",
           "[LLY] Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly (Investor's Business Daily)",
-          "[AAPL] Dow Jones Futures: Market Needs Repair But Sandisk, Micron Look Broken; Apple, Amazon, Microsoft Strong (Investor's Business Daily)",
-          "[AAPL] ETF Zoo: How the Election Splits Big Tech (etf.com)"
+          "[AAPL] Lassonde Industries Inc (LSDAF) (Q3 2026) Earnings Call Highlights: Margin Pressure and ... (GuruFocus.com)",
+          "[AAPL] Uber\u2019s Robo Push (Barrons.com)"
         ],
         "ai_briefing": "On 2026-11-06, the $7,000 AI Model closed at $6,723.80 (-276.20 / -3.95%), with Trade Win Rate at 44.8%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,715.15, 60/40 Balanced Fund is at $6,871.48, and 4.5% High-Yield Savings is at $7,015.55. Gemini Catalyst Check: Latest SCHD catalyst: \"ETF Zoo: How the Election Splits Big Tech\" (etf.com). Vetoed dip-adds on PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk."
       },
       "strength_meter": {
-        "score": 55.5,
+        "score": 55.8,
         "regime": "Balanced Accumulation",
         "buy_count": 6,
         "hold_count": 1,
@@ -42887,7 +42887,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 733.0
             },
             {
-              "h": 46,
+              "h": 47,
               "up": true,
               "close": 735.29
             }
@@ -42967,7 +42967,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 535.93
             },
             {
-              "h": 52,
+              "h": 53,
               "up": false,
               "close": 530.61
             }
@@ -43047,7 +43047,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 344.17
             },
             {
-              "h": 49,
+              "h": 50,
               "up": false,
               "close": 342.37
             }
@@ -43287,7 +43287,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 260.21
             },
             {
-              "h": 39,
+              "h": 41,
               "up": false,
               "close": 259.3
             }
@@ -43607,7 +43607,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 1364.73
             },
             {
-              "h": 68,
+              "h": 72,
               "up": false,
               "close": 1354.0
             }
@@ -44255,7 +44255,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 35.17,
-          "day_open": 35.17,
+          "day_open": 34.85,
           "day_high": 35.37,
           "day_low": 34.8,
           "day_pct": -0.71,
@@ -44342,7 +44342,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1354.0,
-          "day_open": 1354.0,
+          "day_open": 1350.45,
           "day_high": 1377.28,
           "day_low": 1333.22,
           "day_pct": -0.79,
@@ -44352,7 +44352,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 66.2,
           "sma20": 1301.95,
           "sma50": 1214.25,
-          "vol_ratio": 1.27,
+          "vol_ratio": 1.35,
           "score": 93.3,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -44416,7 +44416,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 1364.73
             },
             {
-              "h": 68,
+              "h": 72,
               "up": false,
               "close": 1354.0
             }
@@ -44429,7 +44429,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 342.37,
-          "day_open": 342.37,
+          "day_open": 338.73,
           "day_high": 345.79,
           "day_low": 338.3,
           "day_pct": -0.52,
@@ -44439,7 +44439,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 49.6,
           "sma20": 343.38,
           "sma50": 336.01,
-          "vol_ratio": 0.9,
+          "vol_ratio": 0.92,
           "score": 89.3,
           "signal": "BUY",
           "setup_tag": "Pullback to Support",
@@ -44503,7 +44503,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 344.17
             },
             {
-              "h": 49,
+              "h": 50,
               "up": false,
               "close": 342.37
             }
@@ -44516,8 +44516,8 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1053.56,
-          "day_open": 1053.56,
-          "day_high": 1062.94,
+          "day_open": 1045.25,
+          "day_high": 1063.02,
           "day_low": 1043.0,
           "day_pct": -1.13,
           "ret_5d": 4.08,
@@ -44526,7 +44526,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 64.4,
           "sma20": 1004.35,
           "sma50": 952.41,
-          "vol_ratio": 1.05,
+          "vol_ratio": 1.06,
           "score": 88.7,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -44603,7 +44603,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 259.3,
-          "day_open": 259.3,
+          "day_open": 259.81,
           "day_high": 264.18,
           "day_low": 258.53,
           "day_pct": -0.35,
@@ -44613,7 +44613,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 47.7,
           "sma20": 254.28,
           "sma50": 253.95,
-          "vol_ratio": 0.86,
+          "vol_ratio": 0.88,
           "score": 85.8,
           "signal": "BUY",
           "setup_tag": "Tactical Dip Buy",
@@ -44677,96 +44677,9 @@ window.MARKET_INSIGHT_DATA = {
               "close": 260.21
             },
             {
-              "h": 39,
+              "h": 41,
               "up": false,
               "close": 259.3
-            }
-          ]
-        },
-        {
-          "ticker": "MSFT",
-          "name": "Microsoft Corp.",
-          "sector": "Cloud & AI",
-          "bucket": "Core",
-          "max_weight": 0.14,
-          "price": 530.61,
-          "day_open": 530.61,
-          "day_high": 538.3,
-          "day_low": 524.61,
-          "day_pct": -0.99,
-          "ret_5d": 1.67,
-          "ret_20d": -0.83,
-          "rel_strength_20d": 4.73,
-          "rsi14": 48.8,
-          "sma20": 531.41,
-          "sma50": 516.65,
-          "vol_ratio": 1.05,
-          "score": 84.2,
-          "signal": "BUY",
-          "setup_tag": "Pullback to Support",
-          "reason": "Constructive dip toward 50d support ($516.65) \u2022 Healthy momentum zone (RSI 48.8)",
-          "target_price": 573.06,
-          "stop_price": 498.77,
-          "sparkline": [
-            {
-              "h": 42,
-              "up": false,
-              "close": 521.08
-            },
-            {
-              "h": 27,
-              "up": true,
-              "close": 524.51
-            },
-            {
-              "h": 37,
-              "up": true,
-              "close": 532.6
-            },
-            {
-              "h": 38,
-              "up": false,
-              "close": 531.33
-            },
-            {
-              "h": 56,
-              "up": false,
-              "close": 531.01
-            },
-            {
-              "h": 77,
-              "up": false,
-              "close": 530.14
-            },
-            {
-              "h": 70,
-              "up": false,
-              "close": 521.91
-            },
-            {
-              "h": 68,
-              "up": false,
-              "close": 507.12
-            },
-            {
-              "h": 39,
-              "up": true,
-              "close": 520.99
-            },
-            {
-              "h": 100,
-              "up": true,
-              "close": 555.8
-            },
-            {
-              "h": 84,
-              "up": false,
-              "close": 535.93
-            },
-            {
-              "h": 52,
-              "up": false,
-              "close": 530.61
             }
           ]
         },
@@ -44777,8 +44690,8 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.12,
           "price": 570.89,
-          "day_open": 570.89,
-          "day_high": 575.11,
+          "day_open": 562.07,
+          "day_high": 575.12,
           "day_low": 559.61,
           "day_pct": -0.25,
           "ret_5d": 5.24,
@@ -44787,10 +44700,10 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 73.4,
           "sma20": 543.71,
           "sma50": 521.56,
-          "vol_ratio": 1.09,
-          "score": 78.7,
+          "vol_ratio": 1.1,
+          "score": 84.3,
           "signal": "TRIM",
-          "setup_tag": "Overbought / Trim",
+          "setup_tag": "Breakout Accumulation",
           "reason": "Confirmed uptrend above 20d ($543.71) & 50d ($521.56) MAs \u2022 Short-term extended (RSI 73.4 > 73)",
           "target_price": 616.56,
           "stop_price": 536.64,
@@ -44858,14 +44771,101 @@ window.MARKET_INSIGHT_DATA = {
           ]
         },
         {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Cloud & AI",
+          "bucket": "Core",
+          "max_weight": 0.14,
+          "price": 530.61,
+          "day_open": 525.69,
+          "day_high": 538.33,
+          "day_low": 524.47,
+          "day_pct": -0.99,
+          "ret_5d": 1.67,
+          "ret_20d": -0.83,
+          "rel_strength_20d": 4.73,
+          "rsi14": 48.8,
+          "sma20": 531.41,
+          "sma50": 516.65,
+          "vol_ratio": 1.07,
+          "score": 84.2,
+          "signal": "BUY",
+          "setup_tag": "Pullback to Support",
+          "reason": "Constructive dip toward 50d support ($516.65) \u2022 Healthy momentum zone (RSI 48.8)",
+          "target_price": 573.06,
+          "stop_price": 498.77,
+          "sparkline": [
+            {
+              "h": 42,
+              "up": false,
+              "close": 521.08
+            },
+            {
+              "h": 27,
+              "up": true,
+              "close": 524.51
+            },
+            {
+              "h": 37,
+              "up": true,
+              "close": 532.6
+            },
+            {
+              "h": 38,
+              "up": false,
+              "close": 531.33
+            },
+            {
+              "h": 56,
+              "up": false,
+              "close": 531.01
+            },
+            {
+              "h": 77,
+              "up": false,
+              "close": 530.14
+            },
+            {
+              "h": 70,
+              "up": false,
+              "close": 521.91
+            },
+            {
+              "h": 68,
+              "up": false,
+              "close": 507.12
+            },
+            {
+              "h": 39,
+              "up": true,
+              "close": 520.99
+            },
+            {
+              "h": 100,
+              "up": true,
+              "close": 555.8
+            },
+            {
+              "h": 84,
+              "up": false,
+              "close": 535.93
+            },
+            {
+              "h": 53,
+              "up": false,
+              "close": 530.61
+            }
+          ]
+        },
+        {
           "ticker": "JPM",
           "name": "JPMorgan Chase",
           "sector": "Banking",
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 334.49,
-          "day_open": 334.49,
-          "day_high": 341.78,
+          "day_open": 333.15,
+          "day_high": 341.79,
           "day_low": 333.0,
           "day_pct": -0.84,
           "ret_5d": -0.76,
@@ -44874,7 +44874,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 50.7,
           "sma20": 337.03,
           "sma50": 341.83,
-          "vol_ratio": 1.01,
+          "vol_ratio": 1.06,
           "score": 66.9,
           "signal": "HOLD",
           "setup_tag": "Below 50d Trend",
@@ -44938,7 +44938,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 337.34
             },
             {
-              "h": 58,
+              "h": 60,
               "up": false,
               "close": 334.49
             }
@@ -44951,7 +44951,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Defensive",
           "max_weight": 0.08,
           "price": 372.52,
-          "day_open": 372.52,
+          "day_open": 369.44,
           "day_high": 373.76,
           "day_low": 369.26,
           "day_pct": -0.79,
@@ -44961,7 +44961,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 44.7,
           "sma20": 372.79,
           "sma50": 384.96,
-          "vol_ratio": 0.83,
+          "vol_ratio": 0.84,
           "score": 49.4,
           "signal": "WATCH",
           "setup_tag": "Below 50d Trend",
@@ -45038,7 +45038,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.22,
           "price": 735.29,
-          "day_open": 735.29,
+          "day_open": 734.82,
           "day_high": 742.21,
           "day_low": 734.58,
           "day_pct": 0.31,
@@ -45048,7 +45048,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 34.9,
           "sma20": 763.36,
           "sma50": 765.68,
-          "vol_ratio": 1.29,
+          "vol_ratio": 1.3,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -45112,7 +45112,7 @@ window.MARKET_INSIGHT_DATA = {
               "close": 733.0
             },
             {
-              "h": 46,
+              "h": 47,
               "up": true,
               "close": 735.29
             }
@@ -45125,9 +45125,9 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 656.1,
-          "day_open": 656.1,
+          "day_open": 658.35,
           "day_high": 664.52,
-          "day_low": 654.0,
+          "day_low": 653.99,
           "day_pct": 1.4,
           "ret_5d": -4.98,
           "ret_20d": -12.67,
@@ -45135,7 +45135,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 30.5,
           "sma20": 707.64,
           "sma50": 720.97,
-          "vol_ratio": 1.49,
+          "vol_ratio": 1.5,
           "score": 40.7,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -45212,7 +45212,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 284.78,
-          "day_open": 284.78,
+          "day_open": 284.9,
           "day_high": 290.49,
           "day_low": 284.59,
           "day_pct": 0.78,
@@ -45222,7 +45222,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 20.3,
           "sma20": 317.44,
           "sma50": 332.93,
-          "vol_ratio": 0.95,
+          "vol_ratio": 0.96,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -45299,7 +45299,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 186.64,
-          "day_open": 186.64,
+          "day_open": 191.1,
           "day_high": 194.9,
           "day_low": 185.22,
           "day_pct": 2.78,
@@ -45386,7 +45386,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 63.41,
-          "day_open": 63.41,
+          "day_open": 63.86,
           "day_high": 64.35,
           "day_low": 63.31,
           "day_pct": -3.28,
@@ -45473,7 +45473,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 293.69,
-          "day_open": 293.69,
+          "day_open": 311.13,
           "day_high": 311.52,
           "day_low": 289.77,
           "day_pct": 0.74,
@@ -45560,7 +45560,7 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 375.44,
-          "day_open": 375.44,
+          "day_open": 380.56,
           "day_high": 380.72,
           "day_low": 367.95,
           "day_pct": 6.33,
@@ -45821,8 +45821,8 @@ window.MARKET_INSIGHT_DATA = {
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 449.04,
-          "day_open": 449.04,
-          "day_high": 459.78,
+          "day_open": 444.43,
+          "day_high": 459.8,
           "day_low": 433.3,
           "day_pct": 11.04,
           "ret_5d": -11.05,
@@ -45831,7 +45831,7 @@ window.MARKET_INSIGHT_DATA = {
           "rsi14": 38.9,
           "sma20": 527.3,
           "sma50": 546.81,
-          "vol_ratio": 1.75,
+          "vol_ratio": 1.76,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
