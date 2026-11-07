@@ -1651,46 +1651,65 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
         dt_obj = dt.datetime.strptime(d_str, "%Y-%m-%d")
         short_date = dt_obj.strftime("%b %d")
 
+        FORK_DATE = "2026-11-06"
+        is_v2_active = (d_str >= FORK_DATE)
+
         if idx == 0:
-            # Model v1 baseline init
             positions_v1, cash_v1, spy_benchmark_shares, recs_v1 = build_initial_portfolio(
                 d_str, scored_today, spy_price
             )
             todays_actions_v1 = list(recs_v1)
-
-            # Model v2 enhanced init
-            positions_v2, cash_v2, recs_v2, last_exit_dates_v2 = build_initial_portfolio_v2(
-                d_str, scored_today, spy_price, spy_sma50
-            )
-            todays_actions_v2 = list(recs_v2)
-
             tab_label = f"Sim Start • {short_date}"
             is_bt = True
+            todays_actions_v2 = []
         else:
-            # Model v1 baseline rebalance
             positions_v1, cash_v1, todays_actions_v1 = apply_daily_tactical_rebalance(
                 d_str, positions_v1, cash_v1, scored_today, recs_v1
             )
-
-            # Model v2 enhanced rebalance
-            positions_v2, cash_v2, todays_actions_v2, last_exit_dates_v2 = apply_daily_tactical_rebalance_v2(
-                day_date=d_str,
-                day_index=idx,
-                positions=positions_v2,
-                cash=cash_v2,
-                scored_stocks=scored_today,
-                recommendations_log=recs_v2,
-                spy_price=spy_price,
-                spy_sma50=spy_sma50,
-                last_exit_dates=last_exit_dates_v2,
-            )
-
             if is_last:
                 tab_label = f"Today • {short_date} (Live)"
                 is_bt = False
             else:
                 tab_label = f"Day {idx + 1} • {short_date}"
                 is_bt = True
+
+            # Model v2 handling
+            if d_str == FORK_DATE:
+                # Fork launch at exact current pricepoint of Model v1
+                positions_v2 = dict(positions_v1)
+                cash_v2 = cash_v1
+                fork_val = round(cash_v1 + sum(pos["shares"] * day_prices.get(t, pos["avg_entry_price"]) for t, pos in positions_v1.items()), 2)
+                todays_actions_v2 = [{
+                    "id": f"{d_str}-FORK-LAUNCH-v2",
+                    "date": d_str,
+                    "action": "MODEL_FORK",
+                    "ticker": "BOOK",
+                    "name": "Model v2.0 Live Fork Launch",
+                    "sector": "Algorithmic Upgrade",
+                    "setup_tag": "Forward Test Start",
+                    "rec_price": fork_val,
+                    "rec_dollars": fork_val,
+                    "shares": 1.0,
+                    "score": 100.0,
+                    "reason": f"Model v2.0 officially launched from Model v1's exact current pricepoint (${fork_val:,.2f}) with stop-losses and cash shield active for Monday's open."
+                }]
+                recs_v2 = list(todays_actions_v2)
+                last_exit_dates_v2 = {}
+            elif d_str > FORK_DATE:
+                # Model v2 enhanced rebalancing for future days
+                positions_v2, cash_v2, todays_actions_v2, last_exit_dates_v2 = apply_daily_tactical_rebalance_v2(
+                    day_date=d_str,
+                    day_index=idx,
+                    positions=positions_v2,
+                    cash=cash_v2,
+                    scored_stocks=scored_today,
+                    recommendations_log=recs_v2,
+                    spy_price=spy_price,
+                    spy_sma50=spy_sma50,
+                    last_exit_dates=last_exit_dates_v2,
+                )
+            else:
+                todays_actions_v2 = []
 
         news_map = {}
         if is_last:
@@ -1715,11 +1734,11 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
             todays_actions=todays_actions_v1,
             recommendations_log=recs_v1,
             prev_total_value=prev_val_v1,
-            positions_v2=positions_v2,
-            cash_v2=cash_v2,
-            todays_actions_v2=todays_actions_v2,
-            recommendations_log_v2=recs_v2,
-            prev_total_value_v2=prev_val_v2,
+            positions_v2=positions_v2 if is_v2_active else None,
+            cash_v2=cash_v2 if is_v2_active else None,
+            todays_actions_v2=todays_actions_v2 if is_v2_active else None,
+            recommendations_log_v2=recs_v2 if is_v2_active else None,
+            prev_total_value_v2=prev_val_v2 if is_v2_active else None,
             news_map=news_map,
             memory=memory,
             call_gemini_live=is_last,
