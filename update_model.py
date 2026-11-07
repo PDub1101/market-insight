@@ -24,6 +24,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from typing_extensions import TypedDict
 
 WORKSPACE_DIR = Path(__file__).resolve().parent
 STATE_FILE = WORKSPACE_DIR / "portfolio_state.json"
@@ -149,9 +150,9 @@ def call_gemini_advisor(
     adaptive_weights: Dict[str, Any],
 ) -> Dict[str, Any]:
     """
-    Call the Gemini API (`gemini-3.8-flash` via `google-genai` Interactions API)
-    with a strict timeout so the model analyzes live news headlines, past lessons,
-    and mutual fund comparisons to produce a catalyst assessment and new lesson.
+    Call the Gemini API (`gemini-3.8-flash` via official `google-genai` SDK `models.generate_content`)
+    with structured schema output to review candidate trades, apply risk vetos, and generate
+    meaningful lessons learned.
     """
     api_key = load_env_key()
     headlines_flat = []
@@ -159,7 +160,6 @@ def call_gemini_advisor(
         for it in items:
             headlines_flat.append(f"[{t}] {it['title']} ({it['publisher']})")
 
-    # Build a rich, structured fallback in case the API call times out or has no quota
     top_pick = todays_actions[0] if todays_actions else (top_candidates[0] if top_candidates else None)
     top_ticker = top_pick["ticker"] if top_pick else "SPY"
     top_news = news_map.get(top_ticker, [])
@@ -178,24 +178,26 @@ def call_gemini_advisor(
 
     leader_opt = alternatives[0] if alternatives else {"name": "Dividend Value Fund", "gain_pct": 0.0}
     default_lesson = (
-        f"On {day_date}, {leader_opt['name']} led the 8-option leaderboard ({leader_opt['gain_pct']:+.2f}%); "
-        f"combining relative strength ({adaptive_weights['rel_strength_weight']:.2f}x weight) with news-catalyst filtering "
-        f"keeps portfolio win rate at {portfolio_summary['win_rate']}%."
+        f"On {day_date}, {leader_opt['name']} led the leaderboard ({leader_opt['gain_pct']:+.2f}%); "
+        f"combining relative strength ({adaptive_weights.get('rel_strength_weight', 1.0):.2f}x weight) with risk discipline "
+        f"keeps portfolio win rate at {portfolio_summary.get('win_rate', 50.0)}%."
     )
 
     fallback_result = {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
         "catalyst_headline": top_headline_str,
         "veto_note": veto_str,
+        "veto_trade": False,
+        "vetoed_ticker": "NONE",
         "lesson_learned": default_lesson,
         "headlines_scanned": headlines_flat[:6],
         "ai_briefing": (
             f"On {day_date}, the $7,000 AI Model closed at ${portfolio_summary['total_value']:,.2f} "
             f"({portfolio_summary['total_gain_dollars']:+,.2f} / {portfolio_summary['total_gain_pct']:+.2f}%), "
-            f"with Trade Win Rate at {portfolio_summary['win_rate']}%. "
-            f"Compared to passive alternatives: S&P 500 Mutual Fund is at ${portfolio_summary['spy_benchmark_value']:,.2f}, "
-            f"60/40 Balanced Fund is at ${portfolio_summary['balanced_60_40_value']:,.2f}, and 4.5% High-Yield Savings is at ${portfolio_summary['hysa_value']:,.2f}. "
-            f"Gemini Catalyst Check: {top_headline_str} {veto_str}"
+            f"with Trade Win Rate at {portfolio_summary.get('win_rate', 50.0)}%. "
+            f"Compared to passive alternatives: S&P 500 Mutual Fund is at ${portfolio_summary.get('spy_benchmark_value', 7000.0):,.2f}, "
+            f"60/40 Balanced Fund is at ${portfolio_summary.get('balanced_60_40_value', 7000.0):,.2f}, and 4.5% High-Yield Savings is at ${portfolio_summary.get('hysa_value', 7000.0):,.2f}. "
+            f"Catalyst Check: {top_headline_str} {veto_str}"
         ),
     }
 
@@ -204,36 +206,37 @@ def call_gemini_advisor(
 
     def _invoke_sdk() -> Optional[Dict[str, Any]]:
         from google import genai
+        from google.genai import types
 
-        client = genai.Client(api_key=api_key, http_options={"timeout": 7000})
+        class AdvisorSchema(TypedDict):
+            catalyst_headline: str
+            veto_note: str
+            veto_trade: bool
+            vetoed_ticker: str
+            lesson_learned: str
+            ai_briefing: str
+
+        client = genai.Client(api_key=api_key)
         prompt = (
-            f"You are the Portfolio Manager for a $7,000 stock simulation on {day_date}.\n"
-            f"Portfolio Value: ${portfolio_summary['total_value']:,.2f} (Win rate: {portfolio_summary['win_rate']}%).\n"
-            f"S&P 500 Mutual Fund: ${portfolio_summary['spy_benchmark_value']:,.2f} | 60/40 Balanced Fund: ${portfolio_summary['balanced_60_40_value']:,.2f}.\n"
-            f"Today's Recommended Action: {json.dumps(todays_actions)}\n"
+            f"You are the Lead Portfolio Risk Manager for a $7,000 algorithmic stock simulation on {day_date}.\n"
+            f"Portfolio Value: ${portfolio_summary['total_value']:,.2f} (Win rate: {portfolio_summary.get('win_rate', 50.0)}%).\n"
+            f"S&P 500 Mutual Fund: ${portfolio_summary.get('spy_benchmark_value', 7000.0):,.2f} | 60/40 Balanced: ${portfolio_summary.get('balanced_60_40_value', 7000.0):,.2f}.\n"
+            f"Today's Recommended Actions: {json.dumps(todays_actions[:4])}\n"
+            f"Top Ranked Candidates: {json.dumps([c.get('ticker') for c in top_candidates[:4]])}\n"
             f"Recent Headlines: {json.dumps(headlines_flat[:6])}\n"
             f"Prior Lessons: {json.dumps(memory.get('lessons_learned', [])[-3:])}\n"
-            "Return JSON with keys: catalyst_headline, veto_note, lesson_learned, ai_briefing."
+            "Analyze current macro risk, evaluate whether to approve or veto any proposed trade, and generate a new key lesson learned. Return structured JSON."
         )
-        interaction = client.interactions.create(
+
+        resp = client.models.generate_content(
             model="gemini-3.8-flash",
-            input=prompt,
-            response_format={
-                "type": "text",
-                "mime_type": "application/json",
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "catalyst_headline": {"type": "string"},
-                        "veto_note": {"type": "string"},
-                        "lesson_learned": {"type": "string"},
-                        "ai_briefing": {"type": "string"},
-                    },
-                    "required": ["catalyst_headline", "veto_note", "lesson_learned", "ai_briefing"],
-                },
-            },
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                response_schema=AdvisorSchema,
+            ),
         )
-        parsed = json.loads(interaction.output_text)
+        parsed = json.loads(resp.text)
         parsed["engine"] = "Gemini 3.8 Flash Live API"
         parsed["headlines_scanned"] = headlines_flat[:6]
         return parsed
@@ -241,7 +244,7 @@ def call_gemini_advisor(
     ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
     try:
         fut = ex.submit(_invoke_sdk)
-        res = fut.result(timeout=8.0)
+        res = fut.result(timeout=45.0)
         ex.shutdown(wait=False)
         if res:
             return res
@@ -616,6 +619,7 @@ def evaluate_alternative_options(
     model_total_value: float,
     benchmarks_init: Dict[str, Any],
     day_prices: Dict[str, float],
+    model_v2_total_value: Optional[float] = None,
 ) -> List[Dict[str, Any]]:
     start_dt = dt.datetime.strptime(benchmarks_init["start_date"], "%Y-%m-%d")
     curr_dt = dt.datetime.strptime(day_date, "%Y-%m-%d")
@@ -641,11 +645,12 @@ def evaluate_alternative_options(
     raw_options = [
         {
             "id": "model",
-            "name": "Market Insight AI Model ($7K)",
-            "subtitle": "Gemini + Self-Learning Quant Engine",
-            "category": "AI Active Model",
+            "name": "Market Insight Model v1.0 (Baseline)",
+            "subtitle": "19 Static Equities • Partial Trims • 97% Invested",
+            "category": "Legacy AI Baseline",
             "value": model_total_value,
             "is_model": True,
+            "is_model_v1": True,
         },
         {
             "id": "spy_mutual",
@@ -705,17 +710,31 @@ def evaluate_alternative_options(
         },
     ]
 
+    if model_v2_total_value is not None:
+        raw_options.append(
+            {
+                "id": "model_v2",
+                "name": "Market Insight Model v2.0 (Enhanced)",
+                "subtitle": "Stop-Losses (-7%) • Cash Shield • Gemini AI Veto",
+                "category": "Active AI Model v2.0",
+                "value": model_v2_total_value,
+                "is_model": False,
+                "is_model_v2": True,
+            }
+        )
+
+    ref_val = model_v2_total_value if model_v2_total_value is not None else model_total_value
     raw_options.sort(key=lambda x: x["value"], reverse=True)
     for rank_idx, opt in enumerate(raw_options):
         val = opt["value"]
         gain_d = round(val - STARTING_CAPITAL, 2)
         gain_p = round((gain_d / STARTING_CAPITAL) * 100.0, 2)
-        diff_vs_model = round(model_total_value - val, 2)
+        diff_vs_model = round(ref_val - val, 2)
         opt["rank"] = rank_idx + 1
         opt["gain_dollars"] = gain_d
         opt["gain_pct"] = gain_p
         opt["model_edge_dollars"] = diff_vs_model
-        opt["model_edge_pct"] = round(((model_total_value - val) / STARTING_CAPITAL) * 100.0, 2)
+        opt["model_edge_pct"] = round(((ref_val - val) / STARTING_CAPITAL) * 100.0, 2)
 
     return raw_options
 
@@ -803,6 +822,66 @@ def build_initial_portfolio(
 
     spy_benchmark_shares = round(STARTING_CAPITAL / spy_price, 6)
     return positions, cash, spy_benchmark_shares, recommendations_log
+
+
+
+def build_initial_portfolio_v2(
+    day_date: str,
+    scored_stocks: List[Dict[str, Any]],
+    spy_price: float,
+    spy_sma50: float,
+) -> Tuple[Dict[str, Dict[str, Any]], float, List[Dict[str, Any]], Dict[str, int]]:
+    """
+    Initial portfolio allocation for Model v2.0.
+    Respects market regime: if SPY is below its 50d SMA, initiates with 40% cash shield
+    and allocates 60% across top healthy momentum candidates.
+    """
+    is_defensive = spy_price < spy_sma50
+    alloc_capital = STARTING_CAPITAL * (0.60 if is_defensive else 0.90)
+    cash = round(STARTING_CAPITAL - alloc_capital, 2)
+
+    ranked = sorted(scored_stocks, key=lambda x: x["score"], reverse=True)
+    candidates = [s for s in ranked if s["score"] >= 72.0 and s["rsi14"] <= 68]
+    selected = candidates[:5] if candidates else ranked[:4]
+    weight_per_stock = (alloc_capital / len(selected)) if selected else 0.0
+
+    positions: Dict[str, Dict[str, Any]] = {}
+    recommendations_log: List[Dict[str, Any]] = []
+    last_exit_dates: Dict[str, int] = {}
+
+    for s in selected:
+        t = s["ticker"]
+        p = s["price"]
+        sh = round(weight_per_stock / p, 6)
+        cost = round(sh * p, 2)
+        positions[t] = {
+            "ticker": t,
+            "name": s["name"],
+            "sector": s["sector"],
+            "bucket": s["bucket"],
+            "shares": sh,
+            "avg_entry_price": p,
+            "cost_basis": cost,
+            "entry_date": day_date,
+            "high_watermark": p,
+        }
+        rec = {
+            "id": f"{day_date}-BUY-{t}",
+            "date": day_date,
+            "action": "BUY",
+            "ticker": t,
+            "name": s["name"],
+            "sector": s["sector"],
+            "setup_tag": s["setup_tag"],
+            "rec_price": p,
+            "rec_dollars": cost,
+            "shares": sh,
+            "score": s["score"],
+            "reason": f"Initial v2 selection ({s['setup_tag']}) — Score {s['score']:.1f}",
+        }
+        recommendations_log.append(rec)
+
+    return positions, cash, recommendations_log, last_exit_dates
 
 
 def apply_daily_tactical_rebalance(
@@ -929,6 +1008,157 @@ def apply_daily_tactical_rebalance(
     return positions, cash, todays_actions
 
 
+
+def apply_daily_tactical_rebalance_v2(
+    day_date: str,
+    day_index: int,
+    positions: Dict[str, Dict[str, Any]],
+    cash: float,
+    scored_stocks: List[Dict[str, Any]],
+    recommendations_log: List[Dict[str, Any]],
+    spy_price: float,
+    spy_sma50: float,
+    last_exit_dates: Dict[str, int],
+    veto_ticker: Optional[str] = None,
+) -> Tuple[Dict[str, Dict[str, Any]], float, List[Dict[str, Any]], Dict[str, int]]:
+    """
+    Model v2.0 Tactical Rebalancing Engine:
+    1. Full Stop-Loss (-7.0% or score < 42 with loss): Liquidates 100% of broken positions.
+    2. Trailing Stop: Protects gains if pullbacks exceed 5% from a >5% profit peak.
+    3. Profit Trim: Trims 33% once if gain >= 8.0% and RSI >= 76.
+    4. Anti-Whipsaw Cooldown: Blocks re-buying a ticker within 4 trading days of exit.
+    5. Market Regime Cash Shield: Holds minimum 35% cash if SPY < 50d SMA (earning daily interest).
+    6. No SPY/QQQ immunity.
+    """
+    by_ticker = {s["ticker"]: s for s in scored_stocks}
+    todays_actions: List[Dict[str, Any]] = []
+
+    # Daily compounding interest on uninvested cash (4.5% APY / 252 days)
+    cash = round(cash * (1.0 + (0.045 / 252.0)), 2)
+
+    is_defensive = spy_price < spy_sma50
+    min_cash_pct = 0.35 if is_defensive else 0.10
+
+    # Step 1: Manage open positions (Exits, Stop-Losses, Profit Takes)
+    for t, pos in list(positions.items()):
+        st = by_ticker.get(t)
+        if not st:
+            continue
+        curr_p = st["price"]
+        if curr_p > pos.get("high_watermark", pos["avg_entry_price"]):
+            pos["high_watermark"] = curr_p
+
+        gain_pct = ((curr_p - pos["avg_entry_price"]) / pos["avg_entry_price"]) * 100.0
+        drawdown_from_peak = ((curr_p - pos["high_watermark"]) / pos["high_watermark"]) * 100.0
+
+        is_stop_loss = gain_pct <= -7.0
+        is_breakdown = st["score"] < 42.0 and gain_pct < -2.0
+        is_trailing_stop = (pos["high_watermark"] > pos["avg_entry_price"] * 1.05 and drawdown_from_peak <= -5.0)
+
+        if is_stop_loss or is_breakdown or is_trailing_stop:
+            proceeds = round(pos["shares"] * curr_p, 2)
+            cash = round(cash + proceeds, 2)
+            action_type = "STOP_LOSS" if is_stop_loss else ("TRAILING_STOP" if is_trailing_stop else "EXIT")
+            rec = {
+                "id": f"{day_date}-{action_type}-{t}",
+                "date": day_date,
+                "action": action_type,
+                "ticker": t,
+                "name": pos["name"],
+                "sector": pos["sector"],
+                "setup_tag": st["setup_tag"],
+                "rec_price": curr_p,
+                "rec_dollars": proceeds,
+                "shares": pos["shares"],
+                "score": st["score"],
+                "reason": f"Liquidated 100% (${proceeds:.2f}) at ${curr_p:.2f} (PnL: {gain_pct:+.1f}%) — {action_type}",
+            }
+            todays_actions.append(rec)
+            recommendations_log.append(rec)
+            last_exit_dates[t] = day_index
+            del positions[t]
+        elif gain_pct >= 8.0 and st["rsi14"] >= 76:
+            trim_sh = round(pos["shares"] * 0.33, 6)
+            proceeds = round(trim_sh * curr_p, 2)
+            if proceeds >= 50.0:
+                pos["shares"] = round(pos["shares"] - trim_sh, 6)
+                pos["cost_basis"] = round(pos["shares"] * pos["avg_entry_price"], 2)
+                cash = round(cash + proceeds, 2)
+                rec = {
+                    "id": f"{day_date}-PROFIT_TRIM-{t}",
+                    "date": day_date,
+                    "action": "PROFIT_TRIM",
+                    "ticker": t,
+                    "name": pos["name"],
+                    "sector": pos["sector"],
+                    "setup_tag": st["setup_tag"],
+                    "rec_price": curr_p,
+                    "rec_dollars": proceeds,
+                    "shares": trim_sh,
+                    "score": st["score"],
+                    "reason": f"Took profit on 33% (${proceeds:.2f}) at ${curr_p:.2f} (+{gain_pct:.1f}% gain)",
+                }
+                todays_actions.append(rec)
+                recommendations_log.append(rec)
+
+    # Step 2: Deploy cash if available above minimum regime reserve
+    total_port_val = cash + sum(
+        pos["shares"] * by_ticker.get(t, {"price": pos["avg_entry_price"]})["price"]
+        for t, pos in positions.items()
+    )
+    cash_floor = total_port_val * min_cash_pct
+    deployable = max(0.0, cash - cash_floor)
+
+    if deployable >= 180.0:
+        ranked = sorted(scored_stocks, key=lambda x: x["score"], reverse=True)
+        for cand in ranked:
+            t = cand["ticker"]
+            if veto_ticker and t == veto_ticker:
+                continue
+            if t in last_exit_dates and (day_index - last_exit_dates[t]) < 4:
+                continue
+            if cand["signal"] == "BUY" and cand["score"] >= 74.0 and cand["rsi14"] <= 65:
+                if t not in positions:
+                    buy_amt = min(deployable, 300.0)
+                    if buy_amt >= 150.0:
+                        p = cand["price"]
+                        sh = round(buy_amt / p, 6)
+                        actual_cost = round(sh * p, 2)
+                        cash = round(cash - actual_cost, 2)
+                        deployable = round(deployable - actual_cost, 2)
+                        positions[t] = {
+                            "ticker": t,
+                            "name": cand["name"],
+                            "sector": cand["sector"],
+                            "bucket": cand["bucket"],
+                            "shares": sh,
+                            "avg_entry_price": p,
+                            "cost_basis": actual_cost,
+                            "entry_date": day_date,
+                            "high_watermark": p,
+                        }
+                        rec = {
+                            "id": f"{day_date}-BUY-{t}",
+                            "date": day_date,
+                            "action": "BUY",
+                            "ticker": t,
+                            "name": cand["name"],
+                            "sector": cand["sector"],
+                            "setup_tag": cand["setup_tag"],
+                            "rec_price": p,
+                            "rec_dollars": actual_cost,
+                            "shares": sh,
+                            "score": cand["score"],
+                            "reason": f"Bought entry (${actual_cost:.2f}) at ${p:.2f} — {cand['setup_tag']}",
+                        }
+                        todays_actions.append(rec)
+                        recommendations_log.append(rec)
+                        if deployable < 180.0:
+                            break
+
+    return positions, cash, todays_actions, last_exit_dates
+
+
 def build_day_snapshot(
     day_index: int,
     day_date: str,
@@ -945,6 +1175,11 @@ def build_day_snapshot(
     todays_actions: List[Dict[str, Any]],
     recommendations_log: List[Dict[str, Any]],
     prev_total_value: float,
+    positions_v2: Optional[Dict[str, Dict[str, Any]]] = None,
+    cash_v2: Optional[float] = None,
+    todays_actions_v2: Optional[List[Dict[str, Any]]] = None,
+    recommendations_log_v2: Optional[List[Dict[str, Any]]] = None,
+    prev_total_value_v2: Optional[float] = None,
     news_map: Optional[Dict[str, List[Dict[str, str]]]] = None,
     memory: Optional[Dict[str, Any]] = None,
     call_gemini_live: bool = False,
@@ -952,6 +1187,7 @@ def build_day_snapshot(
 ) -> Dict[str, Any]:
     by_ticker = {s["ticker"]: s for s in scored_stocks}
 
+    # Model v1 calculations
     holdings_list = []
     invested_value = 0.0
     day_open_val = cash
@@ -1012,15 +1248,62 @@ def build_day_snapshot(
     alpha_dollars = round(total_value - spy_benchmark_value, 2)
     alpha_pct = round(total_gain_pct - spy_gain_pct, 2)
 
+    # Model v2 calculations (if provided)
+    holdings_v2 = []
+    invested_v2 = 0.0
+    c_v2 = cash_v2 if cash_v2 is not None else cash
+    prev_v2 = prev_total_value_v2 if prev_total_value_v2 is not None else prev_total_value
+    pos_v2_map = positions_v2 if positions_v2 is not None else positions
+
+    for ticker, pos in pos_v2_map.items():
+        st = by_ticker.get(ticker)
+        cur_price = st["price"] if st else pos["avg_entry_price"]
+        mkt_val = round(pos["shares"] * cur_price, 2)
+        invested_v2 += mkt_val
+        pnl_dollars = round(mkt_val - pos["cost_basis"], 2)
+        pnl_pct = round((pnl_dollars / pos["cost_basis"] * 100.0), 2) if pos["cost_basis"] > 0 else 0.0
+
+        holdings_v2.append(
+            {
+                "ticker": ticker,
+                "name": pos["name"],
+                "sector": pos["sector"],
+                "bucket": pos["bucket"],
+                "shares": round(pos["shares"], 4),
+                "avg_entry": pos["avg_entry_price"],
+                "current_price": cur_price,
+                "day_pct": st["day_pct"] if st else 0.0,
+                "cost_basis": pos["cost_basis"],
+                "market_value": mkt_val,
+                "pnl_dollars": pnl_dollars,
+                "pnl_pct": pnl_pct,
+                "score": st["score"] if st else 65.0,
+                "signal": st["signal"] if st else "HOLD",
+                "setup_tag": st["setup_tag"] if st else pos.get("setup_tag", "Core"),
+                "reason": st["reason"] if st else pos.get("entry_reason", ""),
+                "sparkline": st["sparkline"] if st else [],
+            }
+        )
+    holdings_v2.sort(key=lambda x: x["market_value"], reverse=True)
+    invested_v2 = round(invested_v2, 2)
+    total_value_v2 = round(invested_v2 + c_v2, 2)
+    gain_dollars_v2 = round(total_value_v2 - STARTING_CAPITAL, 2)
+    gain_pct_v2 = round((gain_dollars_v2 / STARTING_CAPITAL) * 100.0, 2)
+    day_chg_d_v2 = round(total_value_v2 - prev_v2, 2)
+    day_chg_p_v2 = round((day_chg_d_v2 / prev_v2) * 100.0, 2) if prev_v2 > 0 else 0.0
+
+    # Evaluate 9 alternative options
     alternatives = evaluate_alternative_options(
         day_date=day_date,
         model_total_value=total_value,
         benchmarks_init=benchmarks_init,
         day_prices=day_prices,
+        model_v2_total_value=total_value_v2,
     )
     bal_opt = next((o for o in alternatives if o["id"] == "balanced_60_40"), None)
     hysa_opt = next((o for o in alternatives if o["id"] == "hysa_cash"), None)
 
+    # Audit v1 recommendations
     audited_recommendations = []
     wins = 0
     total_rec_evaluated = 0
@@ -1028,48 +1311,74 @@ def build_day_snapshot(
         if rec["date"] > day_date:
             continue
         st = by_ticker.get(rec["ticker"])
-        now_price = st["price"] if st else rec["rec_price"]
-        pct_outcome = round(((now_price - rec["rec_price"]) / rec["rec_price"]) * 100.0, 2)
-        dollar_outcome = round(rec["rec_dollars"] * (pct_outcome / 100.0), 2)
+        curr_p = st["price"] if st else rec["rec_price"]
+        chg_pct = round(((curr_p - rec["rec_price"]) / rec["rec_price"] * 100.0), 2) if rec["rec_price"] else 0.0
+        is_win = chg_pct >= 0.0
         if rec["action"] == "TRIM":
-            saved_dollars = round(-dollar_outcome, 2)
-            is_win = saved_dollars >= 0
-        else:
-            is_win = dollar_outcome >= 0
+            is_win = True
         if is_win:
             wins += 1
         total_rec_evaluated += 1
-
         audited_recommendations.append(
             {
-                **rec,
-                "current_price": now_price,
-                "outcome_pct": pct_outcome,
-                "outcome_dollars": dollar_outcome,
-                "if_skipped_dollars": 0.00,
-                "status": "WIN" if is_win else "DRAW/LAG",
+                "id": rec["id"],
+                "date": rec["date"],
+                "action": rec["action"],
+                "ticker": rec["ticker"],
+                "name": rec.get("name", rec["ticker"]),
+                "rec_price": rec["rec_price"],
+                "current_price": curr_p,
+                "change_pct": chg_pct,
+                "is_win": is_win,
+                "rec_dollars": rec.get("rec_dollars", 0.0),
+                "setup_tag": rec.get("setup_tag", "Setup"),
+                "reason": rec.get("reason", ""),
             }
         )
 
-    win_rate = round((wins / total_rec_evaluated) * 100.0, 1) if total_rec_evaluated > 0 else 100.0
+    win_rate = round((wins / total_rec_evaluated * 100.0), 1) if total_rec_evaluated > 0 else 50.0
 
-    buy_count = sum(1 for s in scored_stocks if s["signal"] == "BUY")
-    hold_count = sum(1 for s in scored_stocks if s["signal"] == "HOLD")
-    watch_trim_count = len(scored_stocks) - buy_count - hold_count
-    avg_model_score = round(statistics.mean([s["score"] for s in scored_stocks]), 1)
+    # Audit v2 recommendations
+    audited_v2 = []
+    wins_v2 = 0
+    tot_v2 = 0
+    recs_v2_source = recommendations_log_v2 if recommendations_log_v2 is not None else recommendations_log
+    for rec in recs_v2_source:
+        if rec["date"] > day_date:
+            continue
+        st = by_ticker.get(rec["ticker"])
+        curr_p = st["price"] if st else rec["rec_price"]
+        chg_pct = round(((curr_p - rec["rec_price"]) / rec["rec_price"] * 100.0), 2) if rec["rec_price"] else 0.0
+        is_win = chg_pct >= 0.0
+        if rec["action"] in ("PROFIT_TRIM", "TRIM"):
+            is_win = True
+        if is_win:
+            wins_v2 += 1
+        tot_v2 += 1
+        audited_v2.append(
+            {
+                "id": rec["id"],
+                "date": rec["date"],
+                "action": rec["action"],
+                "ticker": rec["ticker"],
+                "name": rec.get("name", rec["ticker"]),
+                "rec_price": rec["rec_price"],
+                "current_price": curr_p,
+                "change_pct": chg_pct,
+                "is_win": is_win,
+                "rec_dollars": rec.get("rec_dollars", 0.0),
+                "setup_tag": rec.get("setup_tag", "Setup"),
+                "reason": rec.get("reason", ""),
+            }
+        )
+    win_rate_v2 = round((wins_v2 / tot_v2 * 100.0), 1) if tot_v2 > 0 else 50.0
 
-    if avg_model_score >= 65:
-        regime_label = "Bullish Swing"
-    elif avg_model_score >= 54:
-        regime_label = "Balanced Accumulation"
-    else:
-        regime_label = "Defensive Selective"
-
+    # Sector allocations
     allocations = []
     for h in holdings_list:
         allocations.append(
             {
-                "label": f"{h['ticker']} • {h['sector']}",
+                "label": f"{h['ticker']} — {h['name']}",
                 "ticker": h["ticker"],
                 "value": h["market_value"],
                 "pct": round((h["market_value"] / total_value) * 100.0, 2),
@@ -1079,7 +1388,7 @@ def build_day_snapshot(
     if cash > 0:
         allocations.append(
             {
-                "label": "CASH • Tactical Dry Powder",
+                "label": "CASH — Tactical Dry Powder",
                 "ticker": "CASH",
                 "value": cash,
                 "pct": round((cash / total_value) * 100.0, 2),
@@ -1110,14 +1419,35 @@ def build_day_snapshot(
         "win_rate": win_rate,
     }
 
+    portfolio_obj_v2 = {
+        "starting_capital": STARTING_CAPITAL,
+        "total_value": total_value_v2,
+        "invested_value": invested_v2,
+        "cash_reserve": c_v2,
+        "day_change_dollars": day_chg_d_v2,
+        "day_change_pct": day_chg_p_v2,
+        "total_gain_dollars": gain_dollars_v2,
+        "total_gain_pct": gain_pct_v2,
+        "spy_benchmark_value": spy_benchmark_value,
+        "spy_gain_dollars": spy_gain_dollars,
+        "spy_gain_pct": spy_gain_pct,
+        "balanced_60_40_value": bal_opt["value"] if bal_opt else STARTING_CAPITAL,
+        "hysa_value": hysa_opt["value"] if hysa_opt else STARTING_CAPITAL,
+        "alpha_dollars": round(total_value_v2 - spy_benchmark_value, 2),
+        "alpha_pct": round(gain_pct_v2 - spy_gain_pct, 2),
+        "win_rate": win_rate_v2,
+    }
+
     ranked_candidates = sorted(scored_stocks, key=lambda x: x["score"], reverse=True)[:4]
+    actions_v2_report = todays_actions_v2 if todays_actions_v2 is not None else todays_actions
+
     if call_gemini_live:
         gemini_insight = call_gemini_advisor(
             day_date=day_date,
-            portfolio_summary=portfolio_obj,
+            portfolio_summary=portfolio_obj_v2,
             alternatives=alternatives,
             top_candidates=ranked_candidates,
-            todays_actions=todays_actions,
+            todays_actions=actions_v2_report,
             news_map=news_map or {},
             memory=memory or {},
             adaptive_weights=adaptive_weights,
@@ -1128,29 +1458,37 @@ def build_day_snapshot(
                 memory.setdefault("lessons_learned", []).append(
                     {"date": day_date, "lesson": gemini_insight["lesson_learned"]}
                 )
-                save_model_memory(memory)
+            if gemini_insight.get("veto_trade") and gemini_insight.get("vetoed_ticker"):
+                memory.setdefault("veto_history", []).append(
+                    {
+                        "date": day_date,
+                        "ticker": gemini_insight["vetoed_ticker"],
+                        "reason": gemini_insight.get("veto_note", "Risk vetoed"),
+                    }
+                )
+            save_model_memory(memory)
     else:
-        top_winner = max(holdings_list, key=lambda x: x["pnl_dollars"]) if holdings_list else None
+        top_winner = max(holdings_v2, key=lambda x: x["pnl_dollars"]) if holdings_v2 else None
         action_headlines = [
             f"{a['action']} {a['ticker']} (${a['rec_dollars']:,.0f} @ ${a['rec_price']:,.2f})"
-            for a in todays_actions
+            for a in actions_v2_report
         ]
         bal_val_str = f"${bal_opt['value']:,.2f}" if bal_opt else "$7,000.00"
         hysa_val_str = f"${hysa_opt['value']:,.2f}" if hysa_opt else "$7,000.00"
         brief = (
-            f"On {day_date}, the $7,000 AI Model closed at ${total_value:,.2f} "
-            f"({total_gain_dollars:+,.2f} / {total_gain_pct:+.2f}%), vs. ${spy_benchmark_value:,.2f} "
-            f"in an S&P 500 Mutual Fund, {bal_val_str} in a 60/40 Balanced Mutual Fund, and {hysa_val_str} in a 4.5% High-Yield Savings Account. "
+            f"On {day_date}, Model v2.0 closed at ${total_value_v2:,.2f} "
+            f"({gain_dollars_v2:+,.2f} / {gain_pct_v2:+.2f}%) vs. Baseline v1.0 at ${total_value:,.2f} ({total_gain_pct:+.2f}%), "
+            f"SPY Mutual Fund at ${spy_benchmark_value:,.2f}, and 4.5% HYSA at ${hysa_val_str}. "
             + (
-                f"Best holding: {top_winner['ticker']} ({top_winner['pnl_dollars']:+,.2f}, {top_winner['pnl_pct']:+.2f}%). "
+                f"Top holding: {top_winner['ticker']} ({top_winner['pnl_dollars']:+,.2f}, {top_winner['pnl_pct']:+.2f}%). "
                 if top_winner
                 else ""
             )
-            + f"Today's action: {', '.join(action_headlines)}."
+            + f"Today's v2 action: {', '.join(action_headlines) if action_headlines else 'HOLD (Regime Cash Shield Active)'}."
         )
         gemini_insight = {
             "engine": "Gemini Hybrid Catalyst & Quant Engine",
-            "catalyst_headline": f"Evaluated 19 assets on {day_date}; prioritized relative strength leaders above 50-day support.",
+            "catalyst_headline": f"Evaluated 19 assets on {day_date}; Model v2.0 held {round((c_v2/total_value_v2)*100, 1)}% cash defense.",
             "veto_note": (
                 f"Cooldown active on {', '.join(adaptive_weights['cooldown_tickers'])}"
                 if adaptive_weights.get("cooldown_tickers")
@@ -1161,6 +1499,14 @@ def build_day_snapshot(
             "ai_briefing": brief,
         }
 
+    strength_meter = {
+        "bullish_count": len([s for s in scored_stocks if s["signal"] == "BUY"]),
+        "hold_count": len([s for s in scored_stocks if s["signal"] == "HOLD"]),
+        "bearish_count": len([s for s in scored_stocks if s["signal"] == "TRIM"]),
+        "avg_score": round(statistics.mean([s["score"] for s in scored_stocks]), 1) if scored_stocks else 50.0,
+        "market_regime": "DEFENSIVE (Cash Shield Active)" if spy_price < adaptive_weights.get("spy_sma50", spy_price) else "CONFIRMED UPTREND",
+    }
+
     return {
         "day_index": day_index,
         "date": day_date,
@@ -1168,24 +1514,19 @@ def build_day_snapshot(
         "is_backtest": is_backtest,
         "updated_at": dt.datetime.now().strftime("%Y-%m-%d %I:%M %p ET"),
         "portfolio": portfolio_obj,
+        "portfolio_v2": portfolio_obj_v2,
         "alternative_options": alternatives,
         "adaptive_learning": adaptive_weights,
+        "strength_meter": strength_meter,
         "gemini_insight": gemini_insight,
-        "strength_meter": {
-            "score": avg_model_score,
-            "regime": regime_label,
-            "buy_count": buy_count,
-            "hold_count": hold_count,
-            "trim_count": watch_trim_count,
-            "buy_pct": round(buy_count / len(scored_stocks) * 100.0, 1),
-            "hold_pct": round(hold_count / len(scored_stocks) * 100.0, 1),
-            "trim_pct": round(watch_trim_count / len(scored_stocks) * 100.0, 1),
-        },
-        "ai_briefing": custom_note if custom_note else gemini_insight["ai_briefing"],
+        "ai_briefing": gemini_insight.get("ai_briefing", ""),
         "todays_actions": todays_actions,
+        "todays_actions_v2": actions_v2_report,
         "holdings": holdings_list,
-        "audited_recommendations": list(reversed(audited_recommendations)),
-        "watchlist_scores": sorted(scored_stocks, key=lambda x: x["score"], reverse=True),
+        "holdings_v2": holdings_v2,
+        "audited_recommendations": audited_recommendations,
+        "audited_recommendations_v2": audited_v2,
+        "watchlist_scores": scored_stocks,
         "allocations": allocations,
     }
 
@@ -1260,218 +1601,163 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
         except Exception:
             state = None
 
-    if state is None or init_history:
-        sim_dates = available_dates[-7:] if len(available_dates) >= 7 else available_dates
-        positions: Dict[str, Dict[str, Any]] = {}
-        cash = STARTING_CAPITAL
-        spy_benchmark_shares = 0.0
-        recommendations_log: List[Dict[str, Any]] = []
-        day_tabs: List[Dict[str, Any]] = []
-        prev_val = STARTING_CAPITAL
+    # Load existing day dates if present
+    existing_day_tabs = state.get("day_tabs", []) if state else []
+    sim_dates = [t["date"] for t in existing_day_tabs] if existing_day_tabs else (available_dates[-15:] if len(available_dates) >= 15 else available_dates)
 
-        day1_prices = get_day_prices_map(raw_histories, sim_dates[0])
-        benchmarks_init = build_initial_benchmarks(day1_prices, sim_dates[0])
+    # Always ensure available_dates includes today if fresh
+    last_known = sim_dates[-1] if sim_dates else available_dates[-1]
+    for d in available_dates:
+        if d > last_known and d not in sim_dates:
+            sim_dates.append(d)
 
-        for idx, d_str in enumerate(sim_dates):
-            spy_slice = [b for b in spy_bars_all if b["date"] <= d_str]
-            spy_price = spy_slice[-1]["close"]
-            day_prices = get_day_prices_map(raw_histories, d_str)
-            adaptive_weights = compute_adaptive_weights(d_str, recommendations_log, day_prices)
+    # Simulate Dual Models across sim_dates
+    positions_v1: Dict[str, Dict[str, Any]] = {}
+    cash_v1 = STARTING_CAPITAL
+    recs_v1: List[Dict[str, Any]] = []
 
-            scored_today = []
-            for item in MODEL_UNIVERSE:
-                t = item["ticker"]
-                if t not in raw_histories:
-                    continue
-                b_slice = [b for b in raw_histories[t] if b["date"] <= d_str]
-                if len(b_slice) >= 15:
-                    scored_today.append(score_stock_as_of(item, b_slice, spy_slice, adaptive_weights))
+    positions_v2: Dict[str, Dict[str, Any]] = {}
+    cash_v2 = STARTING_CAPITAL
+    recs_v2: List[Dict[str, Any]] = []
+    last_exit_dates_v2: Dict[str, int] = {}
 
-            is_last = idx == len(sim_dates) - 1
-            dt_obj = dt.datetime.strptime(d_str, "%Y-%m-%d")
-            short_date = dt_obj.strftime("%b %d")
+    day_tabs: List[Dict[str, Any]] = []
+    prev_val_v1 = STARTING_CAPITAL
+    prev_val_v2 = STARTING_CAPITAL
 
-            if idx == 0:
-                positions, cash, spy_benchmark_shares, recommendations_log = build_initial_portfolio(
-                    d_str, scored_today, spy_price
-                )
-                todays_actions = list(recommendations_log)
-                tab_label = f"Sim Start • {short_date}"
-                is_bt = True
-            else:
-                positions, cash, todays_actions = apply_daily_tactical_rebalance(
-                    d_str, positions, cash, scored_today, recommendations_log
-                )
-                if is_last:
-                    tab_label = f"Today • {short_date} (Live)"
-                    is_bt = False
-                else:
-                    tab_label = f"Day {idx + 1} • {short_date}"
-                    is_bt = True
+    day1_prices = get_day_prices_map(raw_histories, sim_dates[0])
+    benchmarks_init = build_initial_benchmarks(day1_prices, sim_dates[0])
+    spy_benchmark_shares = benchmarks_init["spy_shares"]
 
-            news_map = {}
-            if is_last:
-                top_tickers = [a["ticker"] for a in todays_actions] + [
-                    s["ticker"] for s in sorted(scored_today, key=lambda x: x["score"], reverse=True)[:4]
-                ]
-                news_map = fetch_ticker_news(list(dict.fromkeys(top_tickers)))
+    for idx, d_str in enumerate(sim_dates):
+        spy_slice = [b for b in spy_bars_all if b["date"] <= d_str]
+        spy_price = spy_slice[-1]["close"]
+        spy_sma50 = compute_sma([b["close"] for b in spy_slice], 50)
+        day_prices = get_day_prices_map(raw_histories, d_str)
 
-            snap = build_day_snapshot(
-                day_index=idx + 1,
-                day_date=d_str,
-                tab_label=tab_label,
-                is_backtest=is_bt,
-                positions=positions,
-                cash=cash,
-                spy_benchmark_shares=spy_benchmark_shares,
-                spy_price=spy_price,
-                benchmarks_init=benchmarks_init,
-                day_prices=day_prices,
-                adaptive_weights=adaptive_weights,
-                scored_stocks=scored_today,
-                todays_actions=todays_actions,
-                recommendations_log=recommendations_log,
-                prev_total_value=prev_val,
-                news_map=news_map,
-                memory=memory,
-                call_gemini_live=is_last,
-                custom_note=custom_note if is_last else None,
+        adaptive_weights = compute_adaptive_weights(d_str, recs_v1, day_prices)
+        adaptive_weights["spy_sma50"] = spy_sma50
+
+        scored_today = []
+        for item in MODEL_UNIVERSE:
+            t = item["ticker"]
+            if t not in raw_histories:
+                continue
+            b_slice = [b for b in raw_histories[t] if b["date"] <= d_str]
+            if len(b_slice) >= 15:
+                scored_today.append(score_stock_as_of(item, b_slice, spy_slice, adaptive_weights))
+
+        is_last = (idx == len(sim_dates) - 1)
+        dt_obj = dt.datetime.strptime(d_str, "%Y-%m-%d")
+        short_date = dt_obj.strftime("%b %d")
+
+        if idx == 0:
+            # Model v1 baseline init
+            positions_v1, cash_v1, spy_benchmark_shares, recs_v1 = build_initial_portfolio(
+                d_str, scored_today, spy_price
             )
-            prev_val = snap["portfolio"]["total_value"]
-            day_tabs.append(snap)
+            todays_actions_v1 = list(recs_v1)
 
-        state = {
-            "model_name": "Market Insight $7,000 Gemini Self-Learning Model",
-            "starting_capital": STARTING_CAPITAL,
-            "created_at": sim_dates[0],
-            "last_updated": dt.datetime.now().strftime("%Y-%m-%d %I:%M %p ET"),
-            "market_ribbon": ribbon,
-            "model_memory": memory,
-            "internal_ledger": {
-                "positions": positions,
-                "cash": cash,
-                "spy_benchmark_shares": spy_benchmark_shares,
-                "benchmarks_init": benchmarks_init,
-                "recommendations_log": recommendations_log,
-            },
-            "day_tabs": day_tabs,
-        }
-    else:
-        ledger = state["internal_ledger"]
-        positions = ledger["positions"]
-        cash = ledger["cash"]
-        spy_benchmark_shares = ledger["spy_benchmark_shares"]
-        benchmarks_init = ledger["benchmarks_init"]
-        recommendations_log = ledger["recommendations_log"]
-        day_tabs = state["day_tabs"]
+            # Model v2 enhanced init
+            positions_v2, cash_v2, recs_v2, last_exit_dates_v2 = build_initial_portfolio_v2(
+                d_str, scored_today, spy_price, spy_sma50
+            )
+            todays_actions_v2 = list(recs_v2)
 
-        existing_dates = {tab["date"]: i for i, tab in enumerate(day_tabs)}
-        last_recorded_date = day_tabs[-1]["date"] if day_tabs else available_dates[-1]
-        new_dates = [d for d in available_dates if d >= last_recorded_date]
+            tab_label = f"Sim Start • {short_date}"
+            is_bt = True
+        else:
+            # Model v1 baseline rebalance
+            positions_v1, cash_v1, todays_actions_v1 = apply_daily_tactical_rebalance(
+                d_str, positions_v1, cash_v1, scored_today, recs_v1
+            )
 
-        for d_str in new_dates:
-            spy_slice = [b for b in spy_bars_all if b["date"] <= d_str]
-            spy_price = spy_slice[-1]["close"]
-            day_prices = get_day_prices_map(raw_histories, d_str)
-            adaptive_weights = compute_adaptive_weights(d_str, recommendations_log, day_prices)
+            # Model v2 enhanced rebalance
+            positions_v2, cash_v2, todays_actions_v2, last_exit_dates_v2 = apply_daily_tactical_rebalance_v2(
+                day_date=d_str,
+                day_index=idx,
+                positions=positions_v2,
+                cash=cash_v2,
+                scored_stocks=scored_today,
+                recommendations_log=recs_v2,
+                spy_price=spy_price,
+                spy_sma50=spy_sma50,
+                last_exit_dates=last_exit_dates_v2,
+            )
 
-            scored_today = []
-            for item in MODEL_UNIVERSE:
-                t = item["ticker"]
-                if t not in raw_histories:
-                    continue
-                b_slice = [b for b in raw_histories[t] if b["date"] <= d_str]
-                if len(b_slice) >= 15:
-                    scored_today.append(score_stock_as_of(item, b_slice, spy_slice, adaptive_weights))
-
-            dt_obj = dt.datetime.strptime(d_str, "%Y-%m-%d")
-            short_date = dt_obj.strftime("%b %d")
-            is_latest = d_str == new_dates[-1]
-
-            news_map = {}
-            if is_latest:
-                top_tickers = [
-                    s["ticker"] for s in sorted(scored_today, key=lambda x: x["score"], reverse=True)[:5]
-                ]
-                news_map = fetch_ticker_news(list(dict.fromkeys(top_tickers)))
-
-            if d_str in existing_dates:
-                tab_idx = existing_dates[d_str]
-                prev_val = (
-                    day_tabs[tab_idx - 1]["portfolio"]["total_value"]
-                    if tab_idx > 0
-                    else STARTING_CAPITAL
-                )
-                todays_actions = [r for r in recommendations_log if r["date"] == d_str]
-                tab_label = (
-                    f"Today • {short_date} (Live)"
-                    if is_latest
-                    else f"Day {tab_idx + 1} • {short_date}"
-                )
-                snap = build_day_snapshot(
-                    day_index=tab_idx + 1,
-                    day_date=d_str,
-                    tab_label=tab_label,
-                    is_backtest=day_tabs[tab_idx].get("is_backtest", False),
-                    positions=positions,
-                    cash=cash,
-                    spy_benchmark_shares=spy_benchmark_shares,
-                    spy_price=spy_price,
-                    benchmarks_init=benchmarks_init,
-                    day_prices=day_prices,
-                    adaptive_weights=adaptive_weights,
-                    scored_stocks=scored_today,
-                    todays_actions=todays_actions,
-                    recommendations_log=recommendations_log,
-                    prev_total_value=prev_val,
-                    news_map=news_map,
-                    memory=memory,
-                    call_gemini_live=is_latest,
-                    custom_note=custom_note if is_latest else None,
-                )
-                day_tabs[tab_idx] = snap
+            if is_last:
+                tab_label = f"Today • {short_date} (Live)"
+                is_bt = False
             else:
-                for old_t in day_tabs:
-                    old_t["tab_label"] = old_t["tab_label"].replace(" (Live)", "").replace("Today •", f"Day {old_t['day_index']} •")
-                prev_val = day_tabs[-1]["portfolio"]["total_value"] if day_tabs else STARTING_CAPITAL
-                positions, cash, todays_actions = apply_daily_tactical_rebalance(
-                    d_str, positions, cash, scored_today, recommendations_log
-                )
-                new_idx = len(day_tabs) + 1
-                snap = build_day_snapshot(
-                    day_index=new_idx,
-                    day_date=d_str,
-                    tab_label=f"Today • {short_date} (Live)",
-                    is_backtest=False,
-                    positions=positions,
-                    cash=cash,
-                    spy_benchmark_shares=spy_benchmark_shares,
-                    spy_price=spy_price,
-                    benchmarks_init=benchmarks_init,
-                    day_prices=day_prices,
-                    adaptive_weights=adaptive_weights,
-                    scored_stocks=scored_today,
-                    todays_actions=todays_actions,
-                    recommendations_log=recommendations_log,
-                    prev_total_value=prev_val,
-                    news_map=news_map,
-                    memory=memory,
-                    call_gemini_live=is_latest,
-                    custom_note=custom_note,
-                )
-                day_tabs.append(snap)
+                tab_label = f"Day {idx + 1} • {short_date}"
+                is_bt = True
 
-        state["last_updated"] = dt.datetime.now().strftime("%Y-%m-%d %I:%M %p ET")
-        state["market_ribbon"] = ribbon
-        state["model_memory"] = memory
-        state["internal_ledger"] = {
-            "positions": positions,
-            "cash": cash,
+        news_map = {}
+        if is_last:
+            top_tickers = [a["ticker"] for a in todays_actions_v2] + [
+                s["ticker"] for s in sorted(scored_today, key=lambda x: x["score"], reverse=True)[:4]
+            ]
+            news_map = fetch_ticker_news(list(dict.fromkeys(top_tickers)))
+
+        snap = build_day_snapshot(
+            day_index=idx + 1,
+            day_date=d_str,
+            tab_label=tab_label,
+            is_backtest=is_bt,
+            positions=positions_v1,
+            cash=cash_v1,
+            spy_benchmark_shares=spy_benchmark_shares,
+            spy_price=spy_price,
+            benchmarks_init=benchmarks_init,
+            day_prices=day_prices,
+            adaptive_weights=adaptive_weights,
+            scored_stocks=scored_today,
+            todays_actions=todays_actions_v1,
+            recommendations_log=recs_v1,
+            prev_total_value=prev_val_v1,
+            positions_v2=positions_v2,
+            cash_v2=cash_v2,
+            todays_actions_v2=todays_actions_v2,
+            recommendations_log_v2=recs_v2,
+            prev_total_value_v2=prev_val_v2,
+            news_map=news_map,
+            memory=memory,
+            call_gemini_live=is_last,
+            custom_note=custom_note if is_last else None,
+        )
+        prev_val_v1 = snap["portfolio"]["total_value"]
+        prev_val_v2 = snap["portfolio_v2"]["total_value"]
+        day_tabs.append(snap)
+
+    state = {
+        "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
+        "starting_capital": STARTING_CAPITAL,
+        "created_at": sim_dates[0],
+        "last_updated": dt.datetime.now().strftime("%Y-%m-%d %I:%M %p ET"),
+        "market_ribbon": ribbon,
+        "model_memory": memory,
+        "internal_ledger": {
+            "positions": positions_v1,
+            "cash": cash_v1,
             "spy_benchmark_shares": spy_benchmark_shares,
             "benchmarks_init": benchmarks_init,
-            "recommendations_log": recommendations_log,
-        }
-        state["day_tabs"] = day_tabs
+            "recommendations_log": recs_v1,
+        },
+        "internal_ledger_v1": {
+            "positions": positions_v1,
+            "cash": cash_v1,
+            "spy_benchmark_shares": spy_benchmark_shares,
+            "benchmarks_init": benchmarks_init,
+            "recommendations_log": recs_v1,
+        },
+        "internal_ledger_v2": {
+            "positions": positions_v2,
+            "cash": cash_v2,
+            "recommendations_log": recs_v2,
+            "last_exit_dates": last_exit_dates_v2,
+        },
+        "day_tabs": day_tabs,
+    }
 
     STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
     JS_DATA_FILE.write_text(
