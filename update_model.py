@@ -1045,8 +1045,10 @@ def apply_daily_tactical_rebalance_v2(
         if not st:
             continue
         curr_p = st["price"]
-        if curr_p > pos.get("high_watermark", pos["avg_entry_price"]):
-            pos["high_watermark"] = curr_p
+        hw = pos.get("high_watermark", pos.get("avg_entry_price", curr_p))
+        if curr_p > hw:
+            hw = curr_p
+        pos["high_watermark"] = hw
 
         gain_pct = ((curr_p - pos["avg_entry_price"]) / pos["avg_entry_price"]) * 100.0
         drawdown_from_peak = ((curr_p - pos["high_watermark"]) / pos["high_watermark"]) * 100.0
@@ -1676,7 +1678,9 @@ def run_update(init_history: bool = False, custom_note: Optional[str] = None) ->
             # Model v2 handling
             if d_str == FORK_DATE:
                 # Fork launch at exact current pricepoint of Model v1
-                positions_v2 = dict(positions_v1)
+                positions_v2 = {k: dict(v) for k, v in positions_v1.items()}
+                for p_dict in positions_v2.values():
+                    p_dict["high_watermark"] = p_dict.get("high_watermark", p_dict["avg_entry_price"])
                 cash_v2 = cash_v1
                 fork_val = round(cash_v1 + sum(pos["shares"] * day_prices.get(t, pos["avg_entry_price"]) for t, pos in positions_v1.items()), 2)
                 todays_actions_v2 = [{
