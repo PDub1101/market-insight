@@ -4973,6 +4973,64 @@
           "pct": 12.0,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1400.0,
+          "pct": 20.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 980.0,
+          "pct": 14.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 840.0,
+          "pct": 12.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 840.0,
+          "pct": 12.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 770.0,
+          "pct": 11.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 770.0,
+          "pct": 11.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 560.0,
+          "pct": 8.0,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 840.0,
+          "pct": 12.0,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -8426,6 +8484,71 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 462.0,
+          "pct": 6.6,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1404.69,
+          "pct": 20.06,
+          "pnl_pct": 0.34
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 979.0,
+          "pct": 13.98,
+          "pnl_pct": -0.1
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 840.58,
+          "pct": 12.0,
+          "pnl_pct": 0.07
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 837.4,
+          "pct": 11.96,
+          "pnl_pct": -0.31
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 763.85,
+          "pct": 10.91,
+          "pnl_pct": -0.8
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 757.79,
+          "pct": 10.82,
+          "pnl_pct": -1.59
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 579.56,
+          "pct": 8.28,
+          "pnl_pct": 3.49
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 378.0,
+          "pct": 5.4,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 462.0,
           "pct": 6.6,
@@ -12079,6 +12202,78 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 254.1,
+          "pct": 3.6,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1412.07,
+          "pct": 20.0,
+          "pnl_pct": 0.86
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 989.33,
+          "pct": 14.01,
+          "pnl_pct": 0.95
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 839.74,
+          "pct": 11.89,
+          "pnl_pct": -0.03
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 839.1,
+          "pct": 11.88,
+          "pnl_pct": -0.11
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 800.02,
+          "pct": 11.33,
+          "pnl_pct": 3.9
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 761.35,
+          "pct": 10.78,
+          "pnl_pct": -1.12
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 573.73,
+          "pct": 8.13,
+          "pnl_pct": 2.45
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 383.0,
+          "pct": 5.42,
+          "pnl_pct": 1.32
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 207.9,
+          "pct": 2.94,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 254.1,
           "pct": 3.6,
@@ -15826,6 +16021,78 @@
           "pct": 11.23,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1395.4,
+          "pct": 20.26,
+          "pnl_pct": -0.33
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 961.05,
+          "pct": 13.95,
+          "pnl_pct": -1.93
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 820.41,
+          "pct": 11.91,
+          "pnl_pct": -2.33
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 801.37,
+          "pct": 11.64,
+          "pnl_pct": -4.6
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 778.09,
+          "pct": 11.3,
+          "pnl_pct": 1.05
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 424.94,
+          "pct": 6.17,
+          "pnl_pct": -8.02
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 387.71,
+          "pct": 5.63,
+          "pnl_pct": 2.57
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 353.97,
+          "pct": 5.14,
+          "pnl_pct": 5.35
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 191.05,
+          "pct": 2.77,
+          "pnl_pct": -8.1
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 773.37,
+          "pct": 11.23,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -19562,6 +19829,78 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 941.71,
+          "pct": 13.71,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1388.11,
+          "pct": 20.21,
+          "pnl_pct": -0.85
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 960.96,
+          "pct": 13.99,
+          "pnl_pct": -1.94
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 825.81,
+          "pct": 12.02,
+          "pnl_pct": -1.69
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 793.75,
+          "pct": 11.55,
+          "pnl_pct": -5.51
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 780.31,
+          "pct": 11.36,
+          "pnl_pct": 1.34
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 387.16,
+          "pct": 5.64,
+          "pnl_pct": 2.42
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 344.97,
+          "pct": 5.02,
+          "pnl_pct": 2.67
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 252.51,
+          "pct": 3.68,
+          "pnl_pct": -8.91
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 194.39,
+          "pct": 2.83,
+          "pnl_pct": -6.5
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 941.71,
           "pct": 13.71,
@@ -23331,6 +23670,78 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 941.71,
+          "pct": 13.62,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1397.97,
+          "pct": 20.22,
+          "pnl_pct": -0.14
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 971.6,
+          "pct": 14.06,
+          "pnl_pct": -0.86
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 838.55,
+          "pct": 12.13,
+          "pnl_pct": -0.17
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 797.24,
+          "pct": 11.53,
+          "pnl_pct": -5.09
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 788.6,
+          "pct": 11.41,
+          "pnl_pct": 2.42
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 382.91,
+          "pct": 5.54,
+          "pnl_pct": 1.3
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 346.51,
+          "pct": 5.01,
+          "pnl_pct": 3.13
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 247.78,
+          "pct": 3.58,
+          "pnl_pct": -10.61
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 199.84,
+          "pct": 2.89,
+          "pnl_pct": -3.88
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 941.71,
           "pct": 13.62,
@@ -27127,6 +27538,78 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 517.94,
+          "pct": 7.45,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1405.81,
+          "pct": 20.21,
+          "pnl_pct": 0.41
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 983.94,
+          "pct": 14.15,
+          "pnl_pct": 0.4
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 836.55,
+          "pct": 12.03,
+          "pnl_pct": -0.41
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 810.07,
+          "pct": 11.65,
+          "pnl_pct": -3.56
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 788.16,
+          "pct": 11.33,
+          "pnl_pct": 2.36
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 771.03,
+          "pct": 11.09,
+          "pnl_pct": 1.48
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 386.46,
+          "pct": 5.56,
+          "pnl_pct": 2.24
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 243.7,
+          "pct": 3.5,
+          "pnl_pct": -12.09
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 210.74,
+          "pct": 3.03,
+          "pnl_pct": 1.37
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 517.94,
           "pct": 7.45,
@@ -31118,6 +31601,85 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 284.87,
+          "pct": 4.09,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1410.65,
+          "pct": 20.25,
+          "pnl_pct": 0.76
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 989.89,
+          "pct": 14.21,
+          "pnl_pct": 1.01
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 836.05,
+          "pct": 12.0,
+          "pnl_pct": -0.47
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 814.88,
+          "pct": 11.7,
+          "pnl_pct": -2.99
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 780.55,
+          "pct": 11.21,
+          "pnl_pct": 1.37
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 774.87,
+          "pct": 11.12,
+          "pnl_pct": 1.99
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 382.82,
+          "pct": 5.5,
+          "pnl_pct": 1.28
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 240.68,
+          "pct": 3.46,
+          "pnl_pct": -13.17
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 233.07,
+          "pct": 3.35,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 217.57,
+          "pct": 3.12,
+          "pnl_pct": 4.65
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 284.87,
           "pct": 4.09,
@@ -35249,6 +35811,85 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 510.11,
+          "pct": 7.32,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1405.26,
+          "pct": 20.16,
+          "pnl_pct": 0.38
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 975.88,
+          "pct": 14.0,
+          "pnl_pct": -0.42
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 834.68,
+          "pct": 11.98,
+          "pnl_pct": -0.63
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 779.0,
+          "pct": 11.18,
+          "pnl_pct": 1.17
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 653.61,
+          "pct": 9.38,
+          "pnl_pct": 0.49
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 495.74,
+          "pct": 7.11,
+          "pnl_pct": 8.75
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 468.17,
+          "pct": 6.72,
+          "pnl_pct": -7.11
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 388.48,
+          "pct": 5.57,
+          "pnl_pct": 2.77
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 245.4,
+          "pct": 3.52,
+          "pnl_pct": -11.47
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 213.05,
+          "pct": 3.06,
+          "pnl_pct": 2.48
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 510.11,
           "pct": 7.32,
@@ -39522,6 +40163,85 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 655.29,
+          "pct": 9.58,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1380.35,
+          "pct": 20.19,
+          "pnl_pct": -1.4
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 941.98,
+          "pct": 13.78,
+          "pnl_pct": -3.88
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 919.85,
+          "pct": 13.45,
+          "pnl_pct": 0.62
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 821.72,
+          "pct": 12.02,
+          "pnl_pct": -2.18
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 664.24,
+          "pct": 9.72,
+          "pnl_pct": 2.12
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 438.11,
+          "pct": 6.41,
+          "pnl_pct": -5.17
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 306.94,
+          "pct": 4.49,
+          "pnl_pct": 12.22
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 276.94,
+          "pct": 4.05,
+          "pnl_pct": -8.42
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 241.66,
+          "pct": 3.53,
+          "pnl_pct": -12.82
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 189.88,
+          "pct": 2.78,
+          "pnl_pct": -8.67
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 655.29,
           "pct": 9.58,
@@ -43857,6 +44577,85 @@
           "pct": 18.71,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1373.73,
+          "pct": 20.29,
+          "pnl_pct": -1.88
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 929.16,
+          "pct": 13.73,
+          "pnl_pct": -5.19
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 903.01,
+          "pct": 13.34,
+          "pnl_pct": -1.22
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 682.79,
+          "pct": 10.09,
+          "pnl_pct": 4.97
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 479.06,
+          "pct": 7.08,
+          "pnl_pct": -4.95
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 283.02,
+          "pct": 4.18,
+          "pnl_pct": -6.41
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 254.63,
+          "pct": 3.76,
+          "pnl_pct": -8.14
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 238.41,
+          "pct": 3.52,
+          "pnl_pct": -13.99
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 183.31,
+          "pct": 2.71,
+          "pnl_pct": 11.7
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 175.6,
+          "pct": 2.59,
+          "pnl_pct": -15.54
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 1266.62,
+          "pct": 18.71,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -48155,6 +48954,85 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 724.65,
+          "pct": 10.7,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1377.84,
+          "pct": 20.34,
+          "pnl_pct": -1.58
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1034.13,
+          "pct": 15.26,
+          "pnl_pct": -1.13
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 934.87,
+          "pct": 13.8,
+          "pnl_pct": -4.61
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 885.87,
+          "pct": 13.08,
+          "pnl_pct": -3.09
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 668.82,
+          "pct": 9.87,
+          "pnl_pct": 2.83
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 288.85,
+          "pct": 4.26,
+          "pnl_pct": -4.48
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 250.43,
+          "pct": 3.7,
+          "pnl_pct": -9.66
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 244.03,
+          "pct": 3.6,
+          "pnl_pct": -11.97
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 183.1,
+          "pct": 2.7,
+          "pnl_pct": 11.57
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 182.01,
+          "pct": 2.69,
+          "pnl_pct": -12.45
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 724.65,
           "pct": 10.7,
@@ -52483,6 +53361,85 @@
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
+          "ticker": "CASH",
+          "value": 398.56,
+          "pct": 5.73,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1400.6,
+          "pct": 20.13,
+          "pnl_pct": 0.04
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1103.23,
+          "pct": 15.85,
+          "pnl_pct": 5.47
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 943.97,
+          "pct": 13.56,
+          "pnl_pct": -3.68
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 932.88,
+          "pct": 13.4,
+          "pnl_pct": 2.05
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 686.67,
+          "pct": 9.87,
+          "pnl_pct": 5.57
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 632.62,
+          "pct": 9.09,
+          "pnl_pct": 0.66
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 247.56,
+          "pct": 3.56,
+          "pnl_pct": -10.69
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 245.15,
+          "pct": 3.52,
+          "pnl_pct": -11.56
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 184.22,
+          "pct": 2.65,
+          "pnl_pct": 12.25
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 183.85,
+          "pct": 2.64,
+          "pnl_pct": -11.57
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
           "ticker": "CASH",
           "value": 398.56,
           "pct": 5.73,
@@ -57011,6 +57968,92 @@
           "pct": 2.66,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1338.85,
+          "pct": 19.96,
+          "pnl_pct": -4.37
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1063.79,
+          "pct": 15.86,
+          "pnl_pct": 1.7
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 918.62,
+          "pct": 13.69,
+          "pnl_pct": 0.49
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 882.72,
+          "pct": 13.16,
+          "pnl_pct": -9.93
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 699.22,
+          "pct": 10.42,
+          "pnl_pct": 7.5
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 618.78,
+          "pct": 9.22,
+          "pnl_pct": -1.54
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 237.76,
+          "pct": 3.54,
+          "pnl_pct": -14.23
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 221.29,
+          "pct": 3.3,
+          "pnl_pct": -20.17
+        },
+        {
+          "label": "SCHD \u2014 Schwab US Dividend Equity",
+          "ticker": "SCHD",
+          "value": 220.0,
+          "pct": 3.28,
+          "pnl_pct": 0.0
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 177.3,
+          "pct": 2.64,
+          "pnl_pct": 8.04
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 152.11,
+          "pct": 2.27,
+          "pnl_pct": -26.84
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 178.56,
+          "pct": 2.66,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -61171,6 +62214,92 @@
           "pct": 2.66,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1343.03,
+          "pct": 19.97,
+          "pnl_pct": -4.07
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1053.23,
+          "pct": 15.66,
+          "pnl_pct": 0.69
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 913.82,
+          "pct": 13.59,
+          "pnl_pct": -0.04
+        },
+        {
+          "label": "QQQ \u2014 Invesco QQQ Trust",
+          "ticker": "QQQ",
+          "value": 895.06,
+          "pct": 13.31,
+          "pnl_pct": -8.67
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 691.32,
+          "pct": 10.28,
+          "pnl_pct": 6.28
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 616.61,
+          "pct": 9.17,
+          "pnl_pct": -1.89
+        },
+        {
+          "label": "META \u2014 Meta Platforms",
+          "ticker": "META",
+          "value": 239.76,
+          "pct": 3.57,
+          "pnl_pct": -13.51
+        },
+        {
+          "label": "PLTR \u2014 Palantir Technologies",
+          "ticker": "PLTR",
+          "value": 228.98,
+          "pct": 3.41,
+          "pnl_pct": -17.4
+        },
+        {
+          "label": "SCHD \u2014 Schwab US Dividend Equity",
+          "ticker": "SCHD",
+          "value": 218.45,
+          "pct": 3.25,
+          "pnl_pct": -0.7
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 175.91,
+          "pct": 2.62,
+          "pnl_pct": 7.19
+        },
+        {
+          "label": "AMD \u2014 Advanced Micro Devices",
+          "ticker": "AMD",
+          "value": 168.9,
+          "pct": 2.51,
+          "pnl_pct": -18.76
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 178.56,
+          "pct": 2.66,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -65122,6 +66251,64 @@
           "pct": 2.58,
           "pnl_pct": 0.0
         }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1374.81,
+          "pct": 19.86,
+          "pnl_pct": -1.8
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1082.15,
+          "pct": 15.63,
+          "pnl_pct": 3.46
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 936.03,
+          "pct": 13.52,
+          "pnl_pct": 2.39
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 699.6,
+          "pct": 10.11,
+          "pnl_pct": 7.56
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 634.76,
+          "pct": 9.17,
+          "pnl_pct": 1.0
+        },
+        {
+          "label": "SCHD \u2014 Schwab US Dividend Equity",
+          "ticker": "SCHD",
+          "value": 221.43,
+          "pct": 3.2,
+          "pnl_pct": 0.65
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 183.44,
+          "pct": 2.65,
+          "pnl_pct": 11.78
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 1790.27,
+          "pct": 25.86,
+          "pnl_pct": 0.0
+        }
       ]
     },
     {
@@ -69037,6 +70224,64 @@
           "ticker": "CASH",
           "value": 178.56,
           "pct": 2.59,
+          "pnl_pct": 0.0
+        }
+      ],
+      "allocations_v2": [
+        {
+          "label": "SPY \u2014 SPDR S&P 500 ETF",
+          "ticker": "SPY",
+          "value": 1369.92,
+          "pct": 19.85,
+          "pnl_pct": -2.15
+        },
+        {
+          "label": "MSFT \u2014 Microsoft Corp.",
+          "ticker": "MSFT",
+          "value": 1058.29,
+          "pct": 15.33,
+          "pnl_pct": 1.18
+        },
+        {
+          "label": "AAPL \u2014 Apple Inc.",
+          "ticker": "AAPL",
+          "value": 930.21,
+          "pct": 13.48,
+          "pnl_pct": 1.76
+        },
+        {
+          "label": "COST \u2014 Costco Wholesale",
+          "ticker": "COST",
+          "value": 699.58,
+          "pct": 10.14,
+          "pnl_pct": 7.55
+        },
+        {
+          "label": "AMZN \u2014 Amazon.com Inc.",
+          "ticker": "AMZN",
+          "value": 644.12,
+          "pct": 9.33,
+          "pnl_pct": 2.49
+        },
+        {
+          "label": "SCHD \u2014 Schwab US Dividend Equity",
+          "ticker": "SCHD",
+          "value": 222.48,
+          "pct": 3.22,
+          "pnl_pct": 1.13
+        },
+        {
+          "label": "LLY \u2014 Eli Lilly & Co.",
+          "ticker": "LLY",
+          "value": 186.18,
+          "pct": 2.7,
+          "pnl_pct": 13.45
+        },
+        {
+          "label": "CASH \u2014 Tactical Defense Shield",
+          "ticker": "CASH",
+          "value": 1790.59,
+          "pct": 25.95,
           "pnl_pct": 0.0
         }
       ]
