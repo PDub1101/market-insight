@@ -1375,7 +1375,7 @@ def build_day_snapshot(
         )
     win_rate_v2 = round((wins_v2 / tot_v2 * 100.0), 1) if tot_v2 > 0 else 50.0
 
-    # Sector allocations
+    # Sector allocations (v1)
     allocations = []
     for h in holdings_list:
         allocations.append(
@@ -1394,6 +1394,29 @@ def build_day_snapshot(
                 "ticker": "CASH",
                 "value": cash,
                 "pct": round((cash / total_value) * 100.0, 2),
+                "pnl_pct": 0.0,
+            }
+        )
+
+    # Sector allocations (v2 Enhanced)
+    allocations_v2 = []
+    for h in holdings_v2:
+        allocations_v2.append(
+            {
+                "label": f"{h['ticker']} — {h['name']}",
+                "ticker": h["ticker"],
+                "value": h["market_value"],
+                "pct": round((h["market_value"] / total_value_v2) * 100.0, 2) if total_value_v2 > 0 else 0.0,
+                "pnl_pct": h["pnl_pct"],
+            }
+        )
+    if c_v2 > 0:
+        allocations_v2.append(
+            {
+                "label": "CASH — Tactical Defense Shield",
+                "ticker": "CASH",
+                "value": c_v2,
+                "pct": round((c_v2 / total_value_v2) * 100.0, 2) if total_value_v2 > 0 else 0.0,
                 "pnl_pct": 0.0,
             }
         )
@@ -1530,6 +1553,7 @@ def build_day_snapshot(
         "audited_recommendations_v2": audited_v2,
         "watchlist_scores": scored_stocks,
         "allocations": allocations,
+        "allocations_v2": allocations_v2,
     }
 
 
@@ -1823,7 +1847,7 @@ def sync_to_github_if_configured() -> None:
 
         # 3. Build tree with all updated data files at once in a single commit
         tree_items = []
-        for fname in ("portfolio_data.js", "portfolio_state.json", "model_memory.json"):
+        for fname in ("index.html", "portfolio_data.js", "portfolio_state.json", "model_memory.json"):
             fpath = WORKSPACE_DIR / fname
             if not fpath.exists():
                 continue
@@ -1877,8 +1901,6 @@ def sync_to_github_if_configured() -> None:
         print(f"Synced updated Day Tab (single commit {new_commit_sha[:8]}) to https://pdub1101.github.io/market-insight/")
     except Exception as exc:
         print(f"[warn] GitHub sync skipped: {exc}", file=sys.stderr)
-    except Exception as exc:
-        print(f"[warn] GitHub sync skipped: {exc}", file=sys.stderr)
 
 
 def print_concise_summary(state: Dict[str, Any]) -> None:
@@ -1887,21 +1909,26 @@ def print_concise_summary(state: Dict[str, Any]) -> None:
     except Exception:
         pass
     latest = state["day_tabs"][-1]
-    p = latest["portfolio"]
+    p_v2 = latest.get("portfolio_v2") or latest["portfolio"]
+    p_v1 = latest["portfolio"]
     al = latest["adaptive_learning"]
     gem = latest.get("gemini_insight", {})
+    alpha_v2 = round(p_v2["total_value"] - p_v1["total_value"], 2)
+    alpha_v2_pct = round(p_v2["total_gain_pct"] - p_v1["total_gain_pct"], 2)
     print("=" * 74)
     print(f"MARKET INSIGHT $7,000 GEMINI MODEL UPDATE - {latest['date']} ({latest['tab_label']})")
     print("=" * 74)
-    print(f"AI Model Portfolio ($7K)  : ${p['total_value']:,.2f} ({p['total_gain_dollars']:+,.2f} / {p['total_gain_pct']:+.2f}%)")
-    print(f"S&P 500 Mutual Fund (SPY) : ${p['spy_benchmark_value']:,.2f} ({p['spy_gain_dollars']:+,.2f} / {p['spy_gain_pct']:+.2f}%)")
-    print(f"60/40 Balanced Fund       : ${p['balanced_60_40_value']:,.2f}")
-    print(f"4.50% High-Yield Savings  : ${p['hysa_value']:,.2f}")
+    print(f"Active Model v2.0 ($7K)    : ${p_v2['total_value']:,.2f} ({p_v2['total_gain_dollars']:+,.2f} / {p_v2['total_gain_pct']:+.2f}%)")
+    print(f"Baseline Model v1.0 ($7K)  : ${p_v1['total_value']:,.2f} ({p_v1['total_gain_dollars']:+,.2f} / {p_v1['total_gain_pct']:+.2f}%)")
+    print(f"v2 Alpha vs Baseline v1.0  : ${alpha_v2:+,.2f} ({alpha_v2_pct:+.2f}%)")
+    print(f"S&P 500 Mutual Fund (SPY)  : ${p_v2['spy_benchmark_value']:,.2f} ({p_v2['spy_gain_dollars']:+,.2f} / {p_v2['spy_gain_pct']:+.2f}%)")
+    print(f"60/40 Balanced Fund        : ${p_v2['balanced_60_40_value']:,.2f}")
+    print(f"4.50% High-Yield Savings   : ${p_v2['hysa_value']:,.2f}")
     print("-" * 74)
-    print(f"Gemini Catalyst Analysis  : {gem.get('catalyst_headline', '')}")
-    print(f"Gemini Risk Veto Check    : {gem.get('veto_note', '')}")
-    print(f"New Lesson Saved to Memory: {gem.get('lesson_learned', '')}")
-    print(f"Adaptive Factor Weights   : {al['learning_note']}")
+    print(f"Gemini Catalyst Analysis   : {gem.get('catalyst_headline', '')}")
+    print(f"Gemini Risk Veto Check     : {gem.get('veto_note', '')}")
+    print(f"New Lesson Saved to Memory : {gem.get('lesson_learned', '')}")
+    print(f"Adaptive Factor Weights    : {al['learning_note']}")
     print("=" * 74)
 
 
