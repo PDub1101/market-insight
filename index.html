@@ -674,6 +674,22 @@
     .compare-table tr.row-model:hover {
       background: var(--accent-primary-bg);
     }
+    .compare-table tr.row-model-v2 {
+      background: rgba(16, 185, 129, 0.08);
+      font-weight: 600;
+    }
+    .compare-table tr.row-model-v2 td {
+      border-top: 1px solid rgba(16, 185, 129, 0.35);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .compare-table tr.row-model-v2:hover {
+      background: rgba(16, 185, 129, 0.14);
+    }
+    .table-rank-badge.rank-v2 {
+      background: rgba(16, 185, 129, 0.18);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
     .table-rank-badge {
       font-family: var(--font-mono);
       font-size: 11px;
@@ -817,6 +833,11 @@
       background: var(--bg-highlight);
       border: 2px solid var(--accent-primary);
     }
+    .option-card.is-our-model-v2 {
+      background: rgba(16, 185, 129, 0.08);
+      border: 2px solid #10b981;
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.12);
+    }
     .option-top {
       display: flex;
       justify-content: space-between;
@@ -941,6 +962,65 @@
     .action-pill.BUY { background: var(--pos-bg); color: var(--pos); border: 1px solid var(--pos-border); }
     .action-pill.TRIM { background: var(--warn-bg); color: var(--warn); border: 1px solid var(--warn-border); }
     .action-pill.HOLD { background: var(--accent-primary-bg); color: var(--accent-primary); border: 1px solid var(--accent-primary-border); }
+    .action-pill.STOP_LOSS { background: rgba(239, 68, 68, 0.12); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.35); }
+    .action-pill.EXIT { background: rgba(245, 158, 11, 0.12); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.35); }
+    .action-pill.FORK { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.35); }
+
+    .model-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-card-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      padding: 3px;
+      gap: 3px;
+    }
+    .model-switch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: var(--font-sans);
+    }
+    .model-switch-btn:hover {
+      color: var(--text-primary);
+      background: var(--bg-card-hover);
+    }
+    .model-switch-btn.active {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      font-weight: 700;
+    }
+    .model-switch-btn.active.v2-active {
+      color: #10b981;
+    }
+    .model-switch-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .model-badge-v2 {
+      background: rgba(16, 185, 129, 0.18);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
 
     .move-headline {
       font-family: var(--font-heading);
@@ -1346,6 +1426,18 @@
       </div>
 
       <div class="controls-row">
+        <div class="model-switcher" id="topModelSwitcher" title="Switch between Active Model v2.0 and Baseline Model v1.0">
+          <button class="model-switch-btn active v2-active" id="topBtnModelV2" onclick="setActiveModel('v2')" title="Enhanced AI Model: -7% Stop Losses, Market Regime Cash Shield, Gemini Vetoes">
+            <span class="model-switch-dot" style="background:#10b981;"></span>
+            <strong>Model 2.0 (Active)</strong>
+            <span class="model-badge-v2">Enhanced</span>
+          </button>
+          <button class="model-switch-btn" id="topBtnModelV1" onclick="setActiveModel('v1')" title="Legacy Baseline Model: 19 Static Equities, Always ~97% Invested">
+            <span class="model-switch-dot" style="background:var(--accent-primary);"></span>
+            <strong>Model 1.0 (Baseline)</strong>
+          </button>
+        </div>
+
         <div class="control-chip" title="See what your numbers would look like with a different starting investment">
           <span>Starting Amount:</span>
           <select id="capitalScaleSelect" onchange="onCapitalScaleChange()">
@@ -1403,10 +1495,82 @@
        ========================================================================== */
     let appData = window.MARKET_INSIGHT_DATA || null;
     let selectedView = 0;       // integer day index, or 'overview', or 'memory'
+    let activeModel = 'v2';     // 'v2' (Active Enhanced Model - default) | 'v1' (Baseline)
     let capitalScale = 1.0;
     let showRawMath = false;
     let tradeFilter = 'all';    // 'all' | 'buy' | 'trim' | 'win' | 'lag'
     let watchFilter = 'all';    // 'all' | 'BUY' | 'HOLD' | 'TRIM'
+
+    function getActivePortfolio(tab) {
+      if (activeModel === 'v2' && tab && tab.portfolio_v2) {
+        return tab.portfolio_v2;
+      }
+      return (tab && tab.portfolio) || {};
+    }
+
+    function getActiveHoldings(tab) {
+      if (activeModel === 'v2' && tab && tab.holdings_v2 && tab.holdings_v2.length > 0) {
+        return tab.holdings_v2;
+      }
+      return (tab && tab.holdings) || [];
+    }
+
+    function getActiveActions(tab) {
+      if (activeModel === 'v2' && tab && tab.todays_actions_v2 !== undefined && tab.todays_actions_v2 !== null) {
+        return tab.todays_actions_v2;
+      }
+      return (tab && tab.todays_actions) || [];
+    }
+
+    function getActiveRecommendations(tab) {
+      if (activeModel === 'v2' && tab && tab.audited_recommendations_v2 && tab.audited_recommendations_v2.length > 0) {
+        return tab.audited_recommendations_v2;
+      }
+      return (tab && tab.audited_recommendations) || [];
+    }
+
+    function getActiveAllocations(tab, p, holdings) {
+      if (activeModel === 'v2' && tab && tab.allocations_v2 && tab.allocations_v2.length > 0) {
+        return tab.allocations_v2;
+      }
+      if (activeModel === 'v1' && tab && tab.allocations && tab.allocations.length > 0) {
+        return tab.allocations;
+      }
+      const tot = (p && p.total_value) || 1;
+      const list = (holdings || []).map(h => ({
+        label: `${h.ticker} — ${h.name}`,
+        ticker: h.ticker,
+        value: h.market_value,
+        pct: (h.market_value / tot) * 100,
+        pnl_pct: h.pnl_pct
+      }));
+      if (p && p.cash_reserve > 0) {
+        list.push({
+          label: activeModel === 'v2' ? 'CASH — Tactical Defense Shield' : 'CASH — Tactical Dry Powder',
+          ticker: 'CASH',
+          value: p.cash_reserve,
+          pct: (p.cash_reserve / tot) * 100,
+          pnl_pct: 0.0
+        });
+      }
+      return list;
+    }
+
+    function setActiveModel(modelVer) {
+      activeModel = modelVer;
+      const btnV2 = document.getElementById('topBtnModelV2');
+      const btnV1 = document.getElementById('topBtnModelV1');
+      if (btnV2 && btnV1) {
+        if (activeModel === 'v2') {
+          btnV2.classList.add('active', 'v2-active');
+          btnV1.classList.remove('active');
+        } else {
+          btnV1.classList.add('active');
+          btnV2.classList.remove('active', 'v2-active');
+        }
+      }
+      renderCurrentView();
+    }
 
     // Active series on the head-to-head chart (all 9 toggleable!)
     const CHART_SERIES_META = [
@@ -1465,6 +1629,9 @@
     function normalizeActionType(rawAction) {
       const s = String(rawAction || 'HOLD').toUpperCase();
       if (s.includes('BUY')) return 'BUY';
+      if (s.includes('STOP_LOSS') || s.includes('STOP')) return 'STOP_LOSS';
+      if (s.includes('EXIT')) return 'EXIT';
+      if (s.includes('FORK')) return 'FORK';
       if (s.includes('TRIM') || s.includes('SELL')) return 'TRIM';
       return 'HOLD';
     }
@@ -1484,6 +1651,30 @@
 
       const act = normalizeActionType(rawAction);
       let s = String(rawReason);
+
+      // Check for Liquidated prefix (Model v2 stop-loss & exit actions):
+      // "Liquidated 100% ($241.58) at $34.51 (PnL: -7.5%) — STOP_LOSS"
+      const liqMatch = s.match(/Liquidated\s+(\d+%)\s+\(\$([\d,.]+)\)\s+at\s+\$([\d,.]+)\s+\(PnL:\s*([+-]?[\d.]+)%\)\s*—\s*(\w+)/i);
+      if (liqMatch) {
+        const pct = liqMatch[1];
+        const proceeds = liqMatch[2];
+        const px = liqMatch[3];
+        const pnl = parseFloat(liqMatch[4]);
+        const actType = liqMatch[5].toUpperCase();
+        if (actType === 'STOP_LOSS') {
+          return `Strict -7% stop-loss discipline: liquidated ${pct} ($${proceeds}) at $${px} (${pnl.toFixed(1)}% vs entry) to cap downside risk and preserve capital in cash.`;
+        } else if (actType === 'EXIT') {
+          return `Defensive exit: liquidated ${pct} ($${proceeds}) at $${px} (${pnl.toFixed(1)}%) after stock score broke down, rotating capital into cash defense.`;
+        } else if (actType === 'TRAILING_STOP') {
+          return `Trailing stop: sold ${pct} ($${proceeds}) at $${px} (${pnl.toFixed(1)}%) after pulling back 5% from recent highs to protect open profits.`;
+        }
+      }
+
+      // Check for Model v2 Fork Launch:
+      if (/Model v2\.0 officially launched/i.test(s) || /MODEL_FORK/i.test(rawAction)) {
+        return "Model v2.0 live forward-test launch: activated strict -7.0% stop-losses, dynamic market regime cash defense (triggered when SPY is below 50d average), and Gemini AI risk vetoes.";
+      }
+
       const parts = [];
 
       // Check for Trimmed prefix: "Trimmed 40% ($330) at $1373.70 (+8.7% vs entry)"
@@ -1567,9 +1758,13 @@
       return "↘ Sliding Below Average";
     }
 
-    function describeWatchVerdict(s, heldSet) {
+    function describeWatchVerdict(s, heldSet, exitedSet) {
       const sig = normalizeActionType(s.signal);
-      const isHeld = heldSet.has(s.ticker);
+      const isHeld = heldSet && heldSet.has(s.ticker);
+      const isExited = exitedSet && exitedSet.has(s.ticker);
+      if (isExited && activeModel === 'v2') {
+        return { text: "Stopped Out / In Cash", cls: "STOP_LOSS" };
+      }
       if (sig === 'BUY') {
         return isHeld
           ? { text: "Strong — Already Own", cls: "BUY" }
@@ -1709,39 +1904,59 @@
        SINGLE DAY PAGE — ALL 5 SPACIOUS PLAIN-ENGLISH CHAPTERS
        ========================================================================== */
     function buildPlainEnglishBullets(tab, dayIdx) {
-      const p = tab.portfolio;
+      const p = getActivePortfolio(tab);
+      const holdings = getActiveHoldings(tab);
+      const actions = getActiveActions(tab);
       const alts = tab.alternative_options || [];
       const leader = alts[0];
-      const modelAlt = alts.find(a => a.is_model) || { rank: 7 };
+      const modelAlt = alts.find(a => (activeModel === 'v2' ? (a.id === 'model_v2' || a.is_model_v2) : (a.id === 'model' || (a.is_model && a.id !== 'model_v2')))) || { rank: 5 };
+      const v1Alt = alts.find(a => a.id === 'model' || (a.is_model && a.id !== 'model_v2')) || {};
+      const v2Alt = alts.find(a => a.id === 'model_v2' || a.is_model_v2) || {};
+      const otherModelAlt = activeModel === 'v2' ? v1Alt : v2Alt;
       const spyAlt = alts.find(a => a.id === 'spy_mutual');
       const startStr = fmtMoney(scaled(p.starting_capital));
       const totalStr = fmtMoney(scaled(p.total_value));
       const dayMoveStr = fmtMoney(scaled(p.day_change_dollars), true);
 
-      // Bullet 1: Where your money stands & how today went vs S&P 500
+      // Bullet 1: Where your money stands & how today went vs S&P 500 & other model
       let b1 = '';
       if (dayIdx === 0) {
-        b1 = `<strong>Day 1 Kickoff (${tab.date}):</strong> We started with <strong>${startStr}</strong> and put <strong>${fmtMoney(scaled(p.invested_value))}</strong> to work across ${(tab.holdings || []).length} initial stocks &amp; index funds while keeping <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> safely on the sidelines as spare cash.`;
+        b1 = `<strong>Day 1 Kickoff (${tab.date}):</strong> We started with <strong>${startStr}</strong> and put <strong>${fmtMoney(scaled(p.invested_value))}</strong> to work across ${holdings.length} initial stocks &amp; index funds while keeping <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> safely on the sidelines as spare cash.`;
       } else {
         const prevTab = appData.day_tabs[dayIdx - 1];
         const spyPrev = prevTab ? prevTab.portfolio.spy_benchmark_value : p.starting_capital;
         const spyTodayMove = p.spy_benchmark_value - spyPrev;
         const beatSpyToday = p.day_change_dollars >= spyTodayMove;
-        b1 = `<strong>How your money moved today:</strong> Your portfolio moved <strong>${dayMoveStr} (${fmtPct(p.day_change_pct)})</strong> today to close at <strong>${totalStr}</strong>. By comparison, a standard S&amp;P 500 fund moved <strong>${fmtMoney(scaled(spyTodayMove), true)}</strong> today${beatSpyToday ? ' — meaning our portfolio held up better than the S&amp;P 500 in today\'s session.' : '.'}`;
+        const otherVal = otherModelAlt.value || 0;
+        const otherDiff = otherVal ? (p.total_value - otherVal) : 0;
+        if (activeModel === 'v2') {
+          b1 = `<strong>How your money moved today (Model 2.0 Enhanced):</strong> Your portfolio moved <strong>${dayMoveStr} (${fmtPct(p.day_change_pct)})</strong> today to close at <strong>${totalStr}</strong>. By comparison, the standard S&amp;P 500 index moved <strong>${fmtMoney(scaled(spyTodayMove), true)}</strong> and Baseline Model 1.0 closed at <strong>${fmtMoney(scaled(otherVal))}</strong>${otherDiff > 0 ? ` (${fmtMoney(scaled(otherDiff), true)} ahead for v2.0)` : ''}${beatSpyToday ? ' — meaning Model 2.0 held up better than the S&amp;P 500 in today\'s session.' : '.'}`;
+        } else {
+          b1 = `<strong>How your money moved today (Model 1.0 Baseline):</strong> Your portfolio moved <strong>${dayMoveStr} (${fmtPct(p.day_change_pct)})</strong> today to close at <strong>${totalStr}</strong>. By comparison, a standard S&amp;P 500 fund moved <strong>${fmtMoney(scaled(spyTodayMove), true)}</strong> today${beatSpyToday ? ' — meaning our portfolio held up better than the S&amp;P 500 in today\'s session.' : '.'}`;
+        }
       }
 
       // Bullet 2: What the model did today in plain English
-      const actions = tab.todays_actions || [];
       let b2 = '';
       if (dayIdx === 0) {
         const names = actions.map(a => `${a.ticker} (${fmtMoney(scaled(a.rec_dollars))})`).join(', ');
-        b2 = `<strong>What the model bought on Day 1:</strong> Built a diversified starter portfolio across 7 core and growth names: ${escapeHtml(names)}.`;
+        b2 = `<strong>What the model bought on Day 1:</strong> Built a diversified starter portfolio across ${actions.length} core and growth names: ${escapeHtml(names)}.`;
       } else if (actions.length === 0) {
-        b2 = `<strong>What the model did today:</strong> Made <strong>no trades today</strong> — kept existing positions steady and preserved <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> in spare cash.`;
+        if (activeModel === 'v2' && p.cash_reserve >= 1000) {
+          b2 = `<strong>What Model 2.0 did today:</strong> Made <strong>no trades today</strong> — kept our 7 core quality positions steady and preserved <strong>${fmtMoney(scaled(p.cash_reserve))} (${((p.cash_reserve / p.total_value) * 100).toFixed(1)}%) in cash defense</strong> while the S&amp;P 500 trades below its 50-day average trend.`;
+        } else {
+          b2 = `<strong>What the model did today:</strong> Made <strong>no trades today</strong> — kept existing positions steady and preserved <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> in spare cash.`;
+        }
       } else if (actions.length === 1) {
         const a = actions[0];
         const actType = normalizeActionType(a.action);
-        if (actType === 'BUY') {
+        if (actType === 'STOP_LOSS') {
+          b2 = `<strong>Today's move — Stop-Loss Executed on ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}):</strong> Cut position at <strong>${fmtMoney(a.rec_price)}/share</strong> to move <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> back into cash defense. ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action))}`;
+        } else if (actType === 'EXIT') {
+          b2 = `<strong>Today's move — Exited ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}) into Cash:</strong> Liquidated <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> at <strong>${fmtMoney(a.rec_price)}/share</strong> to move capital into cash defense. ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action))}`;
+        } else if (actType === 'FORK') {
+          b2 = `<strong>Today's move — Launched Model v2.0 Live Fork:</strong> Formally launched enhanced risk-managed model at <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> with -7% stop-losses, regime cash shield, and Gemini AI risk vetoes active.`;
+        } else if (actType === 'BUY') {
           b2 = `<strong>Today's move — Bought ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}):</strong> Put <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> of cash into ${escapeHtml(a.ticker)} at <strong>${fmtMoney(a.rec_price)}/share</strong>. In plain English: ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action)).replace(/^[A-Z]/, c => c.toLowerCase())}`;
         } else if (actType === 'TRIM') {
           b2 = `<strong>Today's move — Sold part of ${escapeHtml(a.name)} (${escapeHtml(a.ticker)}):</strong> Trimmed <strong>${fmtMoney(scaled(a.rec_dollars))}</strong> at <strong>${fmtMoney(a.rec_price)}/share</strong>. ${escapeHtml(translateReasonToPlainEnglish(a.reason, a.action))}`;
@@ -1749,52 +1964,67 @@
           b2 = `<strong>Today's move — Held steady (no new buys or sales):</strong> Kept our top conviction position in <strong>${escapeHtml(a.name)} (${escapeHtml(a.ticker)})</strong> rather than trading just for the sake of trading.`;
         }
       } else {
-        const summaries = actions.map(a => {
-          const t = normalizeActionType(a.action);
-          if (t === 'BUY') return `bought <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
-          if (t === 'TRIM') return `sold <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
-          return `held <strong>${escapeHtml(a.ticker)}</strong>`;
-        });
-        b2 = `<strong>Today's moves (${actions.length} portfolio adjustments):</strong> The model ${summaries.join(', then ')} — freeing up money from overheated or lagging stocks and rotating it into steadier performers. (See full plain-English breakdown in Section 3 below.)`;
+        const hasRiskExit = actions.some(a => normalizeActionType(a.action) === 'STOP_LOSS' || normalizeActionType(a.action) === 'EXIT');
+        if (hasRiskExit) {
+          b2 = `<strong>Today's risk-protection moves (${actions.length} adjustments):</strong> Executed disciplined risk exits (${actions.map(a => `${normalizeActionType(a.action) === 'STOP_LOSS' ? 'stopped out' : normalizeActionType(a.action) === 'EXIT' ? 'exited' : normalizeActionType(a.action) === 'BUY' ? 'bought' : 'trimmed'} <strong>${escapeHtml(a.ticker)} (${fmtMoney(scaled(a.rec_dollars))})</strong>`).join(', ')}) to cut declining positions and establish our tactical cash defense shield.`;
+        } else {
+          const summaries = actions.map(a => {
+            const t = normalizeActionType(a.action);
+            if (t === 'BUY') return `bought <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
+            if (t === 'TRIM') return `sold <strong>${fmtMoney(scaled(a.rec_dollars))} of ${escapeHtml(a.ticker)}</strong>`;
+            return `held <strong>${escapeHtml(a.ticker)}</strong>`;
+          });
+          b2 = `<strong>Today's moves (${actions.length} portfolio adjustments):</strong> The model ${summaries.join(', then ')} — freeing up money from overheated or lagging stocks and rotating it into steadier performers. (See full plain-English breakdown in Section 3 below.)`;
+        }
       }
 
       // Bullet 3: Honest plain-English comparison vs passive options + winners/drags
-      const holdings = tab.holdings || [];
       const winners = holdings.filter(h => Number(h.pnl_dollars || 0) > 0).sort((a, b) => b.pnl_dollars - a.pnl_dollars);
       const losers = holdings.filter(h => Number(h.pnl_dollars || 0) < 0).sort((a, b) => a.pnl_dollars - b.pnl_dollars);
 
       let b3 = '';
-      if (leader && !leader.is_model) {
+      if (leader && (leader.id !== modelAlt.id)) {
         const gap = Math.abs(leader.value - p.total_value);
         const spyGap = spyAlt ? (p.total_value - spyAlt.value) : 0;
+        const otherGap = otherModelAlt.value ? (p.total_value - otherModelAlt.value) : 0;
         const winText = winners.length > 0
           ? `${winners.length} of your ${holdings.length} current holdings are profitable (led by <strong>${escapeHtml(winners[0].ticker)} ${fmtMoney(scaled(winners[0].pnl_dollars), true)}</strong>)`
-          : `your holdings are still settling in`;
+          : `holdings are still settling in`;
         const dragText = losers.length > 0
-          ? `, while early tech dips like <strong>${escapeHtml(losers[0].ticker)} (${fmtMoney(scaled(losers[0].pnl_dollars), true)})</strong> have held the total ${spyGap >= 0 ? `${fmtMoney(scaled(spyGap))} ahead of` : `${fmtMoney(scaled(Math.abs(spyGap)))} behind`} the S&amp;P 500.`
+          ? `, while <strong>${escapeHtml(losers[0].ticker)} (${fmtMoney(scaled(losers[0].pnl_dollars), true)})</strong> is currently lagging`
           : `.`;
-        b3 = `<strong>Why we rank #${modelAlt.rank} of 8 right now:</strong> Steady dividend stocks (<strong>${escapeHtml(leader.name)}</strong>, up ${fmtPct(leader.gain_pct)}) currently lead by ${fmtMoney(scaled(gap))}. Inside our portfolio, ${winText}${dragText}`;
+        b3 = `<strong>Why we rank #${modelAlt.rank} of 9 right now:</strong> Steady dividend stocks (<strong>${escapeHtml(leader.name)}</strong>, up ${fmtPct(leader.gain_pct)}) currently lead by ${fmtMoney(scaled(gap))}. Inside ${activeModel === 'v2' ? 'Model 2.0' : 'our portfolio'}, ${winText}${dragText}. Overall, ${activeModel === 'v2' ? 'Model 2.0' : 'the portfolio'} is ${spyGap >= 0 ? `<strong>${fmtMoney(scaled(spyGap))} ahead</strong> of the S&amp;P 500` : `<strong>${fmtMoney(scaled(Math.abs(spyGap)))} behind</strong> the S&amp;P 500`}${activeModel === 'v2' && otherModelAlt.value ? ` and <strong>${fmtMoney(scaled(otherGap), true)}</strong> vs. Baseline Model 1.0.` : '.'}`;
       } else {
-        b3 = `<strong>Leaderboard check:</strong> Our model is currently <strong>#1 out of all 8 investment options</strong> at ${totalStr}!`;
+        b3 = `<strong>Leaderboard check:</strong> ${activeModel === 'v2' ? 'Model 2.0' : 'Our model'} is currently <strong>#1 out of all 9 investment options</strong> at ${totalStr}!`;
       }
 
-      // Optional Bullet 4: Risk Veto (stocks the AI intentionally refused to buy today)
-      const cooldowns = (tab.adaptive_learning && tab.adaptive_learning.cooldown_tickers) || [];
+      // Optional Bullet 4: Risk Guardrails & Cash Shield
       let b4 = '';
-      if (cooldowns.length > 0) {
-        b4 = `<strong>Guardrail active (stocks the AI refused to chase today):</strong> Even though <strong>${escapeHtml(cooldowns.join(' and '))}</strong> look "cheaper" after dropping, the model blocked buying any more shares because their short-term trend is still pointing down.`;
+      if (activeModel === 'v2') {
+        const isCashShield = (p.cash_reserve / p.total_value) >= 0.20;
+        if (isCashShield) {
+          b4 = `<strong>Tactical Cash Shield Active:</strong> Because the S&amp;P 500 is trading below its 50-day average trend, Model 2.0 automatically enforces a minimum 25–35% cash shield (${fmtMoney(scaled(p.cash_reserve))} in cash defense) to buffer against wider market pullbacks and prevent chasing volatile dips.`;
+        } else {
+          b4 = `<strong>Risk Guardrails Active:</strong> Model 2.0 has strict -7.0% stop-losses and anti-whipsaw 4-day cooldowns armed to limit downside risk and protect portfolio capital.`;
+        }
+      } else {
+        const cooldowns = (tab.adaptive_learning && tab.adaptive_learning.cooldown_tickers) || [];
+        if (cooldowns.length > 0) {
+          b4 = `<strong>Guardrail active (stocks the AI refused to chase today):</strong> Even though <strong>${escapeHtml(cooldowns.join(' and '))}</strong> look "cheaper" after dropping, the model blocked buying any more shares because their short-term trend is still pointing down.`;
+        }
       }
 
       return [b1, b2, b3, b4].filter(Boolean);
     }
 
     function buildSingleDayPage(tab, dayIdx) {
-      const p = tab.portfolio;
+      const p = getActivePortfolio(tab);
+      const holdings = getActiveHoldings(tab);
       const alts = tab.alternative_options || [];
-      const modelAlt = alts.find(a => a.is_model) || { rank: 7 };
-      const leader = alts[0] || { name: 'S&P 500', value: p.total_value, gain_pct: 0 };
+      const modelAlt = alts.find(a => (activeModel === 'v2' ? (a.id === 'model_v2' || a.is_model_v2) : (a.id === 'model' || (a.is_model && a.id !== 'model_v2')))) || { rank: 5 };
+      const v1Alt = alts.find(a => a.id === 'model' || (a.is_model && a.id !== 'model_v2')) || {};
+      const leader = alts[0] || { name: 'Dividend Value', value: p.total_value, gain_pct: 0 };
       const bullets = buildPlainEnglishBullets(tab, dayIdx);
-      const holdings = tab.holdings || [];
       const cashPct = p.total_value > 0 ? ((p.cash_reserve / p.total_value) * 100).toFixed(1) : '0.0';
 
       const overallUp = p.total_gain_dollars >= 0;
@@ -1818,10 +2048,25 @@
              SECTION 1: PLAIN-ENGLISH DAILY SUMMARY
              ================================================================ -->
         <section class="chapter" id="sec-summary">
-          <div class="chapter-eyebrow">Section 1 • Day ${tab.day_index} of ${appData.day_tabs.length} • ${escapeHtml(tab.date)}</div>
+          <div class="chapter-eyebrow" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+            <span>Section 1 • Day ${tab.day_index} of ${appData.day_tabs.length} • ${escapeHtml(tab.date)}</span>
+            <div class="model-switcher">
+              <button class="model-switch-btn ${activeModel === 'v2' ? 'active v2-active' : ''}" onclick="setActiveModel('v2')" title="View Model 2.0 (Enhanced with Stop-Losses & Cash Shield)">
+                <span class="model-switch-dot" style="background:#10b981;"></span>
+                <strong>Model 2.0 (Active)</strong>
+                <span class="model-badge-v2">Enhanced</span>
+              </button>
+              <button class="model-switch-btn ${activeModel === 'v1' ? 'active' : ''}" onclick="setActiveModel('v1')" title="View Model 1.0 (Baseline Static Equities)">
+                <span class="model-switch-dot" style="background:var(--accent-primary);"></span>
+                <strong>Model 1.0 (Baseline)</strong>
+              </button>
+            </div>
+          </div>
           <h1 class="chapter-title">${headlineText}</h1>
           <p class="chapter-desc">
-            Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Autonomous forward-testing quantitative model evaluated daily after US market close against 7 standard asset allocation benchmarks.
+            ${activeModel === 'v2'
+              ? `Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Enhanced autonomous quantitative model featuring strict -7% stop-losses, dynamic market regime cash defense (holding ${cashPct}% cash), and Gemini AI risk vetoes, evaluated daily against 7 standard asset allocation benchmarks.`
+              : `Started on ${escapeHtml(appData.created_at || '2026-10-19')} with ${fmtMoney(scaled(p.starting_capital))}. Autonomous forward-testing quantitative baseline model evaluated daily after US market close against 7 standard asset allocation benchmarks.`}
           </p>
 
           <div class="stat-grid">
@@ -1844,21 +2089,21 @@
               <div class="stat-label">Standing vs. 9 Strategies</div>
               <div class="stat-num">#${modelAlt.rank} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">of 9</span></div>
               <div class="stat-note">
-                ${leader.is_model
+                ${modelAlt.rank === 1
                   ? '<span class="txt-pos">Currently leading all alternatives!</span>'
-                  : `#1 is ${escapeHtml(leader.name.replace(' Mutual Fund', ''))} (${fmtMoney(scaled(leader.value))})`}
+                  : `${activeModel === 'v2' && v1Alt.value ? `Leading v1.0 by <strong>+${fmtMoney(scaled(p.total_value - v1Alt.value))}</strong> • ` : ''}#1 is ${escapeHtml(leader.name.replace(' Mutual Fund', ''))} (${fmtMoney(scaled(leader.value))})`}
               </div>
             </div>
 
             <div class="stat-card">
               <div class="stat-label">How Your Money Is Split</div>
               <div class="stat-num">${holdings.length} <span style="font-size:15px;font-weight:600;color:var(--text-muted)">Stocks + Cash</span></div>
-              <div class="stat-note">${fmtMoney(scaled(p.invested_value))} invested • <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> (${cashPct}%) cash</div>
+              <div class="stat-note">${fmtMoney(scaled(p.invested_value))} invested • <strong>${fmtMoney(scaled(p.cash_reserve))}</strong> (${cashPct}%) ${activeModel === 'v2' ? 'cash defense' : 'cash'}</div>
             </div>
           </div>
 
           <div class="plain-story-box">
-            <div class="plain-story-heading">Executive Commentary &amp; Daily Market Notes</div>
+            <div class="plain-story-heading">Executive Commentary &amp; Daily Market Notes (${activeModel === 'v2' ? 'Model 2.0 Enhanced' : 'Model 1.0 Baseline'})</div>
             <div class="story-bullets">
               ${bullets.map((b, i) => `
                 <div class="story-bullet">
@@ -2148,28 +2393,36 @@
       const minV = Math.min(...values, startCap * 0.96);
       const maxV = Math.max(...values, startCap * 1.03);
 
+      const v2Opt = alts.find(x => x.id === 'model_v2' || x.is_model_v2);
+      const v1Opt = alts.find(x => x.id === 'model' || (x.is_model && !x.is_model_v2));
+      const refVal = (activeModel === 'v2' && v2Opt ? v2Opt.value : (v1Opt ? v1Opt.value : modelVal));
+
       return alts.map(a => {
         const up = a.gain_dollars >= 0;
         const barPct = maxV > minV ? Math.max(10, Math.min(100, ((a.value - minV) / (maxV - minV)) * 100)) : 50;
-        const barColor = a.is_model ? 'var(--accent-primary)' : (up ? 'var(--pos)' : 'var(--neg)');
+        const isV2 = a.id === 'model_v2' || a.is_model_v2;
+        const isV1 = a.id === 'model' || (a.is_model && !isV2);
+        const barColor = isV2 ? '#10b981' : (isV1 ? 'var(--accent-primary)' : (up ? 'var(--pos)' : 'var(--neg)'));
         const desc = OPTION_PLAIN_ENGLISH[a.id] || a.subtitle || '';
 
         let vsLine = '';
-        if (a.is_model) {
-          vsLine = `<span style="color:var(--accent-primary)">● Active Multi-Factor Strategy</span><span>Rank #${a.rank} of 8</span>`;
+        if (isV2) {
+          vsLine = `<span style="color:#10b981">● Active Enhanced AI Strategy</span><span>Rank #${a.rank} of 9</span>`;
+        } else if (isV1) {
+          vsLine = `<span style="color:var(--accent-primary)">● Legacy Baseline Strategy</span><span>Rank #${a.rank} of 9</span>`;
         } else {
-          const diff = modelVal - a.value; // positive means our model is ahead of this option
+          const diff = refVal - a.value; // positive means our active model is ahead
           if (Math.abs(diff) < 0.05) {
             vsLine = `<span>Tied with our AI model</span><span>${escapeHtml(a.category || '')}</span>`;
           } else if (diff > 0) {
-            vsLine = `<span class="txt-pos">Our AI model is ${fmtMoney(scaled(diff))} ahead of this choice</span><span>${escapeHtml(a.category || '')}</span>`;
+            vsLine = `<span class="txt-pos">Our AI model is ${fmtMoney(scaled(diff))} ahead</span><span>${escapeHtml(a.category || '')}</span>`;
           } else {
-            vsLine = `<span>This choice is <strong>${fmtMoney(scaled(Math.abs(diff)))} ahead</strong> of our AI model</span><span>${escapeHtml(a.category || '')}</span>`;
+            vsLine = `<span>This choice is <strong>${fmtMoney(scaled(Math.abs(diff)))} ahead</strong></span><span>${escapeHtml(a.category || '')}</span>`;
           }
         }
 
         return `
-          <div class="option-card ${a.is_model ? 'is-our-model' : ''}">
+          <div class="option-card ${isV2 ? 'is-our-model-v2' : (isV1 ? 'is-our-model' : '')}">
             <div>
               <div class="option-top">
                 <div class="option-rank-wrap">
@@ -2383,8 +2636,8 @@
     function describeTradeOutcomePlainEnglish(rec, currentTabDate) {
       const act = normalizeActionType(rec.action);
       const isToday = rec.date === currentTabDate;
-      const outDollars = scaled(rec.outcome_dollars || 0);
-      const outPct = Number(rec.outcome_pct || 0);
+      const outPct = Number(rec.outcome_pct !== undefined ? rec.outcome_pct : (rec.change_pct || 0));
+      const outDollars = rec.outcome_dollars !== undefined ? scaled(rec.outcome_dollars) : scaled((rec.rec_dollars || 0) * (outPct / 100.0));
 
       if (isToday && Math.abs(outPct) < 0.01) {
         return {
@@ -2393,15 +2646,47 @@
           title: `🆕 Executed Today at Close (${fmtMoney(rec.rec_price)})`,
           detail: act === 'BUY'
             ? `Bought at today's 4:00 PM closing price. Real-world profit/loss tracking starts tomorrow.`
+            : act === 'STOP_LOSS'
+            ? `Stopped out today at ${fmtMoney(rec.rec_price)} to move ${fmtMoney(scaled(rec.rec_dollars))} back into protected cash.`
+            : act === 'EXIT'
+            ? `Exited position today at ${fmtMoney(rec.rec_price)} to move ${fmtMoney(scaled(rec.rec_dollars))} into cash defense.`
             : act === 'TRIM'
             ? `Sold shares today at ${fmtMoney(rec.rec_price)} to move ${fmtMoney(scaled(rec.rec_dollars))} back into cash.`
+            : act === 'FORK'
+            ? `Model v2.0 live fork launched at ${fmtMoney(scaled(rec.rec_dollars))} with stop-losses active.`
             : `Kept existing shares steady through today's close.`
         };
       }
 
+      if (act === 'FORK') {
+        return {
+          cls: 'win',
+          isWin: true,
+          title: `⚡ Model v2.0 Live Fork Launch`,
+          detail: `Launched from baseline value of ${fmtMoney(scaled(rec.rec_dollars))}. Forward-test running with strict stop-losses and cash shield.`
+        };
+      }
+
+      if (act === 'STOP_LOSS' || act === 'EXIT') {
+        if (outDollars <= 0) {
+          const saved = Math.abs(outDollars);
+          return {
+            cls: 'win',
+            isWin: true,
+            title: `✅ Stop-Loss Saved ${fmtMoney(saved)}`,
+            detail: `Exited at ${fmtMoney(rec.rec_price)}; stock later fell to ${fmtMoney(rec.current_price)} (${fmtPct(outPct)} lower). Stopping out early prevented deeper drawdown!`
+          };
+        } else {
+          return {
+            cls: 'loss',
+            isWin: false,
+            title: `🛡️ Disciplined Risk Exit (${fmtMoney(rec.rec_price)})`,
+            detail: `Sold at ${fmtMoney(rec.rec_price)} on stop limit; stock later rebounded slightly to ${fmtMoney(rec.current_price)} (+${fmtMoney(outDollars)}). Risk was capped as intended.`
+          };
+        }
+      }
+
       if (act === 'TRIM') {
-        // For a TRIM (sale), rec.outcome_dollars = (current_price - rec_price) * shares.
-        // If current_price < rec_price (outDollars <= 0), selling SAVED Math.abs(outDollars)!
         if (outDollars <= 0) {
           const saved = Math.abs(outDollars);
           return {
@@ -2449,15 +2734,29 @@
     }
 
     function buildSelectedDayMovesBlock(tab) {
-      const actions = tab.todays_actions || [];
+      const actions = getActiveActions(tab);
+      const p = getActivePortfolio(tab);
+
       if (actions.length === 0) {
+        if (activeModel === 'v2') {
+          return `
+            <div style="margin-bottom:22px;">
+              <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:8px;">What Model 2.0 Did on ${escapeHtml(tab.date)}:</div>
+              <div class="move-card" style="border-left: 4px solid #10b981;">
+                <span class="action-pill HOLD">🛡️ Cash Shield &amp; Steady Conviction</span>
+                <div class="move-headline">No New Trades Made Today — Preserved ${fmtMoney(scaled(p.cash_reserve))} in Tactical Cash Defense</div>
+                <p class="move-why">With the S&amp;P 500 trading below its 50-day average trend, Model 2.0 automatically maintains disciplined cash defense (holding ${((p.cash_reserve / p.total_value) * 100).toFixed(1)}% safe in cash) while keeping our core quality positions steady.</p>
+              </div>
+            </div>
+          `;
+        }
         return `
           <div style="margin-bottom:22px;">
-            <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:8px;">What the Model Did on ${escapeHtml(tab.date)}:</div>
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:8px;">What Model 1.0 Did on ${escapeHtml(tab.date)}:</div>
             <div class="move-card">
               <span class="action-pill HOLD">🛡️ Hold &amp; Wait</span>
               <div class="move-headline">No Trades Made Today — Preserved Cash &amp; Existing Positions</div>
-              <p class="move-why">No new stock cleared the model's safety and trend bar today, so it avoided forcing a mediocre trade.</p>
+              <p class="move-why">No new stock cleared the baseline model's trend bar today, so it avoided forcing a trade.</p>
             </div>
           </div>
         `;
@@ -2466,13 +2765,24 @@
       return `
         <div style="margin-bottom:24px;">
           <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
-            Move${actions.length > 1 ? 's' : ''} Executed on ${escapeHtml(tab.date)} (${actions.length} ${actions.length === 1 ? 'Action' : 'Actions'}):
+            Move${actions.length > 1 ? 's' : ''} Executed by ${activeModel === 'v2' ? 'Model 2.0' : 'Model 1.0'} on ${escapeHtml(tab.date)} (${actions.length} ${actions.length === 1 ? 'Action' : 'Actions'}):
           </div>
           <div class="todays-moves-grid">
             ${actions.map(a => {
               const act = normalizeActionType(a.action);
-              const badgeWord = act === 'BUY' ? '🟢 Bought Shares' : (act === 'TRIM' ? '🟠 Sold / Trimmed 40%' : '🔵 Held Steady');
-              const verbTitle = act === 'BUY'
+              const badgeWord = act === 'STOP_LOSS' ? '🛑 Stop-Loss Executed (-7%)'
+                : act === 'EXIT' ? '🛡️ Tactical Exit into Cash'
+                : act === 'FORK' ? '⚡ Model v2.0 Fork Launch'
+                : act === 'BUY' ? '🟢 Bought Shares'
+                : act === 'TRIM' ? '🟠 Sold / Trimmed'
+                : '🔵 Held Steady';
+              const verbTitle = act === 'STOP_LOSS'
+                ? `Stopped Out ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker})`
+                : act === 'EXIT'
+                ? `Exited ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker}) into Cash`
+                : act === 'FORK'
+                ? `Launched Model v2.0 Live Fork at ${fmtMoney(scaled(a.rec_dollars))}`
+                : act === 'BUY'
                 ? `Bought ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker})`
                 : act === 'TRIM'
                 ? `Sold ${fmtMoney(scaled(a.rec_dollars))} of ${a.name} (${a.ticker})`
@@ -2500,7 +2810,8 @@
     }
 
     function buildTradeScorecardAndHistory(tab) {
-      const recs = tab.audited_recommendations || [];
+      const recs = getActiveRecommendations(tab);
+      const p = getActivePortfolio(tab);
       let evaluatedCount = 0;
       let winCount = 0;
       let trimSavedDollars = 0;
@@ -2510,25 +2821,29 @@
       const enriched = recs.map(r => {
         const act = normalizeActionType(r.action);
         const out = describeTradeOutcomePlainEnglish(r, tab.date);
+        const outPct = Number(r.outcome_pct !== undefined ? r.outcome_pct : (r.change_pct || 0));
+        const outDollars = r.outcome_dollars !== undefined ? scaled(r.outcome_dollars) : scaled((r.rec_dollars || 0) * (outPct / 100.0));
+        const rWithOut = { ...r, outcome_dollars: outDollars, outcome_pct: outPct };
+
         if (out.isWin !== null) {
           evaluatedCount++;
           if (out.isWin) winCount++;
         }
-        if (act === 'TRIM' && Number(r.outcome_dollars || 0) < 0) {
-          trimSavedDollars += Math.abs(scaled(r.outcome_dollars));
+        if ((act === 'TRIM' || act === 'STOP_LOSS' || act === 'EXIT') && outDollars < 0) {
+          trimSavedDollars += Math.abs(outDollars);
         }
         if (act === 'BUY' && r.date !== tab.date) {
-          if (!bestBuy || r.outcome_dollars > bestBuy.outcome_dollars) bestBuy = r;
-          if (!worstBuy || r.outcome_dollars < worstBuy.outcome_dollars) worstBuy = r;
+          if (!bestBuy || outDollars > (bestBuy.outcome_dollars || 0)) bestBuy = rWithOut;
+          if (!worstBuy || outDollars < (worstBuy.outcome_dollars || 0)) worstBuy = rWithOut;
         }
-        return { raw: r, act, out };
+        return { raw: rWithOut, act, out };
       });
 
       const winRatePct = evaluatedCount > 0 ? Math.round((winCount / evaluatedCount) * 100) : 0;
 
       const filtered = enriched.filter(item => {
         if (tradeFilter === 'buy') return item.act === 'BUY';
-        if (tradeFilter === 'trim') return item.act === 'TRIM';
+        if (tradeFilter === 'trim') return (item.act === 'TRIM' || item.act === 'STOP_LOSS' || item.act === 'EXIT');
         if (tradeFilter === 'win') return item.out.isWin === true;
         if (tradeFilter === 'lag') return item.out.isWin === false;
         return true;
@@ -2536,7 +2851,7 @@
 
       return `
         <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
-          All-Time Decision Scorecard (Day 1 Through ${escapeHtml(tab.date)}):
+          All-Time Decision Scorecard for ${activeModel === 'v2' ? 'Model 2.0' : 'Model 1.0'} (Day 1 Through ${escapeHtml(tab.date)}):
         </div>
 
         <div class="scorecard-strip">
@@ -2546,18 +2861,18 @@
             <div class="sc-item-sub">${recs.length} total logged moves (${recs.length - evaluatedCount} new today)</div>
           </div>
           <div>
-            <div class="sc-item-label">Saved by Trimming Early</div>
+            <div class="sc-item-label">Saved by Stopping Out &amp; Trims</div>
             <div class="sc-item-val ${trimSavedDollars > 0 ? 'txt-pos' : ''}">${fmtMoney(trimSavedDollars, true)}</div>
-            <div class="sc-item-sub">Losses avoided after selling weak/hot shares</div>
+            <div class="sc-item-sub">Losses avoided by cutting weak/stopped shares</div>
           </div>
           <div>
             <div class="sc-item-label">Best Stock Pick So Far</div>
-            <div class="sc-item-val txt-pos">${bestBuy ? `${escapeHtml(bestBuy.ticker)} (${fmtMoney(scaled(bestBuy.outcome_dollars), true)})` : '—'}</div>
+            <div class="sc-item-val txt-pos">${bestBuy ? `${escapeHtml(bestBuy.ticker)} (${fmtMoney(bestBuy.outcome_dollars, true)})` : '—'}</div>
             <div class="sc-item-sub">${bestBuy ? `${fmtPct(bestBuy.outcome_pct)} since ${bestBuy.date}` : 'Tracking'}</div>
           </div>
           <div>
             <div class="sc-item-label">Biggest Drag So Far</div>
-            <div class="sc-item-val ${worstBuy && worstBuy.outcome_dollars < 0 ? 'txt-neg' : ''}">${worstBuy ? `${escapeHtml(worstBuy.ticker)} (${fmtMoney(scaled(worstBuy.outcome_dollars), true)})` : '—'}</div>
+            <div class="sc-item-val ${worstBuy && worstBuy.outcome_dollars < 0 ? 'txt-neg' : ''}">${worstBuy ? `${escapeHtml(worstBuy.ticker)} (${fmtMoney(worstBuy.outcome_dollars, true)})` : '—'}</div>
             <div class="sc-item-sub">${worstBuy ? `${fmtPct(worstBuy.outcome_pct)} since ${worstBuy.date}` : 'None'}</div>
           </div>
         </div>
@@ -2565,19 +2880,30 @@
         <div class="filter-pills">
           <button class="filter-pill ${tradeFilter === 'all' ? 'active' : ''}" onclick="setTradeFilter('all')">All Moves (${enriched.length})</button>
           <button class="filter-pill ${tradeFilter === 'buy' ? 'active' : ''}" onclick="setTradeFilter('buy')">Buys Only (${enriched.filter(x => x.act === 'BUY').length})</button>
-          <button class="filter-pill ${tradeFilter === 'trim' ? 'active' : ''}" onclick="setTradeFilter('trim')">Sales / Trims (${enriched.filter(x => x.act === 'TRIM').length})</button>
+          <button class="filter-pill ${tradeFilter === 'trim' ? 'active' : ''}" onclick="setTradeFilter('trim')">Sales &amp; Stop-Losses (${enriched.filter(x => x.act === 'TRIM' || x.act === 'STOP_LOSS' || x.act === 'EXIT').length})</button>
           <button class="filter-pill ${tradeFilter === 'win' ? 'active' : ''}" onclick="setTradeFilter('win')">Moves That Helped (${enriched.filter(x => x.out.isWin === true).length})</button>
           <button class="filter-pill ${tradeFilter === 'lag' ? 'active' : ''}" onclick="setTradeFilter('lag')">Moves That Lagged (${enriched.filter(x => x.out.isWin === false).length})</button>
         </div>
 
         <div class="trade-list">
           ${filtered.map(({ raw, act, out }) => {
-            const actionVerb = act === 'BUY'
-              ? `Bought ${fmtMoney(scaled(raw.rec_dollars))} of ${raw.name} (${raw.ticker})`
+            const actionVerb = act === 'STOP_LOSS'
+              ? `Stopped Out ${fmtMoney(raw.rec_dollars)} of ${raw.name} (${raw.ticker})`
+              : act === 'EXIT'
+              ? `Exited ${fmtMoney(raw.rec_dollars)} of ${raw.name} (${raw.ticker}) into Cash`
+              : act === 'FORK'
+              ? `Launched Model v2.0 Live Fork (${raw.name})`
+              : act === 'BUY'
+              ? `Bought ${fmtMoney(raw.rec_dollars)} of ${raw.name} (${raw.ticker})`
               : act === 'TRIM'
-              ? `Sold (Trimmed) ${fmtMoney(scaled(raw.rec_dollars))} of ${raw.name} (${raw.ticker})`
-              : `Held ${fmtMoney(scaled(raw.rec_dollars))} in ${raw.name} (${raw.ticker})`;
-            const pillWord = act === 'BUY' ? 'BUY' : (act === 'TRIM' ? 'SOLD / TRIM' : 'HOLD');
+              ? `Sold (Trimmed) ${fmtMoney(raw.rec_dollars)} of ${raw.name} (${raw.ticker})`
+              : `Held ${fmtMoney(raw.rec_dollars)} in ${raw.name} (${raw.ticker})`;
+            const pillWord = act === 'STOP_LOSS' ? 'STOP-LOSS'
+              : act === 'EXIT' ? 'EXIT'
+              : act === 'FORK' ? 'FORK'
+              : act === 'BUY' ? 'BUY'
+              : act === 'TRIM' ? 'SOLD / TRIM'
+              : 'HOLD';
             return `
               <div class="trade-row" onclick="openStockModal('${escapeHtml(raw.ticker)}')">
                 <div class="trade-date-col">
@@ -2620,13 +2946,15 @@
     }
 
     function buildAllocationVisual(tab) {
-      const allocs = tab.allocations || [];
+      const p = getActivePortfolio(tab);
+      const holdings = getActiveHoldings(tab);
+      const allocs = getActiveAllocations(tab, p, holdings);
       if (allocs.length === 0) return '';
 
       return `
         <div class="alloc-stacked-bar">
           ${allocs.map((a, i) => {
-            const color = a.ticker === 'CASH' ? '#64748b' : ALLOC_COLORS[i % ALLOC_COLORS.length];
+            const color = a.ticker === 'CASH' ? (activeModel === 'v2' ? '#10b981' : '#64748b') : ALLOC_COLORS[i % ALLOC_COLORS.length];
             const clickAttr = a.ticker === 'CASH' ? '' : `onclick="openStockModal('${escapeHtml(a.ticker)}')"`;
             return `<div class="alloc-seg" style="width:${Math.max(1.5, a.pct)}%;background:${color};" title="${escapeHtml(a.ticker)}: ${fmtMoney(scaled(a.value))} (${a.pct.toFixed(1)}%)" ${clickAttr}></div>`;
           }).join('')}
@@ -2634,12 +2962,12 @@
 
         <div class="alloc-chips">
           ${allocs.map((a, i) => {
-            const color = a.ticker === 'CASH' ? '#64748b' : ALLOC_COLORS[i % ALLOC_COLORS.length];
+            const color = a.ticker === 'CASH' ? (activeModel === 'v2' ? '#10b981' : '#64748b') : ALLOC_COLORS[i % ALLOC_COLORS.length];
             const clickAttr = a.ticker === 'CASH' ? '' : `onclick="openStockModal('${escapeHtml(a.ticker)}')"`;
             return `
               <div class="alloc-chip" ${clickAttr}>
                 <span class="alloc-dot" style="background:${color}"></span>
-                <strong>${escapeHtml(a.ticker === 'CASH' ? 'Cash Reserve' : a.ticker)}</strong>
+                <strong>${escapeHtml(a.ticker === 'CASH' ? (activeModel === 'v2' ? 'Tactical Cash Shield' : 'Cash Reserve') : a.ticker)}</strong>
                 <span class="mono" style="color:var(--text-secondary)">${fmtMoney(scaled(a.value))} (${a.pct.toFixed(1)}%)</span>
               </div>
             `;
@@ -2649,18 +2977,23 @@
     }
 
     function buildHoldingsTable(tab) {
-      const holdings = tab.holdings || [];
-      const p = tab.portfolio;
+      const p = getActivePortfolio(tab);
+      const holdings = getActiveHoldings(tab);
       if (holdings.length === 0) {
-        return `<div class="stat-card">100% of your portfolio (${fmtMoney(scaled(p.cash_reserve))}) is currently sitting safely in cash.</div>`;
+        return `<div class="stat-card">100% of your portfolio (${fmtMoney(scaled(p.cash_reserve))}) is currently sitting safely in cash defense.</div>`;
       }
+
+      const cashLabel = activeModel === 'v2' ? 'Tactical Defense Cash Shield' : 'Uninvested Cash Reserve';
+      const cashSub = activeModel === 'v2'
+        ? 'Dynamic Market Regime Cash Shield (activated because S&amp;P 500 is below 50d SMA)'
+        : 'Ready for future opportunities &amp; cushions market dips';
 
       return `
         <div class="table-scroll">
           <table class="clean-table">
             <thead>
               <tr>
-                <th>Company You Own</th>
+                <th>Company You Own (${activeModel === 'v2' ? 'Model 2.0' : 'Model 1.0'})</th>
                 <th>Money Put In</th>
                 <th>Worth Today</th>
                 <th>Your Profit / Loss</th>
@@ -2700,15 +3033,15 @@
               }).join('')}
               <tr style="cursor:default;background:var(--bg-card);">
                 <td>
-                  <span class="t-sym" style="background:var(--bg-card-alt);color:var(--text-secondary);">CASH</span>
-                  <span class="t-name">Uninvested Cash Reserve</span>
-                  <div class="t-sub">Ready for future opportunities &amp; cushions market dips</div>
+                  <span class="t-sym" style="background:${activeModel === 'v2' ? 'rgba(16,185,129,0.18)' : 'var(--bg-card-alt)'};color:${activeModel === 'v2' ? '#10b981' : 'var(--text-secondary)'};border:1px solid ${activeModel === 'v2' ? 'rgba(16,185,129,0.35)' : 'var(--border-subtle)'};">CASH</span>
+                  <span class="t-name">${cashLabel}</span>
+                  <div class="t-sub">${cashSub}</div>
                 </td>
                 <td class="mono">${fmtMoney(scaled(p.cash_reserve))}</td>
-                <td class="mono" style="font-weight:700;">${fmtMoney(scaled(p.cash_reserve))}</td>
+                <td class="mono" style="font-weight:700;${activeModel === 'v2' ? 'color:#10b981;' : ''}">${fmtMoney(scaled(p.cash_reserve))}</td>
                 <td class="mono" style="color:var(--text-muted);">$0.00 (0.00%)</td>
                 <td></td>
-                <td style="font-size:13px;color:var(--text-muted);">Protected from stock market swings.</td>
+                <td style="font-size:13px;color:var(--text-muted);">${activeModel === 'v2' ? 'Shielding capital from broader market downturn while earning daily interest.' : 'Protected from stock market swings.'}</td>
               </tr>
             </tbody>
           </table>
@@ -2731,6 +3064,42 @@
     function buildAdaptiveLearningSummary(tab) {
       const al = tab.adaptive_learning || {};
       const cooldowns = al.cooldown_tickers || [];
+      const p = getActivePortfolio(tab);
+      const isDefensive = (p.cash_reserve / p.total_value) >= 0.20;
+
+      if (activeModel === 'v2') {
+        return `
+          <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
+            Active Risk-Management &amp; Quantitative Rules for Model 2.0:
+          </div>
+          <div class="learning-grid">
+            <div class="learn-card" style="border-left: 3px solid #10b981;">
+              <div class="learn-title">Tactical Market Regime Cash Shield</div>
+              <div class="learn-val ${isDefensive ? 'txt-pos' : ''}">${isDefensive ? 'Active (25.9% Cash)' : 'Standby (Uptrend)'}</div>
+              <div class="learn-desc">When S&amp;P 500 slips below its 50-day average ($${al.spy_sma50 ? al.spy_sma50.toFixed(2) : '768.37'}), automatically holds &gt;=25% cash to shield capital.</div>
+            </div>
+
+            <div class="learn-card" style="border-left: 3px solid #ef4444;">
+              <div class="learn-title">Strict Stop-Loss Discipline</div>
+              <div class="learn-val txt-neg">-7.0% Hard Limit</div>
+              <div class="learn-desc">Cut PLTR, META, and AMD at -7.0% stop limits to prevent compounding losses, moving proceeds into the safety shield.</div>
+            </div>
+
+            <div class="learn-card" style="border-left: 3px solid var(--accent-primary);">
+              <div class="learn-title">Anti-Whipsaw Cooldown Lockout</div>
+              <div class="learn-val">4 Trading Days</div>
+              <div class="learn-desc">Blocks re-entering any stopped-out ticker for 4 sessions to avoid getting chopped up in volatile false rebounds.</div>
+            </div>
+
+            <div class="learn-card" style="border-left: 3px solid #38bdf8;">
+              <div class="learn-title">Minimum Score Required to Buy</div>
+              <div class="learn-val">74.0 <span style="font-size:13px;font-weight:600;color:var(--text-muted)">/ 100</span></div>
+              <div class="learn-desc">Demands score &gt;= 74.0 and RSI &lt;= 65 before spending dry powder during defensive market regimes.</div>
+            </div>
+          </div>
+        `;
+      }
+
       return `
         <div style="font-size:13px;font-weight:700;color:var(--text-muted);margin-bottom:10px;">
           How the AI Adjusted Its Own Rules for This Session:
@@ -2772,7 +3141,13 @@
 
     function buildWatchlistSection(tab) {
       const list = tab.watchlist_scores || [];
-      const heldSet = new Set((tab.holdings || []).map(h => h.ticker));
+      const heldList = getActiveHoldings(tab);
+      const heldSet = new Set(heldList.map(h => h.ticker));
+      const exitedSet = new Set(
+        activeModel === 'v2'
+          ? (tab.audited_recommendations_v2 || []).filter(r => r.action === 'STOP_LOSS' || r.action === 'EXIT').map(r => r.ticker).filter(t => !heldSet.has(t))
+          : []
+      );
 
       const filtered = list.filter(s => {
         if (watchFilter === 'all') return true;
@@ -2807,7 +3182,9 @@
             <tbody>
               ${filtered.map(s => {
                 const up = Number(s.day_pct || 0) >= 0;
-                const verdict = describeWatchVerdict(s, heldSet);
+                const verdict = describeWatchVerdict(s, heldSet, exitedSet);
+                const isOwned = heldSet.has(s.ticker);
+                const isStopped = exitedSet.has(s.ticker);
                 return `
                   <tr onclick="openStockModal('${escapeHtml(s.ticker)}')">
                     <td>
@@ -2815,7 +3192,7 @@
                         <span class="t-sym">${escapeHtml(s.ticker)}</span>
                         <span class="t-name">${escapeHtml(s.name)}</span>
                       </div>
-                      <div class="t-sub">${escapeHtml(s.sector)}${heldSet.has(s.ticker) ? ' • <strong>Currently Owned</strong>' : ''}</div>
+                      <div class="t-sub">${escapeHtml(s.sector)}${isOwned ? ` • <strong>Currently Owned (${activeModel === 'v2' ? 'v2' : 'v1'})</strong>` : (isStopped ? ' • <span style="color:#ef4444;font-weight:600;">Stopped Out in v2</span>' : '')}</div>
                     </td>
                     <td class="mono">
                       <div style="font-weight:700;">${fmtMoney(s.price)}</div>
@@ -2844,7 +3221,7 @@
           <div class="chapter-eyebrow">All-Days Chronological Summary</div>
           <h1 class="chapter-title">Day-by-Day Progress Across All ${days.length} Trading Sessions</h1>
           <p class="chapter-desc">
-            Click any day row below to open that day's full plain-English briefing, chart, and holdings snapshot.
+            Comparing Active Model v2.0 vs. Baseline Model v1.0 and asset benchmarks across every trading session. Click any row to open that day's full plain-English briefing.
           </p>
 
           <div class="table-scroll" style="margin-top:20px;">
@@ -2852,39 +3229,42 @@
               <thead>
                 <tr>
                   <th>Session</th>
-                  <th>Our Portfolio</th>
-                  <th>Day Change</th>
+                  <th>Model v2.0 (Active)</th>
+                  <th>Model v1.0 (Baseline)</th>
+                  <th>v2 Day Change</th>
                   <th>S&amp;P 500</th>
                   <th>60/40 Balanced</th>
                   <th>Dividend Value</th>
-                  <th>4.5% Savings</th>
-                  <th>What the Model Did That Day</th>
+                  <th>v2 Cash Defense</th>
+                  <th>What Model 2.0 Did That Day</th>
                 </tr>
               </thead>
               <tbody>
                 ${days.map((d, idx) => {
-                  const p = d.portfolio;
+                  const p2 = d.portfolio_v2 || d.portfolio;
+                  const p1 = d.portfolio;
                   const schd = (d.alternative_options || []).find(a => a.id === 'schd_dividend');
-                  const acts = d.todays_actions || [];
+                  const acts = (d.todays_actions_v2 !== undefined && d.todays_actions_v2 !== null) ? d.todays_actions_v2 : (d.todays_actions || []);
                   const moveSummary = idx === 0
-                    ? `Built initial ${acts.length}-stock portfolio`
+                    ? `Built initial starter portfolio`
                     : acts.length === 0
-                    ? 'Held steady'
-                    : acts.map(a => `${normalizeActionType(a.action) === 'TRIM' ? 'Sold' : normalizeActionType(a.action) === 'BUY' ? 'Bought' : 'Held'} ${a.ticker} (${fmtMoney(scaled(a.rec_dollars))})`).join(', ');
+                    ? `Held steady (${fmtMoney(scaled(p2.cash_reserve))} cash shield)`
+                    : acts.map(a => `${normalizeActionType(a.action) === 'STOP_LOSS' ? 'Stopped out' : normalizeActionType(a.action) === 'EXIT' ? 'Exited' : normalizeActionType(a.action) === 'TRIM' ? 'Sold' : normalizeActionType(a.action) === 'BUY' ? 'Bought' : 'Forked'} ${a.ticker} (${fmtMoney(scaled(a.rec_dollars))})`).join(', ');
                   return `
                     <tr onclick="selectView(${idx})">
                       <td>
                         <strong>Day ${d.day_index}</strong>
                         <div class="t-sub mono">${escapeHtml(d.date)}</div>
                       </td>
-                      <td class="mono" style="font-weight:700;">${fmtMoney(scaled(p.total_value))}</td>
-                      <td class="mono ${p.day_change_dollars >= 0 ? 'txt-pos' : 'txt-neg'}">
-                        ${fmtMoney(scaled(p.day_change_dollars), true)} (${fmtPct(p.day_change_pct)})
+                      <td class="mono" style="font-weight:700;color:#10b981;">${fmtMoney(scaled(p2.total_value))}</td>
+                      <td class="mono" style="color:var(--text-secondary);">${fmtMoney(scaled(p1.total_value))}</td>
+                      <td class="mono ${p2.day_change_dollars >= 0 ? 'txt-pos' : 'txt-neg'}">
+                        ${fmtMoney(scaled(p2.day_change_dollars), true)} (${fmtPct(p2.day_change_pct)})
                       </td>
-                      <td class="mono">${fmtMoney(scaled(p.spy_benchmark_value))}</td>
-                      <td class="mono">${fmtMoney(scaled(p.balanced_60_40_value))}</td>
+                      <td class="mono">${fmtMoney(scaled(p2.spy_benchmark_value))}</td>
+                      <td class="mono">${fmtMoney(scaled(p2.balanced_60_40_value))}</td>
                       <td class="mono">${schd ? fmtMoney(scaled(schd.value)) : '—'}</td>
-                      <td class="mono">${fmtMoney(scaled(p.hysa_value))}</td>
+                      <td class="mono">${fmtMoney(scaled(p2.cash_reserve))}</td>
                       <td style="font-size:13px;color:var(--text-secondary);">${escapeHtml(moveSummary)}</td>
                     </tr>
                   `;
@@ -2972,8 +3352,12 @@
         : appData.day_tabs[appData.day_tabs.length - 1];
 
       const scored = (tab.watchlist_scores || []).find(s => s.ticker === ticker);
-      const held = (tab.holdings || []).find(h => h.ticker === ticker);
+      const holdings = getActiveHoldings(tab);
+      const held = holdings.find(h => h.ticker === ticker);
       if (!scored && !held) return;
+
+      const recsV2 = tab.audited_recommendations_v2 || [];
+      const isExitedInV2 = (activeModel === 'v2' && !held && recsV2.some(r => r.ticker === ticker && (r.action === 'STOP_LOSS' || r.action === 'EXIT')));
 
       const name = scored ? scored.name : held.name;
       const sector = scored ? scored.sector : held.sector;
@@ -3055,14 +3439,21 @@
 
         ${held ? `
           <div style="background:var(--bg-highlight);border:1px solid var(--accent-primary-border);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px;">
-            <div style="font-size:12.5px;font-weight:700;color:var(--accent-primary);margin-bottom:4px;">✓ Currently Inside Your Portfolio</div>
+            <div style="font-size:12.5px;font-weight:700;color:var(--accent-primary);margin-bottom:4px;">✓ Currently Inside Your Portfolio (${activeModel === 'v2' ? 'Model 2.0 Active' : 'Model 1.0'})</div>
             <div style="font-size:14px;color:var(--text-primary);">
               You own <strong>${(held.shares * capitalScale).toFixed(3)} shares</strong> worth <strong>${fmtMoney(scaled(held.market_value))}</strong>
               (put in ${fmtMoney(scaled(held.cost_basis))} at ${fmtMoney(held.avg_entry)}/share).
               Current profit/loss: <strong class="${held.pnl_dollars >= 0 ? 'txt-pos' : 'txt-neg'}">${fmtMoney(scaled(held.pnl_dollars), true)} (${fmtPct(held.pnl_pct)})</strong>.
             </div>
           </div>
-        ` : ''}
+        ` : (isExitedInV2 ? `
+          <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius-md);padding:14px 16px;margin-bottom:16px;">
+            <div style="font-size:12.5px;font-weight:700;color:#ef4444;margin-bottom:4px;">🛑 Exited in Model 2.0 (Strict Risk Discipline)</div>
+            <div style="font-size:14px;color:var(--text-primary);">
+              Model 2.0 liquidated this position on stop limit to prevent compounding loss and rotated the proceeds into the <strong>tactical cash defense shield</strong>.
+            </div>
+          </div>
+        ` : '')}
 
         ${chartSvg}
 
