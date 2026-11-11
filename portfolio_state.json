@@ -2,14 +2,14 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-10 04:05 PM ET",
+  "last_updated": "2026-11-11 12:41 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 4041.6,
-      "change": -72.9,
-      "pct": -1.77,
+      "price": 4044.4,
+      "change": -70.1,
+      "pct": -1.7,
       "up": false,
       "spark": [
         4060.4,
@@ -25,7 +25,7 @@
         4113.5,
         4074.9,
         4114.5,
-        4041.6
+        4044.4
       ]
     },
     {
@@ -103,9 +103,9 @@
     {
       "label": "RUSSELL 2K",
       "symbol": "^RUT",
-      "price": 2823.5,
-      "change": -17.31,
-      "pct": -0.61,
+      "price": 2821.38,
+      "change": -19.43,
+      "pct": -0.68,
       "up": false,
       "spark": [
         2784.03,
@@ -121,15 +121,15 @@
         2729.89,
         2754.11,
         2840.81,
-        2823.5
+        2821.38
       ]
     },
     {
       "label": "VIX VOL",
       "symbol": "^VIX",
-      "price": 19.41,
-      "change": -0.51,
-      "pct": -2.56,
+      "price": 19.46,
+      "change": -0.46,
+      "pct": -2.31,
       "up": false,
       "spark": [
         19.03,
@@ -145,7 +145,7 @@
         28.18,
         25.64,
         19.92,
-        19.41
+        19.46
       ]
     }
   ],
@@ -1421,7 +1421,7 @@
         "entry_date": "2026-10-19",
         "entry_reason": "Confirmed uptrend above 20d ($1182.54) & 50d ($1181.44) MAs \u2022 Healthy momentum zone (RSI 61.5)",
         "setup_tag": "Steady Momentum",
-        "high_watermark": 1433.04
+        "high_watermark": 1432.29
       },
       "AAPL": {
         "ticker": "AAPL",
@@ -1460,7 +1460,7 @@
         "entry_date": "2026-11-05",
         "entry_reason": "Confirmed uptrend above 20d ($34.80) & 50d ($34.19) MAs \u2022 Healthy momentum zone (RSI 62.4)",
         "setup_tag": "Steady Momentum",
-        "high_watermark": 35.82
+        "high_watermark": 35.83
       }
     },
     "cash": 1790.59,
@@ -1549,7 +1549,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5038,7 +5038,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -8561,7 +8561,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12286,7 +12286,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16100,7 +16100,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -19913,7 +19913,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -23754,7 +23754,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -27622,7 +27622,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -31692,7 +31692,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -35902,7 +35902,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40254,7 +40254,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -44663,7 +44663,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49045,7 +49045,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -53452,7 +53452,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58061,7 +58061,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62307,7 +62307,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:40 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66316,45 +66316,45 @@
       "date": "2026-11-10",
       "tab_label": "Today \u2022 Nov 10 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-10 04:05 PM ET",
+      "updated_at": "2026-11-11 12:41 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
-        "total_value": 6896.71,
-        "invested_value": 6718.15,
+        "total_value": 6896.51,
+        "invested_value": 6717.95,
         "cash_reserve": 178.56,
         "day_open": 6893.47,
         "day_high": 6964.78,
         "day_low": 6816.96,
-        "day_change_dollars": -25.75,
+        "day_change_dollars": -25.95,
         "day_change_pct": -0.37,
-        "total_gain_dollars": -103.29,
+        "total_gain_dollars": -103.49,
         "total_gain_pct": -1.48,
         "uninvested_cash_value": 7000.0,
-        "spy_benchmark_value": 6849.58,
-        "spy_gain_dollars": -150.42,
-        "spy_gain_pct": -2.15,
-        "balanced_60_40_value": 6933.01,
+        "spy_benchmark_value": 6848.76,
+        "spy_gain_dollars": -151.24,
+        "spy_gain_pct": -2.16,
+        "balanced_60_40_value": 6931.93,
         "hysa_value": 7019.01,
-        "alpha_dollars": 47.13,
-        "alpha_pct": 0.67,
+        "alpha_dollars": 47.75,
+        "alpha_pct": 0.68,
         "win_rate": 77.4
       },
       "portfolio_v2": {
         "starting_capital": 7000.0,
-        "total_value": 6901.37,
-        "invested_value": 5110.78,
+        "total_value": 6901.17,
+        "invested_value": 5110.58,
         "cash_reserve": 1790.59,
-        "day_change_dollars": -21.12,
+        "day_change_dollars": -21.32,
         "day_change_pct": -0.31,
-        "total_gain_dollars": -98.63,
+        "total_gain_dollars": -98.83,
         "total_gain_pct": -1.41,
-        "spy_benchmark_value": 6849.58,
-        "spy_gain_dollars": -150.42,
-        "spy_gain_pct": -2.15,
-        "balanced_60_40_value": 6933.01,
+        "spy_benchmark_value": 6848.76,
+        "spy_gain_dollars": -151.24,
+        "spy_gain_pct": -2.16,
+        "balanced_60_40_value": 6931.93,
         "hysa_value": 7019.01,
-        "alpha_dollars": 51.79,
-        "alpha_pct": 0.74,
+        "alpha_dollars": 52.41,
+        "alpha_pct": 0.75,
         "win_rate": 60.0
       },
       "alternative_options": [
@@ -66363,13 +66363,13 @@
           "name": "Dividend Value Mutual Fund",
           "subtitle": "SCHD / VDADX (High-Dividend Blue Chips)",
           "category": "Income Mutual Fund",
-          "value": 7323.01,
+          "value": 7325.06,
           "is_model": false,
           "rank": 1,
-          "gain_dollars": 323.01,
-          "gain_pct": 4.61,
-          "model_edge_dollars": -421.64,
-          "model_edge_pct": -6.02
+          "gain_dollars": 325.06,
+          "gain_pct": 4.64,
+          "model_edge_dollars": -423.89,
+          "model_edge_pct": -6.06
         },
         {
           "id": "hysa_cash",
@@ -66381,7 +66381,7 @@
           "rank": 2,
           "gain_dollars": 19.01,
           "gain_pct": 0.27,
-          "model_edge_dollars": -117.64,
+          "model_edge_dollars": -117.84,
           "model_edge_pct": -1.68
         },
         {
@@ -66394,7 +66394,7 @@
           "rank": 3,
           "gain_dollars": 0.0,
           "gain_pct": 0.0,
-          "model_edge_dollars": -98.63,
+          "model_edge_dollars": -98.83,
           "model_edge_pct": -1.41
         },
         {
@@ -66402,24 +66402,24 @@
           "name": "60/40 Balanced Mutual Fund",
           "subtitle": "VBIAX Style (60% Stocks / 40% US Bonds)",
           "category": "Retirement Mutual Fund",
-          "value": 6933.01,
+          "value": 6931.93,
           "is_model": false,
           "rank": 4,
-          "gain_dollars": -66.99,
-          "gain_pct": -0.96,
-          "model_edge_dollars": -31.64,
-          "model_edge_pct": -0.45
+          "gain_dollars": -68.07,
+          "gain_pct": -0.97,
+          "model_edge_dollars": -30.76,
+          "model_edge_pct": -0.44
         },
         {
           "id": "model_v2",
           "name": "Market Insight Model v2.0 (Enhanced)",
           "subtitle": "Stop-Losses (-7%) \u2022 Cash Shield \u2022 Gemini AI Veto",
           "category": "Active AI Model v2.0",
-          "value": 6901.37,
+          "value": 6901.17,
           "is_model": false,
           "is_model_v2": true,
           "rank": 5,
-          "gain_dollars": -98.63,
+          "gain_dollars": -98.83,
           "gain_pct": -1.41,
           "model_edge_dollars": 0.0,
           "model_edge_pct": 0.0
@@ -66429,11 +66429,11 @@
           "name": "Market Insight Model v1.0 (Baseline)",
           "subtitle": "19 Static Equities \u2022 Partial Trims \u2022 97% Invested",
           "category": "Legacy AI Baseline",
-          "value": 6896.71,
+          "value": 6896.51,
           "is_model": true,
           "is_model_v1": true,
           "rank": 6,
-          "gain_dollars": -103.29,
+          "gain_dollars": -103.49,
           "gain_pct": -1.48,
           "model_edge_dollars": 4.66,
           "model_edge_pct": 0.07
@@ -66443,26 +66443,26 @@
           "name": "S&P 500 Index Mutual Fund",
           "subtitle": "VFIAX / SPY (500 Largest US Companies)",
           "category": "Stock Mutual Fund",
-          "value": 6849.58,
+          "value": 6848.76,
           "is_model": false,
           "rank": 7,
-          "gain_dollars": -150.42,
-          "gain_pct": -2.15,
-          "model_edge_dollars": 51.79,
-          "model_edge_pct": 0.74
+          "gain_dollars": -151.24,
+          "gain_pct": -2.16,
+          "model_edge_dollars": 52.41,
+          "model_edge_pct": 0.75
         },
         {
           "id": "gold_fund",
           "name": "Gold Bullion Fund (GLD)",
           "subtitle": "Physical Gold Inflation Hedge",
           "category": "Precious Metals",
-          "value": 6810.48,
+          "value": 6809.56,
           "is_model": false,
           "rank": 8,
-          "gain_dollars": -189.52,
-          "gain_pct": -2.71,
-          "model_edge_dollars": 90.89,
-          "model_edge_pct": 1.3
+          "gain_dollars": -190.44,
+          "gain_pct": -2.72,
+          "model_edge_dollars": 91.61,
+          "model_edge_pct": 1.31
         },
         {
           "id": "qqq_growth",
@@ -66474,7 +66474,7 @@
           "rank": 9,
           "gain_dollars": -424.86,
           "gain_pct": -6.07,
-          "model_edge_dollars": 326.23,
+          "model_edge_dollars": 326.03,
           "model_edge_pct": 4.66
         }
       ],
@@ -66490,33 +66490,33 @@
           "AMD"
         ],
         "learning_note": "Self-Learning Update (Historical Win Rate 62% across 16 calls): trimmed Dip weight to 0.78x; boosted Trend weight to 1.26x; raised Relative Strength weight to 1.05x to favor S&P 500 outperformers; applied cooldown penalty (-7 pts) to lagging pick(s): PLTR, META, AMD. Active BUY threshold set to 69.5/100.",
-        "spy_sma50": 765.0058
+        "spy_sma50": 765.0039999999999
       },
       "strength_meter": {
         "bullish_count": 6,
         "hold_count": 1,
         "bearish_count": 10,
-        "avg_score": 57.0,
+        "avg_score": 56.9,
         "market_regime": "DEFENSIVE (Cash Shield Active)"
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest AAPL catalyst: \"Apple users get urgent security warning over iPhone flaw\" (TheStreet).",
+        "catalyst_headline": "Latest AAPL catalyst: \"What Could Lift Netflix Stock From Here?\" (Trefis).",
         "veto_note": "Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
         "veto_trade": false,
         "vetoed_ticker": "NONE",
-        "lesson_learned": "On 2026-11-10, Dividend Value Mutual Fund led the leaderboard (+4.61%); combining relative strength (1.05x weight) with risk discipline keeps portfolio win rate at 60.0%.",
+        "lesson_learned": "On 2026-11-10, Dividend Value Mutual Fund led the leaderboard (+4.64%); combining relative strength (1.05x weight) with risk discipline keeps portfolio win rate at 60.0%.",
         "headlines_scanned": [
-          "[AAPL] Apple users get urgent security warning over iPhone flaw (TheStreet)",
-          "[AAPL] Apple (AAPL) Faces A 38% Premium Following Fresh Debt Issuance (Simply Wall St.)",
-          "[AMZN] Stock Market Today: Dow Dips As Nvidia Dives; Microsoft Skids On Anthropic Tools Move (Live Coverage) (Investor's Business Daily)",
-          "[AMZN] Anthropic's Blockbuster IPO Filing Contains a Surprising Nod to Washington (GuruFocus.com)",
+          "[AAPL] What Could Lift Netflix Stock From Here? (Trefis)",
+          "[AAPL] Bullish\u2019s New President Backs Issuer-First Model for Tokenized Stocks (CryptoProwl)",
+          "[AMZN] What Could Lift Netflix Stock From Here? (Trefis)",
+          "[AMZN] Bullish\u2019s New President Backs Issuer-First Model for Tokenized Stocks (CryptoProwl)",
           "[SCHD] How Much Do You Need at 63 to Replace a $190,000 Salary With Dividends? (24/7 Wall St.)",
           "[SCHD] Benjamin Graham Had a 20-Year Rule for Retirement Income. It Just Won the AI Sell-Off (24/7 Wall St.)"
         ],
-        "ai_briefing": "On 2026-11-10, the $7,000 AI Model closed at $6,901.37 (-98.63 / -1.41%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,849.58, 60/40 Balanced Fund is at $6,933.01, and 4.5% High-Yield Savings is at $7,019.01. Catalyst Check: Latest AAPL catalyst: \"Apple users get urgent security warning over iPhone flaw\" (TheStreet). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-10, the $7,000 AI Model closed at $6,901.17 (-98.83 / -1.41%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,848.76, 60/40 Balanced Fund is at $6,931.93, and 4.5% High-Yield Savings is at $7,019.01. Catalyst Check: Latest AAPL catalyst: \"What Could Lift Netflix Stock From Here?\" (Trefis). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk."
       },
-      "ai_briefing": "On 2026-11-10, the $7,000 AI Model closed at $6,901.37 (-98.63 / -1.41%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,849.58, 60/40 Balanced Fund is at $6,933.01, and 4.5% High-Yield Savings is at $7,019.01. Catalyst Check: Latest AAPL catalyst: \"Apple users get urgent security warning over iPhone flaw\" (TheStreet). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-10, the $7,000 AI Model closed at $6,901.17 (-98.83 / -1.41%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,848.76, 60/40 Balanced Fund is at $6,931.93, and 4.5% High-Yield Savings is at $7,019.01. Catalyst Check: Latest AAPL catalyst: \"What Could Lift Netflix Stock From Here?\" (Trefis). Vetoed dip-adds on PLTR, META, AMD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-10-HOLD-AAPL",
@@ -66542,16 +66542,16 @@
           "bucket": "Core",
           "shares": 1.8265,
           "avg_entry": 766.48,
-          "current_price": 750.01,
-          "day_pct": -0.36,
+          "current_price": 749.92,
+          "day_pct": -0.37,
           "cost_basis": 1400.0,
-          "market_value": 1369.92,
-          "pnl_dollars": -30.08,
-          "pnl_pct": -2.15,
+          "market_value": 1369.75,
+          "pnl_dollars": -30.25,
+          "pnl_pct": -2.16,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
-          "reason": "Trading below 50d moving average ($765.01) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
+          "reason": "Trading below 50d moving average ($765.00) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
           "sparkline": [
             {
               "h": 25,
@@ -66609,9 +66609,9 @@
               "close": 752.69
             },
             {
-              "h": 27,
+              "h": 32,
               "up": false,
-              "close": 750.01
+              "close": 749.92
             }
           ]
         },
@@ -66689,7 +66689,7 @@
               "close": 545.18
             },
             {
-              "h": 47,
+              "h": 53,
               "up": false,
               "close": 533.16
             }
@@ -66769,7 +66769,7 @@
               "close": 350.69
             },
             {
-              "h": 30,
+              "h": 33,
               "up": false,
               "close": 348.51
             }
@@ -66791,7 +66791,7 @@
           "score": 36.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
-          "reason": "Trading below 50d moving average ($719.39) \u2022 Lagging S&P 500 (-5.7% over 20d)",
+          "reason": "Trading below 50d moving average ($719.39) \u2022 Lagging S&P 500 (-5.6% over 20d)",
           "sparkline": [
             {
               "h": 25,
@@ -66849,7 +66849,7 @@
               "close": 679.35
             },
             {
-              "h": 26,
+              "h": 30,
               "up": false,
               "close": 674.76
             }
@@ -66929,7 +66929,7 @@
               "close": 1066.18
             },
             {
-              "h": 29,
+              "h": 33,
               "up": false,
               "close": 1066.14
             }
@@ -67009,7 +67009,7 @@
               "close": 266.93
             },
             {
-              "h": 35,
+              "h": 37,
               "up": true,
               "close": 270.87
             }
@@ -67089,7 +67089,7 @@
               "close": 641.37
             },
             {
-              "h": 24,
+              "h": 25,
               "up": true,
               "close": 641.39
             }
@@ -67169,7 +67169,7 @@
               "close": 169.2
             },
             {
-              "h": 34,
+              "h": 37,
               "up": false,
               "close": 168.82
             }
@@ -67182,12 +67182,12 @@
           "bucket": "Defensive",
           "shares": 6.2112,
           "avg_entry": 35.42,
-          "current_price": 35.82,
-          "day_pct": 0.48,
+          "current_price": 35.83,
+          "day_pct": 0.5,
           "cost_basis": 220.0,
-          "market_value": 222.48,
-          "pnl_dollars": 2.48,
-          "pnl_pct": 1.13,
+          "market_value": 222.55,
+          "pnl_dollars": 2.55,
+          "pnl_pct": 1.16,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -67249,9 +67249,9 @@
               "close": 35.65
             },
             {
-              "h": 67,
+              "h": 68,
               "up": true,
-              "close": 35.82
+              "close": 35.83
             }
           ]
         },
@@ -67329,7 +67329,7 @@
               "close": 508.58
             },
             {
-              "h": 65,
+              "h": 66,
               "up": true,
               "close": 515.21
             }
@@ -67342,16 +67342,16 @@
           "bucket": "Defensive",
           "shares": 0.1299,
           "avg_entry": 1263.19,
-          "current_price": 1433.04,
-          "day_pct": 1.49,
+          "current_price": 1432.29,
+          "day_pct": 1.44,
           "cost_basis": 164.11,
-          "market_value": 186.18,
-          "pnl_dollars": 22.07,
-          "pnl_pct": 13.45,
+          "market_value": 186.08,
+          "pnl_dollars": 21.97,
+          "pnl_pct": 13.39,
           "score": 84.9,
           "signal": "HOLD",
           "setup_tag": "Trend Hold",
-          "reason": "Confirmed uptrend above 20d ($1326.75) & 50d ($1224.53) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
+          "reason": "Confirmed uptrend above 20d ($1326.71) & 50d ($1224.51) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
           "sparkline": [
             {
               "h": 40,
@@ -67409,9 +67409,9 @@
               "close": 1411.95
             },
             {
-              "h": 35,
+              "h": 54,
               "up": true,
-              "close": 1433.04
+              "close": 1432.29
             }
           ]
         }
@@ -67424,16 +67424,16 @@
           "bucket": "Core",
           "shares": 1.8265,
           "avg_entry": 766.48,
-          "current_price": 750.01,
-          "day_pct": -0.36,
+          "current_price": 749.92,
+          "day_pct": -0.37,
           "cost_basis": 1400.0,
-          "market_value": 1369.92,
-          "pnl_dollars": -30.08,
-          "pnl_pct": -2.15,
+          "market_value": 1369.75,
+          "pnl_dollars": -30.25,
+          "pnl_pct": -2.16,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
-          "reason": "Trading below 50d moving average ($765.01) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
+          "reason": "Trading below 50d moving average ($765.00) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
           "sparkline": [
             {
               "h": 25,
@@ -67491,9 +67491,9 @@
               "close": 752.69
             },
             {
-              "h": 27,
+              "h": 32,
               "up": false,
-              "close": 750.01
+              "close": 749.92
             }
           ]
         },
@@ -67571,7 +67571,7 @@
               "close": 545.18
             },
             {
-              "h": 47,
+              "h": 53,
               "up": false,
               "close": 533.16
             }
@@ -67651,7 +67651,7 @@
               "close": 350.69
             },
             {
-              "h": 30,
+              "h": 33,
               "up": false,
               "close": 348.51
             }
@@ -67731,7 +67731,7 @@
               "close": 1066.18
             },
             {
-              "h": 29,
+              "h": 33,
               "up": false,
               "close": 1066.14
             }
@@ -67811,7 +67811,7 @@
               "close": 266.93
             },
             {
-              "h": 35,
+              "h": 37,
               "up": true,
               "close": 270.87
             }
@@ -67824,12 +67824,12 @@
           "bucket": "Defensive",
           "shares": 6.2112,
           "avg_entry": 35.42,
-          "current_price": 35.82,
-          "day_pct": 0.48,
+          "current_price": 35.83,
+          "day_pct": 0.5,
           "cost_basis": 220.0,
-          "market_value": 222.48,
-          "pnl_dollars": 2.48,
-          "pnl_pct": 1.13,
+          "market_value": 222.55,
+          "pnl_dollars": 2.55,
+          "pnl_pct": 1.16,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -67891,9 +67891,9 @@
               "close": 35.65
             },
             {
-              "h": 67,
+              "h": 68,
               "up": true,
-              "close": 35.82
+              "close": 35.83
             }
           ]
         },
@@ -67904,16 +67904,16 @@
           "bucket": "Defensive",
           "shares": 0.1299,
           "avg_entry": 1263.19,
-          "current_price": 1433.04,
-          "day_pct": 1.49,
+          "current_price": 1432.29,
+          "day_pct": 1.44,
           "cost_basis": 164.11,
-          "market_value": 186.18,
-          "pnl_dollars": 22.07,
-          "pnl_pct": 13.45,
+          "market_value": 186.08,
+          "pnl_dollars": 21.97,
+          "pnl_pct": 13.39,
           "score": 84.9,
           "signal": "HOLD",
           "setup_tag": "Trend Hold",
-          "reason": "Confirmed uptrend above 20d ($1326.75) & 50d ($1224.53) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
+          "reason": "Confirmed uptrend above 20d ($1326.71) & 50d ($1224.51) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
           "sparkline": [
             {
               "h": 40,
@@ -67971,9 +67971,9 @@
               "close": 1411.95
             },
             {
-              "h": 35,
+              "h": 54,
               "up": true,
-              "close": 1433.04
+              "close": 1432.29
             }
           ]
         }
@@ -67986,8 +67986,8 @@
           "ticker": "SPY",
           "name": "SPDR S&P 500 ETF",
           "rec_price": 766.48,
-          "current_price": 750.01,
-          "change_pct": -2.15,
+          "current_price": 749.92,
+          "change_pct": -2.16,
           "is_win": false,
           "rec_dollars": 1400.0,
           "setup_tag": "Below 50d Trend",
@@ -68070,8 +68070,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1240.34,
-          "current_price": 1433.04,
-          "change_pct": 15.54,
+          "current_price": 1432.29,
+          "change_pct": 15.48,
           "is_win": true,
           "rec_dollars": 560.0,
           "setup_tag": "Steady Momentum",
@@ -68126,8 +68126,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1306.69,
-          "current_price": 1433.04,
-          "change_pct": 9.67,
+          "current_price": 1432.29,
+          "change_pct": 9.61,
           "is_win": true,
           "rec_dollars": 235.98,
           "setup_tag": "Breakout Accumulation",
@@ -68168,8 +68168,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1281.91,
-          "current_price": 1433.04,
-          "change_pct": 11.79,
+          "current_price": 1432.29,
+          "change_pct": 11.73,
           "is_win": true,
           "rec_dollars": 423.77,
           "setup_tag": "Trend Hold",
@@ -68210,8 +68210,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1373.7,
-          "current_price": 1433.04,
-          "change_pct": 4.32,
+          "current_price": 1432.29,
+          "change_pct": 4.27,
           "is_win": true,
           "rec_dollars": 330.5,
           "setup_tag": "Breakout Accumulation",
@@ -68266,8 +68266,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1417.54,
-          "current_price": 1433.04,
-          "change_pct": 1.09,
+          "current_price": 1432.29,
+          "change_pct": 1.04,
           "is_win": true,
           "rec_dollars": 204.63,
           "setup_tag": "Breakout Accumulation",
@@ -68322,8 +68322,8 @@
           "ticker": "LLY",
           "name": "Eli Lilly & Co.",
           "rec_price": 1410.99,
-          "current_price": 1433.04,
-          "change_pct": 1.56,
+          "current_price": 1432.29,
+          "change_pct": 1.51,
           "is_win": true,
           "rec_dollars": 122.21,
           "setup_tag": "Breakout Accumulation",
@@ -68364,8 +68364,8 @@
           "ticker": "SCHD",
           "name": "Schwab US Dividend Equity",
           "rec_price": 35.42,
-          "current_price": 35.82,
-          "change_pct": 1.13,
+          "current_price": 35.83,
+          "change_pct": 1.16,
           "is_win": true,
           "rec_dollars": 220.0,
           "setup_tag": "Steady Momentum",
@@ -68378,8 +68378,8 @@
           "ticker": "SCHD",
           "name": "Schwab US Dividend Equity",
           "rec_price": 35.17,
-          "current_price": 35.82,
-          "change_pct": 1.85,
+          "current_price": 35.83,
+          "change_pct": 1.88,
           "is_win": true,
           "rec_dollars": 218.45,
           "setup_tag": "Steady Momentum",
@@ -68493,24 +68493,24 @@
           "sector": "Index Anchor",
           "bucket": "Core",
           "max_weight": 0.22,
-          "price": 750.01,
+          "price": 749.92,
           "day_open": 747.94,
           "day_high": 752.14,
           "day_low": 744.87,
-          "day_pct": -0.36,
-          "ret_5d": -0.58,
-          "ret_20d": -3.6,
+          "day_pct": -0.37,
+          "ret_5d": -0.59,
+          "ret_20d": -3.61,
           "rel_strength_20d": 0.0,
           "rsi14": 40.1,
           "sma20": 760.69,
-          "sma50": 765.01,
-          "vol_ratio": 0.7,
+          "sma50": 765.0,
+          "vol_ratio": 0.82,
           "score": 55.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
-          "reason": "Trading below 50d moving average ($765.01) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
-          "target_price": 810.01,
-          "stop_price": 705.01,
+          "reason": "Trading below 50d moving average ($765.00) \u2022 Attractive swing entry on cooldown (RSI 40.1)",
+          "target_price": 809.91,
+          "stop_price": 704.92,
           "sparkline": [
             {
               "h": 25,
@@ -68568,9 +68568,9 @@
               "close": 752.69
             },
             {
-              "h": 27,
+              "h": 32,
               "up": false,
-              "close": 750.01
+              "close": 749.92
             }
           ]
         },
@@ -68587,15 +68587,15 @@
           "day_pct": -0.68,
           "ret_5d": -1.54,
           "ret_20d": -9.25,
-          "rel_strength_20d": -5.66,
+          "rel_strength_20d": -5.64,
           "rsi14": 35.9,
           "sma20": 700.86,
           "sma50": 719.39,
-          "vol_ratio": 0.67,
+          "vol_ratio": 0.76,
           "score": 36.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
-          "reason": "Trading below 50d moving average ($719.39) \u2022 Lagging S&P 500 (-5.7% over 20d)",
+          "reason": "Trading below 50d moving average ($719.39) \u2022 Lagging S&P 500 (-5.6% over 20d)",
           "target_price": 728.74,
           "stop_price": 634.27,
           "sparkline": [
@@ -68655,7 +68655,7 @@
               "close": 679.35
             },
             {
-              "h": 26,
+              "h": 30,
               "up": false,
               "close": 674.76
             }
@@ -68674,11 +68674,11 @@
           "day_pct": -2.2,
           "ret_5d": 2.34,
           "ret_20d": -1.89,
-          "rel_strength_20d": 1.71,
+          "rel_strength_20d": 1.72,
           "rsi14": 50.1,
           "sma20": 531.09,
           "sma50": 517.8,
-          "vol_ratio": 0.91,
+          "vol_ratio": 1.04,
           "score": 87.8,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -68742,7 +68742,7 @@
               "close": 545.18
             },
             {
-              "h": 47,
+              "h": 53,
               "up": false,
               "close": 533.16
             }
@@ -68761,11 +68761,11 @@
           "day_pct": -0.62,
           "ret_5d": 5.0,
           "ret_20d": 2.12,
-          "rel_strength_20d": 5.72,
+          "rel_strength_20d": 5.73,
           "rsi14": 53.1,
           "sma20": 344.23,
           "sma50": 337.27,
-          "vol_ratio": 0.54,
+          "vol_ratio": 0.6,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -68829,7 +68829,7 @@
               "close": 350.69
             },
             {
-              "h": 30,
+              "h": 33,
               "up": false,
               "close": 348.51
             }
@@ -68848,11 +68848,11 @@
           "day_pct": -0.27,
           "ret_5d": 2.62,
           "ret_20d": -18.77,
-          "rel_strength_20d": -15.17,
+          "rel_strength_20d": -15.16,
           "rsi14": 25.0,
           "sma20": 310.89,
           "sma50": 330.72,
-          "vol_ratio": 0.69,
+          "vol_ratio": 0.71,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -68935,11 +68935,11 @@
           "day_pct": 1.48,
           "ret_5d": 8.05,
           "ret_20d": 4.75,
-          "rel_strength_20d": 8.35,
+          "rel_strength_20d": 8.36,
           "rsi14": 55.4,
           "sma20": 255.26,
           "sma50": 254.18,
-          "vol_ratio": 0.75,
+          "vol_ratio": 0.78,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -69003,7 +69003,7 @@
               "close": 266.93
             },
             {
-              "h": 35,
+              "h": 37,
               "up": true,
               "close": 270.87
             }
@@ -69015,24 +69015,24 @@
           "sector": "Semiconductors",
           "bucket": "Swing",
           "max_weight": 0.14,
-          "price": 168.8,
+          "price": 168.89,
           "day_open": 173.98,
           "day_high": 174.65,
           "day_low": 165.89,
-          "day_pct": -5.52,
-          "ret_5d": -18.33,
-          "ret_20d": -26.13,
-          "rel_strength_20d": -22.53,
+          "day_pct": -5.47,
+          "ret_5d": -18.29,
+          "ret_20d": -26.09,
+          "rel_strength_20d": -22.48,
           "rsi14": 19.3,
           "sma20": 206.18,
           "sma50": 218.0,
-          "vol_ratio": 3.03,
+          "vol_ratio": 3.11,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
           "reason": "Trading below 50d moving average ($218.00) \u2022 Deeply oversold (RSI 19.3)",
-          "target_price": 182.3,
-          "stop_price": 158.67,
+          "target_price": 182.4,
+          "stop_price": 158.76,
           "sparkline": [
             {
               "h": 20,
@@ -69090,9 +69090,9 @@
               "close": 178.67
             },
             {
-              "h": 90,
+              "h": 92,
               "up": false,
-              "close": 168.8
+              "close": 168.89
             }
           ]
         },
@@ -69109,11 +69109,11 @@
           "day_pct": 0.0,
           "ret_5d": 3.28,
           "ret_20d": -15.88,
-          "rel_strength_20d": -12.28,
+          "rel_strength_20d": -12.27,
           "rsi14": 35.9,
           "sma20": 651.54,
           "sma50": 677.57,
-          "vol_ratio": 0.49,
+          "vol_ratio": 0.52,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -69177,7 +69177,7 @@
               "close": 641.37
             },
             {
-              "h": 24,
+              "h": 25,
               "up": true,
               "close": 641.39
             }
@@ -69196,11 +69196,11 @@
           "day_pct": 3.91,
           "ret_5d": -0.05,
           "ret_20d": -7.09,
-          "rel_strength_20d": -3.49,
+          "rel_strength_20d": -3.48,
           "rsi14": 48.3,
           "sma20": 329.1,
           "sma50": 346.13,
-          "vol_ratio": 1.08,
+          "vol_ratio": 1.14,
           "score": 46.4,
           "signal": "WATCH",
           "setup_tag": "Below 50d Trend",
@@ -69264,7 +69264,7 @@
               "close": 319.48
             },
             {
-              "h": 50,
+              "h": 53,
               "up": true,
               "close": 331.98
             }
@@ -69276,24 +69276,24 @@
           "sector": "Foundry",
           "bucket": "Swing",
           "max_weight": 0.1,
-          "price": 396.58,
+          "price": 396.48,
           "day_open": 388.42,
           "day_high": 400.21,
           "day_low": 387.2,
-          "day_pct": 2.05,
-          "ret_5d": -2.03,
-          "ret_20d": -10.9,
-          "rel_strength_20d": -7.31,
-          "rsi14": 40.7,
-          "sma20": 411.23,
+          "day_pct": 2.02,
+          "ret_5d": -2.06,
+          "ret_20d": -10.93,
+          "rel_strength_20d": -7.32,
+          "rsi14": 40.6,
+          "sma20": 411.22,
           "sma50": 430.69,
-          "vol_ratio": 0.83,
+          "vol_ratio": 0.95,
           "score": 29.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
           "reason": "Trading below 50d moving average ($430.69) \u2022 Lagging S&P 500 (-7.3% over 20d)",
-          "target_price": 428.31,
-          "stop_price": 372.79,
+          "target_price": 428.2,
+          "stop_price": 372.69,
           "sparkline": [
             {
               "h": 22,
@@ -69351,9 +69351,9 @@
               "close": 388.62
             },
             {
-              "h": 29,
+              "h": 33,
               "up": true,
-              "close": 396.58
+              "close": 396.48
             }
           ]
         },
@@ -69370,11 +69370,11 @@
           "day_pct": 1.3,
           "ret_5d": 6.47,
           "ret_20d": -14.92,
-          "rel_strength_20d": -11.32,
+          "rel_strength_20d": -11.31,
           "rsi14": 45.8,
           "sma20": 518.5,
           "sma50": 548.56,
-          "vol_ratio": 1.59,
+          "vol_ratio": 1.6,
           "score": 29.0,
           "signal": "TRIM",
           "setup_tag": "Breakout Accumulation",
@@ -69438,7 +69438,7 @@
               "close": 508.58
             },
             {
-              "h": 65,
+              "h": 66,
               "up": true,
               "close": 515.21
             }
@@ -69457,11 +69457,11 @@
           "day_pct": -1.08,
           "ret_5d": -0.25,
           "ret_20d": -10.22,
-          "rel_strength_20d": -6.62,
+          "rel_strength_20d": -6.61,
           "rsi14": 44.3,
           "sma20": 65.55,
           "sma50": 70.32,
-          "vol_ratio": 0.55,
+          "vol_ratio": 0.58,
           "score": 30.1,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -69525,7 +69525,7 @@
               "close": 63.95
             },
             {
-              "h": 48,
+              "h": 50,
               "up": false,
               "close": 63.26
             }
@@ -69544,11 +69544,11 @@
           "day_pct": -0.22,
           "ret_5d": -3.75,
           "ret_20d": -19.1,
-          "rel_strength_20d": -15.5,
+          "rel_strength_20d": -15.49,
           "rsi14": 25.3,
           "sma20": 186.13,
           "sma50": 185.19,
-          "vol_ratio": 0.67,
+          "vol_ratio": 0.74,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -69612,7 +69612,7 @@
               "close": 169.2
             },
             {
-              "h": 34,
+              "h": 37,
               "up": false,
               "close": 168.82
             }
@@ -69624,24 +69624,24 @@
           "sector": "Dividend Value Fund",
           "bucket": "Defensive",
           "max_weight": 0.16,
-          "price": 35.82,
+          "price": 35.83,
           "day_open": 35.42,
           "day_high": 35.87,
           "day_low": 35.37,
-          "day_pct": 0.48,
-          "ret_5d": 0.76,
-          "ret_20d": 7.34,
-          "rel_strength_20d": 10.94,
+          "day_pct": 0.5,
+          "ret_5d": 0.79,
+          "ret_20d": 7.37,
+          "rel_strength_20d": 10.98,
           "rsi14": 62.6,
           "sma20": 35.15,
           "sma50": 34.23,
-          "vol_ratio": 1.08,
+          "vol_ratio": 1.1,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
           "reason": "Confirmed uptrend above 20d ($35.15) & 50d ($34.23) MAs \u2022 Healthy momentum zone (RSI 62.6)",
-          "target_price": 38.69,
-          "stop_price": 33.67,
+          "target_price": 38.7,
+          "stop_price": 33.68,
           "sparkline": [
             {
               "h": 60,
@@ -69699,9 +69699,9 @@
               "close": 35.65
             },
             {
-              "h": 67,
+              "h": 68,
               "up": true,
-              "close": 35.82
+              "close": 35.83
             }
           ]
         },
@@ -69711,24 +69711,24 @@
           "sector": "Financials",
           "bucket": "Defensive",
           "max_weight": 0.12,
-          "price": 583.61,
+          "price": 583.34,
           "day_open": 575.59,
           "day_high": 586.45,
           "day_low": 574.0,
-          "day_pct": 1.45,
-          "ret_5d": 4.76,
-          "ret_20d": 12.11,
-          "rel_strength_20d": 15.7,
+          "day_pct": 1.41,
+          "ret_5d": 4.72,
+          "ret_20d": 12.05,
+          "rel_strength_20d": 15.66,
           "rsi14": 75.6,
-          "sma20": 549.75,
-          "sma50": 524.56,
-          "vol_ratio": 0.66,
+          "sma20": 549.73,
+          "sma50": 524.55,
+          "vol_ratio": 0.9,
           "score": 74.9,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
-          "reason": "Confirmed uptrend above 20d ($549.75) & 50d ($524.56) MAs \u2022 Short-term extended (RSI 75.6 > 73)",
-          "target_price": 630.3,
-          "stop_price": 548.59,
+          "reason": "Confirmed uptrend above 20d ($549.73) & 50d ($524.55) MAs \u2022 Short-term extended (RSI 75.6 > 73)",
+          "target_price": 630.01,
+          "stop_price": 548.34,
           "sparkline": [
             {
               "h": 48,
@@ -69786,9 +69786,9 @@
               "close": 575.25
             },
             {
-              "h": 35,
+              "h": 47,
               "up": true,
-              "close": 583.61
+              "close": 583.34
             }
           ]
         },
@@ -69798,24 +69798,24 @@
           "sector": "Banking",
           "bucket": "Defensive",
           "max_weight": 0.1,
-          "price": 342.3,
+          "price": 342.07,
           "day_open": 343.96,
           "day_high": 344.85,
           "day_low": 341.26,
-          "day_pct": 0.06,
-          "ret_5d": 1.28,
-          "ret_20d": 3.28,
-          "rel_strength_20d": 6.88,
-          "rsi14": 55.0,
-          "sma20": 337.96,
+          "day_pct": -0.0,
+          "ret_5d": 1.21,
+          "ret_20d": 3.21,
+          "rel_strength_20d": 6.82,
+          "rsi14": 54.9,
+          "sma20": 337.95,
           "sma50": 341.24,
-          "vol_ratio": 0.47,
-          "score": 75.6,
+          "vol_ratio": 0.64,
+          "score": 75.5,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
-          "reason": "Healthy momentum zone (RSI 55.0) \u2022 Outperforming S&P 500 by +6.9% over 20d",
-          "target_price": 369.68,
-          "stop_price": 321.76,
+          "reason": "Healthy momentum zone (RSI 54.9) \u2022 Outperforming S&P 500 by +6.8% over 20d",
+          "target_price": 369.44,
+          "stop_price": 321.55,
           "sparkline": [
             {
               "h": 48,
@@ -69873,9 +69873,9 @@
               "close": 342.08
             },
             {
-              "h": 27,
-              "up": true,
-              "close": 342.3
+              "h": 38,
+              "up": false,
+              "close": 342.07
             }
           ]
         },
@@ -69892,11 +69892,11 @@
           "day_pct": -0.0,
           "ret_5d": 4.6,
           "ret_20d": 11.68,
-          "rel_strength_20d": 15.28,
+          "rel_strength_20d": 15.29,
           "rsi14": 66.2,
           "sma20": 1015.26,
           "sma50": 957.27,
-          "vol_ratio": 0.56,
+          "vol_ratio": 0.64,
           "score": 84.9,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -69960,7 +69960,7 @@
               "close": 1066.18
             },
             {
-              "h": 29,
+              "h": 33,
               "up": false,
               "close": 1066.14
             }
@@ -69972,24 +69972,24 @@
           "sector": "Healthcare",
           "bucket": "Defensive",
           "max_weight": 0.09,
-          "price": 1433.04,
+          "price": 1432.29,
           "day_open": 1408.49,
           "day_high": 1438.88,
           "day_low": 1400.0,
-          "day_pct": 1.49,
-          "ret_5d": 1.68,
-          "ret_20d": 22.85,
-          "rel_strength_20d": 26.45,
-          "rsi14": 71.8,
-          "sma20": 1326.75,
-          "sma50": 1224.53,
-          "vol_ratio": 0.6,
+          "day_pct": 1.44,
+          "ret_5d": 1.63,
+          "ret_20d": 22.78,
+          "rel_strength_20d": 26.39,
+          "rsi14": 71.7,
+          "sma20": 1326.71,
+          "sma50": 1224.51,
+          "vol_ratio": 0.92,
           "score": 84.9,
           "signal": "HOLD",
           "setup_tag": "Trend Hold",
-          "reason": "Confirmed uptrend above 20d ($1326.75) & 50d ($1224.53) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
-          "target_price": 1547.68,
-          "stop_price": 1347.06,
+          "reason": "Confirmed uptrend above 20d ($1326.71) & 50d ($1224.51) MAs \u2022 Outperforming S&P 500 by +26.4% over 20d",
+          "target_price": 1546.87,
+          "stop_price": 1346.35,
           "sparkline": [
             {
               "h": 40,
@@ -70047,9 +70047,9 @@
               "close": 1411.95
             },
             {
-              "h": 35,
+              "h": 54,
               "up": true,
-              "close": 1433.04
+              "close": 1432.29
             }
           ]
         },
@@ -70059,24 +70059,24 @@
           "sector": "Precious Metals",
           "bucket": "Defensive",
           "max_weight": 0.08,
-          "price": 369.41,
+          "price": 369.36,
           "day_open": 371.38,
           "day_high": 371.88,
           "day_low": 367.8,
-          "day_pct": -2.67,
-          "ret_5d": 2.83,
-          "ret_20d": -3.21,
+          "day_pct": -2.68,
+          "ret_5d": 2.81,
+          "ret_20d": -3.23,
           "rel_strength_20d": 0.39,
-          "rsi14": 44.2,
-          "sma20": 372.05,
+          "rsi14": 44.1,
+          "sma20": 372.04,
           "sma50": 383.59,
-          "vol_ratio": 0.79,
+          "vol_ratio": 0.87,
           "score": 38.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
           "reason": "Trading below 50d moving average ($383.59)",
-          "target_price": 398.96,
-          "stop_price": 347.25,
+          "target_price": 398.91,
+          "stop_price": 347.2,
           "sparkline": [
             {
               "h": 40,
@@ -70134,9 +70134,9 @@
               "close": 379.53
             },
             {
-              "h": 44,
+              "h": 48,
               "up": false,
-              "close": 369.41
+              "close": 369.36
             }
           ]
         }
@@ -70145,15 +70145,15 @@
         {
           "label": "SPY \u2014 SPDR S&P 500 ETF",
           "ticker": "SPY",
-          "value": 1369.92,
+          "value": 1369.75,
           "pct": 19.86,
-          "pnl_pct": -2.15
+          "pnl_pct": -2.16
         },
         {
           "label": "MSFT \u2014 Microsoft Corp.",
           "ticker": "MSFT",
           "value": 1058.29,
-          "pct": 15.34,
+          "pct": 15.35,
           "pnl_pct": 1.18
         },
         {
@@ -70201,9 +70201,9 @@
         {
           "label": "SCHD \u2014 Schwab US Dividend Equity",
           "ticker": "SCHD",
-          "value": 222.48,
+          "value": 222.55,
           "pct": 3.23,
-          "pnl_pct": 1.13
+          "pnl_pct": 1.16
         },
         {
           "label": "AMD \u2014 Advanced Micro Devices",
@@ -70215,9 +70215,9 @@
         {
           "label": "LLY \u2014 Eli Lilly & Co.",
           "ticker": "LLY",
-          "value": 186.18,
+          "value": 186.08,
           "pct": 2.7,
-          "pnl_pct": 13.45
+          "pnl_pct": 13.39
         },
         {
           "label": "CASH \u2014 Tactical Dry Powder",
@@ -70231,9 +70231,9 @@
         {
           "label": "SPY \u2014 SPDR S&P 500 ETF",
           "ticker": "SPY",
-          "value": 1369.92,
+          "value": 1369.75,
           "pct": 19.85,
-          "pnl_pct": -2.15
+          "pnl_pct": -2.16
         },
         {
           "label": "MSFT \u2014 Microsoft Corp.",
@@ -70266,16 +70266,16 @@
         {
           "label": "SCHD \u2014 Schwab US Dividend Equity",
           "ticker": "SCHD",
-          "value": 222.48,
+          "value": 222.55,
           "pct": 3.22,
-          "pnl_pct": 1.13
+          "pnl_pct": 1.16
         },
         {
           "label": "LLY \u2014 Eli Lilly & Co.",
           "ticker": "LLY",
-          "value": 186.18,
+          "value": 186.08,
           "pct": 2.7,
-          "pnl_pct": 13.45
+          "pnl_pct": 13.39
         },
         {
           "label": "CASH \u2014 Tactical Defense Shield",
