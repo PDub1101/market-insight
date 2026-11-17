@@ -2,11 +2,9 @@ name: Daily $7K Stock Model Cloud Update
 
 on:
   schedule:
-    # Runs after US market close on Weekdays (Mon-Fri) with staggered retries across afternoon/evening
-    - cron: "15 20 * * 1-5"  # 4:15 PM ET (20:15 UTC)
-    - cron: "45 20 * * 1-5"  # 4:45 PM ET (20:45 UTC)
-    - cron: "30 21 * * 1-5"  # 5:30 PM ET (21:30 UTC)
-    - cron: "00 23 * * 1-5"  # 7:00 PM ET (23:00 UTC)
+    # Runs after US market close on Weekdays (Mon-Fri) using off-peak cron minutes
+    - cron: "23 21 * * 1-5"  # 4:23 PM EST (21:23 UTC)
+    - cron: "7 23 * * 1-5"   # 6:07 PM EST (23:07 UTC)
   workflow_dispatch: # Allows manual 1-click trigger from GitHub Actions tab
 
 permissions:
@@ -30,11 +28,32 @@ jobs:
       - name: Run $7,000 Stock Model Daily Update
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python update_model.py
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - << 'EOF'
+          import datetime as dt, json, os, subprocess, sys
+          from zoneinfo import ZoneInfo
+          if os.environ.get("EVENT_NAME") == "schedule":
+              ny = dt.datetime.now(ZoneInfo("America/New_York"))
+              today_str = ny.strftime("%Y-%m-%d")
+              try:
+                  state = json.load(open("portfolio_state.json", encoding="utf-8"))
+                  lu = state.get("last_updated", "")
+                  if lu.startswith(today_str):
+                      t_part = lu.replace(" ET", "").strip()
+                      dt_lu = dt.datetime.strptime(t_part, "%Y-%m-%d %I:%M %p")
+                      if dt_lu.hour > 16 or (dt_lu.hour == 16 and dt_lu.minute >= 5):
+                          print(f"Already updated after 4:05 PM ET today ({lu}). Skipping redundant cloud run.")
+                          sys.exit(0)
+              except Exception as e:
+                  print("Idempotency check note:", e)
+          subprocess.check_call([sys.executable, "update_model.py"])
+          EOF
 
       - name: Commit & Push Updated Day Tab to Live Webpage
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
           git add portfolio_state.json portfolio_data.js model_memory.json
           git diff --staged --quiet || (git commit -m "Automated Daily $7K Stock Model Update ($(date -u +'%Y-%m-%d'))" && git push)
