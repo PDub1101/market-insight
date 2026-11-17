@@ -2,15 +2,15 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-17 04:29 PM ET",
+  "last_updated": "2026-11-17 04:34 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3852.0,
-      "change": -1.0,
-      "pct": -0.03,
-      "up": false,
+      "price": 3855.3,
+      "change": 2.3,
+      "pct": 0.06,
+      "up": true,
       "spark": [
         4031.4,
         3898.9,
@@ -25,7 +25,7 @@
         3885.3,
         3886.3,
         3853.0,
-        3852.0
+        3855.3
       ]
     },
     {
@@ -127,9 +127,9 @@
     {
       "label": "VIX VOL",
       "symbol": "^VIX",
-      "price": 25.52,
-      "change": 2.61,
-      "pct": 11.39,
+      "price": 25.46,
+      "change": 2.55,
+      "pct": 11.13,
       "up": true,
       "spark": [
         17.2,
@@ -145,7 +145,7 @@
         18.7,
         19.3,
         22.91,
-        25.52
+        25.46
       ]
     }
   ],
@@ -1793,7 +1793,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5282,7 +5282,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -8805,7 +8805,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12530,7 +12530,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16344,7 +16344,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20157,7 +20157,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -23998,7 +23998,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -27866,7 +27866,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -31936,7 +31936,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36146,7 +36146,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40498,7 +40498,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -44907,7 +44907,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49289,7 +49289,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -53696,7 +53696,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58305,7 +58305,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62551,7 +62551,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66560,7 +66560,7 @@
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70526,7 +70526,7 @@
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74506,7 +74506,7 @@
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78499,7 +78499,7 @@
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82507,7 +82507,7 @@
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:28 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -86588,7 +86588,7 @@
       "date": "2026-11-17",
       "tab_label": "Today \u2022 Nov 17 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-17 04:29 PM ET",
+      "updated_at": "2026-11-17 04:34 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
@@ -90151,7 +90151,7 @@
           "rsi14": 80.9,
           "sma20": 564.46,
           "sma50": 533.01,
-          "vol_ratio": 0.95,
+          "vol_ratio": 0.97,
           "score": 80.6,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -90215,7 +90215,7 @@
               "close": 592.85
             },
             {
-              "h": 50,
+              "h": 51,
               "up": false,
               "close": 586.76
             }
