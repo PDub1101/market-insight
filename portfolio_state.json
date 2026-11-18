@@ -2,17 +2,16 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-17 04:34 PM ET",
+  "last_updated": "2026-11-17 11:46 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3855.3,
-      "change": 2.3,
-      "pct": 0.06,
-      "up": true,
+      "price": 3786.8,
+      "change": -77.4,
+      "pct": -2.0,
+      "up": false,
       "spark": [
-        4031.4,
         3898.9,
         3969.6,
         3940.4,
@@ -25,14 +24,15 @@
         3885.3,
         3886.3,
         3853.0,
-        3855.3
+        3864.2,
+        3786.8
       ]
     },
     {
       "label": "DOW 30",
       "symbol": "^DJI",
-      "price": 50759.42,
-      "change": -848.75,
+      "price": 50759.4,
+      "change": -848.77,
       "pct": -1.64,
       "up": false,
       "spark": [
@@ -49,7 +49,7 @@
         52297.09,
         52347.55,
         51608.17,
-        50759.42
+        50759.4
       ]
     },
     {
@@ -1793,7 +1793,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5282,7 +5282,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -8805,7 +8805,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12530,7 +12530,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16344,7 +16344,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20157,7 +20157,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -23998,7 +23998,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -27866,7 +27866,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -31936,7 +31936,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36146,7 +36146,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40498,7 +40498,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -44907,7 +44907,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49289,7 +49289,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -53696,7 +53696,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58305,7 +58305,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62551,7 +62551,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66560,7 +66560,7 @@
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70526,7 +70526,7 @@
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74506,7 +74506,7 @@
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78499,7 +78499,7 @@
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82507,7 +82507,7 @@
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:45 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -86588,15 +86588,15 @@
       "date": "2026-11-17",
       "tab_label": "Today \u2022 Nov 17 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-17 04:34 PM ET",
+      "updated_at": "2026-11-17 11:46 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
         "invested_value": 6516.82,
         "cash_reserve": 238.6,
-        "day_open": 6806.37,
-        "day_high": 6839.03,
-        "day_low": 6678.66,
+        "day_open": 6808.39,
+        "day_high": 6839.13,
+        "day_low": 6678.64,
         "day_change_dollars": -64.54,
         "day_change_pct": -0.95,
         "total_gain_dollars": -244.58,
@@ -86775,22 +86775,22 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest COST catalyst: \"Costco stock near 52-week high as panic buying looks priced in\" (Investing.com).",
+        "catalyst_headline": "Latest COST catalyst: \"Charlie Munger Said He\u2019d \u2018Never Sell a Share\u2019 of Costco. $10,000 From 1997 Is Now Worth $833,000 and Gets a $22,535 Check on Dec. 4\" (24/7 Wall St.).",
         "veto_note": "Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk.",
         "veto_trade": false,
         "vetoed_ticker": "NONE",
         "lesson_learned": "On 2026-11-17, Dividend Value Mutual Fund led the leaderboard (+3.12%); combining relative strength (1.12x weight) with risk discipline keeps portfolio win rate at 42.9%.",
         "headlines_scanned": [
-          "[COST] Costco stock near 52-week high as panic buying looks priced in (Investing.com)",
-          "[COST] After IPO Day: Executing as a Public Company, 6th Palm Beach CorpGov Forum (CorpGov.com)",
-          "[AAPL] Chime Financial, Stock Of The Day, Eyes A Buy Point As Growth Ramps, Big Debut Looms (Investor's Business Daily)",
-          "[AAPL] Huang pitches Nvidia comeback after sources say board not considering it (Reuters)",
-          "[LLY] Sector Update: Healthcare Stocks Retreat Late Afternoon (MT Newswires)",
-          "[LLY] Positive Trial Results Could Be A Big Moment For Eli Lilly Stock (Simply Wall St.)"
+          "[COST] Charlie Munger Said He\u2019d \u2018Never Sell a Share\u2019 of Costco. $10,000 From 1997 Is Now Worth $833,000 and Gets a $22,535 Check on Dec. 4 (24/7 Wall St.)",
+          "[COST] Costco (COST) Stock Fair Value Edges Higher As AI Rollout Expands And Lawsuits Emerge (Simply Wall St.)",
+          "[AAPL] Broadcom vs. Micron Technology: Which Tech Stock Is the Better Buy for 2027? (Motley Fool)",
+          "[AAPL] A Retiree With $400,000 in His 401(k) Tries to Move Money Before Stocks Fall Further. Apple\u2019s Widespread Outage Raises the Stakes of a Missed Trade (24/7 Wall St.)",
+          "[LLY] Eli Lilly Is Up 39% in a Year. Barclays Sees Another 9% (TIKR)",
+          "[LLY] Coca-Cola Stock (KO) May Struggle to Repeat Its Strong 2026 Performance (TipRanks)"
         ],
-        "ai_briefing": "On 2026-11-17, the $7,000 AI Model closed at $6,819.88 (-180.12 / -2.57%), with Trade Win Rate at 42.9%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,689.12, 60/40 Balanced Fund is at $6,817.89, and 4.5% High-Yield Savings is at $7,025.07. Catalyst Check: Latest COST catalyst: \"Costco stock near 52-week high as panic buying looks priced in\" (Investing.com). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-17, the $7,000 AI Model closed at $6,819.88 (-180.12 / -2.57%), with Trade Win Rate at 42.9%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,689.12, 60/40 Balanced Fund is at $6,817.89, and 4.5% High-Yield Savings is at $7,025.07. Catalyst Check: Latest COST catalyst: \"Charlie Munger Said He\u2019d \u2018Never Sell a Share\u2019 of Costco. $10,000 From 1997 Is Now Worth $833,000 and Gets a $22,535 Check on Dec. 4\" (24/7 Wall St.). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk."
       },
-      "ai_briefing": "On 2026-11-17, the $7,000 AI Model closed at $6,819.88 (-180.12 / -2.57%), with Trade Win Rate at 42.9%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,689.12, 60/40 Balanced Fund is at $6,817.89, and 4.5% High-Yield Savings is at $7,025.07. Catalyst Check: Latest COST catalyst: \"Costco stock near 52-week high as panic buying looks priced in\" (Investing.com). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-17, the $7,000 AI Model closed at $6,819.88 (-180.12 / -2.57%), with Trade Win Rate at 42.9%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,689.12, 60/40 Balanced Fund is at $6,817.89, and 4.5% High-Yield Savings is at $7,025.07. Catalyst Check: Latest COST catalyst: \"Charlie Munger Said He\u2019d \u2018Never Sell a Share\u2019 of Costco. $10,000 From 1997 Is Now Worth $833,000 and Gets a $22,535 Check on Dec. 4\" (24/7 Wall St.). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-17-TRIM-COST",
@@ -86912,7 +86912,7 @@
               "close": 739.95
             },
             {
-              "h": 54,
+              "h": 57,
               "up": false,
               "close": 732.44
             }
@@ -86992,7 +86992,7 @@
               "close": 517.99
             },
             {
-              "h": 54,
+              "h": 55,
               "up": false,
               "close": 506.24
             }
@@ -87072,7 +87072,7 @@
               "close": 352.78
             },
             {
-              "h": 40,
+              "h": 42,
               "up": false,
               "close": 351.91
             }
@@ -87152,7 +87152,7 @@
               "close": 661.75
             },
             {
-              "h": 38,
+              "h": 42,
               "up": false,
               "close": 656.95
             }
@@ -87312,7 +87312,7 @@
               "close": 257.75
             },
             {
-              "h": 39,
+              "h": 41,
               "up": true,
               "close": 257.89
             }
@@ -87392,7 +87392,7 @@
               "close": 1113.74
             },
             {
-              "h": 61,
+              "h": 67,
               "up": false,
               "close": 1110.08
             }
@@ -87472,7 +87472,7 @@
               "close": 626.41
             },
             {
-              "h": 39,
+              "h": 40,
               "up": false,
               "close": 618.87
             }
@@ -87552,7 +87552,7 @@
               "close": 160.39
             },
             {
-              "h": 32,
+              "h": 33,
               "up": false,
               "close": 156.56
             }
@@ -87632,7 +87632,7 @@
               "close": 504.28
             },
             {
-              "h": 48,
+              "h": 50,
               "up": false,
               "close": 503.41
             }
@@ -87712,7 +87712,7 @@
               "close": 1431.67
             },
             {
-              "h": 50,
+              "h": 54,
               "up": false,
               "close": 1415.55
             }
@@ -87794,7 +87794,7 @@
               "close": 739.95
             },
             {
-              "h": 54,
+              "h": 57,
               "up": false,
               "close": 732.44
             }
@@ -87874,7 +87874,7 @@
               "close": 517.99
             },
             {
-              "h": 54,
+              "h": 55,
               "up": false,
               "close": 506.24
             }
@@ -87954,7 +87954,7 @@
               "close": 352.78
             },
             {
-              "h": 40,
+              "h": 42,
               "up": false,
               "close": 351.91
             }
@@ -88034,7 +88034,7 @@
               "close": 257.75
             },
             {
-              "h": 39,
+              "h": 41,
               "up": true,
               "close": 257.89
             }
@@ -88114,7 +88114,7 @@
               "close": 1113.74
             },
             {
-              "h": 61,
+              "h": 67,
               "up": false,
               "close": 1110.08
             }
@@ -88274,7 +88274,7 @@
               "close": 1431.67
             },
             {
-              "h": 50,
+              "h": 54,
               "up": false,
               "close": 1415.55
             }
@@ -88933,7 +88933,7 @@
           "rsi14": 34.5,
           "sma20": 755.86,
           "sma50": 763.15,
-          "vol_ratio": 1.4,
+          "vol_ratio": 1.47,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -88997,7 +88997,7 @@
               "close": 739.95
             },
             {
-              "h": 54,
+              "h": 57,
               "up": false,
               "close": 732.44
             }
@@ -89012,7 +89012,7 @@
           "price": 656.95,
           "day_open": 663.05,
           "day_high": 663.36,
-          "day_low": 646.65,
+          "day_low": 646.64,
           "day_pct": -0.73,
           "ret_5d": -2.64,
           "ret_20d": -8.46,
@@ -89020,7 +89020,7 @@
           "rsi14": 31.6,
           "sma20": 689.58,
           "sma50": 715.49,
-          "vol_ratio": 0.99,
+          "vol_ratio": 1.11,
           "score": 44.8,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -89084,7 +89084,7 @@
               "close": 661.75
             },
             {
-              "h": 38,
+              "h": 42,
               "up": false,
               "close": 656.95
             }
@@ -89097,7 +89097,7 @@
           "bucket": "Core",
           "max_weight": 0.14,
           "price": 506.24,
-          "day_open": 514.01,
+          "day_open": 514.57,
           "day_high": 515.64,
           "day_low": 496.51,
           "day_pct": -2.27,
@@ -89107,7 +89107,7 @@
           "rsi14": 42.1,
           "sma20": 527.33,
           "sma50": 519.61,
-          "vol_ratio": 1.01,
+          "vol_ratio": 1.04,
           "score": 48.5,
           "signal": "WATCH",
           "setup_tag": "Tactical Dip Buy",
@@ -89171,7 +89171,7 @@
               "close": 517.99
             },
             {
-              "h": 54,
+              "h": 55,
               "up": false,
               "close": 506.24
             }
@@ -89184,7 +89184,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 351.91,
-          "day_open": 352.92,
+          "day_open": 352.83,
           "day_high": 355.36,
           "day_low": 349.67,
           "day_pct": -0.25,
@@ -89194,7 +89194,7 @@
           "rsi14": 55.7,
           "sma20": 347.26,
           "sma50": 340.41,
-          "vol_ratio": 0.75,
+          "vol_ratio": 0.78,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -89258,7 +89258,7 @@
               "close": 352.78
             },
             {
-              "h": 40,
+              "h": 42,
               "up": false,
               "close": 351.91
             }
@@ -89281,7 +89281,7 @@
           "rsi14": 27.3,
           "sma20": 297.39,
           "sma50": 325.93,
-          "vol_ratio": 0.75,
+          "vol_ratio": 0.77,
           "score": 39.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -89345,7 +89345,7 @@
               "close": 283.72
             },
             {
-              "h": 58,
+              "h": 60,
               "up": false,
               "close": 280.2
             }
@@ -89358,7 +89358,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 257.89,
-          "day_open": 257.35,
+          "day_open": 257.55,
           "day_high": 259.9,
           "day_low": 254.0,
           "day_pct": 0.05,
@@ -89368,7 +89368,7 @@
           "rsi14": 52.2,
           "sma20": 256.86,
           "sma50": 254.81,
-          "vol_ratio": 0.74,
+          "vol_ratio": 0.78,
           "score": 83.9,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -89432,7 +89432,7 @@
               "close": 257.75
             },
             {
-              "h": 39,
+              "h": 41,
               "up": true,
               "close": 257.89
             }
@@ -89445,7 +89445,7 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 155.46,
-          "day_open": 156.91,
+          "day_open": 156.9,
           "day_high": 158.19,
           "day_low": 150.33,
           "day_pct": -0.44,
@@ -89455,7 +89455,7 @@
           "rsi14": 16.3,
           "sma20": 192.59,
           "sma50": 211.76,
-          "vol_ratio": 1.57,
+          "vol_ratio": 1.81,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -89519,7 +89519,7 @@
               "close": 156.14
             },
             {
-              "h": 46,
+              "h": 53,
               "up": false,
               "close": 155.46
             }
@@ -89532,7 +89532,7 @@
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 618.87,
-          "day_open": 624.4,
+          "day_open": 624.21,
           "day_high": 627.48,
           "day_low": 613.51,
           "day_pct": -1.2,
@@ -89542,7 +89542,7 @@
           "rsi14": 51.8,
           "sma20": 629.34,
           "sma50": 680.11,
-          "vol_ratio": 0.53,
+          "vol_ratio": 0.55,
           "score": 35.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -89606,7 +89606,7 @@
               "close": 626.41
             },
             {
-              "h": 39,
+              "h": 40,
               "up": false,
               "close": 618.87
             }
@@ -89620,7 +89620,7 @@
           "max_weight": 0.1,
           "price": 341.6,
           "day_open": 335.59,
-          "day_high": 341.74,
+          "day_high": 344.0,
           "day_low": 330.13,
           "day_pct": 2.46,
           "ret_5d": 2.9,
@@ -89629,7 +89629,7 @@
           "rsi14": 47.3,
           "sma20": 331.26,
           "sma50": 344.35,
-          "vol_ratio": 0.91,
+          "vol_ratio": 0.95,
           "score": 64.4,
           "signal": "HOLD",
           "setup_tag": "Tactical Dip Buy",
@@ -89693,7 +89693,7 @@
               "close": 333.4
             },
             {
-              "h": 46,
+              "h": 48,
               "up": true,
               "close": 341.6
             }
@@ -89707,7 +89707,7 @@
           "max_weight": 0.1,
           "price": 359.69,
           "day_open": 372.18,
-          "day_high": 373.05,
+          "day_high": 373.1,
           "day_low": 353.5,
           "day_pct": -3.68,
           "ret_5d": -9.28,
@@ -89716,7 +89716,7 @@
           "rsi14": 31.2,
           "sma20": 403.25,
           "sma50": 427.41,
-          "vol_ratio": 1.62,
+          "vol_ratio": 1.69,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -89780,7 +89780,7 @@
               "close": 373.45
             },
             {
-              "h": 56,
+              "h": 58,
               "up": false,
               "close": 359.69
             }
@@ -89793,8 +89793,8 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 503.41,
-          "day_open": 511.6,
-          "day_high": 511.85,
+          "day_open": 512.12,
+          "day_high": 512.12,
           "day_low": 480.5,
           "day_pct": -0.17,
           "ret_5d": -2.29,
@@ -89803,7 +89803,7 @@
           "rsi14": 42.2,
           "sma20": 515.77,
           "sma50": 555.04,
-          "vol_ratio": 0.96,
+          "vol_ratio": 1.01,
           "score": 31.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -89867,7 +89867,7 @@
               "close": 504.28
             },
             {
-              "h": 48,
+              "h": 50,
               "up": false,
               "close": 503.41
             }
@@ -89882,7 +89882,7 @@
           "price": 59.68,
           "day_open": 60.56,
           "day_high": 61.01,
-          "day_low": 59.4,
+          "day_low": 59.41,
           "day_pct": -1.76,
           "ret_5d": -5.66,
           "ret_20d": -13.12,
@@ -89890,7 +89890,7 @@
           "rsi14": 42.2,
           "sma20": 63.43,
           "sma50": 68.49,
-          "vol_ratio": 0.75,
+          "vol_ratio": 0.76,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -89954,7 +89954,7 @@
               "close": 60.75
             },
             {
-              "h": 69,
+              "h": 70,
               "up": false,
               "close": 59.68
             }
@@ -89967,7 +89967,7 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 156.56,
-          "day_open": 159.97,
+          "day_open": 160.15,
           "day_high": 162.59,
           "day_low": 153.91,
           "day_pct": -2.39,
@@ -89977,7 +89977,7 @@
           "rsi14": 23.5,
           "sma20": 178.87,
           "sma50": 184.24,
-          "vol_ratio": 0.7,
+          "vol_ratio": 0.72,
           "score": 27.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -90041,7 +90041,7 @@
               "close": 160.39
             },
             {
-              "h": 32,
+              "h": 33,
               "up": false,
               "close": 156.56
             }
@@ -90054,7 +90054,7 @@
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 35.31,
-          "day_open": 35.58,
+          "day_open": 35.59,
           "day_high": 35.78,
           "day_low": 35.22,
           "day_pct": -1.53,
@@ -90064,7 +90064,7 @@
           "rsi14": 52.3,
           "sma20": 35.56,
           "sma50": 34.33,
-          "vol_ratio": 0.92,
+          "vol_ratio": 0.93,
           "score": 95.2,
           "signal": "BUY",
           "setup_tag": "Pullback to Support",
@@ -90151,7 +90151,7 @@
           "rsi14": 80.9,
           "sma20": 564.46,
           "sma50": 533.01,
-          "vol_ratio": 0.97,
+          "vol_ratio": 0.98,
           "score": 80.6,
           "signal": "TRIM",
           "setup_tag": "Overbought / Trim",
@@ -90215,7 +90215,7 @@
               "close": 592.85
             },
             {
-              "h": 51,
+              "h": 52,
               "up": false,
               "close": 586.76
             }
@@ -90238,7 +90238,7 @@
           "rsi14": 44.0,
           "sma20": 339.01,
           "sma50": 339.54,
-          "vol_ratio": 1.25,
+          "vol_ratio": 1.28,
           "score": 63.4,
           "signal": "HOLD",
           "setup_tag": "Tactical Dip Buy",
@@ -90302,7 +90302,7 @@
               "close": 338.21
             },
             {
-              "h": 62,
+              "h": 63,
               "up": false,
               "close": 329.96
             }
@@ -90315,9 +90315,9 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1110.08,
-          "day_open": 1110.0,
+          "day_open": 1110.49,
           "day_high": 1123.67,
-          "day_low": 1108.69,
+          "day_low": 1108.68,
           "day_pct": -0.33,
           "ret_5d": 4.12,
           "ret_20d": 11.61,
@@ -90325,7 +90325,7 @@
           "rsi14": 81.6,
           "sma20": 1043.79,
           "sma50": 975.07,
-          "vol_ratio": 1.2,
+          "vol_ratio": 1.32,
           "score": 86.0,
           "signal": "TRIM",
           "setup_tag": "Breakout Accumulation",
@@ -90389,7 +90389,7 @@
               "close": 1113.74
             },
             {
-              "h": 61,
+              "h": 67,
               "up": false,
               "close": 1110.08
             }
@@ -90402,7 +90402,7 @@
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1415.55,
-          "day_open": 1415.99,
+          "day_open": 1416.0,
           "day_high": 1432.28,
           "day_low": 1401.66,
           "day_pct": -1.13,
@@ -90412,7 +90412,7 @@
           "rsi14": 68.3,
           "sma20": 1372.41,
           "sma50": 1252.56,
-          "vol_ratio": 0.81,
+          "vol_ratio": 0.87,
           "score": 95.3,
           "signal": "HOLD",
           "setup_tag": "Trend Hold",
@@ -90476,7 +90476,7 @@
               "close": 1431.67
             },
             {
-              "h": 50,
+              "h": 54,
               "up": false,
               "close": 1415.55
             }
@@ -90563,7 +90563,7 @@
               "close": 352.93
             },
             {
-              "h": 57,
+              "h": 58,
               "up": false,
               "close": 352.48
             }
