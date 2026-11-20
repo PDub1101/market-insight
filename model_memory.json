@@ -76,6 +76,10 @@
     {
       "date": "2026-11-19",
       "lesson": "On 2026-11-19, High-Yield Savings (4.50% APY) led the leaderboard (+0.38%); combining relative strength (1.12x weight) with risk discipline keeps portfolio win rate at 60.0%."
+    },
+    {
+      "date": "2026-11-20",
+      "lesson": "Enforcing non-negotiable stop-losses during systemic momentum unwinds effectively truncates tail risk, allowing cash reserves to be redeployed into resilient, high-quality defensive anchors."
     }
   ],
   "veto_history": []
