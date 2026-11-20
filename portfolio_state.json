@@ -2,17 +2,16 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-19 04:34 PM ET",
+  "last_updated": "2026-11-20 12:11 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3649.1,
-      "change": -92.8,
-      "pct": -2.48,
+      "price": 3529.6,
+      "change": -155.9,
+      "pct": -4.23,
       "up": false,
       "spark": [
-        3969.6,
         3940.4,
         4073.0,
         4113.5,
@@ -25,7 +24,8 @@
         3853.0,
         3864.2,
         3741.9,
-        3649.1
+        3685.5,
+        3529.6
       ]
     },
     {
@@ -1914,7 +1914,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5403,7 +5403,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -8926,7 +8926,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12651,7 +12651,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16465,7 +16465,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20278,7 +20278,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -24119,7 +24119,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -27987,7 +27987,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -32057,7 +32057,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36267,7 +36267,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40619,7 +40619,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -45028,7 +45028,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49410,7 +49410,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -53817,7 +53817,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58426,7 +58426,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62672,7 +62672,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66681,7 +66681,7 @@
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70647,7 +70647,7 @@
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74627,7 +74627,7 @@
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78620,7 +78620,7 @@
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82628,7 +82628,7 @@
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -86709,7 +86709,7 @@
       "date": "2026-11-17",
       "tab_label": "Day 22 \u2022 Nov 17",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
@@ -90832,7 +90832,7 @@
       "date": "2026-11-18",
       "tab_label": "Day 23 \u2022 Nov 18",
       "is_backtest": true,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.77,
@@ -94940,14 +94940,14 @@
       "date": "2026-11-19",
       "tab_label": "Today \u2022 Nov 19 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-19 04:34 PM ET",
+      "updated_at": "2026-11-20 12:11 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6634.55,
         "invested_value": 6285.72,
         "cash_reserve": 348.83,
-        "day_open": 6836.23,
-        "day_high": 6887.61,
+        "day_open": 6814.37,
+        "day_high": 6887.66,
         "day_low": 6607.9,
         "day_change_dollars": -140.22,
         "day_change_pct": -2.07,
@@ -95127,23 +95127,23 @@
         "market_regime": "DEFENSIVE (Cash Shield Active)"
       },
       "gemini_insight": {
-        "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest MSFT catalyst: \"Meta trades at 21x P/E, yet shareholders face a massive new bill\" (Investing.com).",
-        "veto_note": "Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
+        "catalyst_headline": "Tech Shakeout Drives Discipline as Portfolio Secures Gains and Trims Laggards",
+        "veto_note": "All actions approved. Cutting MSFT after breaking below its 50-day trend line adheres to disciplined capital preservation, while taking profits on LLY locks in a +7.0% gain. The measured $300 allocation into AVGO maintains high-quality semiconductor momentum without taking excessive directional risk.",
         "veto_trade": false,
         "vetoed_ticker": "NONE",
-        "lesson_learned": "On 2026-11-19, High-Yield Savings (4.50% APY) led the leaderboard (+0.38%); combining relative strength (1.12x weight) with risk discipline keeps portfolio win rate at 60.0%.",
+        "lesson_learned": "Systematically honoring moving-average exit triggers on declining mega-caps prevents localized downturns from eroding outperformance against benchmark indices.",
+        "ai_briefing": "On 2026-11-19, the portfolio stands at $6,746.13, continuing to beat both the S&P 500 ($6,537.80) and 60/40 Balanced benchmarks ($6,735.93) with a strong 60.0% win rate. Portfolio risk management is reinforced today by liquidating the broken technical trend in Microsoft ($989.09, -5.4%) and securing gains on Eli Lilly ($175.53, +7.0%) via a trailing stop. Simultaneously, a measured $300 position in Broadcom (AVGO) initiates steady momentum exposure while preserving a healthy cash buffer.",
+        "engine": "Gemini 3.8 Flash Live API",
         "headlines_scanned": [
-          "[MSFT] Meta trades at 21x P/E, yet shareholders face a massive new bill (Investing.com)",
-          "[LLY] Best Blue Chip Stocks: 21 Hedge Fund Top Picks (Kiplinger)",
-          "[LLY] Eli Lilly (LLY) \u2013 The Only Healthcare Name in Ken Fisher\u2019s Fastest-Growing Top Positions (Insider Monkey)",
-          "[AVGO] Nvidia, Broadcom, and Micron stocks decline as Anthropic goes public (Yahoo Finance)",
-          "[AVGO] Marvell Stock Halved Again. What Does Its Cash Say? (Trefis)",
-          "[AAPL] Apple Stock Polishes Breakout As Nvidia-Led AI Boom Gets Wake-Up Call (Investor's Business Daily)"
-        ],
-        "ai_briefing": "On 2026-11-19, the $7,000 AI Model closed at $6,746.13 (-253.87 / -3.63%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,537.80, 60/40 Balanced Fund is at $6,735.93, and 4.5% High-Yield Savings is at $7,026.80. Catalyst Check: Latest MSFT catalyst: \"Meta trades at 21x P/E, yet shareholders face a massive new bill\" (Investing.com). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN, SCHD due to negative 5-day momentum and below-50d MA trend risk."
+          "[MSFT] Microsoft CEO Satya Nadella explains why he asked 60K employees to quit (TechCrunch)",
+          "[MSFT] Microsoft CEO Nadella faces uncomfortable reality after outage (TheStreet)",
+          "[LLY] Jefferies Has Wall Street\u2019s Highest Target on Eli Lilly (LLY). Why? (Insider Monkey)",
+          "[LLY] Sanofi and Regeneron\u2019s rare disease wins; Lilly\u2019s dealmaking dance (Pharma Voice)",
+          "[AVGO] Is Broadcom (AVGO) Stock Stretched Or Still Reasonable On Cash Flow? (Simply Wall St.)",
+          "[AVGO] Is Your VOO Fund Secretly An AI Bet? (Trefis)"
+        ]
       },
-      "ai_briefing": "On 2026-11-19, the $7,000 AI Model closed at $6,746.13 (-253.87 / -3.63%), with Trade Win Rate at 60.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,537.80, 60/40 Balanced Fund is at $6,735.93, and 4.5% High-Yield Savings is at $7,026.80. Catalyst Check: Latest MSFT catalyst: \"Meta trades at 21x P/E, yet shareholders face a massive new bill\" (Investing.com). Vetoed dip-adds on MSFT, PLTR, META, AMD, AMZN, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-19, the portfolio stands at $6,746.13, continuing to beat both the S&P 500 ($6,537.80) and 60/40 Balanced benchmarks ($6,735.93) with a strong 60.0% win rate. Portfolio risk management is reinforced today by liquidating the broken technical trend in Microsoft ($989.09, -5.4%) and securing gains on Eli Lilly ($175.53, +7.0%) via a trailing stop. Simultaneously, a measured $300 position in Broadcom (AVGO) initiates steady momentum exposure while preserving a healthy cash buffer.",
       "todays_actions": [
         {
           "id": "2026-11-19-TRIM-MSFT",
@@ -95293,7 +95293,7 @@
               "close": 730.2
             },
             {
-              "h": 58,
+              "h": 61,
               "up": false,
               "close": 715.87
             }
@@ -95373,7 +95373,7 @@
               "close": 352.45
             },
             {
-              "h": 44,
+              "h": 46,
               "up": false,
               "close": 349.21
             }
@@ -95453,7 +95453,7 @@
               "close": 659.51
             },
             {
-              "h": 53,
+              "h": 54,
               "up": false,
               "close": 645.04
             }
@@ -95533,7 +95533,7 @@
               "close": 267.74
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 257.37
             }
@@ -95613,7 +95613,7 @@
               "close": 34.7
             },
             {
-              "h": 73,
+              "h": 74,
               "up": false,
               "close": 34.2
             }
@@ -95693,7 +95693,7 @@
               "close": 508.29
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 498.3
             }
@@ -95773,7 +95773,7 @@
               "close": 1382.75
             },
             {
-              "h": 63,
+              "h": 66,
               "up": false,
               "close": 1351.12
             }
@@ -95933,7 +95933,7 @@
               "close": 616.38
             },
             {
-              "h": 46,
+              "h": 47,
               "up": false,
               "close": 596.22
             }
@@ -96093,7 +96093,7 @@
               "close": 530.14
             },
             {
-              "h": 99,
+              "h": 100,
               "up": false,
               "close": 489.19
             }
@@ -96175,7 +96175,7 @@
               "close": 730.2
             },
             {
-              "h": 58,
+              "h": 61,
               "up": false,
               "close": 715.87
             }
@@ -96255,7 +96255,7 @@
               "close": 352.45
             },
             {
-              "h": 44,
+              "h": 46,
               "up": false,
               "close": 349.21
             }
@@ -96335,7 +96335,7 @@
               "close": 267.74
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 257.37
             }
@@ -96495,7 +96495,7 @@
               "close": 354.05
             },
             {
-              "h": 45,
+              "h": 48,
               "up": false,
               "close": 346.65
             }
@@ -96575,7 +96575,7 @@
               "close": 34.7
             },
             {
-              "h": 73,
+              "h": 74,
               "up": false,
               "close": 34.2
             }
@@ -97318,7 +97318,7 @@
           "rsi14": 34.5,
           "sma20": 751.32,
           "sma50": 761.67,
-          "vol_ratio": 1.42,
+          "vol_ratio": 1.49,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -97382,7 +97382,7 @@
               "close": 730.2
             },
             {
-              "h": 58,
+              "h": 61,
               "up": false,
               "close": 715.87
             }
@@ -97395,8 +97395,8 @@
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 645.04,
-          "day_open": 671.05,
-          "day_high": 676.46,
+          "day_open": 671.09,
+          "day_high": 676.49,
           "day_low": 644.34,
           "day_pct": -2.19,
           "ret_5d": -6.27,
@@ -97405,7 +97405,7 @@
           "rsi14": 36.5,
           "sma20": 683.33,
           "sma50": 713.09,
-          "vol_ratio": 1.33,
+          "vol_ratio": 1.37,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -97469,7 +97469,7 @@
               "close": 659.51
             },
             {
-              "h": 53,
+              "h": 54,
               "up": false,
               "close": 645.04
             }
@@ -97492,7 +97492,7 @@
           "rsi14": 42.6,
           "sma20": 524.96,
           "sma50": 520.06,
-          "vol_ratio": 1.02,
+          "vol_ratio": 1.04,
           "score": 36.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -97556,7 +97556,7 @@
               "close": 508.29
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 498.3
             }
@@ -97579,7 +97579,7 @@
           "rsi14": 53.5,
           "sma20": 347.74,
           "sma50": 341.6,
-          "vol_ratio": 0.83,
+          "vol_ratio": 0.85,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -97643,7 +97643,7 @@
               "close": 352.45
             },
             {
-              "h": 44,
+              "h": 46,
               "up": false,
               "close": 349.21
             }
@@ -97656,7 +97656,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 272.66,
-          "day_open": 294.12,
+          "day_open": 294.3,
           "day_high": 295.43,
           "day_low": 272.36,
           "day_pct": -3.46,
@@ -97666,7 +97666,7 @@
           "rsi14": 44.5,
           "sma20": 292.2,
           "sma50": 323.76,
-          "vol_ratio": 1.14,
+          "vol_ratio": 1.17,
           "score": 33.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -97730,7 +97730,7 @@
               "close": 282.44
             },
             {
-              "h": 90,
+              "h": 92,
               "up": false,
               "close": 272.66
             }
@@ -97743,7 +97743,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 257.37,
-          "day_open": 272.58,
+          "day_open": 272.56,
           "day_high": 274.0,
           "day_low": 256.75,
           "day_pct": -3.87,
@@ -97753,7 +97753,7 @@
           "rsi14": 60.6,
           "sma20": 257.48,
           "sma50": 255.23,
-          "vol_ratio": 1.03,
+          "vol_ratio": 1.05,
           "score": 87.4,
           "signal": "BUY",
           "setup_tag": "Pullback to Support",
@@ -97817,7 +97817,7 @@
               "close": 267.74
             },
             {
-              "h": 56,
+              "h": 57,
               "up": false,
               "close": 257.37
             }
@@ -97840,7 +97840,7 @@
           "rsi14": 16.5,
           "sma20": 185.73,
           "sma50": 208.86,
-          "vol_ratio": 1.25,
+          "vol_ratio": 1.28,
           "score": 34.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -97904,7 +97904,7 @@
               "close": 150.96
             },
             {
-              "h": 42,
+              "h": 43,
               "up": false,
               "close": 145.98
             }
@@ -97917,7 +97917,7 @@
           "bucket": "Swing",
           "max_weight": 0.11,
           "price": 596.22,
-          "day_open": 625.0,
+          "day_open": 596.22,
           "day_high": 630.01,
           "day_low": 595.79,
           "day_pct": -3.27,
@@ -97927,7 +97927,7 @@
           "rsi14": 44.6,
           "sma20": 622.65,
           "sma50": 678.4,
-          "vol_ratio": 0.67,
+          "vol_ratio": 0.68,
           "score": 31.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -97991,7 +97991,7 @@
               "close": 616.38
             },
             {
-              "h": 46,
+              "h": 47,
               "up": false,
               "close": 596.22
             }
@@ -98006,7 +98006,7 @@
           "price": 346.65,
           "day_open": 362.94,
           "day_high": 369.26,
-          "day_low": 345.14,
+          "day_low": 345.0,
           "day_pct": -2.09,
           "ret_5d": -4.86,
           "ret_20d": 7.24,
@@ -98014,7 +98014,7 @@
           "rsi14": 55.5,
           "sma20": 333.24,
           "sma50": 343.86,
-          "vol_ratio": 0.86,
+          "vol_ratio": 0.92,
           "score": 75.4,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -98078,7 +98078,7 @@
               "close": 354.05
             },
             {
-              "h": 45,
+              "h": 48,
               "up": false,
               "close": 346.65
             }
@@ -98091,7 +98091,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 352.09,
-          "day_open": 369.55,
+          "day_open": 369.56,
           "day_high": 374.77,
           "day_low": 351.14,
           "day_pct": -2.9,
@@ -98101,7 +98101,7 @@
           "rsi14": 36.0,
           "sma20": 396.77,
           "sma50": 424.44,
-          "vol_ratio": 1.14,
+          "vol_ratio": 1.15,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -98165,7 +98165,7 @@
               "close": 362.62
             },
             {
-              "h": 41,
+              "h": 42,
               "up": false,
               "close": 352.09
             }
@@ -98178,7 +98178,7 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 489.19,
-          "day_open": 543.48,
+          "day_open": 542.17,
           "day_high": 555.01,
           "day_low": 470.56,
           "day_pct": -7.72,
@@ -98188,7 +98188,7 @@
           "rsi14": 48.4,
           "sma20": 513.7,
           "sma50": 554.93,
-          "vol_ratio": 1.89,
+          "vol_ratio": 1.9,
           "score": 46.0,
           "signal": "WATCH",
           "setup_tag": "Below 50d Trend",
@@ -98252,7 +98252,7 @@
               "close": 530.14
             },
             {
-              "h": 99,
+              "h": 100,
               "up": false,
               "close": 489.19
             }
@@ -98265,9 +98265,9 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 58.46,
-          "day_open": 60.05,
+          "day_open": 59.92,
           "day_high": 60.45,
-          "day_low": 58.19,
+          "day_low": 58.18,
           "day_pct": -2.27,
           "ret_5d": -6.75,
           "ret_20d": -12.81,
@@ -98275,7 +98275,7 @@
           "rsi14": 38.8,
           "sma20": 62.74,
           "sma50": 67.82,
-          "vol_ratio": 0.92,
+          "vol_ratio": 0.94,
           "score": 30.2,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -98339,7 +98339,7 @@
               "close": 59.82
             },
             {
-              "h": 75,
+              "h": 76,
               "up": false,
               "close": 58.46
             }
@@ -98352,7 +98352,7 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 153.68,
-          "day_open": 160.94,
+          "day_open": 153.68,
           "day_high": 167.13,
           "day_low": 153.2,
           "day_pct": -1.91,
@@ -98439,7 +98439,7 @@
           "bucket": "Defensive",
           "max_weight": 0.16,
           "price": 34.2,
-          "day_open": 34.67,
+          "day_open": 34.68,
           "day_high": 34.71,
           "day_low": 34.05,
           "day_pct": -1.44,
@@ -98513,7 +98513,7 @@
               "close": 34.7
             },
             {
-              "h": 73,
+              "h": 74,
               "up": false,
               "close": 34.2
             }
@@ -98536,7 +98536,7 @@
           "rsi14": 66.8,
           "sma20": 567.49,
           "sma50": 535.67,
-          "vol_ratio": 1.07,
+          "vol_ratio": 1.08,
           "score": 92.4,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -98623,7 +98623,7 @@
           "rsi14": 39.0,
           "sma20": 337.64,
           "sma50": 338.26,
-          "vol_ratio": 1.05,
+          "vol_ratio": 1.06,
           "score": 44.5,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -98687,7 +98687,7 @@
               "close": 324.11
             },
             {
-              "h": 53,
+              "h": 54,
               "up": false,
               "close": 320.22
             }
@@ -98700,8 +98700,8 @@
           "bucket": "Defensive",
           "max_weight": 0.1,
           "price": 1093.83,
-          "day_open": 1089.0,
-          "day_high": 1094.76,
+          "day_open": 1089.5,
+          "day_high": 1094.79,
           "day_low": 1083.15,
           "day_pct": -0.25,
           "ret_5d": 0.15,
@@ -98797,7 +98797,7 @@
           "rsi14": 38.3,
           "sma20": 1380.23,
           "sma50": 1262.29,
-          "vol_ratio": 0.99,
+          "vol_ratio": 1.04,
           "score": 94.0,
           "signal": "BUY",
           "setup_tag": "Tactical Dip Buy",
@@ -98861,7 +98861,7 @@
               "close": 1382.75
             },
             {
-              "h": 63,
+              "h": 66,
               "up": false,
               "close": 1351.12
             }
@@ -98884,7 +98884,7 @@
           "rsi14": 37.1,
           "sma20": 362.61,
           "sma50": 376.42,
-          "vol_ratio": 1.05,
+          "vol_ratio": 1.09,
           "score": 44.5,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -98948,7 +98948,7 @@
               "close": 341.19
             },
             {
-              "h": 76,
+              "h": 79,
               "up": false,
               "close": 335.18
             }
