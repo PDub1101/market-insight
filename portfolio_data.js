@@ -2,14 +2,14 @@ window.MARKET_INSIGHT_DATA = {
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-25 05:23 AM ET",
+  "last_updated": "2026-11-25 09:16 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3545.0,
-      "change": -16.9,
-      "pct": -0.47,
+      "price": 3508.9,
+      "change": -53.0,
+      "pct": -1.49,
       "up": false,
       "spark": [
         4074.9,
@@ -25,7 +25,7 @@ window.MARKET_INSIGHT_DATA = {
         3515.4,
         3651.4,
         3561.9,
-        3545.0
+        3508.9
       ]
     },
     {
@@ -127,12 +127,11 @@ window.MARKET_INSIGHT_DATA = {
     {
       "label": "VIX VOL",
       "symbol": "^VIX",
-      "price": 26.36,
-      "change": -0.26,
-      "pct": -0.98,
-      "up": false,
+      "price": 31.52,
+      "change": 5.16,
+      "pct": 19.58,
+      "up": true,
       "spark": [
-        28.18,
         25.64,
         19.92,
         19.46,
@@ -145,7 +144,8 @@ window.MARKET_INSIGHT_DATA = {
         28.44,
         35.89,
         26.62,
-        26.36
+        26.36,
+        31.52
       ]
     }
   ],
@@ -2135,7 +2135,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5624,7 +5624,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -9147,7 +9147,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12872,7 +12872,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16686,7 +16686,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20499,7 +20499,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -24340,7 +24340,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -28208,7 +28208,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -32278,7 +32278,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36488,7 +36488,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40840,7 +40840,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -45249,7 +45249,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49631,7 +49631,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -54038,7 +54038,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58647,7 +58647,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62893,7 +62893,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66902,7 +66902,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70868,7 +70868,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74848,7 +74848,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78841,7 +78841,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82849,7 +82849,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -86930,7 +86930,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-17",
       "tab_label": "Day 22 \u2022 Nov 17",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
@@ -91053,7 +91053,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-18",
       "tab_label": "Day 23 \u2022 Nov 18",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.77,
@@ -95161,7 +95161,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-19",
       "tab_label": "Day 24 \u2022 Nov 19",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6634.55,
@@ -99310,7 +99310,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-20",
       "tab_label": "Day 25 \u2022 Nov 20",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6420.97,
@@ -103529,7 +103529,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-23",
       "tab_label": "Day 26 \u2022 Nov 23",
       "is_backtest": true,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:15 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6643.88,
@@ -107762,7 +107762,7 @@ window.MARKET_INSIGHT_DATA = {
       "date": "2026-11-24",
       "tab_label": "Today \u2022 Nov 24 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-25 05:23 AM ET",
+      "updated_at": "2026-11-25 09:16 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6637.76,
@@ -107950,21 +107950,22 @@ window.MARKET_INSIGHT_DATA = {
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com).",
+        "catalyst_headline": "Latest AAPL catalyst: \"Nasdaq Futures Tumble as AI Selloff Returns\" (The Wall Street Journal).",
         "veto_note": "Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
         "veto_trade": false,
         "vetoed_ticker": "NONE",
         "lesson_learned": "On 2026-11-24, Dividend Value Mutual Fund led the leaderboard (+1.90%); combining relative strength (1.12x weight) with risk discipline keeps portfolio win rate at 50.0%.",
         "headlines_scanned": [
-          "[AAPL] Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs (Investing.com)",
-          "[AAPL] 5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains (Kiplinger)",
-          "[LLY] Will 'Anti-Pharma' Democrats Chop Away At Biotech Stocks' Big Wins? (Investor's Business Daily)",
-          "[COST] Costco gives $30 gift for the holidays, but there's a catch (TheStreet)",
-          "[COST] Everyone Predicted a Retail Apocalypse. Instead, Store Vacancies Are Near Lows. (Barrons.com)"
+          "[AAPL] Nasdaq Futures Tumble as AI Selloff Returns (The Wall Street Journal)",
+          "[AAPL] Market Chatter: Trump to Preside Over Taiwan Semiconductor Plant Expansion Ceremony in Arizona (MT Newswires)",
+          "[LLY] Market Chatter: Novo Nordisk and Eli Lilly Prepare New Warning Labels for GLP-1 Drugs Over Eye Condition Risk (MT Newswires)",
+          "[LLY] 3 Stocks With Dividend Yields of 4% or More to Buy in November (Motley Fool)",
+          "[COST] Costco Now Yields 11%, Its Highest in 5 Years. Is the Dividend Safe? (TIKR)",
+          "[COST] State Street Consumer Staples SPDR (XLP) Adds Walmart and Costco on Nov. 23 (GuruFocus.com)"
         ],
-        "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Nasdaq Futures Tumble as AI Selloff Returns\" (The Wall Street Journal). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk."
       },
-      "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Nasdaq Futures Tumble as AI Selloff Returns\" (The Wall Street Journal). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-24-HOLD-AAPL",
