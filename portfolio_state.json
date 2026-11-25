@@ -2,17 +2,16 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-24 04:31 PM ET",
+  "last_updated": "2026-11-25 05:23 AM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
       "symbol": "GC=F",
-      "price": 3552.3,
-      "change": -99.1,
-      "pct": -2.71,
+      "price": 3545.0,
+      "change": -16.9,
+      "pct": -0.47,
       "up": false,
       "spark": [
-        4113.5,
         4074.9,
         4114.5,
         4030.2,
@@ -25,7 +24,8 @@
         3685.5,
         3515.4,
         3651.4,
-        3552.3
+        3561.9,
+        3545.0
       ]
     },
     {
@@ -2135,7 +2135,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5624,7 +5624,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -9147,7 +9147,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12872,7 +12872,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16686,7 +16686,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20499,7 +20499,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -24340,7 +24340,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -28208,7 +28208,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -32278,7 +32278,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36488,7 +36488,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40840,7 +40840,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -45249,7 +45249,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49631,7 +49631,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -54038,7 +54038,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58647,7 +58647,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -62893,7 +62893,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -66902,7 +66902,7 @@
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70868,7 +70868,7 @@
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74848,7 +74848,7 @@
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78841,7 +78841,7 @@
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82849,7 +82849,7 @@
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -86930,7 +86930,7 @@
       "date": "2026-11-17",
       "tab_label": "Day 22 \u2022 Nov 17",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
@@ -91053,7 +91053,7 @@
       "date": "2026-11-18",
       "tab_label": "Day 23 \u2022 Nov 18",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.77,
@@ -95161,7 +95161,7 @@
       "date": "2026-11-19",
       "tab_label": "Day 24 \u2022 Nov 19",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6634.55,
@@ -99310,7 +99310,7 @@
       "date": "2026-11-20",
       "tab_label": "Day 25 \u2022 Nov 20",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6420.97,
@@ -103529,7 +103529,7 @@
       "date": "2026-11-23",
       "tab_label": "Day 26 \u2022 Nov 23",
       "is_backtest": true,
-      "updated_at": "2026-11-24 04:30 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6643.88,
@@ -107762,15 +107762,15 @@
       "date": "2026-11-24",
       "tab_label": "Today \u2022 Nov 24 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-24 04:31 PM ET",
+      "updated_at": "2026-11-25 05:23 AM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6637.76,
         "invested_value": 6384.99,
         "cash_reserve": 252.77,
-        "day_open": 6586.17,
-        "day_high": 6679.89,
-        "day_low": 6538.43,
+        "day_open": 6585.08,
+        "day_high": 6686.21,
+        "day_low": 6538.09,
         "day_change_dollars": -6.12,
         "day_change_pct": -0.09,
         "total_gain_dollars": -362.24,
@@ -107950,22 +107950,21 @@
       },
       "gemini_insight": {
         "engine": "Gemini Hybrid Catalyst & Quant Engine",
-        "catalyst_headline": "Latest AAPL catalyst: \"Is Apple (AAPL) Above Fair Value As ETF Buying Returns?\" (Simply Wall St.).",
+        "catalyst_headline": "Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com).",
         "veto_note": "Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
         "veto_trade": false,
         "vetoed_ticker": "NONE",
         "lesson_learned": "On 2026-11-24, Dividend Value Mutual Fund led the leaderboard (+1.90%); combining relative strength (1.12x weight) with risk discipline keeps portfolio win rate at 50.0%.",
         "headlines_scanned": [
-          "[AAPL] Is Apple (AAPL) Above Fair Value As ETF Buying Returns? (Simply Wall St.)",
-          "[AAPL] Trump Warns of \u201cPaying 200 Percent on Chips\u201d in Two Years. That Pushes TSMC Toward a $22.6 Billion Texas Plant (TIKR)",
+          "[AAPL] Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs (Investing.com)",
+          "[AAPL] 5 Sleeper Blue-Chip Stock Picks for Steady Long-Term Gains (Kiplinger)",
           "[LLY] Will 'Anti-Pharma' Democrats Chop Away At Biotech Stocks' Big Wins? (Investor's Business Daily)",
-          "[LLY] Why Is AbbVie (ABBV) Stock Up Today? Health Care Rally as Tech Slides (GuruFocus.com)",
-          "[COST] Sanofi Bets $41 Billion on Insmed to Fuel Growth Beyond Dupixent (MarketBeat)",
-          "[COST] How Much Is a Costco Membership? (Gold Star vs. Executive) (The Penny Hoarder)"
+          "[COST] Costco gives $30 gift for the holidays, but there's a catch (TheStreet)",
+          "[COST] Everyone Predicted a Retail Apocalypse. Instead, Store Vacancies Are Near Lows. (Barrons.com)"
         ],
-        "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Is Apple (AAPL) Above Fair Value As ETF Buying Returns?\" (Simply Wall St.). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk."
+        "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk."
       },
-      "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Is Apple (AAPL) Above Fair Value As ETF Buying Returns?\" (Simply Wall St.). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
+      "ai_briefing": "On 2026-11-24, the $7,000 AI Model closed at $6,673.00 (-327.00 / -4.67%), with Trade Win Rate at 50.0%. Compared to passive alternatives: S&P 500 Mutual Fund is at $6,564.37, 60/40 Balanced Fund is at $6,770.12, and 4.5% High-Yield Savings is at $7,031.14. Catalyst Check: Latest AAPL catalyst: \"Xiaomi shares jump over 8% as premium phone sales cushion rising chip costs\" (Investing.com). Vetoed dip-adds on MSFT, AMZN, PLTR, META, AMD, SCHD due to negative 5-day momentum and below-50d MA trend risk.",
       "todays_actions": [
         {
           "id": "2026-11-24-HOLD-AAPL",
@@ -108058,7 +108057,7 @@
               "close": 722.29
             },
             {
-              "h": 40,
+              "h": 42,
               "up": false,
               "close": 718.78
             }
@@ -108138,7 +108137,7 @@
               "close": 349.08
             },
             {
-              "h": 49,
+              "h": 51,
               "up": true,
               "close": 354.07
             }
@@ -108218,7 +108217,7 @@
               "close": 651.03
             },
             {
-              "h": 41,
+              "h": 42,
               "up": false,
               "close": 638.1
             }
@@ -108298,7 +108297,7 @@
               "close": 34.39
             },
             {
-              "h": 77,
+              "h": 78,
               "up": true,
               "close": 34.89
             }
@@ -108378,7 +108377,7 @@
               "close": 255.39
             },
             {
-              "h": 45,
+              "h": 46,
               "up": false,
               "close": 252.29
             }
@@ -108458,7 +108457,7 @@
               "close": 1364.6
             },
             {
-              "h": 73,
+              "h": 76,
               "up": true,
               "close": 1407.59
             }
@@ -108538,7 +108537,7 @@
               "close": 572.36
             },
             {
-              "h": 58,
+              "h": 60,
               "up": true,
               "close": 577.21
             }
@@ -108618,7 +108617,7 @@
               "close": 1097.91
             },
             {
-              "h": 59,
+              "h": 65,
               "up": false,
               "close": 1091.71
             }
@@ -108698,7 +108697,7 @@
               "close": 597.6
             },
             {
-              "h": 46,
+              "h": 47,
               "up": false,
               "close": 589.82
             }
@@ -108778,7 +108777,7 @@
               "close": 159.36
             },
             {
-              "h": 54,
+              "h": 56,
               "up": true,
               "close": 161.18
             }
@@ -108858,7 +108857,7 @@
               "close": 492.5
             },
             {
-              "h": 47,
+              "h": 49,
               "up": true,
               "close": 496.13
             }
@@ -109020,7 +109019,7 @@
               "close": 349.08
             },
             {
-              "h": 49,
+              "h": 51,
               "up": true,
               "close": 354.07
             }
@@ -109100,7 +109099,7 @@
               "close": 255.39
             },
             {
-              "h": 45,
+              "h": 46,
               "up": false,
               "close": 252.29
             }
@@ -109180,7 +109179,7 @@
               "close": 572.36
             },
             {
-              "h": 58,
+              "h": 60,
               "up": true,
               "close": 577.21
             }
@@ -109260,7 +109259,7 @@
               "close": 34.39
             },
             {
-              "h": 77,
+              "h": 78,
               "up": true,
               "close": 34.89
             }
@@ -109340,7 +109339,7 @@
               "close": 1097.91
             },
             {
-              "h": 59,
+              "h": 65,
               "up": false,
               "close": 1091.71
             }
@@ -110200,7 +110199,7 @@
           "max_weight": 0.22,
           "price": 718.78,
           "day_open": 715.15,
-          "day_high": 720.92,
+          "day_high": 720.93,
           "day_low": 712.14,
           "day_pct": -0.49,
           "ret_5d": -1.86,
@@ -110209,7 +110208,7 @@
           "rsi14": 36.0,
           "sma20": 743.11,
           "sma50": 758.64,
-          "vol_ratio": 0.99,
+          "vol_ratio": 1.05,
           "score": 43.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110273,7 +110272,7 @@
               "close": 722.29
             },
             {
-              "h": 40,
+              "h": 42,
               "up": false,
               "close": 718.78
             }
@@ -110286,8 +110285,8 @@
           "bucket": "Core",
           "max_weight": 0.18,
           "price": 638.1,
-          "day_open": 640.02,
-          "day_high": 643.47,
+          "day_open": 640.04,
+          "day_high": 648.0,
           "day_low": 631.15,
           "day_pct": -1.99,
           "ret_5d": -2.87,
@@ -110296,7 +110295,7 @@
           "rsi14": 38.8,
           "sma20": 671.31,
           "sma50": 708.47,
-          "vol_ratio": 0.93,
+          "vol_ratio": 0.96,
           "score": 37.1,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110360,7 +110359,7 @@
               "close": 651.03
             },
             {
-              "h": 41,
+              "h": 42,
               "up": false,
               "close": 638.1
             }
@@ -110373,8 +110372,8 @@
           "bucket": "Core",
           "max_weight": 0.14,
           "price": 496.13,
-          "day_open": 490.43,
-          "day_high": 501.8,
+          "day_open": 490.13,
+          "day_high": 501.82,
           "day_low": 488.43,
           "day_pct": 0.74,
           "ret_5d": -2.0,
@@ -110383,7 +110382,7 @@
           "rsi14": 25.5,
           "sma20": 519.19,
           "sma50": 519.56,
-          "vol_ratio": 0.72,
+          "vol_ratio": 0.76,
           "score": 42.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -110447,7 +110446,7 @@
               "close": 492.5
             },
             {
-              "h": 47,
+              "h": 49,
               "up": true,
               "close": 496.13
             }
@@ -110460,8 +110459,8 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 354.07,
-          "day_open": 348.12,
-          "day_high": 354.37,
+          "day_open": 348.06,
+          "day_high": 354.4,
           "day_low": 345.88,
           "day_pct": 1.43,
           "ret_5d": 0.61,
@@ -110470,7 +110469,7 @@
           "rsi14": 54.3,
           "sma20": 348.08,
           "sma50": 342.58,
-          "vol_ratio": 0.79,
+          "vol_ratio": 0.82,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -110534,7 +110533,7 @@
               "close": 349.08
             },
             {
-              "h": 49,
+              "h": 51,
               "up": true,
               "close": 354.07
             }
@@ -110547,9 +110546,9 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 279.05,
-          "day_open": 281.39,
-          "day_high": 281.39,
-          "day_low": 276.05,
+          "day_open": 281.6,
+          "day_high": 281.78,
+          "day_low": 276.03,
           "day_pct": -1.08,
           "ret_5d": -0.41,
           "ret_20d": -12.95,
@@ -110557,7 +110556,7 @@
           "rsi14": 44.0,
           "sma20": 285.64,
           "sma50": 319.64,
-          "vol_ratio": 0.72,
+          "vol_ratio": 0.73,
           "score": 35.4,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110621,7 +110620,7 @@
               "close": 282.1
             },
             {
-              "h": 57,
+              "h": 58,
               "up": false,
               "close": 279.05
             }
@@ -110634,7 +110633,7 @@
           "bucket": "Core",
           "max_weight": 0.12,
           "price": 252.29,
-          "day_open": 252.54,
+          "day_open": 252.29,
           "day_high": 255.56,
           "day_low": 250.53,
           "day_pct": -1.21,
@@ -110644,7 +110643,7 @@
           "rsi14": 41.0,
           "sma20": 257.7,
           "sma50": 255.15,
-          "vol_ratio": 0.61,
+          "vol_ratio": 0.63,
           "score": 61.2,
           "signal": "HOLD",
           "setup_tag": "Tactical Dip Buy",
@@ -110708,7 +110707,7 @@
               "close": 255.39
             },
             {
-              "h": 45,
+              "h": 46,
               "up": false,
               "close": 252.29
             }
@@ -110721,7 +110720,7 @@
           "bucket": "Swing",
           "max_weight": 0.14,
           "price": 155.38,
-          "day_open": 159.06,
+          "day_open": 159.1,
           "day_high": 159.92,
           "day_low": 150.5,
           "day_pct": -5.86,
@@ -110731,7 +110730,7 @@
           "rsi14": 34.4,
           "sma20": 175.78,
           "sma50": 204.95,
-          "vol_ratio": 1.18,
+          "vol_ratio": 1.19,
           "score": 28.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110795,7 +110794,7 @@
               "close": 165.05
             },
             {
-              "h": 48,
+              "h": 49,
               "up": false,
               "close": 155.38
             }
@@ -110818,7 +110817,7 @@
           "rsi14": 41.0,
           "sma20": 615.4,
           "sma50": 673.69,
-          "vol_ratio": 0.56,
+          "vol_ratio": 0.58,
           "score": 31.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110882,7 +110881,7 @@
               "close": 597.6
             },
             {
-              "h": 46,
+              "h": 47,
               "up": false,
               "close": 589.82
             }
@@ -110895,7 +110894,7 @@
           "bucket": "Swing",
           "max_weight": 0.1,
           "price": 301.08,
-          "day_open": 300.89,
+          "day_open": 301.29,
           "day_high": 309.18,
           "day_low": 297.8,
           "day_pct": -3.98,
@@ -110905,7 +110904,7 @@
           "rsi14": 44.7,
           "sma20": 329.54,
           "sma50": 341.32,
-          "vol_ratio": 0.95,
+          "vol_ratio": 0.99,
           "score": 31.5,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -110969,7 +110968,7 @@
               "close": 313.55
             },
             {
-              "h": 50,
+              "h": 52,
               "up": false,
               "close": 301.08
             }
@@ -110983,7 +110982,7 @@
           "max_weight": 0.1,
           "price": 349.2,
           "day_open": 356.47,
-          "day_high": 357.16,
+          "day_high": 357.2,
           "day_low": 339.73,
           "day_pct": -3.96,
           "ret_5d": -2.92,
@@ -111069,9 +111068,9 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 413.27,
-          "day_open": 425.12,
+          "day_open": 425.13,
           "day_high": 428.87,
-          "day_low": 396.03,
+          "day_low": 396.01,
           "day_pct": -8.86,
           "ret_5d": -17.91,
           "ret_20d": -26.24,
@@ -111079,7 +111078,7 @@
           "rsi14": 43.1,
           "sma20": 497.84,
           "sma50": 550.48,
-          "vol_ratio": 1.03,
+          "vol_ratio": 1.04,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -111156,9 +111155,9 @@
           "bucket": "Swing",
           "max_weight": 0.09,
           "price": 58.87,
-          "day_open": 57.89,
+          "day_open": 57.88,
           "day_high": 59.72,
-          "day_low": 57.58,
+          "day_low": 57.57,
           "day_pct": 1.33,
           "ret_5d": -1.36,
           "ret_20d": -5.84,
@@ -111166,7 +111165,7 @@
           "rsi14": 26.1,
           "sma20": 61.81,
           "sma50": 66.58,
-          "vol_ratio": 0.83,
+          "vol_ratio": 0.88,
           "score": 44.2,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -111230,7 +111229,7 @@
               "close": 58.1
             },
             {
-              "h": 49,
+              "h": 52,
               "up": true,
               "close": 58.87
             }
@@ -111243,9 +111242,9 @@
           "bucket": "Swing",
           "max_weight": 0.08,
           "price": 161.18,
-          "day_open": 157.8,
-          "day_high": 163.01,
-          "day_low": 157.8,
+          "day_open": 157.63,
+          "day_high": 163.02,
+          "day_low": 157.62,
           "day_pct": 1.14,
           "ret_5d": 2.95,
           "ret_20d": -18.89,
@@ -111253,7 +111252,7 @@
           "rsi14": 43.6,
           "sma20": 167.97,
           "sma50": 182.75,
-          "vol_ratio": 0.77,
+          "vol_ratio": 0.8,
           "score": 21.0,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -111317,7 +111316,7 @@
               "close": 159.36
             },
             {
-              "h": 54,
+              "h": 56,
               "up": true,
               "close": 161.18
             }
@@ -111404,7 +111403,7 @@
               "close": 34.39
             },
             {
-              "h": 77,
+              "h": 78,
               "up": true,
               "close": 34.89
             }
@@ -111418,7 +111417,7 @@
           "max_weight": 0.12,
           "price": 577.21,
           "day_open": 574.0,
-          "day_high": 579.77,
+          "day_high": 579.79,
           "day_low": 571.34,
           "day_pct": 0.85,
           "ret_5d": -1.63,
@@ -111427,7 +111426,7 @@
           "rsi14": 48.4,
           "sma20": 571.79,
           "sma50": 539.22,
-          "vol_ratio": 0.74,
+          "vol_ratio": 0.76,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -111491,7 +111490,7 @@
               "close": 572.36
             },
             {
-              "h": 58,
+              "h": 60,
               "up": true,
               "close": 577.21
             }
@@ -111505,7 +111504,7 @@
           "max_weight": 0.1,
           "price": 317.1,
           "day_open": 314.78,
-          "day_high": 319.0,
+          "day_high": 319.01,
           "day_low": 313.62,
           "day_pct": 0.14,
           "ret_5d": -3.9,
@@ -111514,7 +111513,7 @@
           "rsi14": 25.9,
           "sma20": 334.79,
           "sma50": 335.97,
-          "vol_ratio": 0.97,
+          "vol_ratio": 1.01,
           "score": 50.7,
           "signal": "WATCH",
           "setup_tag": "Oversold Bounce Watch",
@@ -111578,7 +111577,7 @@
               "close": 316.66
             },
             {
-              "h": 55,
+              "h": 57,
               "up": true,
               "close": 317.1
             }
@@ -111593,7 +111592,7 @@
           "price": 1091.71,
           "day_open": 1071.38,
           "day_high": 1094.75,
-          "day_low": 1068.0,
+          "day_low": 1067.92,
           "day_pct": -0.56,
           "ret_5d": -1.65,
           "ret_20d": 10.04,
@@ -111601,7 +111600,7 @@
           "rsi14": 67.4,
           "sma20": 1067.05,
           "sma50": 994.12,
-          "vol_ratio": 0.94,
+          "vol_ratio": 1.04,
           "score": 94.1,
           "signal": "BUY",
           "setup_tag": "Trend Hold",
@@ -111665,7 +111664,7 @@
               "close": 1097.91
             },
             {
-              "h": 59,
+              "h": 65,
               "up": false,
               "close": 1091.71
             }
@@ -111678,9 +111677,9 @@
           "bucket": "Defensive",
           "max_weight": 0.09,
           "price": 1407.59,
-          "day_open": 1370.22,
+          "day_open": 1370.23,
           "day_high": 1415.0,
-          "day_low": 1370.0,
+          "day_low": 1369.84,
           "day_pct": 3.15,
           "ret_5d": -0.56,
           "ret_20d": 9.8,
@@ -111688,7 +111687,7 @@
           "rsi14": 48.4,
           "sma20": 1394.47,
           "sma50": 1276.87,
-          "vol_ratio": 0.92,
+          "vol_ratio": 0.96,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -111752,7 +111751,7 @@
               "close": 1364.6
             },
             {
-              "h": 73,
+              "h": 76,
               "up": true,
               "close": 1407.59
             }
@@ -111766,7 +111765,7 @@
           "max_weight": 0.08,
           "price": 325.45,
           "day_open": 331.43,
-          "day_high": 332.73,
+          "day_high": 332.74,
           "day_low": 324.9,
           "day_pct": -2.27,
           "ret_5d": -7.67,
@@ -111775,7 +111774,7 @@
           "rsi14": 23.4,
           "sma20": 356.34,
           "sma50": 372.33,
-          "vol_ratio": 0.85,
+          "vol_ratio": 0.89,
           "score": 43.6,
           "signal": "TRIM",
           "setup_tag": "Oversold Bounce Watch",
@@ -111839,7 +111838,7 @@
               "close": 333.02
             },
             {
-              "h": 38,
+              "h": 40,
               "up": false,
               "close": 325.45
             }
