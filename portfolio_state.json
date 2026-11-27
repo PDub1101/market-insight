@@ -2,7 +2,7 @@
   "model_name": "Market Insight Dual Model Simulation (v1 Baseline vs. v2 Enhanced)",
   "starting_capital": 7000.0,
   "created_at": "2026-10-19",
-  "last_updated": "2026-11-27 04:06 PM ET",
+  "last_updated": "2026-11-27 04:30 PM ET",
   "market_ribbon": [
     {
       "label": "GOLD",
@@ -2254,7 +2254,7 @@
       "date": "2026-10-19",
       "tab_label": "Sim Start \u2022 Oct 19",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7000.0,
@@ -5743,7 +5743,7 @@
       "date": "2026-10-20",
       "tab_label": "Day 2 \u2022 Oct 20",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7002.87,
@@ -9266,7 +9266,7 @@
       "date": "2026-10-21",
       "tab_label": "Day 3 \u2022 Oct 21",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 7060.34,
@@ -12991,7 +12991,7 @@
       "date": "2026-10-22",
       "tab_label": "Day 4 \u2022 Oct 22",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6887.36,
@@ -16805,7 +16805,7 @@
       "date": "2026-10-23",
       "tab_label": "Day 5 \u2022 Oct 23",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6869.68,
@@ -20618,7 +20618,7 @@
       "date": "2026-10-26",
       "tab_label": "Day 6 \u2022 Oct 26",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6912.71,
@@ -24459,7 +24459,7 @@
       "date": "2026-10-27",
       "tab_label": "Day 7 \u2022 Oct 27",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6954.4,
@@ -28327,7 +28327,7 @@
       "date": "2026-10-28",
       "tab_label": "Day 8 \u2022 Oct 28",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6965.9,
@@ -32397,7 +32397,7 @@
       "date": "2026-10-29",
       "tab_label": "Day 9 \u2022 Oct 29",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6969.38,
@@ -36607,7 +36607,7 @@
       "date": "2026-10-30",
       "tab_label": "Day 10 \u2022 Oct 30",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6836.96,
@@ -40959,7 +40959,7 @@
       "date": "2026-11-02",
       "tab_label": "Day 11 \u2022 Nov 02",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6769.34,
@@ -45368,7 +45368,7 @@
       "date": "2026-11-03",
       "tab_label": "Day 12 \u2022 Nov 03",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.6,
@@ -49750,7 +49750,7 @@
       "date": "2026-11-04",
       "tab_label": "Day 13 \u2022 Nov 04",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6959.31,
@@ -54157,7 +54157,7 @@
       "date": "2026-11-05",
       "tab_label": "Day 14 \u2022 Nov 05",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6709.0,
@@ -58766,7 +58766,7 @@
       "date": "2026-11-06",
       "tab_label": "Day 15 \u2022 Nov 06",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6723.63,
@@ -63012,7 +63012,7 @@
       "date": "2026-11-09",
       "tab_label": "Day 16 \u2022 Nov 09",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6922.46,
@@ -67021,7 +67021,7 @@
       "date": "2026-11-10",
       "tab_label": "Day 17 \u2022 Nov 10",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6896.51,
@@ -70987,7 +70987,7 @@
       "date": "2026-11-11",
       "tab_label": "Day 18 \u2022 Nov 11",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6950.1,
@@ -74967,7 +74967,7 @@
       "date": "2026-11-12",
       "tab_label": "Day 19 \u2022 Nov 12",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6957.04,
@@ -78960,7 +78960,7 @@
       "date": "2026-11-13",
       "tab_label": "Day 20 \u2022 Nov 13",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6939.5,
@@ -82968,7 +82968,7 @@
       "date": "2026-11-16",
       "tab_label": "Day 21 \u2022 Nov 16",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6819.96,
@@ -87049,7 +87049,7 @@
       "date": "2026-11-17",
       "tab_label": "Day 22 \u2022 Nov 17",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6755.42,
@@ -91172,7 +91172,7 @@
       "date": "2026-11-18",
       "tab_label": "Day 23 \u2022 Nov 18",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6774.77,
@@ -95280,7 +95280,7 @@
       "date": "2026-11-19",
       "tab_label": "Day 24 \u2022 Nov 19",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6634.55,
@@ -99429,7 +99429,7 @@
       "date": "2026-11-20",
       "tab_label": "Day 25 \u2022 Nov 20",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6420.97,
@@ -103648,7 +103648,7 @@
       "date": "2026-11-23",
       "tab_label": "Day 26 \u2022 Nov 23",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6643.88,
@@ -107881,7 +107881,7 @@
       "date": "2026-11-24",
       "tab_label": "Day 27 \u2022 Nov 24",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6637.76,
@@ -112099,7 +112099,7 @@
       "date": "2026-11-25",
       "tab_label": "Day 28 \u2022 Nov 25",
       "is_backtest": true,
-      "updated_at": "2026-11-27 04:05 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6621.95,
@@ -116415,14 +116415,14 @@
       "date": "2026-11-27",
       "tab_label": "Today \u2022 Nov 27 (Live)",
       "is_backtest": false,
-      "updated_at": "2026-11-27 04:06 PM ET",
+      "updated_at": "2026-11-27 04:30 PM ET",
       "portfolio": {
         "starting_capital": 7000.0,
         "total_value": 6727.26,
         "invested_value": 6680.36,
         "cash_reserve": 46.9,
         "day_open": 6696.84,
-        "day_high": 6751.42,
+        "day_high": 6751.29,
         "day_low": 6637.36,
         "day_change_dollars": 105.31,
         "day_change_pct": 1.59,
@@ -116950,7 +116950,7 @@
               "close": 35.29
             },
             {
-              "h": 43,
+              "h": 44,
               "up": true,
               "close": 35.67
             }
@@ -117030,7 +117030,7 @@
               "close": 579.32
             },
             {
-              "h": 32,
+              "h": 36,
               "up": true,
               "close": 580.79
             }
@@ -117110,7 +117110,7 @@
               "close": 1392.22
             },
             {
-              "h": 41,
+              "h": 44,
               "up": true,
               "close": 1392.38
             }
@@ -117752,7 +117752,7 @@
               "close": 579.32
             },
             {
-              "h": 32,
+              "h": 36,
               "up": true,
               "close": 580.79
             }
@@ -117832,7 +117832,7 @@
               "close": 1392.22
             },
             {
-              "h": 41,
+              "h": 44,
               "up": true,
               "close": 1392.38
             }
@@ -117912,7 +117912,7 @@
               "close": 35.29
             },
             {
-              "h": 43,
+              "h": 44,
               "up": true,
               "close": 35.67
             }
@@ -120126,7 +120126,7 @@
               "close": 35.29
             },
             {
-              "h": 43,
+              "h": 44,
               "up": true,
               "close": 35.67
             }
@@ -120140,7 +120140,7 @@
           "max_weight": 0.12,
           "price": 580.79,
           "day_open": 580.48,
-          "day_high": 583.73,
+          "day_high": 583.62,
           "day_low": 579.5,
           "day_pct": 0.25,
           "ret_5d": 1.53,
@@ -120149,7 +120149,7 @@
           "rsi14": 58.9,
           "sma20": 575.68,
           "sma50": 541.84,
-          "vol_ratio": 0.39,
+          "vol_ratio": 0.44,
           "score": 96.0,
           "signal": "BUY",
           "setup_tag": "Steady Momentum",
@@ -120213,7 +120213,7 @@
               "close": 579.32
             },
             {
-              "h": 32,
+              "h": 36,
               "up": true,
               "close": 580.79
             }
@@ -120236,7 +120236,7 @@
           "rsi14": 40.7,
           "sma20": 332.63,
           "sma50": 334.8,
-          "vol_ratio": 0.47,
+          "vol_ratio": 0.48,
           "score": 44.5,
           "signal": "TRIM",
           "setup_tag": "Below 50d Trend",
@@ -120410,7 +120410,7 @@
           "rsi14": 56.8,
           "sma20": 1400.6,
           "sma50": 1286.76,
-          "vol_ratio": 0.44,
+          "vol_ratio": 0.46,
           "score": 90.9,
           "signal": "BUY",
           "setup_tag": "Pullback to Support",
@@ -120474,7 +120474,7 @@
               "close": 1392.22
             },
             {
-              "h": 41,
+              "h": 44,
               "up": true,
               "close": 1392.38
             }
