@@ -1847,7 +1847,7 @@ def sync_to_github_if_configured() -> None:
 
         # 3. Build tree with all updated data files at once in a single commit
         tree_items = []
-        for fname in ("index.html", "portfolio_data.js", "portfolio_state.json", "model_memory.json"):
+        for fname in ("portfolio_data.js", "portfolio_state.json", "model_memory.json"):
             fpath = WORKSPACE_DIR / fname
             if not fpath.exists():
                 continue
